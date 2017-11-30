@@ -1,0 +1,19 @@
+<h1>Electronic#index</h1>
+<p>Find me in app/views/electronic/index.html.erb</p>
+
+
+<% @electronic.each do |p|%>
+
+<%= p.name %>
+<br>
+<%= p.desc %>
+<br>
+<%= p.admin.email%>
+<br>
+Seats filled <%= p.admin.users.count%> 
+<br>
+Seats available <%= p.limit %>
+<br>
+<br>
+<br>
+<% end%>

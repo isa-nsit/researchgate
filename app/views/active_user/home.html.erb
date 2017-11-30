@@ -1,3 +1,14 @@
-<h1>ActiveUser#home</h1>
-<p>Find me in app/views/active_user/home.html.erb</p>
+Welcome <%= current_user.email%>
+<br>
+ 
+ projects doing      <%= current_user.projects.count%>
+
+ <br>
+
+ <%= link_to "Electronics",electronic_index_path%>
+ <br>
+ <%= link_to "Electrical",electrical_index_path%>
+ <br>
+ <%= link_to "Mechanical",mechanical_index_path%>
+ <br>
  

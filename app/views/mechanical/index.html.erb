@@ -1,0 +1,18 @@
+<h1>Mechanical#index</h1>
+<p>Find me in app/views/mechanical/index.html.erb</p>
+
+<% @mechanical.each do |m|%>
+
+<%= m.name %>
+<br>
+<%= m.desc %>
+<br>
+<%= m.admin.email%>
+<br>
+Seats filled <%= m.admin.users.count%> 
+<br>
+Seats available <%= m.limit %>
+<br>
+<br>
+<br>
+<% end%>

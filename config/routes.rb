@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'mechanical/index'
+
+  get 'electrical/index'
+
+  get 'electronic/index'
+
   get 'active_admin/home'
 
   get 'active_user/home'
