@@ -1,8 +1,8 @@
-<h1>Electronic#index</h1>
+<h1><%=@category%>#index</h1>
 <p>Find me in app/views/electronic/index.html.erb</p>
 
 
-<% @electronic.each do |p|%>
+<% @project.each do |p|%>
 
 <%= p.name %>
 <br>
@@ -10,10 +10,11 @@
 <br>
 <%= p.admin.email%>
 <br>
-Seats filled <%= p.admin.users.count%> 
+Seats filled <%= p.users.count%> 
 <br>
 Seats available <%= p.limit %>
 <br>
+<%= link_to "APPLY", work_index_path %>
 <br>
 <br>
 <% end%>

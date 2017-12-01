@@ -1,0 +1,27 @@
+<h1>New Project</h1>
+
+<%= form_for @project, url:projects_create_path(@project) do |f| %>
+  <% if @project.errors.any? %>
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+  <% end %>
+
+<%= f.label :Name %>
+<%= f.text_field :name %><br>
+
+<%= f.label :Description %>
+<%= f.text_field :desc %><br>
+
+<%= f.label :Category %>
+<%= f.text_field :category %><br>
+
+<%= f.label :limit %>
+<%= f.number_field :limit %><br>
+
+<%= f.submit %>
+<% end %>

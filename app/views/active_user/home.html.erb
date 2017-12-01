@@ -4,11 +4,10 @@ Welcome <%= current_user.email%>
  projects doing      <%= current_user.projects.count%>
 
  <br>
-
- <%= link_to "Electronics",electronic_index_path%>
+ <%= link_to "Electronics",active_user_projectIndex_path(:category =>"Electronic") %>
  <br>
- <%= link_to "Electrical",electrical_index_path%>
+ <%= link_to "Electrical",active_user_projectIndex_path(:category =>"Electrical")%>
  <br>
- <%= link_to "Mechanical",mechanical_index_path%>
+ <%= link_to "Mechanical",active_user_projectIndex_path(:category =>"Mechanical")%>
  <br>
  

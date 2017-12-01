@@ -1,2 +1,31 @@
 <h1>ActiveAdmin#home</h1>
 <p>Find me in app/views/active_admin/home.html.erb</p>
+
+Welcome <%=current_admin.email%>
+<br>
+Current projects: <%=current_admin.projects.count%>
+<br>
+
+<%= button_to "Add new project", url_for(controller: 'projects', action: 'new'),method: :get %>
+
+<br>
+
+My projects: <br>
+
+<% @projects.each do |p| %>
+	Name: <%= p.name %><br>
+	Description: <%= p.desc %><br>
+	Category: <%= p.category %> <br>
+	Faculty name: <%= p.admin.email %> <br> 
+	Limit of students: <%= p.limit %> <br>
+	Seats filled: <%= p.users.count %> <br>
+
+	Students:
+	<% p.users.each do |u| %>
+		<%= u.email %>
+	<% end %>	
+	<br>
+	<%= link_to "Edit", url_for(controller: "projects", action: "edit", id: p.id), method: :get %>
+	<%= link_to "Delete", url_for(controller: "projects", action: "destroy", id: p.id), method: :delete %>
+<br><br><br>
+<%end %> 

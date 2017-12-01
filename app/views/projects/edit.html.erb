@@ -1,0 +1,17 @@
+<h1>Editing Project</h1>
+
+<%= form_for @project, url:projects_update_path(@project, id:@project.id)  do |f| %>
+	<%= f.label :Name %>
+	<%= f.text_field :name, value:@project.name %><br>
+
+	<%= f.label :Description %>
+	<%= f.text_field :desc, value:@project.desc %><br>
+
+	<%= f.label :Category %>
+	<%= f.text_field :category, value:@project.category %><br>
+
+	<%= f.label :limit %>
+	<%= f.number_field :limit, value:@project.limit %><br>
+
+	<%= f.submit %>
+<% end %>

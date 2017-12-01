@@ -1,27 +1,34 @@
 Rails.application.routes.draw do
-  
-  get 'mechanical/index'
 
-  get 'electrical/index'
+  get 'work/index'
+  post 'work/index'=> 'work#create'
 
-  get 'electronic/index'
+  get 'projects/new'
+  post 'projects/create'
+  get 'projects/edit'
+  put 'projects/update'
+  patch 'projects/update'
+  delete 'projects/destroy'
+
+  get 'active_user/projectIndex'
+  get 'active_user/home'
 
   get 'active_admin/home'
 
-  get 'active_user/home'
-
+  get 'main/index'
   root 'main#index'
   
   devise_for :users, path: 'users'
   devise_for :admins, path: 'admins'
+  
+
   get 'admins/functions/home'
   post 'admins/functions/home'
 
   get 'users/functions/home'
   post 'users/functions/home'
   
-  get 'main/index'
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
