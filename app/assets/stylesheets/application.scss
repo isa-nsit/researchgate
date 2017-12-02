@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body{
+	margin:0px;
+	padding:0px;
+}
 .example3 .navbar-brand {
   height: 80px;
 }
@@ -13,4 +17,16 @@
   padding: 10px;
   margin: 25px 15px 25px 0;
 }
-
+.project-panel{
+	border: 1px solid black;
+	box-shadow: 10px 10px 5px lightgrey;
+}
+.navigation_bar{
+	 border-bottom: 1px solid blue;
+}
+.nav>li:hover>a{
+    background: none;
+}
+.fade{
+   margin-top: 80px;
+}

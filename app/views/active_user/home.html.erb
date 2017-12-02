@@ -1,13 +1,17 @@
-Welcome <%= current_user.email%>
-<br>
- 
- projects doing      <%= current_user.projects.count%>
+ <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Categories 
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><%= link_to "Electronics <span class='badge'>#{Project.all.where(category:"Electronic").count}</span>".html_safe,active_user_projectIndex_path(:category =>"Electronic") %></li>
+    
+    <li role="separator" class="divider"></li>
+    
+    <li><%= link_to "Electrical <span class='badge'>#{Project.all.where(category:"Electrical").count}</span>".html_safe,active_user_projectIndex_path(:category =>"Electrical") %></li>
+    <li role="separator" class="divider"></li>
+    
+    <li><%= link_to "Mechanical <span class='badge'>#{Project.all.where(category:"Mechanical").count}</span>".html_safe,active_user_projectIndex_path(:category =>"Mechanical") %></li>
+  </ul>
+</div>
 
- <br>
- <%= link_to "Electronics",active_user_projectIndex_path(:category =>"Electronic") %>
- <br>
- <%= link_to "Electrical",active_user_projectIndex_path(:category =>"Electrical")%>
- <br>
- <%= link_to "Mechanical",active_user_projectIndex_path(:category =>"Mechanical")%>
- <br>
- 

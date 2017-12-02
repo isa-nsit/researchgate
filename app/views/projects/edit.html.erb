@@ -1,17 +1,46 @@
-<h1>Editing Project</h1>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Edit Project</div>
+			<div class="panel-body">
+				<%= form_for @project, url:projects_update_path(@project, id:@project.id)  do |f| %>
+				  <% if @project.errors.any? %>
+      				<h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-<%= form_for @project, url:projects_update_path(@project, id:@project.id)  do |f| %>
-	<%= f.label :Name %>
-	<%= f.text_field :name, value:@project.name %><br>
+      			<ul>
+			      <% @project.errors.full_messages.each do |message| %>
+			        <li><%= message %></li>
+			      <% end %>
+			    </ul>
+  					<% end %>
+  						
+  					<div class="field form-group">
+  						<%= f.label :Name %>
+						<%= f.text_field :name, :class => 'form-control',value:@project.name ,autofocus: true%>
+  					</div>
+					
+					<div class="form-group">
+	  					<%= f.label :Description %>
+						<%= f.text_field :desc , :class => 'form-control', value:@project.desc %><br>
+					</div>
+					
+					<div class="form-group">
+						<%= f.label :Category %>
+						<%= f.text_field :category , :class => 'form-control', value:@project.category%><br>
+					</div>
 
-	<%= f.label :Description %>
-	<%= f.text_field :desc, value:@project.desc %><br>
+					<div class="form-group">
+						<%= f.label :limit %>
+						<%= f.number_field :limit , :class => 'form-control', value:@project.limit %><br>
+					</div>
 
-	<%= f.label :Category %>
-	<%= f.text_field :category, value:@project.category %><br>
-
-	<%= f.label :limit %>
-	<%= f.number_field :limit, value:@project.limit %><br>
-
-	<%= f.submit %>
-<% end %>
+					<div class="form-group">
+          				<%= f.submit "Update" , :class => 'btn btn-block btn-primary'%>
+        			</div>
+					
+					<% end %>
+					
+			</div>
+		</div>
+	</div>
+</div>
