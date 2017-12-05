@@ -2,12 +2,16 @@ class TasksController < ApplicationController
 	before_action :authenticate_user!
 
 	def new
+
     @email=params[:email]
+
 		@task=Task.new
 	end
 
 	def create
+
     @email=params[:email]
+
 	  @task=Task.new
       @task.name=params[:task][:name]
       @task.year=params[:task][:year]
@@ -20,7 +24,9 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.save
         format.html { redirect_to active_user_home_path, notice: 'Response has been sent' }
+
          FormMailer.FormSubmission(@task,@email).deliver_now
+
        
       else
         format.html { redirect_to tasks_new_path , notice: 'You have not filled all the fields' }
