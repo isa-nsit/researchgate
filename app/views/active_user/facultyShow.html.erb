@@ -1,0 +1,17 @@
+<%= @faculty.name %>
+<br>
+<%= image_tag("#{@faculty.pic}")%>
+<br>
+<%= @faculty.qualifications%>
+<br>
+<%= @faculty.designation%>
+<br>
+<%= @faculty.division%>
+<br>
+<%= @faculty.contact_no%>
+<br>
+<%= @faculty.email%>
+<br>
+<%= @faculty.bio%>
+<br>
+<%= link_to "APPLY", tasks_new_path(:email=>"#{@faculty.email}")%>

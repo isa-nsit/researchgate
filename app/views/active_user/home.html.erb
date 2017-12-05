@@ -1,0 +1,17 @@
+ <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Categories 
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><%= link_to "Electronics <span class='badge'>#{@countElectronic}</span>".html_safe,active_user_facultyIndex_path(:division =>"Electronic") %></li>
+    
+    <li role="separator" class="divider"></li>
+    
+    <li><%= link_to "Electrical <span class='badge'>#{@countElectrical}</span>".html_safe,active_user_facultyIndex_path(:division =>"Electrical") %></li>
+    <li role="separator" class="divider"></li>
+    
+     <li><%= link_to "Mechanical <span class='badge'>#{@countMechanical}</span>".html_safe,active_user_facultyIndex_path(:division =>"Mechanical") %></li>
+  </ul>
+</div>
+

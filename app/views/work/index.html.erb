@@ -1,0 +1,39 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <center><span style="font-weight: bold;">Apply For Project</span></center>
+  </div>
+  <div class="panel-body">
+    <%= form_for @work, url: {action: "create"} do |f| %>
+  
+  <div class="field form-group">
+              <%= f.label :Name%>
+            <%= f.text_field :name , :class => 'form-control',autofocus: true%><br>
+            </div>
+          
+          <div class="form-group">
+              <%= f.label :Year %>
+            <%= f.text_field :year , :class => 'form-control'%><br>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :Branch %>
+            <%= f.text_field :branch , :class => 'form-control'%><br>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :Percentage %>
+            <%= f.number_field :string , :class => 'form-control'%><br>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :"Statement Of Purpose" %>
+            <%= f.number_field :sop , :class => 'form-control'%><br>
+          </div>
+          
+          <div class="form-group">
+                  <%= f.submit "Apply" , :class => 'btn btn-block btn-primary'%>
+              </div>
+          
+<% end %>    
+  </div>
+</div>

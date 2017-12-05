@@ -1,0 +1,6 @@
+
+
+<% @faculty.each do|f|%>
+<%= image_tag("#{f.pic}")%>
+<%= link_to "#{f.name}",active_user_facultyShow_path(:name =>"#{f.name}")%>
+<%end%>
