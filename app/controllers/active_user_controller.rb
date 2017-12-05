@@ -1,9 +1,19 @@
 class ActiveUserController < ApplicationController
   def home
+  	@countElectronic=Admin.all.where(division:"Electronic").count
+  	@countElectrical=Admin.all.where(division:"Electrical").count
+  	@countMechanical=Admin.all.where(division:"Mechanical").count
   end
 
-  def projectIndex
-  	@category=params[:category]
-	@project=Project.where(:category=>@category)
+  def facultyIndex
+  	@division=params[:division]
+	  @faculty=Admin.where(:division=>@division)
+  end
+
+  def facultyShow
+
+    @name=params[:name]
+	  @faculty=Admin.where(:name=>@name).first
+    
   end
 end

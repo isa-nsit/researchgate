@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
 
-  get 'work/index'
-  post 'work/index'=> 'work#create'
+  get 'tasks/new'
+  post 'tasks/create'
 
   get 'projects/new'
   post 'projects/create'
+  get 'active_user/facultyShow'
   get 'projects/edit'
   put 'projects/update'
   patch 'projects/update'
   delete 'projects/destroy'
 
-  get 'active_user/projectIndex'
+  get 'active_user/facultyIndex'
   get 'active_user/home'
 
   get 'active_admin/home'
