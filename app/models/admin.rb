@@ -4,7 +4,7 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  has_many :projects
-  has_many :users, through: :projects
+  has_many :selectedprojects
+  has_many :users, through: :selectedprojects
 
 end
