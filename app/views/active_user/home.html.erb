@@ -15,3 +15,7 @@
   </ul>
 </div>
 
+
+<% @show.each do |s|%>
+<%= Task.where(:id=> s.task_id).first.name %>
+<% end %>

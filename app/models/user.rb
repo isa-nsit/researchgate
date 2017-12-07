@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   has_many :selectedprojects
   has_many :admins, through: :selectedprojects
   has_many :tasks
+
+
 end

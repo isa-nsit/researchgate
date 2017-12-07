@@ -12,6 +12,12 @@
               <%= f.label :Name%>
             <%= f.text_field :name , :class => 'form-control',autofocus: true%><br>
             </div>
+
+
+             <div class="field form-group">
+              <%= f.label :Email%>
+            <%= f.text_field :email1 , :class => 'form-control',autofocus: true%><br>
+            </div>
           
           <div class="form-group">
               <%= f.label :Year %>
@@ -40,9 +46,33 @@
           </div>
 
           <div class="form-group">
-            <%= f.label :"Members" %>
-            <%= f.number_field :members_count , :class => 'form-control'%><br>
+            <%= f.label :"Members in Project "%>
+            <%= f.radio_button :members_count, '1', :checked => true %> 1
+             <%= f.radio_button :members_count, '2' %> 2
+             <%= f.radio_button :members_count, '3' %> 3
+             <%= f.radio_button :members_count, '4' %> 4
+             <%= f.radio_button :members_count, '5' %> 5
           </div>
+
+          <div class="field form-group">
+              <%= f.label :Email %>2 Member 
+            <%= f.text_field :email2 , :class => 'form-control',autofocus: true%><br>
+            </div>
+            <div class="field form-group">
+              <%= f.label :Email%>3 Member
+            <%= f.text_field :email3 , :class => 'form-control',autofocus: true%><br>
+            </div>
+            <div class="field form-group">
+              <%= f.label :Email%>4 Member
+            <%= f.text_field :email4 , :class => 'form-control',autofocus: true%><br>
+            </div>
+            <div class="field form-group">
+              <%= f.label :Email%>5 Member
+            <%= f.text_field :email5 , :class => 'form-control',autofocus: true%><br>
+            </div>
+
+
+
           <div class="form-group">
 
                   <%= f.submit "Apply"  ,:class => 'btn btn-block btn-primary'%>

@@ -3,6 +3,8 @@ class ActiveUserController < ApplicationController
   	@countElectronic=Admin.all.where(division:"Electronic").count
   	@countElectrical=Admin.all.where(division:"Electrical").count
   	@countMechanical=Admin.all.where(division:"Mechanical").count
+    @show=UserTaskRelation.where(:user_id=>current_user.id)
+        
   end
 
   def facultyIndex
