@@ -1,6 +1,7 @@
 class ActiveAdminController < ApplicationController
   def home
-  	  	 @selected_projects = SelectedProject.where(admin_id: current_admin.id)
+  	  	 @projects = ProjectUserAdminRelation.where(admin_id: current_admin.id)
+         @complete=CompleteProject.where(Admin_id: current_admin.id)
   end
 
   def new
@@ -10,6 +11,6 @@ class ActiveAdminController < ApplicationController
 
   def createProject
   	@project = SelectedProject.new
-  	byebug
+  
   end
 end

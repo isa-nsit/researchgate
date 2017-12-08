@@ -1,4 +1,5 @@
 class SelectedProjectsController < ApplicationController
+ before_action :authenticate_admin!
   def new
  	@project = SelectedProject.new
   end
@@ -98,4 +99,25 @@ class SelectedProjectsController < ApplicationController
   	end
   end
   end
+
+
+   def complete
+  
+     @id= params[:id]
+     @complete=ProjectUserAdminRelation.where(:admin_id=>current_admin.id , :SelectedProject_id=> @id).first
+     @val=CompleteProject.new
+     @val.SelectedProject_id=@id
+     @val.Admin_id=current_admin.id
+     @val.user1=@complete.user_id1
+     @val.user2=@complete.user_id2
+     @val.user3=@complete.user_id3
+     @val.user4=@complete.user_id4
+     @val.user5=@complete.user_id5
+     @val.save
+     @complete.destroy
+
+     return redirect_to active_admin_home_path
+ 
+   end
+
 end

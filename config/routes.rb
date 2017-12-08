@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post 'selected_projects/create'
   get 'tasks/new'
   post 'tasks/create'
-
+  get 'selected_projects/complete'
   get 'projects/new'
   post 'projects/create'
   get 'active_user/facultyShow'

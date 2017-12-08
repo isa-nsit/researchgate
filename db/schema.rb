@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171208104310) do
+ActiveRecord::Schema.define(version: 20171208190209) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -41,6 +41,21 @@ ActiveRecord::Schema.define(version: 20171208104310) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "complete_projects", force: :cascade do |t|
+    t.integer  "SelectedProject_id"
+    t.integer  "Admin_id"
+    t.string   "user1"
+    t.string   "user2"
+    t.string   "user3"
+    t.string   "user4"
+    t.string   "user5"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "complete_projects", ["Admin_id"], name: "index_complete_projects_on_Admin_id"
+  add_index "complete_projects", ["SelectedProject_id"], name: "index_complete_projects_on_SelectedProject_id"
 
   create_table "project_user_admin_relations", force: :cascade do |t|
     t.integer  "admin_id"

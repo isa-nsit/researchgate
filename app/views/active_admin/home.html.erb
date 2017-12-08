@@ -12,27 +12,30 @@
 					    <th>Name</th>
 					    <th>Description</th> 
 					    <th>Students</th>
+
 					  </tr>
-						<%@selected_projects.each do|project|%>	  
+						<%@projects.each do|project|%>	  
 					  <tr>
-					    <td><%=project.ProjectName%></td>
-					    <td><%=project.Description%></td>
+					    <td><%=SelectedProject.where(:id=>project.SelectedProject_id).first.ProjectName%></td>
+					    <td><%=SelectedProject.where(:id=>project.SelectedProject_id).first.Description%></td>
 					    <td>
-					    	<% if project.email1!=""%>
-					    		<li><%=User.find_by_email(project.email1).email%></li>
+					    
+					    	<% if project.user_id1!=0%>
+					    		<li><%=User.find_by_id(project.user_id1).email%></li>
 					    	<% end %>
-					    	<% if project.email2!=""%>
-					    		<li><%=User.find_by_email(project.email2).email%></li>
+					    	<% if project.user_id2!=0%>
+					    		<li><%=User.find_by_id(project.user_id2).email%></li>
 					    	<% end %>
-					    	<% if project.email3!=""%>
-					    		<li><%=User.find_by_email(project.email3).email%></li>
+					    	<% if project.user_id3!=0%>
+					    		<li><%=User.find_by_id(project.user_id3).email%></li>
 					    	<% end %>
-					    	<% if project.email4!=""%>
-					    		<li><%=User.find_by_email(project.email4).email%></li>
+					    	<% if project.user_id4!=0%>
+					    		<li><%=User.find_by_id(project.user_id4).email%></li>
 					    	<% end %>
-					    	<% if project.email5!=""%>
-					    		<li><%=User.find_by_email(project.email5).email%></li>
+					    	<% if project.user_id5!=0%>
+					    		<li><%=User.find_by_id(project.user_id5).email%></li>
 					    	<% end %>
+					    	<%= link_to "Complete", selected_projects_complete_path(:id =>"#{project.SelectedProject.id}") %>
 					    </td>
 					  </tr>
 				<% end %>
@@ -41,6 +44,13 @@
 		</div>
 	</div>
 </div>
+
+
+completed Project 
+<% @complete.each do|c|%>
+<%=  SelectedProject.where(:id=> c.SelectedProject_id).first.Description%>
+<%=  SelectedProject.where(:id=> c.SelectedProject_id).first.ProjectName%>
+<% end %>
 
 <style type="text/css">
 
