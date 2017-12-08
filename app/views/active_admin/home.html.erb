@@ -1,78 +1,141 @@
-<h2>Welcome<strong><%=current_admin.name%></strong></h2>
 
-<%=link_to 'New Project', selected_projects_new_path%>
+<div class="row">
+	<div class="col-sm-4">
+		<div class="panel panel-success" style="border: 1px solid black;">
+			<div class="panel-heading">
+				<h4><%=current_admin.name%></h4>
+			</div>
+			<div class="panel-body" style="height: 170px;">
+				<div class="row">
+					<div class="col-sm-4">
+						<%=image_tag current_admin.pic ,class:"img-responsive round-image",alt:"hero"%>
+					</div>
+					<div class="col-sm-8">
+						<ul class="list-group">
+						  <li class="list-group-item">Projects Completed<span class="badge"><%=current_admin.complete_projects.count%></span></li>
+						  <li class="list-group-item">Projects Undergoing<span class="badge"><%=current_admin.project_user_admin_relations.count%></span></li>
+						</ul>
+						<span class="small">Contact : </span><%=link_to current_admin.email,'', class:'contact'%>
+					</div>
+				</div>
+			</div>
+		</div>
+		<%=link_to link_to '<button type="button" class="addBtn">Add Project</button>'.html_safe, selected_projects_new_path%>
 
-<div style="float: right;">
-	<div id="wrapper">
-		<div id="table-header">Undergoing Projects</div>
-		<div>
-			<ul id="selectedprojects">
-				<table style="width:100%">
-					 <tr>
-					    <th>Name</th>
-					    <th>Description</th> 
-					    <th>Students</th>
+	</div>
+	<div class="col-sm-4">
+		<div class="panel panel-info" style="border: 1px solid black;">
+			<div class="panel-heading text-center" id="OnGoing"><h4>OnGoing Projects</h4></div>
+			<div class="panel-body" style=" overflow-y: scroll; overflow-x: hidden; border: 1px solid lightgrey;  height: calc(100% - 40px); max-height: 480px;">
 
-					  </tr>
-						<%@projects.each do|project|%>	  
-					  <tr>
-					    <td><%=SelectedProject.where(:id=>project.SelectedProject_id).first.ProjectName%></td>
-					    <td><%=SelectedProject.where(:id=>project.SelectedProject_id).first.Description%></td>
-					    <td>
-					    
-					    	<% if project.user_id1!=0%>
-					    		<li><%=User.find_by_id(project.user_id1).email%></li>
-					    	<% end %>
-					    	<% if project.user_id2!=0%>
-					    		<li><%=User.find_by_id(project.user_id2).email%></li>
-					    	<% end %>
-					    	<% if project.user_id3!=0%>
-					    		<li><%=User.find_by_id(project.user_id3).email%></li>
-					    	<% end %>
-					    	<% if project.user_id4!=0%>
-					    		<li><%=User.find_by_id(project.user_id4).email%></li>
-					    	<% end %>
-					    	<% if project.user_id5!=0%>
-					    		<li><%=User.find_by_id(project.user_id5).email%></li>
-					    	<% end %>
-					    	<%= link_to "Complete", selected_projects_complete_path(:id =>"#{project.SelectedProject.id}") %>
-					    </td>
-					  </tr>
+				<%@projects.each do|project|%>
+					<div class="panel-group">
+					<div class="panel panel-success" style="margin: -21px; ">
+						<div class="panel-heading text-center" style="word-wrap: break-word;"><%=SelectedProject.find_by_id(project.SelectedProject_id).ProjectName.humanize%></div>
+						<div class="panel-body lead" style="word-wrap: break-word;">
+							<%=SelectedProject.find_by_id(project.SelectedProject_id).Description.humanize%>
+						</div>
+						<div class="panel-footer">
+							<div class="dropdown">
+							  <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown">Students <span class="caret"></span></a>
+							  <ul class="dropdown-menu">
+							  	<% if project.user_id1!=0%>
+							    	<li><a class="dropdown-item" href="#"><%=User.find_by_id(project.user_id1).email%></a></li>
+					    		<% end %>
+					    		<% if project.user_id2!=0%>
+							    	<li><a class="dropdown-item" href="#"><%=User.find_by_id(project.user_id2).email%></a></li>
+					    		<% end %>
+					    		<% if project.user_id3!=0%>
+							    	<li><a class="dropdown-item" href="#"><%=User.find_by_id(project.user_id3).email%></a></li>
+					    		<% end %>
+					    		<% if project.user_id4!=0%>
+							    	<li><a class="dropdown-item" href="#"><%=User.find_by_id(project.user_id4).email%></a></li>
+					    		<% end %>
+					    		<% if project.user_id5!=0%>
+							    	<li><a class="dropdown-item" href="#"><%=User.find_by_id(project.user_id5).email%></a></li>
+							    <% end %>
+							    </ul>
+							    <%= link_to "Complete",selected_projects_complete_path(:id =>"#{project.SelectedProject.id}"),html_options={class:'complete'} %>
+
+							  </div>
+							</div>
+					    </div>	
+					    </div>
 				<% end %>
-				</table>	
-			</ul>
+			</div>
 		</div>
 	</div>
+	<div class="col-sm-4">
+		<div class="panel panel-info" style="border: 1px solid black;">
+			<div class="panel-heading text-center"><h4>Completed Projects</h4></div>
+				<div class="panel-body" style="height: calc(100% - 40px); max-height: 480px; overflow-y: scroll; border: 1px solid lightgrey; overflow-x: hidden;">
+
+					<% @complete.each do|project|%>
+						<div class="panel-group">
+						<div class="panel panel-success" style="margin: -21px;">
+							<div class="panel-heading text-center" style="word-wrap: break-word;"><%=SelectedProject.find_by_id(project.SelectedProject_id).ProjectName%></div>
+							<div class="panel-body lead" style="word-wrap: break-word;">
+								<%=SelectedProject.find_by_id(project.SelectedProject_id).Description.humanize%>
+							</div> 
+						</div>
+						</div>
+					<% end %>
+				</div>
+			</div>	
+			</div>
 </div>
-
-
-completed Project 
-<% @complete.each do|c|%>
-<%=  SelectedProject.where(:id=> c.SelectedProject_id).first.Description%>
-<%=  SelectedProject.where(:id=> c.SelectedProject_id).first.ProjectName%>
-<% end %>
 
 <style type="text/css">
 
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
+.round-image{
+	border: 1px solid black;
+	border-radius: 20px;
+	box-shadow: 1px 1px lightgrey;
 }
-th, td {
-    padding: 15px;
+.contact:hover{
+	text-decoration: none;
 }
-th {
-    text-align: center;
+
+.dropBtn{
+	background: transparent;
+	outline: none;
+	border-radius: 30px;
+	border: 1px solid blue;
 }
-li{
-	list-style: none;
+.dropBtn:hover{
+	color:black;
+	background-color: lightblue;
 }
-#table-header{
-	color: black;
-	font-weight: bold;
-	width: 90%;
-	margin-left: 40px;
+.complete{
+	float:right;
+	margin-top: 5px;
+	border: 1px solid blue;
+	height: 25px;
+	width: 80px;
 	text-align: center;
-	padding: 10px;
+	border-radius: 30px;
+	color:black;
+}
+.complete:hover{
+	text-decoration: none;
+	color:black;
+	background-color: lightblue;
+}
+.addBtn{
+	border: 2px solid blue;
+	width: 8em;
+	height: 3em;
+	color:black;
+	border-radius: 40px;
+	background: transparent;
+	background-color: lightblue;
+	outline: none;
+}
+.addBtn:hover{
+	color:#fff;
+	background-color: blue;
+	font-weight: bold;
 }
 </style>
+					    	
+	

@@ -1,9 +1,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body{
-	margin:0px;
-	padding:0px;
+body {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    height: 100%;
+}
+body:before{
+  content: "";
+  position: absolute;
+	background: url('https://www.toptal.com/designers/subtlepatterns/patterns/stonehaven.png'); 
+  background-size: cover;
+  z-index: -1;
+  height: 20%; width: 20%;
+  transform: scale(5);
+  transform-origin: top left;
+  filter: blur(1px);
 }
 .example3 .navbar-brand {
   height: 80px;

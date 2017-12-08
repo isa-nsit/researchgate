@@ -5,6 +5,7 @@ class Admin < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_many :selected_projects
+  has_many :complete_projects
+  has_many :project_user_admin_relations
   has_many :users, through: :selectedprojects
-
 end
