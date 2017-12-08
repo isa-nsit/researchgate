@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'selected_projects/new'
+
+  post 'selected_projects/create'
   get 'tasks/new'
   post 'tasks/create'
 
@@ -19,6 +22,8 @@ Rails.application.routes.draw do
   get 'main/index'
   root 'main#index'
   
+  get 'active_admin/createProject'  
+  post 'active_admin/createProject'  
   devise_for :users, path: 'users'
   devise_for :admins, path: 'admins'
   

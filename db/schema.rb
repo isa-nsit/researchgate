@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171207185514) do
+ActiveRecord::Schema.define(version: 20171208104310) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -42,6 +42,23 @@ ActiveRecord::Schema.define(version: 20171207185514) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+  create_table "project_user_admin_relations", force: :cascade do |t|
+    t.integer  "admin_id"
+    t.integer  "user_id"
+    t.integer  "SelectedProject_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "user_id1"
+    t.integer  "user_id2"
+    t.integer  "user_id3"
+    t.integer  "user_id4"
+    t.integer  "user_id5"
+  end
+
+  add_index "project_user_admin_relations", ["SelectedProject_id"], name: "index_project_user_admin_relations_on_SelectedProject_id"
+  add_index "project_user_admin_relations", ["admin_id"], name: "index_project_user_admin_relations_on_admin_id"
+  add_index "project_user_admin_relations", ["user_id"], name: "index_project_user_admin_relations_on_user_id"
+
   create_table "project_user_relations", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "Selectedproject_id"
@@ -51,6 +68,19 @@ ActiveRecord::Schema.define(version: 20171207185514) do
 
   add_index "project_user_relations", ["Selectedproject_id"], name: "index_project_user_relations_on_Selectedproject_id"
   add_index "project_user_relations", ["user_id"], name: "index_project_user_relations_on_user_id"
+
+  create_table "selected_projects", force: :cascade do |t|
+    t.string   "ProjectName"
+    t.text     "Description"
+    t.string   "email1"
+    t.string   "email2"
+    t.string   "email3"
+    t.string   "email4"
+    t.string   "email5"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "admin_id"
+  end
 
   create_table "selectedprojects", force: :cascade do |t|
     t.string   "name"

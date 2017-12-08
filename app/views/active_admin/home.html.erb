@@ -1,1 +1,68 @@
-hi
+<h2>Welcome<strong><%=current_admin.name%></strong></h2>
+
+<%=link_to 'New Project', selected_projects_new_path%>
+
+<div style="float: right;">
+	<div id="wrapper">
+		<div id="table-header">Undergoing Projects</div>
+		<div>
+			<ul id="selectedprojects">
+				<table style="width:100%">
+					 <tr>
+					    <th>Name</th>
+					    <th>Description</th> 
+					    <th>Students</th>
+					  </tr>
+						<%@selected_projects.each do|project|%>	  
+					  <tr>
+					    <td><%=project.ProjectName%></td>
+					    <td><%=project.Description%></td>
+					    <td>
+					    	<% if project.email1!=""%>
+					    		<li><%=User.find_by_email(project.email1).email%></li>
+					    	<% end %>
+					    	<% if project.email2!=""%>
+					    		<li><%=User.find_by_email(project.email2).email%></li>
+					    	<% end %>
+					    	<% if project.email3!=""%>
+					    		<li><%=User.find_by_email(project.email3).email%></li>
+					    	<% end %>
+					    	<% if project.email4!=""%>
+					    		<li><%=User.find_by_email(project.email4).email%></li>
+					    	<% end %>
+					    	<% if project.email5!=""%>
+					    		<li><%=User.find_by_email(project.email5).email%></li>
+					    	<% end %>
+					    </td>
+					  </tr>
+				<% end %>
+				</table>	
+			</ul>
+		</div>
+	</div>
+</div>
+
+<style type="text/css">
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+th {
+    text-align: center;
+}
+li{
+	list-style: none;
+}
+#table-header{
+	color: black;
+	font-weight: bold;
+	width: 90%;
+	margin-left: 40px;
+	text-align: center;
+	padding: 10px;
+}
+</style>
