@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  root 'main#index'
   get 'selected_projects/new'
 
   post 'selected_projects/create'
@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   get 'active_admin/home'
 
   get 'main/index'
-  root 'main#index'
   
   get 'active_admin/createProject'  
   post 'active_admin/createProject'  

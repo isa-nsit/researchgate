@@ -1,21 +1,255 @@
- <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Categories 
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><%= link_to "Electronics <span class='badge'>#{@countElectronic}</span>".html_safe,active_user_facultyIndex_path(:division =>"Electronic") %></li>
-    
-    <li role="separator" class="divider"></li>
-    
-    <li><%= link_to "Electrical <span class='badge'>#{@countElectrical}</span>".html_safe,active_user_facultyIndex_path(:division =>"Electrical") %></li>
-    <li role="separator" class="divider"></li>
-    
-     <li><%= link_to "Mechanical <span class='badge'>#{@countMechanical}</span>".html_safe,active_user_facultyIndex_path(:division =>"Mechanical") %></li>
-  </ul>
+ <body style="height: 160%;">
+ <div class="row">
+   <div class="col-md-4 col-sm-4">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="text-center">CATEGORIES</h3>
+      </div>
+      <div class="panel-body">
+        <div class="categories">
+          <div id="category1">
+            <%= link_to "<span id='subject'>Electronics</span> <span class='badge'>#{@countElectronic}</span>".html_safe,active_user_facultyIndex_path(:division =>"Electronic") %>
+          </div>
+          <div id="category2">
+            <%= link_to "<span id='subject'>Electrical</span> <span class='badge'>#{@countElectrical}</span>".html_safe,active_user_facultyIndex_path(:division =>"Electrical") %>
+          </div>
+          <div id="category3">
+            <%= link_to "<span id='subject'>Mechanical</span> <span class='badge'>#{@countMechanical}</span>".html_safe,active_user_facultyIndex_path(:division =>"Mechanical") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-4">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="text-center">Ongoing Projects</h3>
+      </div>
+      <div class="panel-body" style="height: calc(100% - 40px); max-height: 480px; overflow-y: scroll; border: 1px solid lightgrey; overflow-x: hidden;">
+        
+          <%@projects.each do|project|%>
+            <div class="panel-group">
+              <div class="card">
+                <div>
+                  <div class="contain">
+                    <h4 class="text-center projectName"><b style=" border-bottom: 1px solid lightgrey; word-wrap: break-word;"><%=SelectedProject.find_by_id(project.SelectedProject_id).ProjectName.humanize%></b></h4> 
+                    <p style="word-wrap: break-word;" class="text-center"><%=SelectedProject.find_by_id(project.SelectedProject_id).Description.humanize%></p>
+                    <footer style="padding-top: 5px; display: flex; justify-content: space-between;">
+                      <div class="dropdown">
+                        <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email1%>
+                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email1%></a></li>
+                          <% end %>
+                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email2%>
+                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email2%></a></li>
+                          <% end %>
+                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email3%>
+                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email3%></a></li>
+                          <% end %>
+                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email4%>
+                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email4%></a></li>
+                          <% end %>
+                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email5%>
+                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email5%></a></li>
+                          <% end %>
+                          </ul>
+                      </div>
+                      <h5>Faculty : <em><%=Admin.find_by_id(SelectedProject.find_by_id(project.SelectedProject_id).admin_id).name%></em></h5>
+                    </footer>
+                  </div>
+                </div>
+                </div>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-4">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="text-center">Completed Projects</h3>
+      </div>
+      <div class="panel-body" style="height: calc(140% - 40px); max-height: 480px; overflow-y: scroll; border: 1px solid lightgrey; overflow-x: hidden;">
+        
+          <%@completeProjects.each do|project|%>
+            <div class="panel-group">
+              <div class="card">
+                <div>
+                  <div class="contain">
+                    <h4 class="text-center projectName" ><b style=" border-bottom: 1px solid lightgrey; word-wrap: break-word;"><%=SelectedProject.find_by_id(project.SelectedProject_id).ProjectName.humanize%></b></h4> 
+                    <p style="word-wrap: break-word;" class="text-center"><%=SelectedProject.find_by_id(project.SelectedProject_id).Description.humanize%></p>
+                    <footer style="padding-top: 5px; display: flex; justify-content: space-between;">
+                      <div class="dropdown">
+                        <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email1%>
+                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email1%></a></li>
+                          <% end %>
+                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email2%>
+                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email2%></a></li>
+                          <% end %>
+                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email3%>
+                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email3%></a></li>
+                          <% end %>
+                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email4%>
+                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email4%></a></li>
+                          <% end %>
+                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email5%>
+                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email5%></a></li>
+                          <% end %>
+                          </ul>
+                      </div>
+                      <h5>Faculty : <em><%=Admin.find_by_id(SelectedProject.find_by_id(project.SelectedProject_id).admin_id).name%></em></h5>
+                    </footer>
+                  </div>
+                </div>
+                </div>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+<div class="row">
+  <div class="col-sm-4" style="margin-top: -12%;">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="text-center">Sent Ideas</h3>
+      </div>
+      <div class="panel-body" style="height: calc(100% - 40px); max-height: 480px; overflow-y: scroll; border: 1px solid lightgrey; overflow-x: hidden;">
+        
+          <%@tasks.each do|project|%>
+            <div class="panel-group">
+              <div class="card">
+                <div>
+                  <div class="contain">
+                    <h4 class="text-center projectName"><b style=" border-bottom: 1px solid lightgrey; word-wrap: break-word;"><%=Task.find_by_id(project.id).task_name.humanize%></b></h4> 
+                    <p style="word-wrap: break-word;" class="text-center"><%=Task.find_by_id(project.id).task_desc.humanize%></p>
+                  </div>
+                </div>
+                </div>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<style type="text/css">
+.open{
+  transform: scale(1.1, 1.1);
+}
+.categories{
+  height: 300px;
+}
+.categories > * {
+  border: 1px solid black;
+    display: block;
+    padding: 20px;
+    margin-top: 10px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.categories > *:first-child {
+    margin-top: 0px;
+}
+#category1{
+   background-color: #fff;
+  box-shadow: 0 1px 2px grey;
+  transition: all 0.3s ease-in-out;
+}
+#category1 a{
+  text-decoration: none;
+}
+#category:hover::after {
+  opacity: 1;
+} 
+#category1:hover{
+  margin-left: 10px;
+  transform: scale(1.1, 1.1);
+}
+#category1:hover #subject{
+  font-weight: bold;
+  font-size: 15px;
+}
+#category1:hover .badge{
+  margin-left: 30px;
+  transition: all 0.3s ease-in-out;
+}
+#category2{
+   background-color: #fff;
+  box-shadow: 0 1px 2px grey;
+  transition: all 0.3s ease-in-out;
+}
+#category2 a{
+  text-decoration: none;
+}
+#category2:hover{
+  margin-left: 10px;
+  transform: scale(1.1, 1.1);
+}
+#category2:hover #subject{
+  font-weight: bold;
+  font-size: 15px;
+}
+#category2:hover .badge{
+  margin-left: 30px;
+  transition: all 0.3s ease-in-out;
+}
+#category3{
+   background-color: #fff;
+  box-shadow: 0 1px 2px grey;
+  transition: all 0.3s ease-in-out;
+}
+#category3 a{
+  text-decoration: none;
+}
+#category3:hover{
+  margin-left: 10px;
+  transform: scale(1.1, 1.1);
+}
+#category3:hover #subject{
+  font-weight: bold;
+  font-size: 15px;
+}
+#category3:hover .badge{
+  margin-left: 30px;
+  transition: all 0.3s ease-in-out;
+}
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    border: 1px solid black;
+}
 
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transform: scale(1.05, 1.05); 
+}
+.card:hover .projectName{
+  transform: scale(1.1,1.1);
+  text-shadow: 0.5px 0.5px lightgrey;
+  transition: all 0.5s ease-in-out;
+}
+/* Add some padding inside the card container */
+.contain {
+    padding: 2px 16px;
+}
+footer{
+  box-shadow: 0px 2px lightgrey;
+}
+h5{
+  font-weight: bold;
+}
+em{
+  font-weight: normal;
+}
+</style>
 
-<% @show.each do |s|%>
-<%= Task.where(:id=> s.task_id).first.name %>
-<% end %>

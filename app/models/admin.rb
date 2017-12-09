@@ -8,4 +8,5 @@ class Admin < ActiveRecord::Base
   has_many :complete_projects
   has_many :project_user_admin_relations
   has_many :users, through: :selectedprojects
+  has_many :tasks
 end
