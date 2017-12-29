@@ -6,7 +6,9 @@ class Admin < ActiveRecord::Base
 
   has_many :selected_projects
   has_many :complete_projects
-  has_many :project_user_admin_relations
-  has_many :users, through: :selectedprojects
   has_many :tasks
+
+  def ongoingProjectsCount
+  	ProjectUserAdminRelation.where(admin_id:id).count
+  end
 end

@@ -13,98 +13,138 @@
 					<div class="col-sm-8 col-md-8 col-xs-6">
 						<ul class="list-group">
 						  <li class="list-group-item">Projects Completed<span class="badge"><%=current_admin.complete_projects.count%></span></li>
-						  <li class="list-group-item">Projects Undergoing<span class="badge"><%=current_admin.project_user_admin_relations.count%></span></li>
+						  <li class="list-group-item">Projects Undergoing<span class="badge"><%=current_admin.ongoingProjectsCount%></span></li>
 						</ul>
 						<span class="contact"><%=link_to current_admin.email,'', class:'contact'%></span>
 					</div>
 				</div>
 			</div>
 		</div>
-		<%=link_to link_to '<button type="button" class="addBtn">Add Project</button>'.html_safe, selected_projects_new_path%>
-
 	</div>
+
 	<div class="col-sm-4">
 		<div class="panel panel-info" style="border: 1px solid black;">
 			<div class="panel-heading text-center" id="OnGoing"><h4>OnGoing Projects</h4></div>
 			<div class="panel-body" style=" overflow-y: scroll; overflow-x: hidden; border: 1px solid lightgrey;  height: calc(100% - 40px); max-height: 480px;">
-
-				<%@projects.each do|project|%>
+				<%@ongoingProjects.each do|project|%>
 					<div class="panel-group">
-					<div class="panel panel-success" style="margin: -21px; ">
-						<div class="panel-heading text-center" style="word-wrap: break-word;"><%=SelectedProject.find_by_id(project.SelectedProject_id).ProjectName.humanize%></div>
-						<div class="panel-body lead" style="word-wrap: break-word;">
-							<%=SelectedProject.find_by_id(project.SelectedProject_id).Description.humanize%>
-						</div>
-						<div class="panel-footer">
-							<div class="dropdown">
-							  <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown">Students <span class="caret"></span></a>
-							  <ul class="dropdown-menu">
-							  	<% if project.user_id1!=0%>
-							    	<li><a class="dropdown-item" href="#"><%=User.find_by_id(project.user_id1).email%></a></li>
-					    		<% end %>
-					    		<% if project.user_id2!=0%>
-							    	<li><a class="dropdown-item" href="#"><%=User.find_by_id(project.user_id2).email%></a></li>
-					    		<% end %>
-					    		<% if project.user_id3!=0%>
-							    	<li><a class="dropdown-item" href="#"><%=User.find_by_id(project.user_id3).email%></a></li>
-					    		<% end %>
-					    		<% if project.user_id4!=0%>
-							    	<li><a class="dropdown-item" href="#"><%=User.find_by_id(project.user_id4).email%></a></li>
-					    		<% end %>
-					    		<% if project.user_id5!=0%>
-							    	<li><a class="dropdown-item" href="#"><%=User.find_by_id(project.user_id5).email%></a></li>
-							    <% end %>
-							    </ul>
-							    <%= link_to "Complete",selected_projects_complete_path(:id =>"#{project.SelectedProject.id}"),html_options={class:'complete'} %>
-
-							  </div>
+						<div class="panel panel-success" style="margin: -21px; ">
+							<div class="panel-heading text-center" style="word-wrap: break-word;"><%=project.ProjectName.humanize%></div>
+							<div class="panel-body lead" style="word-wrap: break-word;">
+								<%=project.Description.humanize%>
+							</div>
+							<div class="panel-footer">
+								<div class="dropdown">
+								  <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown">Students <span class="caret"></span></a>
+								  <ul class="dropdown-menu">
+								  	<% if project.email1 && project.email1 !=""%>
+								    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email1)%></a></li>
+						    		<% end %>
+						    		<% if project.email2 && project.email2 !=""%>
+								    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email2)%></a></li>
+						    		<% end %>
+						    		<% if project.email3 && project.email3 !=""%>
+								    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email3)%></a></li>
+						    		<% end %>
+						    		<% if project.email4 && project.email4 !=""%>
+								    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email4)%></a></li>
+						    		<% end %>
+						    		<% if project.email5 && project.email5 !=""%>
+								    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email5)%></a></li>
+								    <% end %>
+								    </ul>
+								    <%= link_to "Complete",selected_projects_complete_path(:id =>"#{project.id}"),html_options={class:'complete'} %>
+								</div>
 							</div>
 					    </div>	
-					    </div>
+					</div>
 				<% end %>
 			</div>
 		</div>
 	</div>
+
 	<div class="col-sm-4">
 		<div class="panel panel-info" style="border: 1px solid black;">
 			<div class="panel-heading text-center"><h4>Completed Projects</h4></div>
-				<div class="panel-body" style="height: calc(100% - 40px); max-height: 480px; overflow-y: scroll; border: 1px solid lightgrey; overflow-x: hidden;">
-
-					<% @complete.each do|project|%>
-						<div class="panel-group">
-					<div class="panel panel-success" style="margin: -21px; ">
-						<div class="panel-heading text-center" style="word-wrap: break-word;"><%=SelectedProject.find_by_id(project.SelectedProject_id).ProjectName.humanize%></div>
-						<div class="panel-body lead" style="word-wrap: break-word;">
-							<%=SelectedProject.find_by_id(project.SelectedProject_id).Description.humanize%>
-						</div>
-						<div class="panel-footer">
-							<div class="dropdown">
-							  <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
-							  <ul class="dropdown-menu">
-							  	<% if SelectedProject.find_by_id(project.SelectedProject_id).email1%>
-							    	<li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email1%></a></li>
-					    		<% end %>
-							  	<% if SelectedProject.find_by_id(project.SelectedProject_id).email2%>
-							    	<li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email2%></a></li>
-					    		<% end %>
-							  	<% if SelectedProject.find_by_id(project.SelectedProject_id).email3%>
-							    	<li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email3%></a></li>
-					    		<% end %>
-							  	<% if SelectedProject.find_by_id(project.SelectedProject_id).email4%>
-							    	<li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email4%></a></li>
-					    		<% end %>
-							  	<% if SelectedProject.find_by_id(project.SelectedProject_id).email5%>
-							    	<li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email5%></a></li>
-					    		<% end %>
-							    </ul>
-							  </div>
+			<div class="panel-body" style="height: calc(100% - 40px); max-height: 480px; overflow-y: scroll; border: 1px solid lightgrey; overflow-x: hidden;">
+				<% @completedProjects.each do|project|%>
+					<div class="panel-group">
+						<div class="panel panel-success" style="margin: -21px; ">
+							<div class="panel-heading text-center" style="word-wrap: break-word;"><%=project.ProjectName.humanize%></div>
+							<div class="panel-body lead" style="word-wrap: break-word;">
+								<%=project.Description.humanize%>
+							</div>
+							<div class="panel-footer">
+								<div class="dropdown">
+									<a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+									  	<% if project.email1 && project.email1 !=""%>
+									    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email1)%></a></li>
+							    		<% end %>
+									  	<% if project.email2 && project.email2 !=""%>
+									    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email2)%></a></li>
+							    		<% end %>
+									  	<% if project.email3 && project.email3 !=""%>
+									    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email3)%></a></li>
+							    		<% end %>
+									  	<% if project.email4 && project.email4 !=""%>
+									    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email4)%></a></li>
+							    		<% end %>
+									  	<% if project.email5 && project.email5 !=""%>
+									    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email5)%></a></li>
+							    		<% end %>
+									</ul>
+							    </div>
 							</div>
 					    </div>	
-					    </div>
-					<% end %>
+					</div>
+				<% end %>
 				</div>
 			</div>	
-			</div>
+		</div>
+	</div>	
+
+	<div class="col-sm-4">
+		<div class="panel panel-info" style="border: 1px solid black;">
+			<div class="panel-heading text-center"><h4>Tasks</h4></div>
+			<div class="panel-body" style="height: calc(100% - 40px); max-height: 480px; overflow-y: scroll; border: 1px solid lightgrey; overflow-x: hidden;">
+				<% @tasks.each do|task|%>
+					<div class="panel-group">
+						<div class="panel panel-success" style="margin: -21px; ">
+							<div class="panel-heading text-center" style="word-wrap: break-word;"><%=task.task_name.humanize%></div>
+							<div class="panel-body lead" style="word-wrap: break-word;">
+								<%=task.task_desc.humanize%>
+								<%=link_to link_to '<button type="button" class="addBtn">Add Project</button>'.html_safe, selected_projects_create_path(id:task.id)%>
+							</div>
+							<div class="panel-footer">
+								<div class="dropdown">
+									<a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+									  	<% if task.email1 && task.email1 !=""%>
+									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email1)%></a></li>
+							    		<% end %>
+									  	<% if task.email2 && task.email2 !=""%>
+									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email2)%></a></li>
+							    		<% end %>
+									  	<% if task.email3 && task.email3 !=""%>
+									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email3)%></a></li>
+							    		<% end %>
+									  	<% if task.email4 && task.email4 !=""%>
+									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email4)%></a></li>
+							    		<% end %>
+									  	<% if task.email5 && task.email5 !=""%>
+									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email5)%></a></li>
+							    		<% end %>
+									</ul>
+							    </div>
+							</div>
+					    </div>	
+					</div>
+				<% end %>
+				</div>
+			</div>	
+		</div>
+	</div>
 </div>
 
 <style type="text/css">

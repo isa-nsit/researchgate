@@ -1,0 +1,9 @@
+Image:
+<% if @user.profile_pic %>
+	<img src="/uploads/<%=@user.profile_pic%>">
+<% end %>
+<br>
+Name: <%=@user.name %><br>
+Branch: <%=@user.branch %><br>
+Year: <%=@user.year %><br>
+Percentage: <%=@user.percentage %><br>

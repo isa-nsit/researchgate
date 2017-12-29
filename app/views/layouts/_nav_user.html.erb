@@ -17,9 +17,9 @@
         <a class="navbar-brand" href="/"><b>ISA</b></a>
       </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/active_user/home"><%=current_user.email%> <span class="glyphicon glyphicon-user"></span></a></li>
+            <li><%=link_to current_user.email, active_user_profile_path(id: current_user.id), :class=>"glyphicon glyphicon-user".html_safe%></li>
             <li><%= link_to('Logout <span class="glyphicon glyphicon-log-out"></span>'.html_safe, destroy_user_session_path, method: :delete) %></li>
-            <li><%= link_to('Edit Profile <span class="glyphicon glyphicon-edit"></span>'.html_safe, edit_user_registration_path, method: :update) %></li>
+            <li><%= link_to('Edit Profile <span class="glyphicon glyphicon-edit"></span>'.html_safe, active_user_edit_profile_path) %></li>
           </ul>
         </li>
       </ul>

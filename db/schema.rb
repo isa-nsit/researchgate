@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171209160618) do
+ActiveRecord::Schema.define(version: 20171225130519) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -74,16 +74,6 @@ ActiveRecord::Schema.define(version: 20171209160618) do
   add_index "project_user_admin_relations", ["admin_id"], name: "index_project_user_admin_relations_on_admin_id"
   add_index "project_user_admin_relations", ["user_id"], name: "index_project_user_admin_relations_on_user_id"
 
-  create_table "project_user_relations", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "Selectedproject_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-  end
-
-  add_index "project_user_relations", ["Selectedproject_id"], name: "index_project_user_relations_on_Selectedproject_id"
-  add_index "project_user_relations", ["user_id"], name: "index_project_user_relations_on_user_id"
-
   create_table "selected_projects", force: :cascade do |t|
     t.string   "ProjectName"
     t.text     "Description"
@@ -95,14 +85,6 @@ ActiveRecord::Schema.define(version: 20171209160618) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "admin_id"
-  end
-
-  create_table "selectedprojects", force: :cascade do |t|
-    t.string   "name"
-    t.string   "desc"
-    t.integer  "members_count"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
   end
 
   create_table "tasks", force: :cascade do |t|

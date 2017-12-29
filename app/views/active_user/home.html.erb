@@ -27,35 +27,35 @@
       </div>
       <div class="panel-body" style="height: calc(100% - 40px); max-height: 480px; overflow-y: scroll; border: 1px solid lightgrey; overflow-x: hidden;">
         
-          <%@projects.each do|project|%>
+          <%@selectedProjects.each do|project|%>
             <div class="panel-group">
               <div class="card">
                 <div>
                   <div class="contain">
-                    <h4 class="text-center projectName"><b style=" border-bottom: 1px solid lightgrey; word-wrap: break-word;"><%=SelectedProject.find_by_id(project.SelectedProject_id).ProjectName.humanize%></b></h4> 
-                    <p style="word-wrap: break-word;" class="text-center"><%=SelectedProject.find_by_id(project.SelectedProject_id).Description.humanize%></p>
+                    <h4 class="text-center projectName"><b style=" border-bottom: 1px solid lightgrey; word-wrap: break-word;"><%=project.ProjectName.humanize%></b></h4> 
+                    <p style="word-wrap: break-word;" class="text-center"><%=project.Description.humanize%></p>
                     <footer style="padding-top: 5px; display: flex; justify-content: space-between;">
                       <div class="dropdown">
                         <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email1%>
-                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email1%></a></li>
+                          <% if project.email1%>
+                            <li><a class="dropdown-item" href="#"><%=project.email1%></a></li>
                           <% end %>
-                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email2%>
-                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email2%></a></li>
+                          <% if project.email2%>
+                            <li><a class="dropdown-item" href="#"><%=project.email2%></a></li>
                           <% end %>
-                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email3%>
-                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email3%></a></li>
+                          <% if project.email3%>
+                            <li><a class="dropdown-item" href="#"><%=project.email3%></a></li>
                           <% end %>
-                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email4%>
-                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email4%></a></li>
+                          <% if project.email4%>
+                            <li><a class="dropdown-item" href="#"><%=project.email4%></a></li>
                           <% end %>
-                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email5%>
-                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email5%></a></li>
+                          <% if project.email5%>
+                            <li><a class="dropdown-item" href="#"><%=project.email5%></a></li>
                           <% end %>
                           </ul>
                       </div>
-                      <h5>Faculty : <em><%=Admin.find_by_id(SelectedProject.find_by_id(project.SelectedProject_id).admin_id).name%></em></h5>
+                      <h5>Faculty : <em><%=project.getAdminName(project.admin_id)%></em></h5>
                     </footer>
                   </div>
                 </div>
@@ -72,35 +72,35 @@
       </div>
       <div class="panel-body" style="height: calc(140% - 40px); max-height: 480px; overflow-y: scroll; border: 1px solid lightgrey; overflow-x: hidden;">
         
-          <%@completeProjects.each do|project|%>
+          <%@completedProjects.each do|project|%>
             <div class="panel-group">
               <div class="card">
                 <div>
                   <div class="contain">
-                    <h4 class="text-center projectName" ><b style=" border-bottom: 1px solid lightgrey; word-wrap: break-word;"><%=SelectedProject.find_by_id(project.SelectedProject_id).ProjectName.humanize%></b></h4> 
-                    <p style="word-wrap: break-word;" class="text-center"><%=SelectedProject.find_by_id(project.SelectedProject_id).Description.humanize%></p>
+                    <h4 class="text-center projectName" ><b style=" border-bottom: 1px solid lightgrey; word-wrap: break-word;"><%=project.ProjectName.humanize%></b></h4> 
+                    <p style="word-wrap: break-word;" class="text-center"><%=project.Description.humanize%></p>
                     <footer style="padding-top: 5px; display: flex; justify-content: space-between;">
                       <div class="dropdown">
                         <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email1%>
-                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email1%></a></li>
+                          <% if project.email1%>
+                            <li><a class="dropdown-item" href="#"><%=project.email1%></a></li>
                           <% end %>
-                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email2%>
-                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email2%></a></li>
+                          <% if project.email2%>
+                            <li><a class="dropdown-item" href="#"><%=project.email2%></a></li>
                           <% end %>
-                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email3%>
-                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email3%></a></li>
+                          <% if project.email3%>
+                            <li><a class="dropdown-item" href="#"><%=project.email3%></a></li>
                           <% end %>
-                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email4%>
-                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email4%></a></li>
+                          <% if project.email4%>
+                            <li><a class="dropdown-item" href="#"><%=project.email4%></a></li>
                           <% end %>
-                          <% if SelectedProject.find_by_id(project.SelectedProject_id).email5%>
-                            <li><a class="dropdown-item" href="#"><%=SelectedProject.find_by_id(project.SelectedProject_id).email5%></a></li>
+                          <% if project.email5%>
+                            <li><a class="dropdown-item" href="#"><%=project.email5%></a></li>
                           <% end %>
                           </ul>
                       </div>
-                      <h5>Faculty : <em><%=Admin.find_by_id(SelectedProject.find_by_id(project.SelectedProject_id).admin_id).name%></em></h5>
+                      <h5>Faculty : <em><%=project.getAdminName(project.admin_id)%></em></h5>
                     </footer>
                   </div>
                 </div>
@@ -119,13 +119,14 @@
       </div>
       <div class="panel-body" style="height: calc(100% - 40px); max-height: 480px; overflow-y: scroll; border: 1px solid lightgrey; overflow-x: hidden;">
         
-          <%@tasks.each do|project|%>
+          <%@tasks.each do|task|%>
             <div class="panel-group">
               <div class="card">
                 <div>
                   <div class="contain">
-                    <h4 class="text-center projectName"><b style=" border-bottom: 1px solid lightgrey; word-wrap: break-word;"><%=Task.find_by_id(project.id).task_name.humanize%></b></h4> 
-                    <p style="word-wrap: break-word;" class="text-center"><%=Task.find_by_id(project.id).task_desc.humanize%></p>
+                    <h4 class="text-center projectName"><b style=" border-bottom: 1px solid lightgrey; word-wrap: break-word;"><%=task.task_name.humanize%></b></h4> 
+                    <p style="word-wrap: break-word;" class="text-center"><%=task.task_desc.humanize%></p>
+                    <p> <%=link_to 'Edit', tasks_edit_path(id: task.id)%> </p> 
                   </div>
                 </div>
                 </div>

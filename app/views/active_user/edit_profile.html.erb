@@ -1,0 +1,24 @@
+<%= form_for current_user, url:{action: "update_profile"},multipart: true do |f| %>
+	
+	<% if current_user.profile_pic %>
+		<img src="/uploads/<%=current_user.profile_pic%>">
+	<% end %>
+	<%=f.label :Profile_picture %>
+	<%=f.file_field :profile_pic %>
+	<br>
+	<%=f.label :Name %>
+	<%=f.text_field :name, :value=>current_user.name %>
+	<br>
+	<%=f.label :Branch %>
+	<%=f.text_field :branch, :value=>current_user.branch %>
+	<br>
+	<%=f.label :Year %>
+	<%=f.text_field :year, :value=>current_user.year %>
+	<br>
+	<%=f.label :Percentage %>
+	<%=f.number_field :percentage, :value=>current_user.percentage %>
+	<br>
+	<%=f.submit "Save changes" %>
+<% end %>
+
+<%= link_to 'Edit credentials',edit_user_registration_path, method: :get %>

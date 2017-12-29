@@ -4,9 +4,4 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  has_many :selectedprojects
-  has_many :admins, through: :selectedprojects
-  has_many :tasks
-
-
 end

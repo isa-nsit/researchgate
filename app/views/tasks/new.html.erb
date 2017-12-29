@@ -6,79 +6,76 @@
   <div class="panel-body">
 
     <%= form_for @task, url: {action: "create"}  do |f| %>
-   <%= hidden_field_tag :email, @email %>
+      <%= hidden_field_tag :email, @email %>
 
-  <div class="field form-group">
-              <%= f.label :Name%>
-            <%= f.text_field :name , :class => 'form-control',autofocus: true%><br>
-            </div>
+      <div class="field form-group">
+        <%= f.label :Name%>
+        <%= f.text_field :name ,:value=>current_user.name, :class => 'form-control',autofocus: true%><br>
+      </div>
 
-
-             <div class="field form-group">
-              <%= f.label :Email%>
-            <%= f.text_field :email1 , :class => 'form-control',autofocus: true%><br>
-            </div>
+      <div class="field form-group">
+        <%= f.label :Email%>
+        <%= f.text_field :email1 ,:value=>current_user.email, :class => 'form-control',autofocus: true%><br>
+      </div>
           
-          <div class="form-group">
-              <%= f.label :Year %>
-            <%= f.text_field :year , :class => 'form-control'%><br>
-          </div>
+      <div class="form-group">
+        <%= f.label :Year %>
+        <%= f.text_field :year ,:value=>current_user.year, :class => 'form-control'%><br>
+      </div>
           
-          <div class="form-group">
-            <%= f.label :Branch %>
-            <%= f.text_field :branch , :class => 'form-control'%><br>
-          </div>
+      <div class="form-group">
+        <%= f.label :Branch %>
+        <%= f.text_field :branch ,:value=>current_user.branch, :class => 'form-control'%><br>
+      </div>
 
-          <div class="form-group">
-            <%= f.label :Percentage %>
-            <%= f.number_field :percentage , :class => 'form-control'%><br>
-          </div>
+      <div class="form-group">
+        <%= f.label :Percentage %>
+        <%= f.number_field :percentage ,:value=>current_user.percentage, :class => 'form-control'%><br>
+      </div>
 
-          <div class="form-group">
-            <%= f.label :"Project name" %>
-            <%= f.text_field :task_name , :class => 'form-control'%><br>
-          </div>
+      <div class="form-group">
+        <%= f.label :"Project name" %>
+        <%= f.text_field :task_name , :class => 'form-control'%><br>
+      </div>
           
+      <div class="form-group">
+        <%= f.label :"Project Description" %>
+        <%= f.text_area :task_desc , :class => 'form-control'%><br>
+      </div>
 
-          <div class="form-group">
-            <%= f.label :"Project Description" %>
-            <%= f.text_area :task_desc , :class => 'form-control'%><br>
-          </div>
+      <div class="form-group">
+        <%= f.label :"Members in Project "%>
+        <%= f.radio_button :members_count, '1', :checked => true %> 1
+        <%= f.radio_button :members_count, '2' %> 2
+        <%= f.radio_button :members_count, '3' %> 3
+        <%= f.radio_button :members_count, '4' %> 4
+        <%= f.radio_button :members_count, '5' %> 5
+      </div>
 
-          <div class="form-group">
-            <%= f.label :"Members in Project "%>
-            <%= f.radio_button :members_count, '1', :checked => true %> 1
-             <%= f.radio_button :members_count, '2' %> 2
-             <%= f.radio_button :members_count, '3' %> 3
-             <%= f.radio_button :members_count, '4' %> 4
-             <%= f.radio_button :members_count, '5' %> 5
-          </div>
+      <div class="field form-group">
+        <%= f.label :Email %>2nd Member 
+        <%= f.text_field :email2 , :class => 'form-control',autofocus: true%><br>
+      </div>
+      
+      <div class="field form-group">
+        <%= f.label :Email%>3rd Member
+        <%= f.text_field :email3 , :class => 'form-control',autofocus: true%><br>
+      </div>
+      
+      <div class="field form-group">
+        <%= f.label :Email%>4th Member
+        <%= f.text_field :email4 , :class => 'form-control',autofocus: true%><br>
+      </div>
+      
+      <div class="field form-group">
+        <%= f.label :Email%>5th Member
+        <%= f.text_field :email5 , :class => 'form-control',autofocus: true%><br>
+      </div>
 
-          <div class="field form-group">
-              <%= f.label :Email %>2 Member 
-            <%= f.text_field :email2 , :class => 'form-control',autofocus: true%><br>
-            </div>
-            <div class="field form-group">
-              <%= f.label :Email%>3 Member
-            <%= f.text_field :email3 , :class => 'form-control',autofocus: true%><br>
-            </div>
-            <div class="field form-group">
-              <%= f.label :Email%>4 Member
-            <%= f.text_field :email4 , :class => 'form-control',autofocus: true%><br>
-            </div>
-            <div class="field form-group">
-              <%= f.label :Email%>5 Member
-            <%= f.text_field :email5 , :class => 'form-control',autofocus: true%><br>
-            </div>
-
-
-
-          <div class="form-group">
-
-                  <%= f.submit "Apply"  ,:class => 'btn btn-block btn-primary'%>
-
-              </div>
+      <div class="form-group">
+        <%= f.submit "Apply"  ,:class => 'btn btn-block btn-primary'%>
+      </div>
           
-<% end %>    
+    <% end %>    
   </div>
 </div>

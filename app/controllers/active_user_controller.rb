@@ -1,76 +1,44 @@
 class ActiveUserController < ApplicationController
   def home
-  	@countElectronic=Admin.all.where(division:"Electronic").count
-  	@countElectrical=Admin.all.where(division:"Electrical").count
-  	@countMechanical=Admin.all.where(division:"Mechanical").count
-    user1 = ProjectUserAdminRelation.where(user_id1:current_user.id)
-    user2 = ProjectUserAdminRelation.where(user_id2:current_user.id)
-    user3 = ProjectUserAdminRelation.where(user_id3:current_user.id)
-    user4 = ProjectUserAdminRelation.where(user_id4:current_user.id)
-    user5 = ProjectUserAdminRelation.where(user_id5:current_user.id)
+  	@countElectronic=Admin.where(division:"Electronic").count
+  	@countElectrical=Admin.where(division:"Electrical").count
+  	@countMechanical=Admin.where(division:"Mechanical").count
+    
 
-    @projects = []
-    user1.each do|projects|
-      @projects<<projects
-    end
-    user2.each do|projects|
-      @projects<<projects
-    end
-    user3.each do|projects|
-      @projects<<projects
-    end
-    user4.each do|projects|
-      @projects<<projects
-    end
-    user5.each do|projects|
-      @projects<<projects
+# finding all the ongoing projects in which current_user is involved 
+    users = ProjectUserAdminRelation.where("user_id1=? OR user_id2=? OR user_id3=? OR user_id4=? OR user_id5=?",
+      current_user.id,current_user.id,current_user.id,current_user.id,current_user.id)
+
+    s_projectIds = []
+    users.each do|project|
+      s_projectIds<<project.SelectedProject_id
     end
     
-    user1 = CompleteProject.where(user1:current_user.id)
-    user2 = CompleteProject.where(user2:current_user.id)
-    user3 = CompleteProject.where(user3:current_user.id)
-    user4 = CompleteProject.where(user4:current_user.id)
-    user5 = CompleteProject.where(user5:current_user.id)
+    @selectedProjects=SelectedProject.where(id:s_projectIds)
+
+
+# finding all the completed projects in which current_user is involved     
+    users = CompleteProject.where("user1=? OR user2=? OR user3=? OR user4=? OR user5=?",current_user.id,
+      current_user.id,current_user.id,current_user.id,current_user.id)
     
-    @completeProjects = []
-    user1.each do|projects|
-      @completeProjects<<projects
-    end
-    user2.each do|projects|
-      @completeProjects<<projects
-    end
-    user3.each do|projects|
-      @completeProjects<<projects
-    end
-    user4.each do|projects|
-      @completeProjects<<projects
-    end
-    user5.each do|projects|
-      @completeProjects<<projects
+    c_projectIds = []
+    users.each do|project|
+      c_projectIds<<project.SelectedProject_id
     end
 
-    user1 = Task.where(email1:current_user.email)
-    user2 = Task.where(email2:current_user.email)
-    user3 = Task.where(email3:current_user.email)
-    user4 = Task.where(email4:current_user.email)
-    user5 = Task.where(email5:current_user.email)
+    @completedProjects=SelectedProject.where(id:c_projectIds)
+
+
+# finding all the tasks in which current_user is involved 
+    users = UserTaskRelation.where(user_id:current_user.id)
+        
+    task_ids = []
+    users.each do|t|
+      task_ids<<t.task_id
+    end
     
-    @tasks = []
-    user1.each do|projects|
-      @tasks<<projects
-    end
-    user2.each do|projects|
-      @tasks<<projects
-    end
-    user3.each do|projects|
-      @tasks<<projects
-    end
-    user4.each do|projects|
-      @tasks<<projects
-    end
-    user5.each do|projects|
-      @tasks<<projects
-    end
+    @tasks=Task.where(id:task_ids)
+
 
   end
 
@@ -80,9 +48,18 @@ class ActiveUserController < ApplicationController
   end
 
   def facultyShow
-
     @name=params[:name]
-	  @faculty=Admin.where(:name=>@name).first
-    
+	  @faculty=Admin.where(:name=>@name).first    
+  end
+
+  def profile
+    @user=User.find_by_id(params[:id])
+  end
+
+  def edit_profile
+  end
+
+  def update_profile
+    byebug
   end
 end
