@@ -14,10 +14,20 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <a class="navbar-brand" href="/"><b>ISA</b></a>
+        <a class="navbar-brand" href="/"><b>ISA</b>&nbsp;<span class="glyphicon glyphicon-home"></span></a>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="ddown"><b>Browse All&nbsp;&nbsp;</b><span class="glyphicon glyphicon-folder-open"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "<span id='subject'>Electronics</span> <span class='badge'>#{@countElectronic}</span>".html_safe,active_user_facultyIndex_path(:division =>"Electronic") %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to "<span id='subject'>Electrical</span> <span class='badge'>#{@countElectrical}</span>".html_safe,active_user_facultyIndex_path(:division =>"Electrical") %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to "<span id='subject'>Mechanical</span> <span class='badge'>#{@countMechanical}</span>".html_safe,active_user_facultyIndex_path(:division =>"Mechanical") %></li>
+          </ul>
+        </li>
       </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><%=link_to current_user.email, active_user_profile_path(id: current_user.id), :class=>"glyphicon glyphicon-user".html_safe%></li>
+            <li><a href="/active_user/home"><%=current_user.email%> <span class="glyphicon glyphicon-user"></span></a></li>
             <li><%= link_to('Logout <span class="glyphicon glyphicon-log-out"></span>'.html_safe, destroy_user_session_path, method: :delete) %></li>
             <li><%= link_to('Edit Profile <span class="glyphicon glyphicon-edit"></span>'.html_safe, active_user_edit_profile_path) %></li>
           </ul>
@@ -27,3 +37,9 @@
     </div>
   </div>
 </nav>
+
+<style type="text/css">
+  .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: #e3f2fd;
+    color: blue;
+</style>

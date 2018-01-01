@@ -15,14 +15,59 @@
 						  <li class="list-group-item">Projects Completed<span class="badge"><%=current_admin.complete_projects.count%></span></li>
 						  <li class="list-group-item">Projects Undergoing<span class="badge"><%=current_admin.ongoingProjectsCount%></span></li>
 						</ul>
-						<span class="contact"><%=link_to current_admin.email,'', class:'contact'%></span>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+		<div class="panel panel-info" style="border: 1px solid black;">
+			<div class="panel-heading text-center"><h4>Tasks</h4></div>
+			<div class="panel-body">
+				<% @tasks.each do|task|%>
+					<div class="panel-group">
+						<div class="panel panel-success" style="margin: -15px; ">
+							<div class="pull-left" id="remove"><%=link_to'<span class="addBtn"><span class="glyphicon glyphicon-remove"></span></button>'.html_safe, selected_projects_create_path(id:task.id)%></div>
+								
+							<div class="pull-right" id="add"><%=link_to'<span class="addBtn"><span class="glyphicon glyphicon-ok"></span></button>'.html_safe, selected_projects_create_path(id:task.id)%></div>
+							<div class="panel-heading text-center" style="word-wrap: break-word;"><%=task.task_name.humanize%></div>
+							<div class="panel-body lead" style="word-wrap: break-word;">
+								<%=task.task_desc.humanize%>
+								
+							</div>
+							<div class="panel-footer">
+								<div class="dropdown">
+									<a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+									  	<% if task.email1 && task.email1 !=""%>
+									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email1)%></a></li>
+							    		<% end %>
+									  	<% if task.email2 && task.email2 !=""%>
+									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email2)%></a></li>
+							    		<% end %>
+									  	<% if task.email3 && task.email3 !=""%>
+									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email3)%></a></li>
+							    		<% end %>
+									  	<% if task.email4 && task.email4 !=""%>
+									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email4)%></a></li>
+							    		<% end %>
+									  	<% if task.email5 && task.email5 !=""%>
+									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email5)%></a></li>
+							    		<% end %>
+									</ul>
+							    </div>
+							</div>
+					    </div>	
+					</div>
+				<% end %>
+				</div>
+			</div>	
+		</div>			
+		</div>
 	</div>
 
-	<div class="col-sm-4">
+	<div class="col-sm-4 col-md-4">
 		<div class="panel panel-info" style="border: 1px solid black;">
 			<div class="panel-heading text-center" id="OnGoing"><h4>OnGoing Projects</h4></div>
 			<div class="panel-body" style=" overflow-y: scroll; overflow-x: hidden; border: 1px solid lightgrey;  height: calc(100% - 40px); max-height: 480px;">
@@ -63,7 +108,7 @@
 		</div>
 	</div>
 
-	<div class="col-sm-4">
+	<div class="col-sm-4 col-md-4">
 		<div class="panel panel-info" style="border: 1px solid black;">
 			<div class="panel-heading text-center"><h4>Completed Projects</h4></div>
 			<div class="panel-body" style="height: calc(100% - 40px); max-height: 480px; overflow-y: scroll; border: 1px solid lightgrey; overflow-x: hidden;">
@@ -103,48 +148,7 @@
 			</div>	
 		</div>
 	</div>	
-
-	<div class="col-sm-4">
-		<div class="panel panel-info" style="border: 1px solid black;">
-			<div class="panel-heading text-center"><h4>Tasks</h4></div>
-			<div class="panel-body" style="height: calc(100% - 40px); max-height: 480px; overflow-y: scroll; border: 1px solid lightgrey; overflow-x: hidden;">
-				<% @tasks.each do|task|%>
-					<div class="panel-group">
-						<div class="panel panel-success" style="margin: -21px; ">
-							<div class="panel-heading text-center" style="word-wrap: break-word;"><%=task.task_name.humanize%></div>
-							<div class="panel-body lead" style="word-wrap: break-word;">
-								<%=task.task_desc.humanize%>
-								<%=link_to link_to '<button type="button" class="addBtn">Add Project</button>'.html_safe, selected_projects_create_path(id:task.id)%>
-							</div>
-							<div class="panel-footer">
-								<div class="dropdown">
-									<a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
-									<ul class="dropdown-menu">
-									  	<% if task.email1 && task.email1 !=""%>
-									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email1)%></a></li>
-							    		<% end %>
-									  	<% if task.email2 && task.email2 !=""%>
-									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email2)%></a></li>
-							    		<% end %>
-									  	<% if task.email3 && task.email3 !=""%>
-									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email3)%></a></li>
-							    		<% end %>
-									  	<% if task.email4 && task.email4 !=""%>
-									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email4)%></a></li>
-							    		<% end %>
-									  	<% if task.email5 && task.email5 !=""%>
-									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email5)%></a></li>
-							    		<% end %>
-									</ul>
-							    </div>
-							</div>
-					    </div>	
-					</div>
-				<% end %>
-				</div>
-			</div>	
-		</div>
-	</div>
+  </div>
 </div>
 
 <style type="text/css">
@@ -185,14 +189,12 @@
 	background-color: lightblue;
 }
 .addBtn{
-	border: 2px solid blue;
-	width: 8em;
-	height: 3em;
-	color:black;
-	border-radius: 40px;
+	color:white;
 	background: transparent;
-	background-color: lightblue;
+	background-color: blue;
+	padding:4px;
 	outline: none;
+	font-size:20px;
 }
 #btn{
 	display: block;
@@ -203,28 +205,31 @@
 }
 .addBtn:hover{
 	color:#fff;
-	background-color: blue;
 	font-weight: bold;
 }
 a{
 	color:#013d71;
 }
 
-@media all and (max-width: 800px)
-{
-	.col-sm-8
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px)
+  and (device-width: 665px) 
+  and (device-height: 711px)
+  and (-webkit-device-pixel-ratio: 2) {
+  	.col-sm-8
 	{
 	    width: 100.666667%;
 	}
 	.contact
 	{
 		display: none;
+		width: 0px;
 	}
 	.img-responsive{
 		width: 25px;
 		height: 25px;
 	}
+
 }
 </style>
-					    	
-	
