@@ -1,8 +1,8 @@
 class ActiveUserController < ApplicationController
   def home
-  	@countElectronic=Admin.where(division:"Electronic").count
-  	@countElectrical=Admin.where(division:"Electrical").count
-  	@countMechanical=Admin.where(division:"Mechanical").count
+  	@countInstrumentation=Admin.where(division:"Instrumentation").count
+  	@countAutomation=Admin.where(division:"Automation").count
+  
     
     @allProjects = []
 # finding all the ongoing projects in which current_user is involved 
@@ -48,11 +48,15 @@ class ActiveUserController < ApplicationController
   end
 
   def facultyIndex
+    @countInstrumentation=Admin.where(division:"Instrumentation").count
+    @countAutomation=Admin.where(division:"Automation").count
   	@division=params[:division]
 	  @faculty=Admin.where(:division=>@division)
   end
 
   def facultyShow
+    @countInstrumentation=Admin.where(division:"Instrumentation").count
+    @countAutomation=Admin.where(division:"Automation").count
     @name=params[:name]
 	  @faculty=Admin.where(:name=>@name).first    
   end

@@ -1,6 +1,14 @@
-
-
 <% @faculty.each do|f|%>
-<%= image_tag("#{f.pic}")%>
-<%= link_to "#{f.name}",active_user_facultyShow_path(:name =>"#{f.name}")%>
+<div class="card" style="width: 18rem;">
+  
+  <div class="card-body">
+    <h5 class="card-title"><%= link_to "#{f.name}",active_user_facultyShow_path(:name =>"#{f.name}")%></h5>
+    <p class="card-text"><%= image_tag("#{f.pic}",size: "250x250")%>
+
+<br>
+<%= f.AOI.html_safe%></p>
+    
+</div>
+
+
 <%end%>

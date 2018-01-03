@@ -1,6 +1,6 @@
 <%= @faculty.name %>
 <br>
-<%= image_tag("#{@faculty.pic}")%>
+<%= image_tag("#{@faculty.pic}",size: "250x250")%>
 <br>
 <%= @faculty.qualifications%>
 <br>
@@ -8,11 +8,15 @@
 <br>
 <%= @faculty.division%>
 <br>
-<%= @faculty.contact_no%>
-<br>
+
+
 <%= @faculty.email%>
 <br>
-<%= @faculty.bio%>
+
+
+<a href="<%=  @faculty.namehref%>"> <%=@faculty.namehref%> </a>
+<br>
+<%= @faculty.AOI.html_safe%>
 <br>
 
 <%= link_to "APPLY", tasks_new_path(:email=>"#{@faculty.email}")%>

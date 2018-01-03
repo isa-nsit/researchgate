@@ -2,11 +2,14 @@ class TasksController < ApplicationController
 	before_action :authenticate_user!
 
 	def new
+    @countInstrumentation=Admin.where(division:"Instrumentation").count
+    @countAutomation=Admin.where(division:"Automation").count
     @email=params[:email]    #faculty email
 		@task=Task.new
 	end 
 
 	def create
+
     @email=params[:email]
 	  @task=Task.new
     @task.name=params[:task][:name]
