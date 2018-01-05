@@ -26,7 +26,7 @@
         </li>
       </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/active_user/home"><%=current_user.email%> <span class="glyphicon glyphicon-user"></span></a></li>
+            <li><a href="/active_user/profile?id=<%=current_user.id%>"><%=current_user.email%> <span class="glyphicon glyphicon-user"></span></a></li>
             <li><%= link_to('Logout <span class="glyphicon glyphicon-log-out"></span>'.html_safe, destroy_user_session_path, method: :delete) %></li>
             <li><%= link_to('Edit Profile <span class="glyphicon glyphicon-edit"></span>'.html_safe, active_user_edit_profile_path) %></li>
           </ul>
