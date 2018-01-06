@@ -15,15 +15,6 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <a class="navbar-brand" href="/"><b>ISA</b>&nbsp;<span class="glyphicon glyphicon-home"></span></a>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="ddown"><b>Browse All&nbsp;&nbsp;</b><span class="glyphicon glyphicon-folder-open"></span></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to "<span id='subject'>Instrumentation</span> <span class='badge'>#{@countInstrumentation}</span>".html_safe,active_user_facultyIndex_path(:division =>"Instrumentation") %></li>
-            <li role="separator" class="divider"></li>
-            <li><%= link_to "<span id='subject'>Automation</span> <span class='badge'>#{@countAutomation}</span>".html_safe,active_user_facultyIndex_path(:division =>"Automation") %></li>
-           
-          </ul>
-        </li>
       </ul>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/active_user/profile?id=<%=current_user.id%>"><%=current_user.email%> <span class="glyphicon glyphicon-user"></span></a></li>
@@ -35,10 +26,26 @@
       
     </div>
   </div>
-</nav>
 
+  <div style="border-top: 1px solid blue; padding-left: 20px; background-color: lightgreen;">
+    <div class="container">
+    <span class="btn"><%= link_to "<span id='subject'>Instrumentation</span> <span class='badge'>#{@countInstrumentation}</span>".html_safe,active_user_facultyIndex_path(:division =>"Instrumentation") %></span>
+    <span class="btn"><%= link_to "<span id='subject'>Automation</span> <span class='badge'>#{@countAutomation}</span>".html_safe,active_user_facultyIndex_path(:division =>"Automation") %></span>
+  </div>
+  </div>
+</nav>
 <style type="text/css">
   .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
     background-color: #e3f2fd;
-    color: blue;
+    color: blue;}
+
+    #subject{
+      font-weight: bold;
+      color:red;
+      font-family: 'Noto Sans', sans-serif;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px white;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
 </style>

@@ -1,12 +1,69 @@
+<style>
+.img-responsive
+{
+    max-height:350px;
+}
+</style>
+
+<div class="container target">
+    <div class="row">
+        <div class="col-sm-10">
+            <h1 class="" style=color:maroon><!--Prof. --><%= @faculty.name %>
+            </h1>
+        </div>
+        <br>
+        
+        
+    </div>
+    <br>
+    <div class="row">
+
+
+        <div class="col-sm-5">
+            <%= image_tag("#{@faculty.pic}",alt:'#{@faculty.pic}',class:'img-responsive img-rounded')%>
+
+        </div>
+        <div class="col-sm-1">
+        </div>
+
+        <div class="col-sm-6">
+            <ul class="list-group">
+                <li class="list-group-item text-muted" contenteditable="false" style="background-color:#f5f5f5">Profile</li>
+                
+                
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Qualifications</strong></span><%= @faculty.qualifications%></li>
+                
+
+                
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Designation</strong></span><%= @faculty.designation%></li>
+                
+                
+                
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Division</strong></span><%= @faculty.division%>
+                </li>
+                
+
+                
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Contact No.</strong></span>+91-11-25099032 (O)
+                </li>
+                
+
+                
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">E-Mail</strong></span>mittalap@gmail.com 
+                </li>
+                
+            </ul>
+        </div>
+</div>
 <%= @faculty.name %>
 <br>
 <%= image_tag("#{@faculty.pic}",size: "250x250")%>
 <br>
-<%= @faculty.qualifications%>
+
 <br>
-<%= @faculty.designation%>
+
 <br>
-<%= @faculty.division%>
+
 <br>
 
 
