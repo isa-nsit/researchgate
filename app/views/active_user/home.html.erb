@@ -17,7 +17,7 @@
               <p style="word-wrap: break-word; color:black; font-size: 1.2em;" class="text-center"><%=project.task_desc.humanize%></p>
               <div style="display: flex; justify-content: space-between;">
               
-              <div id="remove"><%=link_to '<span class="glyphicon glyphicon-remove"</span>'.html_safe, tasks_edit_path(id: project.id),{:style=>'color:black; border-bottom:0px; margin:2px;'}%>
+              <div id="remove"><%=link_to '<span class="glyphicon glyphicon-remove"</span>'.html_safe, tasks_destroy_path(id: project.id), method: :delete, data: {confirm: "Are you sure?"},:style=>'color:black; border-bottom:0px; margin:2px;'%>
               </div>
 
               <div><%=link_to '<span class="glyphicon glyphicon-file"</span>'.html_safe, tasks_edit_path(id: project.id),{:style=>'color:black; border-bottom:0px; margin:2px;'}%>

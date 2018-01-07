@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'tasks/edit'
   patch 'tasks/update'
   put 'tasks/update'
+  delete 'tasks/destroy'
   
   get 'selected_projects/complete'
   get 'selected_projects/create'
@@ -15,11 +16,11 @@ Rails.application.routes.draw do
   get 'active_user/home'
   get 'active_user/profile'
   get 'active_user/edit_profile'
-  get 'active_user/update_profile'
+  patch 'active_user/update_profile'
 
   get 'active_admin/home'
-  get 'active_admin/createProject'  
-  post 'active_admin/createProject'  
+  # get 'active_admin/createProject'  
+  # post 'active_admin/createProject'  
   
   get 'main/index'
   

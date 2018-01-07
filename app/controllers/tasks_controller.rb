@@ -130,48 +130,53 @@ class TasksController < ApplicationController
       @task.email5=params[:task][:email5]
     end
 
-    respond_to do |format| 
-      if (count==@task.members_count and @task.save )    
-        
-        oldRelations=UserTaskRelation.where(task_id: params[:id])
-        oldRelations.destroy_all
-        #creating user_task_relations
+    if (count==@task.members_count and @task.save )
+      oldRelations=UserTaskRelation.where(task_id: params[:id])
+      oldRelations.destroy_all
+      #creating user_task_relations
+      u=UserTaskRelation.new
+      u.task_id=@task.id
+      u.user_id=User.where(:email=>params[:task][:email1]).first.id
+      u.save
+      if(user2)
         u=UserTaskRelation.new
         u.task_id=@task.id
-        u.user_id=User.where(:email=>params[:task][:email1]).first.id
+        u.user_id=user2.id
         u.save
-        if(user2)
-          u=UserTaskRelation.new
-          u.task_id=@task.id
-          u.user_id=user2.id
-          u.save
-        end
-        if(user3)
-          u=UserTaskRelation.new
-          u.task_id=@task.id
-          u.user_id=user3.id
-          u.save
-        end
-        if(user4)
-          u=UserTaskRelation.new
-          u.task_id=@task.id
-          u.user_id=user4.id
-          u.save
-        end
-        if(user5)
-          u=UserTaskRelation.new
-          u.task_id=@task.id
-          u.user_id=user5.id
-          u.save
-        end
-   
-        format.html { redirect_to active_user_home_path, notice: 'Response has been sent' }
-        # FormMailer.FormSubmission(@task,@email).deliver_now
-
-      else
-        format.html { redirect_to tasks_edit_path , notice: 'You have not filled all the fields or email id is not registered with us' }
       end
+      if(user3)
+        u=UserTaskRelation.new
+        u.task_id=@task.id
+        u.user_id=user3.id
+        u.save
+      end
+      if(user4)
+        u=UserTaskRelation.new
+        u.task_id=@task.id
+        u.user_id=user4.id
+        u.save
+      end
+      if(user5)
+        u=UserTaskRelation.new
+        u.task_id=@task.id
+        u.user_id=user5.id
+        u.save
+      end
+      redirect_to active_user_home_path, notice: 'Response has been sent'
+      FormMailer.FormSubmission(@task,@email).deliver_now
+    else
+      redirect_to tasks_edit_path , notice: 'You have not filled all the fields or email id is not registered with us'
     end
+  end
+
+  def destroy
+    byebug
+    task_id=params[:id]
+    task=Task.find_by_id(task_id)
+    user_relations=UserTaskRelation.where(task_id: task_id)
+    user_relations.destroy_all
+    task.destroy
+    return redirect_to active_user_home_path, notice:'Idea successfully deleted'
   end
 
 end

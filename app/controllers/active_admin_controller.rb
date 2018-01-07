@@ -21,13 +21,13 @@ class ActiveAdminController < ApplicationController
 
   end
 
-  def new
-  	@project = SelectedProject.new
-  	@email = params[:selected_project][:email1]
-  end
+  # def new
+  # 	@project = SelectedProject.new
+  # 	@email = params[:selected_project][:email1]
+  # end
 
-  def createProject
-  	@project = SelectedProject.new
+  # def createProject
+  # 	@project = SelectedProject.new
   
-  end
+  # end
 end
