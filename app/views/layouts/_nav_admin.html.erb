@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light navigation_bar navbar-fixed-top" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-light navigation_bar navbar-fixed-top" style="background-color: #922B21; border-bottom: 1px solid #922B21;">
   <div class="container-fluid container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -14,13 +14,30 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <a class="navbar-brand" href="/"><b>ISA</b>&nbsp;<span class="glyphicon glyphicon-home"></span></a>
+       <a class="navbar-brand" href="/" style="color: white;"><b style="font-family: 'Merriweather',serif; letter-spacing: 2px;">ISA</b>&nbsp;<span class="glyphicon glyphicon-home"></span></a>
       </ul>
         <ul class="nav navbar-nav navbar-right">
-        <li><a href="/active_admin/home"><%=current_admin.name%> <span class="glyphicon glyphicon-user"></span></a></li>
-            <li><%= link_to('Logout <span class="glyphicon glyphicon-log-out"></span>'.html_safe, destroy_admin_session_path, method: :delete) %></li>
+        <li><a href="/active_admin/home" style="color: white;"><%=current_admin.name%> <span class="glyphicon glyphicon-user"></span></a></li>
+            <li><%= link_to('<span style="color:white;">Logout <span class="glyphicon glyphicon-log-out"></span></span>'.html_safe, destroy_admin_session_path, method: :delete) %></li>
       </ul>
       
     </div>
   </div>
 </nav>
+<style type="text/css">
+  a{
+      color: white;
+      font-family: 'Karla',sans-serif;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    a:hover{
+      text-decoration: none;
+      transform: scale(1.03,1.03);
+      color: white;
+      background-color: #921B22;
+    }
+    .nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #921B22;
+</style>

@@ -1,19 +1,19 @@
 
 <div class="row">
 	<div class="col-sm-4">
-		<div class="panel panel-success" style="border: 1px solid black;">
-			<div class="panel-heading">
+		<div class="panel" style="border: 1px solid #921B22;">
+			<div class="panel-heading" style="background-color: #921B22;">
 				<h4><%=current_admin.name%></h4>
 			</div>
 			<div class="panel-body" style="height: 170px;">
 				<div class="row">
 					<div class="col-sm-4 col-md-4 col-xs-4">
-						<%=image_tag current_admin.pic ,class:"img-responsive round-image",alt:"hero"%>
+						<%=image_tag current_admin.pic ,class:"img-responsive round-image"%>
 					</div>
 					<div class="col-sm-8 col-md-8 col-xs-6">
 						<ul class="list-group">
-						  <li class="list-group-item">Projects Completed<span class="badge"><%=current_admin.complete_projects.count%></span></li>
-						  <li class="list-group-item">Projects Undergoing<span class="badge"><%=current_admin.ongoingProjectsCount%></span></li>
+						  <li class="list-group-item"><span style="font-family: 'Karla',sans-serif; color: #922B21;">Projects Completed</span><span class="badge"><%=current_admin.complete_projects.count%></span></li>
+						  <li class="list-group-item"><span style="font-family: 'Karla',sans-serif; color: #922B21;">Projects Undergoing</span><span class="badge"><%=current_admin.ongoingProjectsCount%></span></li>
 						</ul>
 					</div>
 				</div>
@@ -22,23 +22,23 @@
 
 		<div class="row">
 			<div class="col-sm-12">
-		<div class="panel panel-info" style="border: 1px solid black;">
-			<div class="panel-heading text-center"><h4>Tasks</h4></div>
+		<div class="panel panel-info" style="border: 1px solid #921B22;">
+			<div class="panel-heading text-center" style="background-color: #921B22;"><h4>Tasks</h4></div>
 			<div class="panel-body">
 				<% @tasks.each do|task|%>
 					<div class="panel-group">
-						<div class="panel panel-success" style="margin: -15px; ">
-							<div class="pull-left" id="remove"><%=link_to'<span class="addBtn"><span class="glyphicon glyphicon-remove"></span></button>'.html_safe, selected_projects_create_path(id:task.id)%></div>
+						<div class="panel" style="margin: -15px; ">
+							<div class="pull-left" style="margin: 5px;"><%=link_to'<span class="action"><span class="glyphicon glyphicon-remove"></span></button>'.html_safe, selected_projects_create_path(id:task.id)%></div>
 								
-							<div class="pull-right" id="add"><%=link_to'<span class="addBtn"><span class="glyphicon glyphicon-ok"></span></button>'.html_safe, selected_projects_create_path(id:task.id)%></div>
-							<div class="panel-heading text-center" style="word-wrap: break-word;"><%=task.task_name.humanize%></div>
+							<div class="pull-right" style="margin: 5px;"><%=link_to'<span class="action"><span class="glyphicon glyphicon-ok"></span></button>'.html_safe, selected_projects_create_path(id:task.id)%></div>
+							<div class="panel-heading text-center font" style=" background-color: white; border-bottom: 2px solid #921B22; word-wrap: break-word; color: #921B22; font-size: 1.1em;"><%=task.task_name.humanize%></div>
 							<div class="panel-body lead" style="word-wrap: break-word;">
 								<%=task.task_desc.humanize%>
 								
 							</div>
 							<div class="panel-footer">
 								<div class="dropdown">
-									<a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
+									<a class="btn dropdown-toggle" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
 									<ul class="dropdown-menu">
 									  	<% if task.email1 && task.email1 !=""%>
 									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email1)%></a></li>
@@ -68,19 +68,19 @@
 	</div>
 
 	<div class="col-sm-4 col-md-4">
-		<div class="panel panel-info" style="border: 1px solid black;">
-			<div class="panel-heading text-center" id="OnGoing"><h4>OnGoing Projects</h4></div>
+		<div class="panel" style="border: 1px solid #921B22;">
+			<div class="panel-heading text-center" style="background-color: #921B22;" id="OnGoing"><h4>OnGoing Projects</h4></div>
 			<div class="panel-body" style=" overflow-y: scroll; overflow-x: hidden; border: 1px solid lightgrey;  height: calc(100% - 40px); max-height: 480px;">
 				<%@ongoingProjects.each do|project|%>
 					<div class="panel-group">
-						<div class="panel panel-success" style="margin: -21px; ">
-							<div class="panel-heading text-center" style="word-wrap: break-word;"><%=project.ProjectName.humanize%></div>
+						<div class="panel" style="margin: -21px; background-color: white; ">
+							<div class="panel-heading text-center font" style="word-wrap: break-word; border-top: 1px solid #921B22;"><%=project.ProjectName.humanize%></div>
 							<div class="panel-body lead" style="word-wrap: break-word;">
 								<%=project.Description.humanize%>
 							</div>
 							<div class="panel-footer">
 								<div class="dropdown">
-								  <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown">Students <span class="caret"></span></a>
+								  <a class="btn dropdown-toggle" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
 								  <ul class="dropdown-menu">
 								  	<% if project.email1 && project.email1 !=""%>
 								    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email1)%></a></li>
@@ -98,7 +98,7 @@
 								    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email5)%></a></li>
 								    <% end %>
 								    </ul>
-								    <%= link_to "Complete",selected_projects_complete_path(:id =>"#{project.id}"),html_options={class:'complete'} %>
+								    <%= link_to "Complete",selected_projects_complete_path(:id =>"#{project.id}"),html_options={id:'btn',class:'btn'} %>
 								</div>
 							</div>
 					    </div>	
@@ -109,19 +109,19 @@
 	</div>
 
 	<div class="col-sm-4 col-md-4">
-		<div class="panel panel-info" style="border: 1px solid black;">
-			<div class="panel-heading text-center"><h4>Completed Projects</h4></div>
+		<div class="panel" style="border: 1px solid #921B22;">
+			<div class="panel-heading text-center" style="background-color: #921B22;"><h4>Completed Projects</h4></div>
 			<div class="panel-body" style="height: calc(100% - 40px); max-height: 480px; overflow-y: scroll; border: 1px solid lightgrey; overflow-x: hidden;">
 				<% @completedProjects.each do|project|%>
 					<div class="panel-group">
-						<div class="panel panel-success" style="margin: -21px; ">
-							<div class="panel-heading text-center" style="word-wrap: break-word;"><%=project.ProjectName.humanize%></div>
+						<div class="panel" style="margin: -21px; ">
+							<div class="panel-heading text-center font" style="word-wrap: break-word;"><%=project.ProjectName.humanize%></div>
 							<div class="panel-body lead" style="word-wrap: break-word;">
 								<%=project.Description.humanize%>
 							</div>
 							<div class="panel-footer">
 								<div class="dropdown">
-									<a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
+									<a class="btn dropdown-toggle dropBtn btnComplete" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
 									<ul class="dropdown-menu">
 									  	<% if project.email1 && project.email1 !=""%>
 									    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email1)%></a></li>
@@ -152,65 +152,63 @@
 </div>
 
 <style type="text/css">
-
+.font{
+	font-family: 'Karla',sans-serif; color: #922B21;
+	font-weight: bold;
+	font-size: 1.2em;
+}
 .round-image{
-	border: 1px solid black;
+	border: 2px solid #921B22;
 	border-radius: 20px;
-	box-shadow: 2px 2px lightgrey;
 	z-index: -4px;
 }
 .contact:hover{
 	text-decoration: none;
 }
-
+#btn{
+  background-color: white;
+  letter-spacing: 1px;
+  font-family: 'Karla',sans-serif; color: #922B21;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+#btn:hover{
+  background-color: #922B21;
+  color: white;
+  transform: scale(0.9,0.9);
+}
+.action{
+	font-size: 1.2em;
+	color:#921B22;
+	padding: 2px;
+}
 .dropBtn{
 	background: transparent;
 	outline: none;
 	border-radius: 30px;
 	border: 1px solid black;
 }
-.dropBtn:hover{
-	color:black;
-	background-color: lightblue;
-}
-.complete{
-	float:right;
-	margin-top: 5px;
-	border: 1px solid blue;
-	height: 25px;
-	width: 80px;
-	text-align: center;
-	border-radius: 30px;
-	color:black;
-}
-.complete:hover{
-	text-decoration: none;
-	color:black;
-	background-color: lightblue;
-}
-.addBtn{
-	color:white;
-	background: transparent;
-	background-color: blue;
+.addBtn {
+	color:#921B22;
+	background-color: white;
 	padding:4px;
 	outline: none;
 	font-size:20px;
+	transition: 0.3s ease-in-out;
+	border-radius: 40px;
 }
-#btn{
+.btnComplete{
+	border:1px solid #921B22;
 	display: block;
 	font-weight: bold;
 }
 .btn:hover{
 	box-shadow: 2px 2px solid grey;
+	border-radius: 40px;
 }
-.addBtn:hover{
-	color:#fff;
-	font-weight: bold;
+.badge{
+	background-color: #921B22;
 }
-a{
-	color:#013d71;
-}
-
 @media screen 
   and (device-width: 360px) 
   and (device-height: 640px)
@@ -231,5 +229,8 @@ a{
 		height: 25px;
 	}
 
+}
+h4{
+	font-family: 'Merriweather',serif; color: white;
 }
 </style>

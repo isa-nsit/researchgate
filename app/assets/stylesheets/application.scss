@@ -1,7 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 .example3 .navbar-brand {
   height: 80px;
 }
@@ -18,12 +17,7 @@
 	border: 1px solid black;
 	box-shadow: 10px 10px 5px lightgrey;
 }
-.navigation_bar{
-	 border-bottom: 1px solid blue;
-}
-.nav>li:hover>a{
-    background: none;
-}
+
 .fade{
    margin-top: 80px;
 }
@@ -33,7 +27,7 @@
 }
 /* optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-    background: blue;
+    background: lightgrey;
 }
 p{
    font-family:'Fira Sans', sans-serif;

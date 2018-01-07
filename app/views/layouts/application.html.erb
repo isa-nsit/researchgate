@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 
 </head>
-<body style="margin: 0; padding: 0; background-color: #d9e0e2;">
+<body>
 <% if notice %>
 <script type="text/javascript">
 	noty({text: '<%= notice %>',type: 'success',
@@ -25,7 +25,7 @@
 <% end %>
 
 <%=render 'layouts/nav'%>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Slabo+27px|Noto+Sans|Roboto+Condensed|Source+Sans+Pro" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Slabo+27px|Noto+Sans|Roboto+Condensed|Source+Sans+Pro|Arvo|Merriweather|Cabin|Karla" rel="stylesheet">
 <div class="container container-fluid" style="margin-top: 8%;">
 <%= yield %>	
 </div>
@@ -33,3 +33,9 @@
 	
 </body>
 </html>
+
+<style type="text/css">
+	body{
+		margin: 0; padding: 0; background-color: white;
+	}
+</style>
