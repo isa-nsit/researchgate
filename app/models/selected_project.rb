@@ -9,4 +9,8 @@ class SelectedProject < ActiveRecord::Base
 	def getUserName user_email
 		User.find_by_email(user_email).email
 	end
+
+	def getUserId email
+		User.find_by_email(email).id
+	end
 end
