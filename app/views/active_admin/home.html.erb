@@ -1,8 +1,8 @@
 
 <div class="row">
 	<div class="col-sm-4">
-		<div class="panel" style="border: 1px solid #921B22;">
-			<div class="panel-heading" style="background-color: #921B22;">
+		<div class="panel" style="border: 1px solid #072c61;">
+			<div class="panel-heading" style="background-color: #072c61;">
 				<h4><%=current_admin.name%></h4>
 			</div>
 			<div class="panel-body" style="height: 170px;">
@@ -12,8 +12,8 @@
 					</div>
 					<div class="col-sm-8 col-md-8 col-xs-6">
 						<ul class="list-group">
-						  <li class="list-group-item"><span style="font-family: 'Karla',sans-serif; color: #922B21;">Projects Completed</span><span class="badge"><%=current_admin.complete_projects.count%></span></li>
-						  <li class="list-group-item"><span style="font-family: 'Karla',sans-serif; color: #922B21;">Projects Undergoing</span><span class="badge"><%=current_admin.ongoingProjectsCount%></span></li>
+						  <li class="list-group-item"><span style="font-family: 'Karla',sans-serif; color: #072c61;">Projects Completed</span><span class="badge"><%=current_admin.complete_projects.count%></span></li>
+						  <li class="list-group-item"><span style="font-family: 'Karla',sans-serif; color: #072c61;">Projects Undergoing</span><span class="badge"><%=current_admin.ongoingProjectsCount%></span></li>
 						</ul>
 					</div>
 				</div>
@@ -22,8 +22,8 @@
 
 		<div class="row">
 			<div class="col-sm-12">
-		<div class="panel panel-info" style="border: 1px solid #921B22;">
-			<div class="panel-heading text-center" style="background-color: #921B22;"><h4>Tasks</h4></div>
+		<div class="panel panel-info" style="border: 1px solid #072c61;">
+			<div class="panel-heading text-center" style="background-color: #072c61;"><h4>Tasks</h4></div>
 			<div class="panel-body">
 				<% @tasks.each do|task|%>
 					<div class="panel-group">
@@ -31,7 +31,7 @@
 							<div class="pull-left" style="margin: 5px;"><%=link_to'<span class="action"><span class="glyphicon glyphicon-remove"></span></button>'.html_safe, selected_projects_create_path(id:task.id)%></div>
 								
 							<div class="pull-right" style="margin: 5px;"><%=link_to'<span class="action"><span class="glyphicon glyphicon-ok"></span></button>'.html_safe, selected_projects_create_path(id:task.id)%></div>
-							<div class="panel-heading text-center font" style=" background-color: white; border-bottom: 2px solid #921B22; word-wrap: break-word; color: #921B22; font-size: 1.1em;"><%=task.task_name.humanize%></div>
+							<div class="panel-heading text-center font" style=" background-color: white; border-bottom: 2px solid #072c61; word-wrap: break-word; color: #072c61; font-size: 1.1em;"><%=task.task_name.humanize%></div>
 							<div class="panel-body lead" style="word-wrap: break-word;">
 								<%=task.task_desc.humanize%>
 								
@@ -68,13 +68,13 @@
 	</div>
 
 	<div class="col-sm-4 col-md-4">
-		<div class="panel" style="border: 1px solid #921B22;">
-			<div class="panel-heading text-center" style="background-color: #921B22;" id="OnGoing"><h4>OnGoing Projects</h4></div>
+		<div class="panel" style="border: 1px solid #072c61;">
+			<div class="panel-heading text-center" style="background-color: #072c61;" id="OnGoing"><h4>OnGoing Projects</h4></div>
 			<div class="panel-body" style=" overflow-y: scroll; overflow-x: hidden; border: 1px solid lightgrey;  height: calc(100% - 40px); max-height: 480px;">
 				<%@ongoingProjects.each do|project|%>
 					<div class="panel-group">
 						<div class="panel" style="margin: -21px; background-color: white; ">
-							<div class="panel-heading text-center font" style="word-wrap: break-word; border-top: 1px solid #921B22;"><%=project.ProjectName.humanize%></div>
+							<div class="panel-heading text-center font" style="word-wrap: break-word; border-top: 1px solid #072c61;"><%=project.ProjectName.humanize%></div>
 							<div class="panel-body lead" style="word-wrap: break-word;">
 								<%=project.Description.humanize%>
 							</div>
@@ -109,8 +109,8 @@
 	</div>
 
 	<div class="col-sm-4 col-md-4">
-		<div class="panel" style="border: 1px solid #921B22;">
-			<div class="panel-heading text-center" style="background-color: #921B22;"><h4>Completed Projects</h4></div>
+		<div class="panel" style="border: 1px solid #072c61;">
+			<div class="panel-heading text-center" style="background-color: #072c61;"><h4>Completed Projects</h4></div>
 			<div class="panel-body" style="height: calc(100% - 40px); max-height: 480px; overflow-y: scroll; border: 1px solid lightgrey; overflow-x: hidden;">
 				<% @completedProjects.each do|project|%>
 					<div class="panel-group">
@@ -153,12 +153,12 @@
 
 <style type="text/css">
 .font{
-	font-family: 'Karla',sans-serif; color: #922B21;
+	font-family: 'Karla',sans-serif; color: #072c61;
 	font-weight: bold;
 	font-size: 1.2em;
 }
 .round-image{
-	border: 2px solid #921B22;
+	border: 2px solid #072c61;
 	border-radius: 20px;
 	z-index: -4px;
 }
@@ -168,18 +168,18 @@
 #btn{
   background-color: white;
   letter-spacing: 1px;
-  font-family: 'Karla',sans-serif; color: #922B21;
+  font-family: 'Karla',sans-serif; color: #072c61;
   font-weight: bold;
   transition: 0.3s ease-in-out;
 }
 #btn:hover{
-  background-color: #922B21;
+  background-color: #072c61;
   color: white;
   transform: scale(0.9,0.9);
 }
 .action{
 	font-size: 1.2em;
-	color:#921B22;
+	color:#072c61;
 	padding: 2px;
 }
 .dropBtn{
@@ -189,7 +189,7 @@
 	border: 1px solid black;
 }
 .addBtn {
-	color:#921B22;
+	color:#072c61;
 	background-color: white;
 	padding:4px;
 	outline: none;
@@ -198,7 +198,7 @@
 	border-radius: 40px;
 }
 .btnComplete{
-	border:1px solid #921B22;
+	border:1px solid #072c61;
 	display: block;
 	font-weight: bold;
 }
@@ -207,7 +207,7 @@
 	border-radius: 40px;
 }
 .badge{
-	background-color: #921B22;
+	background-color: #072c61;
 }
 @media screen 
   and (device-width: 360px) 

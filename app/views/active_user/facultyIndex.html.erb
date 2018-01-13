@@ -1,7 +1,7 @@
 <div class="row">
   <% @faculty.each do|f|%>
     <div class="col-md-6 col-sm-6" style="">
-      <a href="/active_user/facultyShow?name=<%=f.name%>">
+      <a class="test" href="/active_user/facultyShow?name=<%=f.name%>">
       <div class="panel ">
         <div class="panel-body">
           <div class="row">
@@ -9,7 +9,7 @@
               <div class="img-responsive circle"><%= image_tag("#{f.pic}",size: "100x100")%></div>
               <div class="row">
                 <% if f.name != "Andriya Narasimhulu"%>
-                <div class="col-md-12 FacultyName"><a href="/active_user/facultyShow?name=<%=f.name%>"><span style="font-family: 'Merriweather',serif;"><%=f.name%></span></a></div>
+                <div class="col-md-12 FacultyName"><a class="test" href="/active_user/facultyShow?name=<%=f.name%>"><span style="font-family: 'Merriweather',serif;"><%=f.name%></span></a></div>
                 <% else %>
                 <div class="col-md-12 FacultyName"><a href="/active_user/facultyShow?name=<%=f.name%>"><span style="font-family: 'Merriweather',serif; font-size: 15px;"><%=f.name%></span></a></div>
                 <%end%>
@@ -29,21 +29,20 @@
 
 <style type="text/css">
   img{
-    border-radius: 50px;
-    border: 1px solid #922B21;
+    border: 1px solid white;
   }
   .text-center{
     word-wrap: break-word;
-    color:maroon;
   }
   .panel{
-  border:2px solid #922B21; border-radius: 10px; background-color: #922B21;
+  border:2px solid #072c61; border-radius: 10px; background-color: #072c61;
 }
 .FacultyName{
   margin-top: 10px; margin-left: 10px; letter-spacing: 2px;
   font-family: 'Merriweather',serif; color: white; 
 }
 .AOI{
-  padding: 11px 0px 11px 20px; word-wrap: break-word; color: #922B21;
+  font-size: 1.04em;
+  padding: 11px 0px 11px 20px; word-wrap: break-word; color: #072c61;
 }
 </style>

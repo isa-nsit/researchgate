@@ -1,8 +1,13 @@
+<div class="jumbotron">
+	<h2 class="text-center"><%=current_user.name.upcase%></h2>
+</div>
+<div class="row"></div>
 <%= form_for current_user, url:{action: "update_profile"},multipart: true do |f| %>
 	
 	<% if current_user.profile_pic %>
-		<img src="/uploads/<%=current_user.profile_pic%>">
+		<img src="/uploads/<%=current_user.profile_pic%>" class="img-circle img-responsive">
 	<% end %>
+
 	<%=f.label :Profile_picture %>
 	<%=f.file_field :profile_pic %>
 	<br>

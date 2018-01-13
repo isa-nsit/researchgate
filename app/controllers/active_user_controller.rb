@@ -53,7 +53,25 @@ class ActiveUserController < ApplicationController
     @countInstrumentation=Admin.where(division:"Instrumentation").count
     @countAutomation=Admin.where(division:"Automation").count
     @name=params[:name]
-	  @faculty=Admin.where(:name=>@name).first    
+	  @faculty=Admin.where(:name=>@name).first
+    
+    @faculty.AOI.gsub!(/<br>()/,',')
+    
+    @interests = @faculty.AOI.split(',')
+    @interests.delete('and')
+    @interests.delete('&')
+
+    @projects = []
+    @ids = []
+    selectedProjects = ProjectUserAdminRelation.where(admin_id: @faculty.id)
+    
+    selectedProjects.each do|project|
+      @ids<<project.SelectedProject_id
+    end
+
+    @ids.each do|id|
+      @projects<<SelectedProject.find_by_id(id)
+    end
   end
 
   def profile

@@ -170,7 +170,6 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    byebug
     task_id=params[:id]
     task=Task.find_by_id(task_id)
     user_relations=UserTaskRelation.where(task_id: task_id)
