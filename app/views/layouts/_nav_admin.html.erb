@@ -19,9 +19,7 @@
         <ul class="nav navbar-nav navbar-right">
         <li><a class="test" href="/active_admin/home" style="color: white;"><%=current_admin.name%> <span class="glyphicon glyphicon-user"></span></a></li>
             <li><%= link_to('<span style="color:white;">Logout <span class="glyphicon glyphicon-log-out"></span></span>'.html_safe, destroy_admin_session_path, method: :delete,class:'test') %></li>
-        <li><a href="/admins/edit" style="color: white;"><%=current_admin.name%> <span class="glyphicon glyphicon-user"></span></a></li>
-            <li><%= link_to('<span style="color:white;">Logout <span class="glyphicon glyphicon-log-out"></span></span>'.html_safe, destroy_admin_session_path, method: :delete) %></li>
-      </ul>
+        </ul>
       
     </div>
   </div>

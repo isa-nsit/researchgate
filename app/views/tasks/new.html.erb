@@ -1,7 +1,7 @@
 
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <center><span style="font-weight: bold;">Apply For Project</span></center>
+<div class="panel" style="border: 1px solid #072c61;">
+  <div class="panel-heading" style="background-color: #072c61;">
+    <center><span style="font-weight: bold; color: white;">Apply For Project</span></center>
   </div>
   <div class="panel-body">
 
@@ -25,12 +25,12 @@
           
       <div class="form-group">
         <%= f.label :Branch %>
-        <%= f.text_field :branch ,:value=>current_user.branch, :class => 'form-control'%><br>
+        <%= f.text_field :branch ,:value=>current_user.branch.upcase, :class => 'form-control'%><br>
       </div>
 
       <div class="form-group">
         <%= f.label :Percentage %>
-        <%= f.number_field :percentage ,:value=>current_user.percentage, :class => 'form-control'%><br>
+        <%= f.text_field :percentage ,:value=>current_user.percentage, :class => 'form-control'%><br>
       </div>
 
       <div class="form-group">
@@ -44,38 +44,100 @@
       </div>
 
       <div class="form-group">
-        <%= f.label :"Members in Project "%>
-        <%= f.radio_button :members_count, '1', :checked => true %> 1
-        <%= f.radio_button :members_count, '2' %> 2
-        <%= f.radio_button :members_count, '3' %> 3
-        <%= f.radio_button :members_count, '4' %> 4
-        <%= f.radio_button :members_count, '5' %> 5
+        <%= f.label :"Members in Project ? "%>
+        <div style="padding: 10px;">
+          <span class="members"><%= f.radio_button :members_count, '2' %> 2</span>
+          <span class="members"><%= f.radio_button :members_count, '3' %> 3</span>
+          <span class="members"><%= f.radio_button :members_count, '4' %> 4</span>
+          <span class="members"><%= f.radio_button :members_count, '5' %> 5</span>
+        </div>
       </div>
 
-      <div class="field form-group">
-        <%= f.label :Email %>2nd Member 
-        <%= f.text_field :email2 , :class => 'form-control',autofocus: true%><br>
+      <div id="emails">
+        <div class="field form-group" id="email2">
+          <span class="members"><%= f.label :Email%> of 2nd Member</span> 
+          <%= f.text_field :email2 , :class => 'form-control',autofocus: true%><br>
+        </div>
+        
+        <div class="field form-group" id="email3">
+          <span class="members"><%= f.label :Email%> of 3rd Member</span>
+          <%= f.text_field :email3 , :class => 'form-control',autofocus: true%><br>
+        </div>
+        
+        <div class="field form-group" id="email4">
+          <span class="members"><%= f.label :Email%> of 4th Member</span>
+          <%= f.text_field :email4 , :class => 'form-control',autofocus: true%><br>
+        </div>
+        
+        <div class="field form-group" id="email5">
+          <span class="members"><%= f.label :Email%> of 5th Member</span>
+          <%= f.text_field :email5 , :class => 'form-control',autofocus: true%><br>
+        </div>
       </div>
-      
-      <div class="field form-group">
-        <%= f.label :Email%>3rd Member
-        <%= f.text_field :email3 , :class => 'form-control',autofocus: true%><br>
-      </div>
-      
-      <div class="field form-group">
-        <%= f.label :Email%>4th Member
-        <%= f.text_field :email4 , :class => 'form-control',autofocus: true%><br>
-      </div>
-      
-      <div class="field form-group">
-        <%= f.label :Email%>5th Member
-        <%= f.text_field :email5 , :class => 'form-control',autofocus: true%><br>
-      </div>
-
       <div class="form-group">
-        <%= f.submit "Apply"  ,:class => 'btn btn-block btn-primary'%>
+        <input type="submit" name="commit" value="Apply" class="btn btn-block" style="background-color:#072c61; color: white;">
       </div>
           
     <% end %>    
   </div>
 </div>
+<style type="text/css">
+  .form-control:focus {
+  border-color: #072c61;
+}
+.members{
+  font-family: 'Karla',sans-serif; color: #072c61;
+}
+label{
+  font-family: 'Merriweather',serif;
+  color:#072c61;
+}
+</style>
+
+<script type="text/javascript">
+  
+  var r1 = document.getElementById('task_members_count_1');
+  var r2 = document.getElementById('task_members_count_2');
+  var r3 = document.getElementById('task_members_count_3');
+  var r4 = document.getElementById('task_members_count_4');
+  var r5 = document.getElementById('task_members_count_5');
+
+  var emails = document.getElementById('emails');
+  var k = []
+
+  k = Array.from(emails.children)
+  
+  var n = k.length
+
+  for(var i=0;i<n;i++)
+    k[i].style.display = "none";
+
+  r2.addEventListener('change',function (event) {
+    k[0].style.display = "block";
+    k[1].style.display = "none";
+    k[2].style.display = "none";
+    k[3].style.display = "none";
+  });
+
+  r3.addEventListener('change',function (event) {
+    k[0].style.display = "block";
+    k[1].style.display = "block";
+    k[2].style.display = "none";
+    k[3].style.display = "none";
+  });
+
+  r4.addEventListener('change',function (event) {
+    k[0].style.display = "block";
+    k[1].style.display = "block";
+    k[2].style.display = "block";
+    k[3].style.display = "none";
+  });
+  
+  r5.addEventListener('change',function (event) {
+    k[0].style.display = "block";
+    k[1].style.display = "block";
+    k[2].style.display = "block";
+    k[3].style.display = "block";
+  });
+
+</script>
