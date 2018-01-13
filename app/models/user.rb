@@ -4,4 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
+  def find_user(email)
+  	User.find_by(email).id
+  end
 end

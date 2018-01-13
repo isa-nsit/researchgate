@@ -41,19 +41,19 @@
 									<a class="btn dropdown-toggle" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
 									<ul class="dropdown-menu">
 									  	<% if task.email1 && task.email1 !=""%>
-									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email1)%></a></li>
+									    	<li><a class="dropdown-item" href="/active_user/profile?id=<%=task.getUserId(task.email1)%>"><%=task.getUserName(task.email1)%></a></li>
 							    		<% end %>
 									  	<% if task.email2 && task.email2 !=""%>
-									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email2)%></a></li>
+									    	<li><a class="dropdown-item" href="/active_user/profile?id=<%=task.getUserId(task.email2)%>"><%=task.getUserName(task.email2)%></a></li>
 							    		<% end %>
 									  	<% if task.email3 && task.email3 !=""%>
-									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email3)%></a></li>
+									    	<li><a class="dropdown-item" href="/active_user/profile?id=<%=task.getUserId(task.email3)%>"><%=task.getUserName(task.email3)%></a></li>
 							    		<% end %>
 									  	<% if task.email4 && task.email4 !=""%>
-									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email4)%></a></li>
+									    	<li><a class="dropdown-item" href="/active_user/profile?id=<%=task.getUserId(task.email4)%>"><%=task.getUserName(task.email4)%></a></li>
 							    		<% end %>
 									  	<% if task.email5 && task.email5 !=""%>
-									    	<li><a class="dropdown-item" href="#"><%=task.getUserName(task.email5)%></a></li>
+									    	<li><a class="dropdown-item" href="/active_user/profile?id=<%=task.getUserId(task.email5)%>"><%=task.getUserName(task.email5)%></a></li>
 							    		<% end %>
 									</ul>
 							    </div>
@@ -83,19 +83,19 @@
 								  <a class="btn dropdown-toggle" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
 								  <ul class="dropdown-menu">
 								  	<% if project.email1 && project.email1 !=""%>
-								    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email1)%></a></li>
+								    	<li><a class="dropdown-item" href="/active_user/profile?id=<%=project.getUserId(project.email1)%>"><%=project.getUserName(project.email1)%></a></li>
 						    		<% end %>
 						    		<% if project.email2 && project.email2 !=""%>
-								    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email2)%></a></li>
+								    	<li><a class="dropdown-item" href="/active_user/profile?id=<%=project.getUserId(project.email2)%>"><%=project.getUserName(project.email2)%></a></li>
 						    		<% end %>
 						    		<% if project.email3 && project.email3 !=""%>
-								    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email3)%></a></li>
+								    	<li><a class="dropdown-item" href="/active_user/profile?id=<%=project.getUserId(project.email3)%>"><%=project.getUserName(project.email3)%></a></li>
 						    		<% end %>
 						    		<% if project.email4 && project.email4 !=""%>
-								    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email4)%></a></li>
+								    	<li><a class="dropdown-item" href="/active_user/profile?id=<%=project.getUserId(project.email4)%>"><%=project.getUserName(project.email4)%></a></li>
 						    		<% end %>
 						    		<% if project.email5 && project.email5 !=""%>
-								    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email5)%></a></li>
+								    	<li><a class="dropdown-item" href="/active_user/profile?id=<%=project.getUserId(project.email5)%>"><%=project.getUserName(project.email5)%></a></li>
 								    <% end %>
 								    </ul>
 								    <%= link_to "Complete",selected_projects_complete_path(:id =>"#{project.id}"),html_options={id:'btn',class:'btn'} %>
@@ -124,19 +124,19 @@
 									<a class="btn dropdown-toggle dropBtn btnComplete" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
 									<ul class="dropdown-menu">
 									  	<% if project.email1 && project.email1 !=""%>
-									    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email1)%></a></li>
+									    	<li><a class="dropdown-item" href="/active_user/profile?id=<%=project.getUserId(project.email1)%>"><%=project.getUserName(project.email1)%></a></li>
 							    		<% end %>
 									  	<% if project.email2 && project.email2 !=""%>
-									    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email2)%></a></li>
+									    	<li><a class="dropdown-item" href="/active_user/profile?id=<%=project.getUserId(project.email2)%>"><%=project.getUserName(project.email2)%></a></li>
 							    		<% end %>
 									  	<% if project.email3 && project.email3 !=""%>
-									    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email3)%></a></li>
+									    	<li><a class="dropdown-item" href="/active_user/profile?id=<%=project.getUserId(project.email3)%>"><%=project.getUserName(project.email3)%></a></li>
 							    		<% end %>
 									  	<% if project.email4 && project.email4 !=""%>
-									    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email4)%></a></li>
+									    	<li><a class="dropdown-item" href="/active_user/profile?id=<%=project.getUserId(project.email4)%>"><%=project.getUserName(project.email4)%></a></li>
 							    		<% end %>
 									  	<% if project.email5 && project.email5 !=""%>
-									    	<li><a class="dropdown-item" href="#"><%=project.getUserName(project.email5)%></a></li>
+									    	<li><a class="dropdown-item" href="/active_user/profile?id=<%=project.getUserId(project.email5)%>"><%=project.getUserName(project.email5)%></a></li>
 							    		<% end %>
 									</ul>
 							    </div>

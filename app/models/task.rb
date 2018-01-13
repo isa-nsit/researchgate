@@ -3,6 +3,10 @@ class Task < ActiveRecord::Base
 	belongs_to :admin
 
 	def getUserName user_email
-		User.find_by_email(user_email).email
+		User.find_by_email(user_email).name
+	end
+
+	def getUserId email
+		User.find_by_email(email).id
 	end
 end
