@@ -44,11 +44,11 @@
       <div id="exTab1" style="width: 100%;"> 
       <ul  class="nav nav-pills Projects">
         <li class="active" style="margin: 2px;">
-          <a href="#1a" data-toggle="tab"><b>All</b></a>
+          <a href="#1a" data-toggle="tab" class="pill_nav"><b>All</b></a>
         </li>
-        <li><a href="#2a" data-toggle="tab"><b>Completed</b></a>
+        <li><a href="#2a" data-toggle="tab" class="pill_nav"><b>Completed</b></a>
         </li>
-        <li><a href="#3a" data-toggle="tab"><b>OnGoing</b></a>
+        <li><a href="#3a" data-toggle="tab" class="pill_nav"><b>OnGoing</b></a>
         </li>
     </ul>
 
@@ -230,8 +230,14 @@ ul.nav.nav-pills.Projects{
 a:hover{
   text-decoration: none;
 }
+.nav > li > a.pill_nav:hover, .nav > li > a.pill_nav:focus {
+    text-decoration: none;
+    color:white;
+    background-color: #072c61;
+
+}
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
-  transition: 0.2s linear;
+  transition: 0.2s ease-in-out;
   background-color: #072c61;
   border: 1px solid #072c61;
   color:white;
