@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-sm-2 col-md-2"></div>
+    <div class="col-sm-5 col-md-5">
+        <% if @user.profile_pic %>
+			<img src="/uploads/<%=@user.profile_pic%>" style="height: 300px; max-width: 320px; border:2px solid #921B22;" class="img-circle img-responsive">
+		<% end %>
+    </div>
+    <div class="col-sm-5 col-md-5" style="margin-left: -30px;">
+        <div class="panel">
+            <div class="panel-body">
+                <ul class="list-group" style="border: 2px solid #922B21; border-radius: 20px;">
+                  <li class="list-group-item"><span class="glyphicon glyphicon-user">&nbsp;</span><span class="email"><%=@user.name %></span></li>
+
+                  <li class="list-group-item"><span class="glyphicon glyphicon-user">&nbsp;<a class="link"> <%=@user.branch %> </a></li>
+                  
+                  <li class="list-group-item"><span class="glyphicon glyphicon-user">&nbsp;<a class="link"> <%=@user.year %> </a></li>
+                  
+                   <li class="list-group-item"><span class="glyphicon glyphicon-user">&nbsp;<a class="link"> <%=@user.percentage %> </a></li>
+                </ul>
+            </div>
+        </div> 
+</div>
+</div>
+
+<style type="text/css">
+	.list-group-item:nth-child(1){
+    border-radius: 20px 20px 0 0;
+}
+.list-group-item:last-child{
+    border-radius: 0 0 20px 20px;
+}
+.email{
+    font-family: 'Karla', sans-serif; text-shadow: 0.5px 0.5px lightgrey; font-size: 1.1em; color:#922B21;
+}
+.link{
+    font-family: 'Karla', sans-serif; text-shadow: 0.5px 0.5px lightgrey; font-size: 1.1em; color:#922B21;
+    transition: 0.3s ease-in-out;
+}
+.link:hover{
+    font-size: 1.2em;
+    color:#922B21;
+}
+</style>

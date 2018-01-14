@@ -1,0 +1,37 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.example3 .navbar-brand {
+  height: 80px;
+}
+
+.example3 .nav >li >a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.example3 .navbar-toggle {
+  padding: 10px;
+  margin: 25px 15px 25px 0;
+}
+.project-panel{
+	border: 1px solid black;
+	box-shadow: 10px 10px 5px lightgrey;
+}
+
+.fade{
+   margin-top: 80px;
+}
+::-webkit-scrollbar {
+    width: 2px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: lightgrey;
+}
+p{
+   font-family:'Fira Sans', sans-serif;
+}
+h4{
+  font-family: 'Source Sans Pro', sans-serif;
+}

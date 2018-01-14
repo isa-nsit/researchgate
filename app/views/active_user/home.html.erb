@@ -1,0 +1,279 @@
+ <body style="height: 160%;">
+ <div class="row">
+   <div class="col-md-5 col-sm-5">
+    <div class="panel">
+      <div class="panel-heading">
+        <h3 class="text-center" style="font-family: 'Merriweather',serif; color: white;">Sent Ideas</h3>
+      </div>
+      <div class="panel-body" >
+          <%@tasks.each do|project|%>
+            <div class="card">
+            <div class="card-header">
+              <h4 class="text-center name">
+                
+            <span><%=link_to '<button type="button" class="btn btn-xs remove" style="border-radius:5px;"><span class="glyphicon glyphicon-remove glyph-remove" style="padding:1px;"</span></button>'.html_safe, tasks_destroy_path(id: project.id), method: :delete, data: {confirm: "Are you sure?"},:style=>'color:black; border-bottom:0px; font-weight:normal;'%>
+              </span>
+            <span style="font-family: 'Karla',sans-serif; color: #072c61; text-shadow: 0.5px 0.5px #fff;"><%=project.task_name.humanize%></span>
+             <span> <%=link_to '<button type="button" class="btn btn-xs remove" style="border-radius:5px;"><span class="glyphicon glyphicon-file glyph-remove" style="padding:0.5px;"></span></button>'.html_safe, tasks_edit_path(id: project.id),{:style=>'color:black; border-bottom:0px; font-weight:normal;'}%>
+              </span>
+            
+            
+          </h4>
+            </div>
+            <div class="card-body">
+              <br>
+              <p style="word-wrap: break-word; color:black; font-size: 1.2em;" class="text-center"><%=project.task_desc.humanize%></p>
+              
+            </div>
+                        
+          </div>
+          <br>
+          <% end %>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-1 col-md-1"></div>
+
+  <div class="col-md-6 col-sm-6">
+    <div class="panel">
+      <div class="panel-heading">
+        <h3 class="text-center" style="font-family: 'Merriweather',serif; color: white;">PROJECTS</h3>
+      </div>
+      <div class="panel-body" style="height: calc(100% - 90px); max-height: 405px; overflow-y: scroll; overflow-x: hidden;">
+      <div id="exTab1" style="width: 100%;"> 
+      <ul  class="nav nav-pills Projects">
+        <li class="active" style="margin: 2px;">
+          <a href="#1a" data-toggle="tab"><b>All</b></a>
+        </li>
+        <li><a href="#2a" data-toggle="tab"><b>Completed</b></a>
+        </li>
+        <li><a href="#3a" data-toggle="tab"><b>OnGoing</b></a>
+        </li>
+    </ul>
+
+      <div class="tab-content clearfix" style="margin-top: 10px;">
+        <div class="tab-pane active" id="1a">
+          <%@allProjects.each do|project|%>
+          <div class="card">
+            <% if ProjectUserAdminRelation.find_by_SelectedProject_id(project.id)%>
+                <div class="pull-right" style="border-top-right-radius:6px; border-right:1px solid #072c61; padding: 2px; box-shadow: 1px 1px; background-color: green; color: white;" ><span class="glyphicon glyphicon-pencil"></span>&nbsp;<b>Ongoing</b></div>
+              <% else %>
+                <div class="pull-right" style="border-top-right-radius:6px; border-right:1px solid #072c61; padding: 2px; box-shadow: 1px 1px; background-color: blue; color: white; ><span class="glyphicon glyphicon-ok"></span>&nbsp;<b>Completed</b></div>
+              <% end %>
+            <div class="card-header" style="border-bottom: 1px solid #072c61; word-wrap: break-word;">
+              <h4 class="text-center projectName"><%=project.ProjectName.humanize%></h4>
+            </div>
+            <div class="card-body">
+              <br>
+              <p style="word-wrap: break-word; color:black; font-size: 1.2em;" class="text-center"><%=project.Description.humanize%></p>
+              <footer style="padding-top: 5px; display: flex; justify-content: space-around;">
+                      <div class="dropdown">
+                        <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <% if project.email1%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.email1%></li>
+                          <% end %>
+                          <% if project.email2%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.email2%></li>
+                          <% end %>
+                          <% if project.email3%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.email3%></li>
+                          <% end %>
+                          <% if project.email4%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.email4%></li>
+                          <% end %>
+                          <% if project.email5%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.email5%></li>
+                          <% end %>
+                          </ul>
+                      </div>
+                      <h5 class="projectName"><span style="font-family: 'Noto Sans', sans-serif;">Faculty</span> : <em><%=project.getAdminName(project.admin_id)%></em></h5>
+                    </footer>
+            </div>
+          </div>
+          <br>
+          <% end %>
+        </div>
+        <div class="tab-pane" id="2a">
+          <%@completedProjects.each do|project|%>
+          <div class="card">
+            <div class="card-header" style="border-bottom: 1px solid #072c61;">
+              <h4 class="text-center projectName" style="word-wrap: break-word;"><%=project.ProjectName.humanize%></h4>
+            </div>
+            <div class="card-body">
+              <br>
+              <p style="word-wrap: break-word;" class="text-center"><%=project.Description.humanize%></p>
+              <footer style="padding-top: 5px; display: flex; justify-content: space-around;">
+                      <div class="dropdown">
+                        <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <% if project.email1%>
+                            <li><a class="dropdown-item" href="#"><%=project.email1%></a></li>
+                          <% end %>
+                          <% if project.email2%>
+                            <li><a class="dropdown-item" href="#"><%=project.email2%></a></li>
+                          <% end %>
+                          <% if project.email3%>
+                            <li><a class="dropdown-item" href="#"><%=project.email3%></a></li>
+                          <% end %>
+                          <% if project.email4%>
+                            <li><a class="dropdown-item" href="#"><%=project.email4%></a></li>
+                          <% end %>
+                          <% if project.email5%>
+                            <li><a class="dropdown-item" href="#"><%=project.email5%></a></li>
+                          <% end %>
+                          </ul>
+                      </div>
+                      <h5 class="projectName"><span style="font-family: 'Noto Sans', sans-serif;">Faculty</span> : <em><%=project.getAdminName(project.admin_id)%></em></h5>
+                    </footer>
+            </div>
+          </div>
+          <br>
+          <% end %>
+        </div>
+        <div class="tab-pane" id="3a">
+          <%@selectedProjects.each do|project|%>
+            <div class="card">
+            <div class="card-header" style="border-bottom: 1px solid black;">
+              <h4 class="text-center projectName" style="word-wrap: break-word;"><%=project.ProjectName.humanize%></h4>
+            </div>
+            <div class="card-body">
+              <br>
+              <p style="word-wrap: break-word;" class="text-center"><%=project.Description.humanize%></p>
+              <footer style="padding-top: 5px; display: flex; justify-content: space-around;">
+                      <div class="dropdown">
+                        <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <% if project.email1%>
+                            <li><a class="dropdown-item" href="#"><%=project.email1%></a></li>
+                          <% end %>
+                          <% if project.email2%>
+                            <li><a class="dropdown-item" href="#"><%=project.email2%></a></li>
+                          <% end %>
+                          <% if project.email3%>
+                            <li><a class="dropdown-item" href="#"><%=project.email3%></a></li>
+                          <% end %>
+                          <% if project.email4%>
+                            <li><a class="dropdown-item" href="#"><%=project.email4%></a></li>
+                          <% end %>
+                          <% if project.email5%>
+                            <li><a class="dropdown-item" href="#"><%=project.email5%></a></li>
+                          <% end %>
+                          </ul>
+                      </div>
+                      <h5 class="projectName"><span style="font-family: 'Noto Sans', sans-serif;">Faculty</span> : <em><%=project.getAdminName(project.admin_id)%></em></h5>
+                    </footer>
+            </div>
+          </div>
+          <br>
+          <% end %>
+        </div>
+          
+      </div>
+  </div>
+  </div>
+          
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<style type="text/css">
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border: 1px solid black;
+}
+.card-header{
+  padding-top:2px;
+  background-color: #fff;
+  border-bottom: 1px solid #072c61; border-radius: 10px 10px 0 0;
+}
+.name{
+   color: black;
+  font-weight:bolder;
+  display: flex; justify-content: space-around;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+footer{
+  border-bottom: 1px solid #072c61;
+  border-radius: 5px;
+  box-shadow: 0px 2px lightgrey;
+}
+h5{
+  font-weight: bold;
+}
+em{
+  font-weight: normal;
+}
+.card{
+  margin: 10px;
+}
+.card-body{
+  margin: 3px 3px 0 0;
+}
+ul.nav.nav-pills.Projects{
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #072c61;
+  box-shadow: 2px 2px lightgrey;
+  padding: 2px;
+}
+.active{
+  margin: 2px; 
+}
+
+a:hover{
+  text-decoration: none;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
+  transition: 0.2s linear;
+  background-color: #072c61;
+  border: 1px solid #072c61;
+  color:white;
+}
+.remove:hover{
+  background-color: #072c61;
+}
+.remove:hover .glyph-remove{
+  color:white;
+}
+.remove{
+  border: 1px solid #072c61;
+  background-color: white;
+  color: #072c61;
+}
+.panel{
+  border:2px solid #072c61; border-radius: 10px; background-color: #072c61;
+}
+.panel-heading{
+  border-bottom: 1px solid black;
+}
+.panel-body{
+   background-color: white; height: calc(100% - 40px); max-height: 405px; overflow-y: scroll; border: 1px solid lightgrey; overflow-x: hidden; border-radius: 0 0 10px 10px;
+}
+.card{
+  border: 1px solid #072c61; border-radius: 10px;
+}
+.projectName{
+  word-wrap: break-word; font-family: 'Karla',sans-serif; color: #072c61; text-shadow: 0.5px 0.5px #fff; font-weight: bold;
+}
+.Projects a{
+  color: #072c61;
+}
+#btn{
+  background-color: white;
+  color:#072c61;
+  transition: 0.3s ease-in-out;
+}
+#btn:hover{
+  background-color: #072c61;
+  color: white;
+  transform: scale(0.9,0.9);
+}
+
+</style>
