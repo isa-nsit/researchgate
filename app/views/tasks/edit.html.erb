@@ -1,7 +1,7 @@
 
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <center><span style="font-weight: bold;">Edit Project</span></center>
+<div class="panel" style="border: 1px solid #072c61;">
+  <div class="panel-heading" style="background-color: #072c61;">
+    <center><span style="font-weight: bold; color: white;">Edit Project</span></center>
   </div>
   <div class="panel-body">
 
@@ -25,12 +25,12 @@
           
       <div class="form-group">
         <%= f.label :Branch %>
-        <%= f.text_field :branch ,:value=>current_user.branch, :class => 'form-control'%><br>
+        <%= f.text_field :branch ,:value=>current_user.branch.upcase, :class => 'form-control'%><br>
       </div>
 
       <div class="form-group">
         <%= f.label :Percentage %>
-        <%= f.number_field :percentage ,:value=>current_user.percentage, :class => 'form-control'%><br>
+        <%= f.text_field :percentage ,:value=>current_user.percentage, :class => 'form-control'%><br>
       </div>
 
       <div class="form-group">
@@ -44,12 +44,14 @@
       </div>
 
       <div class="form-group">
-        <%= f.label :"Members in Project "%>
-        <%= f.radio_button :members_count, '1', :checked => true %> 1
-        <%= f.radio_button :members_count, '2' %> 2
-        <%= f.radio_button :members_count, '3' %> 3
-        <%= f.radio_button :members_count, '4' %> 4
-        <%= f.radio_button :members_count, '5' %> 5
+        <%= f.label :"Members in Project ? "%>
+        <div style="padding: 10px;">
+          <span class="members"><%= f.radio_button :members_count, '1',checked: true %> 1</span>
+          <span class="members"><%= f.radio_button :members_count, '2' %> 2</span>
+          <span class="members"><%= f.radio_button :members_count, '3' %> 3</span>
+          <span class="members"><%= f.radio_button :members_count, '4' %> 4</span>
+          <span class="members"><%= f.radio_button :members_count, '5' %> 5</span>
+        </div>
       </div>
 
       <div class="field form-group">
@@ -73,7 +75,7 @@
       </div>
 
       <div class="form-group">
-        <%= f.submit "Apply again"  ,:class => 'btn btn-block btn-primary'%>
+        <%=f.submit "Apply Again", :class=>"btn btn-block", :style=>"background-color:#072c61; color: white;"%>
       </div>
           
     <% end %>    

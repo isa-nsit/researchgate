@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'selected_projects/complete'
   get 'selected_projects/create'
   post 'selected_projects/reject'
+  
   get 'active_user/facultyShow'
   get 'active_user/facultyIndex'
   get 'active_user/home'
@@ -18,9 +19,7 @@ Rails.application.routes.draw do
   get 'active_user/edit_profile'
   patch 'active_user/update_profile'
 
-  get 'active_admin/home'
-  # get 'active_admin/createProject'  
-  # post 'active_admin/createProject'  
+  get 'active_admin/home' 
   
   get 'main/index'
   

@@ -5,7 +5,7 @@
   </div>
   <div class="panel-body">
 
-    <%= form_for @task, url: {action: "create"}  do |f| %>
+    <%= form_for @task, url: tasks_create_path(@task), :method => :post do |f| %>
       <%= hidden_field_tag :email, @email %>
 
       <div class="field form-group">
@@ -46,6 +46,7 @@
       <div class="form-group">
         <%= f.label :"Members in Project ? "%>
         <div style="padding: 10px;">
+          <span class="members"><%= f.radio_button :members_count, '1',checked: true %> 1</span>
           <span class="members"><%= f.radio_button :members_count, '2' %> 2</span>
           <span class="members"><%= f.radio_button :members_count, '3' %> 3</span>
           <span class="members"><%= f.radio_button :members_count, '4' %> 4</span>
@@ -75,7 +76,7 @@
         </div>
       </div>
       <div class="form-group">
-        <input type="submit" name="commit" value="Apply" class="btn btn-block" style="background-color:#072c61; color: white;">
+        <%=f.submit "Apply", :class=>"btn btn-block", :style=>"background-color:#072c61; color: white;"%>
       </div>
           
     <% end %>    
@@ -112,6 +113,13 @@ label{
   for(var i=0;i<n;i++)
     k[i].style.display = "none";
 
+  r1.addEventListener('change',function (event) {
+    k[0].style.display = "none";
+    k[1].style.display = "none";
+    k[2].style.display = "none";
+    k[3].style.display = "none";
+  });
+  
   r2.addEventListener('change',function (event) {
     k[0].style.display = "block";
     k[1].style.display = "none";

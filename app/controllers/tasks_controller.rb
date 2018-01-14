@@ -9,21 +9,18 @@ class TasksController < ApplicationController
 	end 
 
 	def create
-
+    
     @email=params[:email]
 	  @task=Task.new
-    @task.name=params[:task][:name]
-    @task.email1=params[:task][:email1]
-    @task.year=params[:task][:year]
-    @task.branch=params[:task][:branch]
-    @task.percentage=params[:task][:percentage]
-    @task.task_name=params[:task][:task_name]
-    @task.task_desc=params[:task][:task_desc]
-    @task.members_count=params[:task][:members_count]
-    @task.accepted=true;
-    @task.members_count=params[:task][:members_count]
-    if(@task.members_count==nil)
-      @task.members_count=1;
+    @task.name =params[:task][:name]
+    @task.email1 =params[:task][:email1]
+    @task.year =params[:task][:year]
+    @task.branch =params[:task][:branch]
+    @task.percentage =params[:task][:percentage]
+    @task.task_name =params[:task][:task_name]
+    @task.task_desc =params[:task][:task_desc]
+    @task.members_count =params[:task][:members_count]
+    @task.accepted = true;
     @task.admin_id = Admin.find_by_email(@email).id
     
     count=1
@@ -108,14 +105,7 @@ class TasksController < ApplicationController
     @task.task_desc=params[:task][:task_desc]
     @task.members_count=params[:task][:members_count]
     @task.admin_id = Admin.find_by_email(params[:email]).id
-    
-    @task.percentage=params[:task][:percentage]
-    @task.task_name=params[:task][:task_name]
-    @task.task_desc=params[:task][:task_desc]
-    
-    @task.members_count=params[:task][:members_count]
-    @task.admin_id = Admin.find_by_email(params[:email]).id
-    
+    @task.accepted = true
     
     count=1
     user2=User.where(:email=>params[:task][:email2]).first
