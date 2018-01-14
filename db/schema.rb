@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20180102203518) do
-=======
 ActiveRecord::Schema.define(version: 20180114114333) do
->>>>>>> f1b47212c65f2467f37c5d1155bab7bb3e9e018b
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -91,14 +87,11 @@ ActiveRecord::Schema.define(version: 20180114114333) do
     t.integer  "admin_id"
   end
 
-<<<<<<< HEAD
-=======
   create_table "task_creates", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
->>>>>>> f1b47212c65f2467f37c5d1155bab7bb3e9e018b
   create_table "tasks", force: :cascade do |t|
     t.string   "name"
     t.string   "branch"
@@ -115,10 +108,7 @@ ActiveRecord::Schema.define(version: 20180114114333) do
     t.string   "email4"
     t.string   "email5"
     t.integer  "admin_id"
-<<<<<<< HEAD
-=======
     t.boolean  "accepted"
->>>>>>> f1b47212c65f2467f37c5d1155bab7bb3e9e018b
   end
 
   create_table "user_task_relations", force: :cascade do |t|

@@ -1,43 +1,64 @@
-<div class="row">
-    <div class="col-sm-2 col-md-2"></div>
-    <div class="col-sm-5 col-md-5">
+<div class="jumbotron" style="border:2px solid white; background-color: #072c61;">
+<h1 class="text-center" style="color: white; border:1px solid white; padding: 2px;"><%=@user.branch.upcase%></h1> 
+</div>
+<div class="container">
+<div class="row" style="padding-top: 10px;" >
+    <div class="col-sm-0 col-md-1"></div>
+    
+    <div class="col-sm-5 col-md-3 col-sm-5">
         <% if @user.profile_pic %>
-			<img src="/uploads/<%=@user.profile_pic%>" style="height: 300px; max-width: 320px; border:2px solid #921B22;" class="img-circle img-responsive">
+			<img src="/uploads/<%=@user.profile_pic%>" style="height: 300px; max-width: 300px; border:2px solid #072c61; border-radius: 10px;" class="img-responsive">
 		<% end %>
     </div>
-    <div class="col-sm-5 col-md-5" style="margin-left: -30px;">
+    
+    <div class="col-sm-2"></div>
+    
+    <div class="col-sm-5 col-md-5 col-sm-5" style="margin-left: -30px; border:2px solid #072c61; margin-bottom: 10px;">
         <div class="panel">
             <div class="panel-body">
-                <ul class="list-group" style="border: 2px solid #922B21; border-radius: 20px;">
-                  <li class="list-group-item"><span class="glyphicon glyphicon-user">&nbsp;</span><span class="email"><%=@user.name %></span></li>
-
-                  <li class="list-group-item"><span class="glyphicon glyphicon-user">&nbsp;<a class="link"> <%=@user.branch %> </a></li>
-                  
-                  <li class="list-group-item"><span class="glyphicon glyphicon-user">&nbsp;<a class="link"> <%=@user.year %> </a></li>
-                  
-                   <li class="list-group-item"><span class="glyphicon glyphicon-user">&nbsp;<a class="link"> <%=@user.percentage %> </a></li>
-                </ul>
+                <div class="row detail-row">
+                    <div class="col-md-3">
+                        <span class="glyphicon glyphicon-user" style="font-size: 2em;">
+                    </div>
+                    <div class="col-md-9">
+                        <span class="details"><%=@user.name %></span>
+                    </div>
+                </div>
+                <div class="row detail-row">
+                    <div class="col-md-3">
+                        <span class="glyphicon glyphicon-tag" style="font-size: 2em;">
+                    </div>
+                    <div class="col-md-9">
+                        <span class="details"><%=@user.branch.upcase %></span>
+                    </div>
+                </div>
+                <div class="row detail-row">
+                    <div class="col-md-3">
+                        <span class="glyphicon glyphicon-hourglass" style="font-size: 2em;"></span>
+                    </div>
+                    <div class="col-md-9">
+                        <span class="details"><%=@user.year.upcase %></span>
+                    </div>
+                </div>
+                <div class="row detail-row">
+                    <div class="col-md-3">
+                        <span class="glyphicon glyphicon-book" style="font-size: 2em;"></span>
+                    </div>
+                    <div class="col-md-9">
+                        <span class="details"><%=@user.percentage%> %</span>
+                    </div>
+                </div>         
             </div>
-        </div> 
+        </div>
+    </div>
 </div>
 </div>
-
 <style type="text/css">
-	.list-group-item:nth-child(1){
-    border-radius: 20px 20px 0 0;
+	
+.details{
+    font-family: 'Karla', sans-serif; text-shadow: 0.5px 0.5px lightgrey; font-size: 1.1em; color:#072c61; font-size: 2em;
 }
-.list-group-item:last-child{
-    border-radius: 0 0 20px 20px;
-}
-.email{
-    font-family: 'Karla', sans-serif; text-shadow: 0.5px 0.5px lightgrey; font-size: 1.1em; color:#922B21;
-}
-.link{
-    font-family: 'Karla', sans-serif; text-shadow: 0.5px 0.5px lightgrey; font-size: 1.1em; color:#922B21;
-    transition: 0.3s ease-in-out;
-}
-.link:hover{
-    font-size: 1.2em;
-    color:#922B21;
+.detail-row{
+    padding: 10px;
 }
 </style>

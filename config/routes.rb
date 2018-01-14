@@ -24,8 +24,8 @@ Rails.application.routes.draw do
   
   get 'main/index'
   
-  devise_for :users, path: 'users'
   devise_for :admins, path: 'admins'
+  devise_for :users, path: 'users'
     
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -7,11 +7,15 @@
         <div class="col-md-4 col-sm-4" style="border:2px solid #072c61;">
             <div class="page-heading">
                 <h2>Research Areas & Interests</h2>
-                <b style="font-size: 2.3em;"><%=@interests.size%></b>
+                <b style="font-size: 2.3em;"><span ><%=@interests.size%></b>
             </div>
         </div>
         <div class="col-md-4 col-sm-8" style="border-top:2px solid #072c61; height: 20em;">
+        <% if @faculty.name != "Pramendra Kumar"%>
             <%= image_tag("#{@faculty.pic}",class:'img-responsive',style:'position:relative; top:-50px; right:-80px; width:50%; border:2px solid #072c61; border-top-left-radius:20px; border-top-right-radius:20px;')%>
+        <% else %>
+             <%= image_tag("#{@faculty.pic}",class:'img-responsive',style:'position:relative; top:-50px; right:-80px; width:50%; height:230px; border:2px solid #072c61; border-top-left-radius:20px; border-top-right-radius:20px;')%>
+        <% end %>
             <div style="position:relative; background-color: #fff; top:-120px;">
                 <h2 class="text-center"  style="border:2px solid #072c61;"><%=@faculty.name%>
                     <p class="h4">Professor</p>

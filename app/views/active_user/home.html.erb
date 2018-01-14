@@ -48,13 +48,7 @@
         </li>
         <li><a href="#2a" data-toggle="tab" class="pill_nav"><b>Completed</b></a>
         </li>
-        <li><a href="#3a" data-toggle="tab" class="pill_nav"><b>OnGoing</b></a>
-          <a href="#1a" data-toggle="tab"><b>All</b></a>
-        </li>
-        <li><a href="#2a" data-toggle="tab"><b>Completed</b></a>
-        </li>
-        <li><a href="#3a" data-toggle="tab"><b>OnGoing</b></a>
-        </li>
+        <li><a href="#3a" data-toggle="tab" class="pill_nav"><b>OnGoing</b></a></li>
     </ul>
 
       <div class="tab-content clearfix" style="margin-top: 10px;">
@@ -240,12 +234,11 @@ a:hover{
     text-decoration: none;
     color:white;
     background-color: #072c61;
-
+    transition: 0.3s linear;
 }
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
-  transition: 0.2s linear;
+  transform: scale(1.04,1.04);
   background-color: #072c61;
-  border: 1px solid #072c61;
   color:white;
 }
 .remove:hover{

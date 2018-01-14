@@ -1,21 +1,20 @@
 <div class="row">
   <% @faculty.each do|f|%>
-    <div class="col-md-6 col-sm-6" style="">
-      <a class="test" href="/active_user/facultyShow?name=<%=f.name%>">
+    <div class="col-md-6 col-sm-10" style="">
       <div class="panel ">
         <div class="panel-body">
           <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-5 col-sm-6">
               <div class="img-responsive circle"><%= image_tag("#{f.pic}",size: "100x100")%></div>
               <div class="row">
                 <% if f.name != "Andriya Narasimhulu"%>
-                <div class="col-md-12 FacultyName"><a class="test" href="/active_user/facultyShow?name=<%=f.name%>"><span style="font-family: 'Merriweather',serif;"><%=f.name%></span></a></div>
+                <div class="col-md-12 col-sm-12 FacultyName"><a class="test" href="/active_user/facultyShow?name=<%=f.name%>"><span style="font-family: 'Merriweather',serif;"><%=f.name%></span></a></div>
                 <% else %>
-                <div class="col-md-12 FacultyName"><a class="test" href="/active_user/facultyShow?name=<%=f.name%>"><span style="font-family: 'Merriweather',serif; font-size: 14px;"><%=f.name%></span></a></div>
+                <div class="col-md-12 col-sm-12 FacultyName"><a class="test" href="/active_user/facultyShow?name=<%=f.name%>"><span style="font-family: 'Merriweather',serif; font-size: 14px;"><%=f.name%></span></a></div>
                 <%end%>
               </div>
             </div>
-            <div class="col-md-7 col-sm-7">
+            <div class="col-md-7 col-sm-6">
               <div style="border: 1px solid white; border-radius: 30px; background-color: white;">
                 <div class="AOI"><span style="font-family: 'Karla', sans-serif; font-size: 1.04em;"><%=f.AOI.html_safe%></span></div></div>
             </div>

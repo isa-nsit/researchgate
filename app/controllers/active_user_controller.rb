@@ -1,5 +1,11 @@
 class ActiveUserController < ApplicationController
   def home
+
+    if !current_user.profile_pic
+      current_user.profile_pic = '/image.jpg'
+      current_user.save!
+    end
+    
   	@countInstrumentation=Admin.where(division:"Instrumentation").count
   	@countAutomation=Admin.where(division:"Automation").count
     
@@ -12,7 +18,6 @@ class ActiveUserController < ApplicationController
     end
     @selectedProjects=SelectedProject.where(id:s_projectIds)     
     
-
     # finding all the completed projects in which current_user is involved
     users = CompleteProject.where("user1=? OR user2=? OR user3=? OR user4=? OR user5=?",current_user.id,
       current_user.id,current_user.id,current_user.id,current_user.id)    
