@@ -9,4 +9,9 @@ class Task < ActiveRecord::Base
 	def getUserId email
 		User.find_by_email(email).id
 	end
+<<<<<<< HEAD
+=======
+
+	
+>>>>>>> f1b47212c65f2467f37c5d1155bab7bb3e9e018b
 end

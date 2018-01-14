@@ -77,4 +77,11 @@ class SelectedProjectsController < ApplicationController
     return redirect_to active_admin_home_path
   end
 
+   def reject
+    task=Task.where(id:params[:id]).first
+    task.accepted=false
+    task.save!
+    return redirect_to active_admin_home_path, notice: 'Idea has been rejected'
+  end
+
 end

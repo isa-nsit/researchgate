@@ -17,7 +17,8 @@ class ActiveAdminController < ApplicationController
     @completedProjects=SelectedProject.where(id:c_projectIds)
 
     #tasks
-    @tasks = Task.where(admin_id:current_admin.id)
+    @tasks = Task.where("admin_id=? AND accepted=?",current_admin.id,true)
+
 
   end
 

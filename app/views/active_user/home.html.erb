@@ -49,6 +49,11 @@
         <li><a href="#2a" data-toggle="tab" class="pill_nav"><b>Completed</b></a>
         </li>
         <li><a href="#3a" data-toggle="tab" class="pill_nav"><b>OnGoing</b></a>
+          <a href="#1a" data-toggle="tab"><b>All</b></a>
+        </li>
+        <li><a href="#2a" data-toggle="tab"><b>Completed</b></a>
+        </li>
+        <li><a href="#3a" data-toggle="tab"><b>OnGoing</b></a>
         </li>
     </ul>
 
@@ -199,6 +204,7 @@
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+
 footer{
   border-bottom: 1px solid #072c61;
   border-radius: 5px;
@@ -237,7 +243,7 @@ a:hover{
 
 }
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
-  transition: 0.2s ease-in-out;
+  transition: 0.2s linear;
   background-color: #072c61;
   border: 1px solid #072c61;
   color:white;

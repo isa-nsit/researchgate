@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   
   get 'selected_projects/complete'
   get 'selected_projects/create'
-
+  post 'selected_projects/reject'
   get 'active_user/facultyShow'
   get 'active_user/facultyIndex'
   get 'active_user/home'
