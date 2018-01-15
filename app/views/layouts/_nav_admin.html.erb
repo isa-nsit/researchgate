@@ -16,11 +16,11 @@
       <ul class="nav navbar-nav">
        <a class="navbar-brand test" href="/" style="color: white;"><b style="font-family: 'Merriweather',serif; letter-spacing: 2px;">ISA</b>&nbsp;<span class="glyphicon glyphicon-home"></span></a>
       </ul>
-        <ul class="nav navbar-nav navbar-right">
-        <li><a class="test" href="/active_admin/home" style="color: white;"><%=current_admin.name%> <span class="glyphicon glyphicon-user"></span></a></li>
-            <li><%= link_to('<span style="color:white;">Logout <span class="glyphicon glyphicon-log-out"></span></span>'.html_safe, destroy_admin_session_path, method: :delete,class:'test') %></li>
-        </ul>
-      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a class="test" href="/active_admin/facultyProfile?name=<%=current_admin.name%>" style="color: white;"><%=current_admin.name%> <span class="glyphicon glyphicon-user"></span></a></li>
+        <li><%= link_to('Edit credentials <span class="glyphicon glyphicon-edit"></span>'.html_safe, edit_admin_registration_path, method: :get,class:'test') %></li>
+        <li><%= link_to('<span style="color:white;">Logout <span class="glyphicon glyphicon-log-out"></span></span>'.html_safe, destroy_admin_session_path, method: :delete,class:'test') %></li>
+      </ul>  
     </div>
   </div>
 </nav>

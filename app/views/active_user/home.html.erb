@@ -70,22 +70,22 @@
                       <div class="dropdown">
                         <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                          <% if project.email1%>
-                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.email1%></li>
+                          <% if project.email1 && project.email1 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email1)%></li>
                           <% end %>
-                          <% if project.email2%>
-                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.email2%></li>
+                          <% if project.email2 && project.email2 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email2)%></li>
                           <% end %>
-                          <% if project.email3%>
-                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.email3%></li>
+                          <% if project.email3 && project.email3 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email3)%></li>
                           <% end %>
-                          <% if project.email4%>
-                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.email4%></li>
+                          <% if project.email4 && project.email4 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email4)%></li>
                           <% end %>
-                          <% if project.email5%>
-                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.email5%></li>
+                          <% if project.email5 && project.email5 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email5)%></li>
                           <% end %>
-                          </ul>
+                        </ul>
                       </div>
                       <h5 class="projectName"><span style="font-family: 'Noto Sans', sans-serif;">Faculty</span> : <em><%=project.getAdminName(project.admin_id)%></em></h5>
                     </footer>
@@ -107,22 +107,22 @@
                       <div class="dropdown">
                         <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                          <% if project.email1%>
-                            <li><a class="dropdown-item" href="#"><%=project.email1%></a></li>
+                          <% if project.email1 && project.email1 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email1)%></li>
                           <% end %>
-                          <% if project.email2%>
-                            <li><a class="dropdown-item" href="#"><%=project.email2%></a></li>
+                          <% if project.email2 && project.email2 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email2)%></li>
                           <% end %>
-                          <% if project.email3%>
-                            <li><a class="dropdown-item" href="#"><%=project.email3%></a></li>
+                          <% if project.email3 && project.email3 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email3)%></li>
                           <% end %>
-                          <% if project.email4%>
-                            <li><a class="dropdown-item" href="#"><%=project.email4%></a></li>
+                          <% if project.email4 && project.email4 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email4)%></li>
                           <% end %>
-                          <% if project.email5%>
-                            <li><a class="dropdown-item" href="#"><%=project.email5%></a></li>
+                          <% if project.email5 && project.email5 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email5)%></li>
                           <% end %>
-                          </ul>
+                        </ul>
                       </div>
                       <h5 class="projectName"><span style="font-family: 'Noto Sans', sans-serif;">Faculty</span> : <em><%=project.getAdminName(project.admin_id)%></em></h5>
                     </footer>
@@ -144,22 +144,22 @@
                       <div class="dropdown">
                         <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                          <% if project.email1%>
-                            <li><a class="dropdown-item" href="#"><%=project.email1%></a></li>
+                          <% if project.email1 && project.email1 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email1)%></li>
                           <% end %>
-                          <% if project.email2%>
-                            <li><a class="dropdown-item" href="#"><%=project.email2%></a></li>
+                          <% if project.email2 && project.email2 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email2)%></li>
                           <% end %>
-                          <% if project.email3%>
-                            <li><a class="dropdown-item" href="#"><%=project.email3%></a></li>
+                          <% if project.email3 && project.email3 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email3)%></li>
                           <% end %>
-                          <% if project.email4%>
-                            <li><a class="dropdown-item" href="#"><%=project.email4%></a></li>
+                          <% if project.email4 && project.email4 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email4)%></li>
                           <% end %>
-                          <% if project.email5%>
-                            <li><a class="dropdown-item" href="#"><%=project.email5%></a></li>
+                          <% if project.email5 && project.email5 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email5)%></li>
                           <% end %>
-                          </ul>
+                        </ul>
                       </div>
                       <h5 class="projectName"><span style="font-family: 'Noto Sans', sans-serif;">Faculty</span> : <em><%=project.getAdminName(project.admin_id)%></em></h5>
                     </footer>

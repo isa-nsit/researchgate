@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  percentage: MyString
+  sems_complete: 1
+  branch: MyString
+  period: MyString
+
+two:
+  percentage: MyString
+  sems_complete: 1
+  branch: MyString
+  period: MyString

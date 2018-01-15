@@ -1,4 +1,5 @@
 class ActiveUserController < ApplicationController
+  before_action :authenticate_user!
   def home
 
     if !current_user.profile_pic
@@ -77,6 +78,8 @@ class ActiveUserController < ApplicationController
     @ids.each do|id|
       @projects<<SelectedProject.find_by_id(id)
     end
+    
+    @eligibility = Eligibility.find_by_faculty_name(@name)
   end
 
   def profile

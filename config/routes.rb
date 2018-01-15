@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   patch 'active_user/update_profile'
 
   get 'active_admin/home' 
-  
+  get 'active_admin/facultyProfile'
+
   get 'main/index'
   
   devise_for :admins, path: 'admins'

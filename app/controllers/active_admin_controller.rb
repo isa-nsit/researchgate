@@ -1,4 +1,5 @@
 class ActiveAdminController < ApplicationController
+  before_action :authenticate_admin!
   def home
   	#ongoing projects
     relations = ProjectUserAdminRelation.where(admin_id: current_admin.id)
@@ -18,8 +19,31 @@ class ActiveAdminController < ApplicationController
 
     #tasks
     @tasks = Task.where("admin_id=? AND accepted=?",current_admin.id,true)
+  end
 
+  def facultyProfile
+    @name=params[:name]
+    @faculty=Admin.where(:name=>@name).first
+    
+    @faculty.AOI.gsub!(/<br>()/,',')
+    
+    @interests = @faculty.AOI.split(',')
+    @interests.delete('and')
+    @interests.delete('&')
 
+    @projects = []
+    @ids = []
+    selectedProjects = ProjectUserAdminRelation.where(admin_id: @faculty.id)
+    
+    selectedProjects.each do|project|
+      @ids<<project.SelectedProject_id
+    end
+
+    @ids.each do|id|
+      @projects<<SelectedProject.find_by_id(id)
+    end
+    
+    @eligibility = Eligibility.find_by_faculty_name(@name)
   end
 
 end

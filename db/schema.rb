@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180114114333) do
+ActiveRecord::Schema.define(version: 20180115180443) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -56,6 +56,16 @@ ActiveRecord::Schema.define(version: 20180114114333) do
 
   add_index "complete_projects", ["Admin_id"], name: "index_complete_projects_on_Admin_id"
   add_index "complete_projects", ["SelectedProject_id"], name: "index_complete_projects_on_SelectedProject_id"
+
+  create_table "eligibilities", force: :cascade do |t|
+    t.string   "percentage"
+    t.integer  "sems_complete"
+    t.string   "branch"
+    t.string   "period"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "faculty_name"
+  end
 
   create_table "project_user_admin_relations", force: :cascade do |t|
     t.integer  "admin_id"

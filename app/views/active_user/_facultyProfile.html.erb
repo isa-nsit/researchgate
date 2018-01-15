@@ -1,0 +1,86 @@
+<div class="jumbotron" style="border:2px solid white; background-color: #072c61;">
+<h1 class="text-center" style="color: white; border:1px solid white; padding: 2px;"><%=@faculty.division.upcase%></h1> 
+</div>
+
+<div class="container">
+    <div class="row row-bottom-margin">
+        <div class="col-md-4 col-sm-4" style="border:2px solid #072c61;">
+            <div class="page-heading">
+                <h2>Research Areas & Interests</h2>
+                <b style="font-size: 2.3em;"><span ><%=@interests.size%></b>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-8" style="border-top:2px solid #072c61; height: 20em;">
+        <% if @faculty.name != "Pramendra Kumar"%>
+            <%= image_tag("#{@faculty.pic}",class:'img-responsive',style:'position:relative; top:-50px; right:-80px; width:50%; border:2px solid #072c61; border-top-left-radius:20px; border-top-right-radius:20px;')%>
+        <% else %>
+             <%= image_tag("#{@faculty.pic}",class:'img-responsive',style:'position:relative; top:-50px; right:-80px; width:50%; height:230px; border:2px solid #072c61; border-top-left-radius:20px; border-top-right-radius:20px;')%>
+        <% end %>
+            <div style="position:relative; background-color: #fff; top:-120px;">
+                <h2 class="text-center"  style="border:2px solid #072c61;"><%=@faculty.name%>
+                    <p class="h4">Professor</p>
+                    <p class="h3">Department of <%=@faculty.division%></p>
+                </h2>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-3" style="border:2px solid #072c61;">
+            <h2>Alumni & Research Partners</h2>
+                <b style="font-size: 2.3em;">56</b>
+        </div>
+    </div>
+    <div class="row two">
+        <div class="col-md-4 col-sm-6" style="border:2px solid #072c61;">
+            <div class="page-heading">
+                <h2>Research Areas & Interests</h2>
+                <b style="font-size: 2.3em;"><%=@interests.size%></b>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-12" style="border:2px solid #072c61; border-left:0px;height: 10.4em;">
+            <%@interests.each do|interest|%>
+            <button class="btn" style="padding: 10px; margin: 10px; background-color: #072c61;"><span style="color:white;"><%=interest.humanize%></span></button>
+            <% end %>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-md-4 col-sm-6" style="border:2px solid #072c61; height: 10em;">
+            <div class="page-heading">
+                <h2>Latest Projects</h2>
+                <b style="font-size: 2.3em;"><%=@projects.size%></b>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-12" style="border:2px solid #072c61; border-left:0px; height: 10em;">
+            <%@projects.each do|project|%>
+            <div class="btn" style="padding: 10px; margin: 10px; background-color: #072c61;"><span style="color:white;"><%=project.ProjectName.humanize%></span></div>
+            <% end %>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-md-4 col-sm-6" style="border:2px solid #072c61; height: 10em;">
+            <div class="page-heading">
+                <h2>Eligibility Criteria</h2>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-12" style="border:2px solid #072c61; border-left:0px; height: 10em;">
+            <% if @eligibility %>
+                <ul>
+                    <li>Minimum aggregate percentage: <%= @eligibility.percentage %></li>
+                    <li>Semesters completed: <%= @eligibility.sems_complete %></li>
+                    <li>Branch: <%= @eligibility.branch %></li>
+                    <li>Minimum Engagement Period: <%= @eligibility.period %></li>
+                </ul>
+            <%end %>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .two{
+        margin-bottom: 50px;
+    }
+    .btn-lg{
+        background-color: #072c61;
+    }
+</style>
+<script type="text/javascript">
+    var mql = window.matchMedia("screen and (max-width: 765px)");
+</script>
