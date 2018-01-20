@@ -11,4 +11,36 @@ class Admin < ActiveRecord::Base
   def ongoingProjectsCount
   	ProjectUserAdminRelation.where(admin_id:id).count
   end
+
+  @@allIds=[]
+
+  def getOngoingProjects faculty_id
+    ids=[]
+    @@allIds=[]
+    relations=ProjectUserAdminRelation.where(admin_id: faculty_id)
+    relations.each do |r|
+      ids<<r.SelectedProject_id
+    end
+    ids.each do |i|
+      @@allIds<<i
+    end
+    SelectedProject.select("ProjectName").where(id: ids)
+  end
+
+  def getCompletedProjects faculty_id
+    ids=[]
+    relations=CompleteProject.where(Admin_id: faculty_id)
+    relations.each do |r|
+      ids<<r.SelectedProject_id
+    end
+    ids.each do |i|
+      @@allIds<<i
+    end
+    SelectedProject.select("ProjectName").where(id: ids)
+  end
+
+  def getStudents
+    students=SelectedProject.select("email1,email2,email3,email4,email5").where(id: @@allIds)
+    return students
+  end
 end

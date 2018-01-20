@@ -83,10 +83,14 @@ class ActiveUserController < ApplicationController
   end
 
   def profile
+    @countInstrumentation=Admin.where(division:"Instrumentation").count
+    @countAutomation=Admin.where(division:"Automation").count
     @user=User.find_by_id(params[:id])
   end
 
   def edit_profile
+    @countInstrumentation=Admin.where(division:"Instrumentation").count
+    @countAutomation=Admin.where(division:"Automation").count
   end
 
   def update_profile

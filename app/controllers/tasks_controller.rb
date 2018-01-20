@@ -90,8 +90,13 @@ class TasksController < ApplicationController
   end
 
   def edit 
+    @countInstrumentation=Admin.where(division:"Instrumentation").count
+    @countAutomation=Admin.where(division:"Automation").count
     @task =Task.where(id: params[:id]).first
     @email=Admin.find_by_id(@task.admin_id).email
+    if(@task.update_count>=3)
+      redirect_to active_user_home_path, notice: 'Update limit reached'
+    end
   end
 
   def update
@@ -106,7 +111,7 @@ class TasksController < ApplicationController
     @task.members_count=params[:task][:members_count]
     @task.admin_id = Admin.find_by_email(params[:email]).id
     @task.accepted = true
-    
+    @task.update_count+=1
     count=1
     user2=User.where(:email=>params[:task][:email2]).first
     user3=User.where(:email=>params[:task][:email3]).first

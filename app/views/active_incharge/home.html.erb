@@ -1,2 +1,70 @@
-<h1>ActiveIncharge#home</h1>
-<p>Find me in app/views/active_incharge/home.html.erb</p>
+<h1><center>List</center></h1>
+
+<table>
+	<tr>
+		<th>S.No &nbsp &nbsp &nbsp</th>
+		<th>Faculty &nbsp &nbsp &nbsp</th>
+		<th>Projects &nbsp &nbsp &nbsp</th>
+		<th>Status &nbsp &nbsp &nbsp</th>
+		<th>Students &nbsp &nbsp &nbsp</th>
+	</tr>
+	<% ctr=1 %>
+	<% @faculties.each do |faculty| %>
+		<tr>
+			<td><%= ctr%></td>
+			<td><%=image_tag faculty.pic, class:"img-responsive round-image"%><%=faculty.name%></td>
+			<td>
+				<% ongoing_projects=faculty.getOngoingProjects(faculty.id) %>
+				<% ongoing_projects.each do |p| %>
+					<%=p.ProjectName%><br>
+				<% end %>
+				<% completed_projects=faculty.getCompletedProjects(faculty.id) %>
+				<% completed_projects.each do |p| %>
+					<%=p.ProjectName%><br>
+				<% end %>	
+			</td>
+			<td>
+				<% op_ctr=ongoing_projects.count %>
+				<% cp_ctr=completed_projects.count %>
+				<% while op_ctr>0 %>
+					Ongoing
+					<% op_ctr-=1%>
+				<% end %>
+				<% while cp_ctr>0 %>
+					Completed 
+					<% cp_ctr-=1%>
+				<% end %>
+			</td>
+			<td>
+				<% students=faculty.getStudents %>
+				<% students.each do |s| %>
+					<% if(s.email1 && s.email1!="") %>
+						<%= s.email1 %>
+					<% end %>	
+					<% if(s.email2 && s.email2!="") %>
+						<%= s.email2 %>
+					<% end %>
+					<% if(s.email3 && s.email3!="") %>
+						<%= s.email3 %>
+					<% end %>
+					<% if(s.email4 && s.email4!="") %>
+						<%= s.email4 %>
+					<% end %>
+					<% if(s.email5 && s.email5!="") %>
+						<%= s.email5 %>
+					<% end %>
+				<% end %>
+			</td>
+		</tr>
+		<% ctr+=1 %>
+	<% end %>
+</table>
+
+<style type="text/css">
+.round-image{
+	border: 2px solid #072c61;
+	z-index: -4px;
+	height: 100px;
+	width: 100px;
+}
+</style>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180120053751) do
+ActiveRecord::Schema.define(version: 20180120154354) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -128,8 +128,8 @@ ActiveRecord::Schema.define(version: 20180120053751) do
     t.string   "task_name"
     t.string   "task_desc"
     t.integer  "members_count"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "email1"
     t.string   "email2"
     t.string   "email3"
@@ -137,6 +137,7 @@ ActiveRecord::Schema.define(version: 20180120053751) do
     t.string   "email5"
     t.integer  "admin_id"
     t.boolean  "accepted"
+    t.integer  "update_count",  default: 0
   end
 
   create_table "user_task_relations", force: :cascade do |t|

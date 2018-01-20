@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   get 'active_admin/home' 
   get 'active_admin/facultyProfile'
+  get 'active_admin/student_profile'
 
   get 'main/index'
   

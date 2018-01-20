@@ -46,4 +46,7 @@ class ActiveAdminController < ApplicationController
     @eligibility = Eligibility.find_by_faculty_name(@name)
   end
 
+  def student_profile
+    @user=User.find_by_id(params[:id])
+  end
 end
