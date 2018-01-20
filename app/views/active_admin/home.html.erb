@@ -24,10 +24,10 @@
 			<div class="col-sm-12">
 		<div class="panel panel-info" style="border: 1px solid #072c61;">
 			<div class="panel-heading text-center" style="background-color: #072c61;"><h4>Tasks</h4></div>
-			<div class="panel-body">
+			<div class="panel-body" style="margin-bottom: -20px;">
 				<% @tasks.each do|task|%>
 					<div class="panel-group">
-						<div class="panel" style="margin: -15px; ">
+						<div class="panel" style="margin: -15px; border-bottom: 1px solid #072c61;">
 							<div class="pull-left" style="margin: 5px;"><%=link_to'<span class="action"><span class="glyphicon glyphicon-remove"></span></button>'.html_safe, selected_projects_reject_path(id:task.id), method: :post%></div>
 								
 							<div class="pull-right" style="margin: 5px;"><%=link_to'<span class="action"><span class="glyphicon glyphicon-ok"></span></button>'.html_safe, selected_projects_create_path(id:task.id)%></div>
@@ -73,8 +73,8 @@
 			<div class="panel-body" style=" overflow-y: scroll; overflow-x: hidden; border: 1px solid lightgrey;  height: calc(100% - 40px); max-height: 480px;">
 				<%@ongoingProjects.each do|project|%>
 					<div class="panel-group">
-						<div class="panel" style="margin: -21px; background-color: white; ">
-							<div class="panel-heading text-center font" style="word-wrap: break-word; border-top: 1px solid #072c61;"><%=project.ProjectName.humanize%></div>
+						<div class="panel" style="margin: -21px; background-color: white;">
+							<div class="panel-heading text-center font" style="word-wrap: break-word; border-top: 2px solid #072c61; border-bottom: 1px solid #072c61;"><%=project.ProjectName.humanize%></div>
 							<div class="panel-body lead" style="word-wrap: break-word;">
 								<%=project.Description.humanize%>
 							</div>
@@ -115,7 +115,7 @@
 				<% @completedProjects.each do|project|%>
 					<div class="panel-group">
 						<div class="panel" style="margin: -21px; ">
-							<div class="panel-heading text-center font" style="word-wrap: break-word;"><%=project.ProjectName.humanize%></div>
+							<div class="panel-heading text-center font" style="word-wrap: break-word; border-top: 2px solid #072c61; border-bottom: 1px solid #072c61;"><%=project.ProjectName.humanize%></div>
 							<div class="panel-body lead" style="word-wrap: break-word;">
 								<%=project.Description.humanize%>
 							</div>
@@ -208,6 +208,9 @@
 }
 .badge{
 	background-color: #072c61;
+}
+.panel-footer{
+	background:transparent;
 }
 @media screen 
   and (device-width: 360px) 

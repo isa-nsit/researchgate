@@ -78,8 +78,14 @@ class ActiveUserController < ApplicationController
     @ids.each do|id|
       @projects<<SelectedProject.find_by_id(id)
     end
-    
+    @projects = @projects[0,10]
     @eligibility = Eligibility.find_by_faculty_name(@name)
+    
+    if @eligibility
+      @eligible_branches = @eligibility.branch.split(',');
+      
+    end
+
   end
 
   def profile

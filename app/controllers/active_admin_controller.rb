@@ -44,6 +44,11 @@ class ActiveAdminController < ApplicationController
     end
     
     @eligibility = Eligibility.find_by_faculty_name(@name)
+    
+    if @eligibility
+      @eligible_branches = @eligibility.branch.split(',');
+      
+    end
   end
 
   def student_profile

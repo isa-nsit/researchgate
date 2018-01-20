@@ -4,9 +4,9 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  has_many :selected_projects
-  has_many :complete_projects
-  has_many :tasks
+  has_many :selected_projects, dependent: :destroy
+  has_many :complete_projects, dependent: :destroy
+  has_many :tasks, dependent: :destroy
 
   def ongoingProjectsCount
   	ProjectUserAdminRelation.where(admin_id:id).count

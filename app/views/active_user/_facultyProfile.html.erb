@@ -25,7 +25,7 @@
         </div>
         <div class="col-md-4 col-sm-3" style="border:2px solid #072c61;">
             <h2>Alumni & Research Partners</h2>
-                <b style="font-size: 2.3em;">56</b>
+                <b style="font-size: 2.3em; color: #072c61;text-shadow: 1px 2px #072c61;">56</b>
         </div>
     </div>
     <div class="row two">
@@ -36,13 +36,12 @@
             </div>
         </div>
         <div class="col-md-8 col-sm-12" style="border:2px solid #072c61; border-left:0px;height: 10.4em;">
-            <%@interests.each do|interest|%>
-            <button class="btn" style="padding: 10px; margin: 10px; background-color: #072c61;"><span style="color:white;"><%=interest.humanize%></span></button>
+            <%@interests.each do|interest|%><span class="badge interests"><%=interest.humanize%></span>
             <% end %>
         </div>
     </div>
     <div class="row" style="margin-bottom: 20px;">
-        <div class="col-md-4 col-sm-6" style="border:2px solid #072c61; height: 10em;">
+        <div class="col-md-4 col-sm-6" style="border:2px solid #072c61; height: 10em;word-wrap: break-word;">
             <div class="page-heading">
                 <h2>Latest Projects</h2>
                 <b style="font-size: 2.3em;"><%=@projects.size%></b>
@@ -50,23 +49,29 @@
         </div>
         <div class="col-md-8 col-sm-12" style="border:2px solid #072c61; border-left:0px; height: 10em;">
             <%@projects.each do|project|%>
-            <div class="btn" style="padding: 10px; margin: 10px; background-color: #072c61;"><span style="color:white;"><%=project.ProjectName.humanize%></span></div>
+            <span class="badge interests" style="
+    word-wrap:break-word;"><%=project.ProjectName.humanize%></span>
             <% end %>
         </div>
     </div>
     <div class="row" style="margin-bottom: 20px;">
-        <div class="col-md-4 col-sm-6" style="border:2px solid #072c61; height: 10em;">
+        <div class="col-md-4 col-sm-6" style="border:2px solid #072c61; height: 15em;">
             <div class="page-heading">
                 <h2>Eligibility Criteria</h2>
             </div>
         </div>
-        <div class="col-md-8 col-sm-12" style="border:2px solid #072c61; border-left:0px; height: 10em;">
+        <div class="col-md-8 col-sm-12" style="border:2px solid #072c61; border-left:0px; height: 15em;">
             <% if @eligibility %>
-                <ul>
-                    <li>Minimum aggregate percentage: <%= @eligibility.percentage %></li>
-                    <li>Semesters completed: <%= @eligibility.sems_complete %></li>
-                    <li>Branch: <%= @eligibility.branch %></li>
-                    <li>Minimum Engagement Period: <%= @eligibility.period %></li>
+                <ul class="list-group eligibility" style="margin-top: 1em;">
+                    <li class="list-group-item"><span class="h4"><span class="label label-default">Minimum aggregate percentage </span><span class="badge"><%= @eligibility.percentage %></span>
+                    </span></li>
+                    <li class="list-group-item"><span class="h4"><span class="label label-default">Semesters completed </span><span class="badge"><%= @eligibility.sems_complete %></li>
+                    <li class="list-group-item"><span class="h4"><span class="label label-default">Branch</span>
+                        <% @eligible_branches.each do|branch|%>
+                            <span class="badge"><%=branch.upcase%></span> 
+                        <% end %>
+                        </li>
+                    <li class="list-group-item"><span class="h4"><span class="label label-default">Minimum Engagement Period</span><span class="badge"><%= @eligibility.period %></span></li>
                 </ul>
             <%end %>
         </div>
@@ -79,6 +84,41 @@
     }
     .btn-lg{
         background-color: #072c61;
+    }
+    .eligibility li{
+        border:0px;
+    }
+    .eligibility .badge{
+        float: none;
+        background-color: #072c61;
+        padding: 5px 10px 5px 10px;
+        font-size: 15px;
+    }
+    .label{
+        padding: 7px;
+        margin: 10px;
+        background-color: #fff;
+        border:1px solid #072c61;
+        color: #072c61;
+        font-family: 'Merriweather',serif; 
+        letter-spacing: 1px;
+    }
+    h2{
+        color: #072c61;
+    }
+    .page-heading b{
+        color: #072c61;
+        text-shadow: 1px 2px #072c61;
+    }
+    .interests{
+        color: white;
+        background-color: rgba(7, 44, 97,0.8);
+        border: 1px solid #072c61;
+        margin: 10px;
+        letter-spacing: 1px;
+        font-family: 'Karla',sans-serif;
+        font-size: 1.02em;
+        padding: 1em;
     }
 </style>
 <script type="text/javascript">
