@@ -9,7 +9,6 @@ class TasksController < ApplicationController
 	end 
 
 	def create
-    
     @email=params[:email]
 	  @task=Task.new
     @task.name =params[:task][:name]

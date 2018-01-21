@@ -40,7 +40,7 @@ class Admin < ActiveRecord::Base
   end
 
   def getStudents
-    students=SelectedProject.select("email1,email2,email3,email4,email5").where(id: @@allIds)
+    students = SelectedProject.select("email1,email2,email3,email4,email5").where(id: @@allIds)
     return students
   end
 end

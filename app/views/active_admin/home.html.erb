@@ -28,9 +28,9 @@
 				<% @tasks.each do|task|%>
 					<div class="panel-group">
 						<div class="panel" style="margin: -15px; border-bottom: 1px solid #072c61;">
-							<div class="pull-left" style="margin: 5px;"><%=link_to'<span class="action"><span class="glyphicon glyphicon-remove"></span></button>'.html_safe, selected_projects_reject_path(id:task.id), method: :post%></div>
+							<div class="pull-left" style="margin: 5px;"><%=link_to'<span class="action"><span class="glyphicon glyphicon-remove" title="Reject"></span></button>'.html_safe, selected_projects_reject_path(id:task.id), method: :post%></div>
 								
-							<div class="pull-right" style="margin: 5px;"><%=link_to'<span class="action"><span class="glyphicon glyphicon-ok"></span></button>'.html_safe, selected_projects_create_path(id:task.id)%></div>
+							<div class="pull-right" style="margin: 5px;"><%=link_to'<span class="action"><span class="glyphicon glyphicon-ok" title="Accept"></span></button>'.html_safe, selected_projects_create_path(id:task.id)%></div>
 							<div class="panel-heading text-center font" style=" background-color: white; border-bottom: 2px solid #072c61; word-wrap: break-word; color: #072c61; font-size: 1.1em;"><%=task.task_name.humanize%></div>
 							<div class="panel-body lead" style="word-wrap: break-word;">
 								<%=task.task_desc.humanize%>

@@ -7,7 +7,8 @@
       </div>
       <div class="panel-body" >
           <%@tasks.each do|project|%>
-            <div class="card">
+          <% if project.accepted %>
+            <div class="card" title="Pending">
             <div class="card-header">
               <h4 class="text-center name">
                 
@@ -16,20 +17,37 @@
             <span style="font-family: 'Karla',sans-serif; color: #072c61; text-shadow: 0.5px 0.5px #fff;"><%=project.task_name.humanize%></span>
              <span> <%=link_to '<button type="button" title="Edit" class="btn btn-xs remove" style="border-radius:5px;"><span class="glyphicon glyphicon-file glyph-remove" style="padding:0.5px;"></span></button>'.html_safe, tasks_edit_path(id: project.id),{:style=>'color:black; border-bottom:0px; font-weight:normal;'}%>
               </span>
-            
-            
           </h4>
             </div>
             <div class="card-body">
               <br>
               <p style="word-wrap: break-word; color:black; font-size: 1.2em;" class="text-center"><%=project.task_desc.humanize%></p>
-              
             </div>
-                        
+          </div>
+          <br>
+
+          <!-- If Task Has been Rejected -->
+          
+          <% else %>
+            <div class="card Rejected" title="Rejected">
+            <div class="card-header">
+              <h4 class="text-center name">
+                
+            <span><%=link_to '<button type="button" title="Remove" class="btn btn-xs remove" style="border-radius:5px;"><span class="glyphicon glyphicon-remove glyph-remove" style="padding:1px;"</span></button>'.html_safe, tasks_destroy_path(id: project.id), method: :delete, data: {confirm: "Are you sure?"},:style=>'color:black; border-bottom:0px; font-weight:normal;'%>
+              </span>
+            <span style="font-family: 'Karla',sans-serif; color: #072c61; text-shadow: 0.5px 0.5px #fff;"><%=project.task_name.humanize%></span>
+             <span> <%=link_to '<button type="button" title="Edit" class="btn btn-xs remove" style="border-radius:5px;"><span class="glyphicon glyphicon-file glyph-remove" style="padding:0.5px;"></span></button>'.html_safe, tasks_edit_path(id: project.id),{:style=>'color:black; border-bottom:0px; font-weight:normal;'}%>
+              </span>
+          </h4>
+            </div>
+            <div class="card-body">
+              <br>
+              <p style="word-wrap: break-word; color:black; font-size: 1.2em;" class="text-center"><%=project.task_desc.humanize%></p>
+            </div>
           </div>
           <br>
           <% end %>
-
+          <% end %>
       </div>
     </div>
   </div>
@@ -280,5 +298,7 @@ a:hover{
   color: white;
   transform: scale(0.9,0.9);
 }
-
+.Rejected{
+  border:1px solid red;
+}
 </style>

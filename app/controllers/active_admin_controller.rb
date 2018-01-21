@@ -7,7 +7,7 @@ class ActiveAdminController < ApplicationController
     relations.each do |r|
       projectIds<<r.SelectedProject_id
     end
-    @ongoingProjects=SelectedProject.where(id:projectIds)
+    @ongoingProjects=SelectedProject.where(id:projectIds).reverse
 
     #completed projects
     complete=CompleteProject.where(Admin_id: current_admin.id)
@@ -15,10 +15,11 @@ class ActiveAdminController < ApplicationController
     complete.each do |c|
       c_projectIds<<c.SelectedProject_id
     end
-    @completedProjects=SelectedProject.where(id:c_projectIds)
+    @completedProjects=SelectedProject.where(id:c_projectIds).reverse
 
     #tasks
-    @tasks = Task.where("admin_id=? AND accepted=?",current_admin.id,true)
+    @tasks = Task.where("admin_id=? AND accepted=?",current_admin.id,true).reverse
+
   end
 
   def facultyProfile

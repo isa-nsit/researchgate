@@ -1,70 +1,114 @@
-<h1><center>List</center></h1>
-
-<table>
-	<tr>
-		<th>S.No &nbsp &nbsp &nbsp</th>
-		<th>Faculty &nbsp &nbsp &nbsp</th>
-		<th>Projects &nbsp &nbsp &nbsp</th>
-		<th>Status &nbsp &nbsp &nbsp</th>
-		<th>Students &nbsp &nbsp &nbsp</th>
-	</tr>
-	<% ctr=1 %>
-	<% @faculties.each do |faculty| %>
-		<tr>
-			<td><%= ctr%></td>
-			<td><%=image_tag faculty.pic, class:"img-responsive round-image"%><%=faculty.name%></td>
-			<td>
-				<% ongoing_projects=faculty.getOngoingProjects(faculty.id) %>
-				<% ongoing_projects.each do |p| %>
-					<%=p.ProjectName%><br>
-				<% end %>
-				<% completed_projects=faculty.getCompletedProjects(faculty.id) %>
-				<% completed_projects.each do |p| %>
-					<%=p.ProjectName%><br>
-				<% end %>	
-			</td>
-			<td>
-				<% op_ctr=ongoing_projects.count %>
-				<% cp_ctr=completed_projects.count %>
-				<% while op_ctr>0 %>
-					Ongoing
-					<% op_ctr-=1%>
-				<% end %>
-				<% while cp_ctr>0 %>
-					Completed 
-					<% cp_ctr-=1%>
-				<% end %>
-			</td>
-			<td>
-				<% students=faculty.getStudents %>
-				<% students.each do |s| %>
-					<% if(s.email1 && s.email1!="") %>
-						<%= s.email1 %>
-					<% end %>	
-					<% if(s.email2 && s.email2!="") %>
-						<%= s.email2 %>
-					<% end %>
-					<% if(s.email3 && s.email3!="") %>
-						<%= s.email3 %>
-					<% end %>
-					<% if(s.email4 && s.email4!="") %>
-						<%= s.email4 %>
-					<% end %>
-					<% if(s.email5 && s.email5!="") %>
-						<%= s.email5 %>
-					<% end %>
-				<% end %>
-			</td>
-		</tr>
-		<% ctr+=1 %>
-	<% end %>
-</table>
+<div class="container">
+  <div class="row">
+    <%@faculties.each do|faculty|%>
+      <% ongoing_projects=faculty.getOngoingProjects(faculty.id) %>
+      <% completed_projects=faculty.getCompletedProjects(faculty.id) %>
+      <% op_ctr=ongoing_projects.count %>
+      <% cp_ctr=completed_projects.count %>
+      <% students=faculty.getStudents %>
+    
+    <div class="col-md-12 col-sm-12">
+      <div class="panel" style="border:1px solid #072c61; margin-bottom: 50px;">
+        <div class="panel-heading text-center" style="font-family: 'Merriweather',serif; color: white; background-color: #072c61; font-weight: bold; display: flex;">
+          <span><%=image_tag faculty.pic, class:"img-responsive fac_image"%></span>
+          <span class="text-center" style="margin-left: 40%; margin-top: 10px;"><%=faculty.name%></span>
+        </div>
+        <div class="panel-body text-center">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="text-center" style="color: #072c61; font-family: 'Merriweather'">Project</th>
+                <th class="text-center" style="font-family: 'Merriweather';color: #072c61;">Status</th>
+                <th class="text-center" style="font-family: 'Merriweather';color: #072c61;">Students</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <ul class="list-group">
+                    <% if ongoing_projects.size > 0%>
+                    <% ongoing_projects.each do |p| %>
+                  <li class="list-group-item pname"><%=p.ProjectName%></li>
+                  <% end %>
+                  <% completed_projects.each do |p| %>
+                    <li class="list-group-item pname"><%=p.ProjectName%></li>
+                  <% end %>
+                  <% else %>
+                  <li class="list-group-item pname">-</li>
+                  <% end %>
+                  </ul>
+                </td>
+                <td>
+                  <ul class="list-group">
+                    <% if op_ctr > 0 %>
+                      <% while op_ctr>0 %>
+                        <li class="list-group-item pname">Ongoing</li>
+                        <% op_ctr-=1%>
+                      <% end %>
+                    <% else %>
+                      <li class="list-group-item pname">-</li>
+                    <% end %>
+                  <% while cp_ctr>0 %>
+                    <li class="list-group-item pname">Completed</li> 
+                    <% cp_ctr-=1%>
+                  <% end %>
+                </ul>
+                </td>
+                <td>
+                    <ul class="list-group">
+                      <% if students.size > 0 %>
+                        <% students.each do |s| %>
+                          <li class="list-group-item pname">
+                          <% if(s.email1 && s.email1!="") %>
+                            <%= s.email1 %>
+                          <% end %> 
+                          <% if(s.email2 && s.email2!="") %>
+                            <%= s.email2 %>
+                          <% end %>
+                          <% if(s.email3 && s.email3!="") %>
+                            <%= s.email3 %>
+                          <% end %>
+                          <% if(s.email4 && s.email4!="") %>
+                            <%= s.email4 %>
+                          <% end %>
+                          <% if(s.email5 && s.email5!="") %>
+                            <%= s.email5 %>
+                          <% end %>
+                          </li>
+                        <% end %>
+                      <% else %>
+                        <li class="list-group-item pname">-</li>
+                      <% end %>
+                </td>
+              </tr>
+            </tbody>
+           </table>
+        
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>
 
 <style type="text/css">
-.round-image{
-	border: 2px solid #072c61;
-	z-index: -4px;
-	height: 100px;
-	width: 100px;
-}
+  .list-group-item{
+    border-left: 0px;
+    border-right: 0px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: -9px;
+  }
+  .list-group-item.pname{
+    font-family: 'Karla',sans-serif;
+    font-size: 1.02em;
+  }
+  .list-group-item:last-child{
+    margin-bottom: -3em;
+  }
+  .fac_image{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+  }
 </style>

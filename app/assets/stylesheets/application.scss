@@ -4,7 +4,9 @@
 .example3 .navbar-brand {
   height: 80px;
 }
-
+.form-control:focus {
+  border-color: #072c61;
+}
 .example3 .nav >li >a {
   padding-top: 30px;
   padding-bottom: 30px;
