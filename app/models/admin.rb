@@ -21,10 +21,12 @@ class Admin < ActiveRecord::Base
     relations.each do |r|
       ids<<r.SelectedProject_id
     end
+    projects=[]
     ids.each do |i|
+      projects<<SelectedProject.select("ProjectName").where(id: i).first
       @@allIds<<i
     end
-    SelectedProject.select("ProjectName").where(id: ids)
+    return projects
   end
 
   def getCompletedProjects faculty_id
@@ -33,14 +35,20 @@ class Admin < ActiveRecord::Base
     relations.each do |r|
       ids<<r.SelectedProject_id
     end
+    
+    projects=[]
     ids.each do |i|
+      projects<<SelectedProject.select("ProjectName").where(id: i).first
       @@allIds<<i
     end
-    SelectedProject.select("ProjectName").where(id: ids)
+    return projects
   end
 
   def getStudents
-    students = SelectedProject.select("email1,email2,email3,email4,email5").where(id: @@allIds)
+    students=[]
+    @@allIds.each do |i|
+      students<<SelectedProject.select("email1,email2,email3,email4,email5").where(id: i).first
+    end
     return students
   end
 end

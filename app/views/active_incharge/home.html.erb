@@ -26,64 +26,64 @@
               <tr>
                 <td>
                   <ul class="list-group">
-                    <% if ongoing_projects.size > 0%>
-                    <% ongoing_projects.each do |p| %>
-                  <li class="list-group-item pname"><%=p.ProjectName%></li>
-                  <% end %>
-                  <% completed_projects.each do |p| %>
-                    <li class="list-group-item pname"><%=p.ProjectName%></li>
-                  <% end %>
-                  <% else %>
-                  <li class="list-group-item pname">-</li>
-                  <% end %>
+                    <% if ongoing_projects.size == 0 and completed_projects.size==0%>
+                      <li class="list-group-item pname">-</li>
+                    <% else %>
+                      <% ongoing_projects.each do |p| %>
+                         <li class="list-group-item pname"><%=p.ProjectName%></li>
+                      <% end %>  
+                      <% completed_projects.each do |p| %>
+                        <li class="list-group-item pname"><%=p.ProjectName%></li>
+                      <% end %>
+                    <% end %>
                   </ul>
                 </td>
                 <td>
                   <ul class="list-group">
-                    <% if op_ctr > 0 %>
+                    <% if op_ctr == 0 and cp_ctr==0 %>
+                      <li class="list-group-item pname">-</li>
+                    <% else %>
                       <% while op_ctr>0 %>
                         <li class="list-group-item pname">Ongoing</li>
                         <% op_ctr-=1%>
                       <% end %>
-                    <% else %>
-                      <li class="list-group-item pname">-</li>
+                      <% while cp_ctr>0 %>
+                        <li class="list-group-item pname">Completed</li> 
+                        <% cp_ctr-=1%>
+                      <% end %>
                     <% end %>
-                  <% while cp_ctr>0 %>
-                    <li class="list-group-item pname">Completed</li> 
-                    <% cp_ctr-=1%>
-                  <% end %>
-                </ul>
+                  </ul>
                 </td>
                 <td>
-                    <ul class="list-group">
-                      <% if students.size > 0 %>
-                        <% students.each do |s| %>
-                          <li class="list-group-item pname">
-                          <% if(s.email1 && s.email1!="") %>
-                            <%= s.email1 %>
-                          <% end %> 
-                          <% if(s.email2 && s.email2!="") %>
-                            <%= s.email2 %>
-                          <% end %>
-                          <% if(s.email3 && s.email3!="") %>
-                            <%= s.email3 %>
-                          <% end %>
-                          <% if(s.email4 && s.email4!="") %>
-                            <%= s.email4 %>
-                          <% end %>
-                          <% if(s.email5 && s.email5!="") %>
-                            <%= s.email5 %>
-                          <% end %>
-                          </li>
+                  <ul class="list-group">
+                    <% if students.size == 0 %>
+                      <li class="list-group-item pname">-</li>
+                    <% else %>
+                      <% students.each do |s| %>
+                        <li class="list-group-item pname">
+                        <% if(s.email1 && s.email1!="") %>
+                          <%= s.email1 %>
+                        <% end %> 
+                        <% if(s.email2 && s.email2!="") %>
+                          <%= s.email2 %>
                         <% end %>
-                      <% else %>
-                        <li class="list-group-item pname">-</li>
-                      <% end %>
+                        <% if(s.email3 && s.email3!="") %>
+                          <%= s.email3 %>
+                        <% end %>
+                        <% if(s.email4 && s.email4!="") %>
+                          <%= s.email4 %>
+                        <% end %>
+                        <% if(s.email5 && s.email5!="") %>
+                          <%= s.email5 %>
+                        <% end %>
+                        </li>
+                      <% end %> 
+                    <% end %>
+                  </ul>
                 </td>
               </tr>
             </tbody>
            </table>
-        
       </div>
     </div>
   </div>
