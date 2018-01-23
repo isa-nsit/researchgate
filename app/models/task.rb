@@ -9,4 +9,9 @@ class Task < ActiveRecord::Base
 	def getUserId email
 		User.find_by_email(email).id
 	end
+
+	def getAdminName admin_id
+		Admin.find_by_id(admin_id).name
+	end
+
 end

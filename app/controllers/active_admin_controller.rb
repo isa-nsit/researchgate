@@ -34,7 +34,7 @@ class ActiveAdminController < ApplicationController
 
     @projects = []
     @ids = []
-    selectedProjects = ProjectUserAdminRelation.where(admin_id: @faculty.id)
+    selectedProjects = ProjectUserAdminRelation.where(admin_id: @faculty.id).order("created_at DESC")
     
     selectedProjects.each do|project|
       @ids<<project.SelectedProject_id
@@ -43,12 +43,11 @@ class ActiveAdminController < ApplicationController
     @ids.each do|id|
       @projects<<SelectedProject.find_by_id(id)
     end
-    
+    @projects = @projects[0..5]
     @eligibility = Eligibility.find_by_faculty_name(@name)
     
     if @eligibility
       @eligible_branches = @eligibility.branch.split(',');
-      
     end
   end
 

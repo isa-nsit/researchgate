@@ -22,6 +22,29 @@
             <div class="card-body">
               <br>
               <p style="word-wrap: break-word; color:black; font-size: 1.2em;" class="text-center"><%=project.task_desc.humanize%></p>
+              <footer style="padding-top: 5px; display: flex; border-bottom: 1px solid #072c61; justify-content: space-around;">
+                      <div class="dropdown">
+                        <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <% if project.email1 && project.email1 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email1)%></li>
+                          <% end %>
+                          <% if project.email2 && project.email2 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email2)%></li>
+                          <% end %>
+                          <% if project.email3 && project.email3 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email3)%></li>
+                          <% end %>
+                          <% if project.email4 && project.email4 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email4)%></li>
+                          <% end %>
+                          <% if project.email5 && project.email5 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email5)%></li>
+                          <% end %>
+                        </ul>
+                      </div>
+                      <h5 class="projectName"><span style="font-family: 'Noto Sans', sans-serif;">Faculty</span> : <em><%=project.getAdminName(project.admin_id)%></em></h5>
+                    </footer>
             </div>
           </div>
           <br>
@@ -43,6 +66,29 @@
             <div class="card-body">
               <br>
               <p style="word-wrap: break-word; color:black; font-size: 1.2em;" class="text-center"><%=project.task_desc.humanize%></p>
+              <footer style="padding-top: 5px; display: flex; border-bottom: 1px solid red; justify-content: space-around;">
+                      <div class="dropdown">
+                        <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <% if project.email1 && project.email1 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email1)%></li>
+                          <% end %>
+                          <% if project.email2 && project.email2 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email2)%></li>
+                          <% end %>
+                          <% if project.email3 && project.email3 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email3)%></li>
+                          <% end %>
+                          <% if project.email4 && project.email4 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email4)%></li>
+                          <% end %>
+                          <% if project.email5 && project.email5 !=""%>
+                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email5)%></li>
+                          <% end %>
+                        </ul>
+                      </div>
+                      <h5 class="projectName"><span style="font-family: 'Noto Sans', sans-serif;">Faculty</span> : <em><%=project.getAdminName(project.admin_id)%></em></h5>
+                    </footer>
             </div>
           </div>
           <br>
@@ -85,28 +131,28 @@
               <br>
               <p style="word-wrap: break-word; color:black; font-size: 1.2em;" class="text-center"><%=project.Description.humanize%></p>
               <footer style="padding-top: 5px; display: flex; justify-content: space-around;">
-                      <div class="dropdown">
-                        <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                          <% if project.email1 && project.email1 !=""%>
-                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email1)%></li>
-                          <% end %>
-                          <% if project.email2 && project.email2 !=""%>
-                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email2)%></li>
-                          <% end %>
-                          <% if project.email3 && project.email3 !=""%>
-                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email3)%></li>
-                          <% end %>
-                          <% if project.email4 && project.email4 !=""%>
-                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email4)%></li>
-                          <% end %>
-                          <% if project.email5 && project.email5 !=""%>
-                            <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email5)%></li>
-                          <% end %>
-                        </ul>
-                      </div>
-                      <h5 class="projectName"><span style="font-family: 'Noto Sans', sans-serif;">Faculty</span> : <em><%=project.getAdminName(project.admin_id)%></em></h5>
-                    </footer>
+                <div class="dropdown">
+                  <a class="btn dropdown-toggle dropBtn" type="button" data-toggle="dropdown" id="btn">Students <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <% if project.email1 && project.email1 !=""%>
+                      <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email1)%></li>
+                    <% end %>
+                    <% if project.email2 && project.email2 !=""%>
+                      <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email2)%></li>
+                    <% end %>
+                    <% if project.email3 && project.email3 !=""%>
+                      <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email3)%></li>
+                    <% end %>
+                    <% if project.email4 && project.email4 !=""%>
+                      <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email4)%></li>
+                    <% end %>
+                    <% if project.email5 && project.email5 !=""%>
+                      <li class="dropdown-item" style="margin-left: 5px;"><%=project.getUserName(project.email5)%></li>
+                    <% end %>
+                  </ul>
+                </div>
+                <h5 class="projectName"><span style="font-family: 'Noto Sans', sans-serif;">Faculty</span> : <em><%=project.getAdminName(project.admin_id)%></em></h5>
+              </footer>
             </div>
           </div>
           <br>
