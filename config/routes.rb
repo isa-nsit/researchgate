@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'active_incharge/home'
+  get 'active_incharge/student_profile'
+  get 'active_incharge/facultyProfile'
 
   root 'main#index'
   

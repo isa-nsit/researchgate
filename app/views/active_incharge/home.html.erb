@@ -11,7 +11,7 @@
       <div class="panel" style="border:1px solid #072c61; margin-bottom: 50px;">
         <div class="panel-heading text-center" style="font-family: 'Merriweather',serif; color: white; background-color: #072c61; font-weight: bold; display: flex;">
           <span><%=image_tag faculty.pic, class:"img-responsive fac_image"%></span>
-          <span class="text-center" style="margin-left: 40%; margin-top: 10px;"><%=faculty.name%></span>
+          <span class="text-center" style="margin-left: 40%; margin-top: 10px;"><a href="/active_incharge/facultyProfile?name=<%=faculty.name%>" style="color: white;"><%=faculty.name%></a></span>
         </div>
         <div class="panel-body text-center">
           <table class="table table-striped">
@@ -59,44 +59,40 @@
                 <td>
                   <ul class="list-group">
                     <% no_of_student = students.size %>
-                    <% email2 = false %>
-                    <% email3 = false %>
-                    <% email4 = false %>
-                    <% email5 = false %>
-                    <% if students.size == 0 %>
+                    <% if no_of_student == 0 %>
                       <li class="list-group-item pname">-</li>
                     <% else %>
                       <% students.each do |s| %>
-                      <% count = 0 %>
-                      <% if temp_op_ctr > 0 %>
-                        <li class="list-group-item pname list-group-item-success">
-                          <% temp_op_ctr-=1 %>
-                      <% elsif temp_cp_ctr > 0 %>
-                        <li class="list-group-item pname list-group-item-warning">
-                          <% temp_cp_ctr-=1 %>
-                      <% end %>
+                        <% count = 0 %>
+                        <% email2 = false %>
+                        <% email3 = false %>
+                        <% email4 = false %>
+                        <% email5 = false %>
+                        <% if temp_op_ctr > 0 %>
+                          <li class="list-group-item pname list-group-item-success">
+                            <% temp_op_ctr-=1 %>
+                        <% elsif temp_cp_ctr > 0 %>
+                          <li class="list-group-item pname list-group-item-warning">
+                            <% temp_cp_ctr-=1 %>
+                        <% end %>
 
                         <% if(s.email1 && s.email1!="") %>
-                          <%= s.email1 %>
+                          <a href="/active_incharge/student_profile?id=<%=s.getUserId(s.email1)%>"><%= s.getUserName(s.email1) %></a>
                         <% end %> 
 
                         <% if(s.email2 && s.email2!="") %>
-                          <% s.email2 %>
                           <%email2=true%>
                           <% count += 1 %>
                         <% end %>
                         <% if(s.email3 && s.email3!="") %>
-                          <% s.email3 %>
                           <%email3=true%>
                           <% count += 1 %>
                         <% end %>
                         <% if(s.email4 && s.email4!="") %>
-                          <% s.email4 %>
                           <%email4=true%>
                           <% count += 1 %>
                         <% end %>
                         <% if(s.email5 && s.email5!="") %>
-                          <% s.email5 %>
                           <%email5=true%>
                           <% count += 1 %>
                         <% end %>
@@ -107,16 +103,16 @@
                           </span>
                           <ul class="dropdown-menu" style="padding: 10px;">
                             <% if email2 == true %>
-                            <li><%=s.email2%></a></li>
+                              <li><a href="/active_incharge/student_profile?id=<%=s.getUserId(s.email2)%>"><%= s.getUserName(s.email2) %></a></li>
                             <% end %>
                             <% if email3 == true %>
-                            <li><%=s.email3%></a></li>
+                              <li><a href="/active_incharge/student_profile?id=<%=s.getUserId(s.email3)%>"><%= s.getUserName(s.email3) %></a></li>
                             <% end %>
                             <% if email4 == true %>
-                            <li><%=s.email4%></a></li>
+                              <li><a href="/active_incharge/student_profile?id=<%=s.getUserId(s.email4)%>"><%= s.getUserName(s.email4) %></a></li>
                             <% end %>
                             <% if email5 == true %>
-                            <li><%=s.email5%></a></li>
+                              <li><a href="/active_incharge/student_profile?id=<%=s.getUserId(s.email5)%>"><%= s.getUserName(s.email5) %></a></li>
                             <% end %>
                           </ul>
                         </span>
@@ -172,5 +168,10 @@
     border: 1px solid #072c61;
     padding: 10px;
   }
-
+  a{
+    color: black;
+  }
+  a:hover{
+    text-decoration: none;
+  }
 </style>
