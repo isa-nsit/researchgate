@@ -1,11 +1,11 @@
 
 <div class="row">
-	<div class="col-sm-4">
-		<div class="panel" style="border: 1px solid #072c61;">
+	<div class="col-md-4 col-sm-12">
+		<div class="panel" style="border: 2px solid #072c61;">
 			<div class="panel-heading" style="background-color: #072c61;">
 				<h4><%=current_admin.name%></h4>
 			</div>
-			<div class="panel-body" style="height: 170px;">
+			<div class="panel-body">
 				<div class="row">
 					<div class="col-sm-4 col-md-4 col-xs-4">
 						<%=image_tag current_admin.pic ,class:"img-responsive round-image"%>
@@ -21,10 +21,19 @@
 		</div>
 
 		<div class="row">
-			<div class="col-sm-12">
-		<div class="panel panel-info" style="border: 1px solid #072c61;">
+			<div class="col-md-12 col-sm-12">
+		<div class="panel panel-info" style="border: 2px solid #072c61;">
 			<div class="panel-heading text-center" style="background-color: #072c61;"><h4>Tasks</h4></div>
 			<div class="panel-body" style="margin-bottom: -20px;">
+
+				<% if @tasks.size == 0 %>
+					<div class="panel">
+						<div class="panel-body text-center">
+							<h4 style="color: #072c61;">NEW IDEAS WILL APPEAR HERE</h4>
+						</div>
+					</div>
+				<% end %>
+
 				<% @tasks.each do|task|%>
 					<div class="panel-group">
 						<div class="panel" style="margin: -15px; border-bottom: 1px solid #072c61;">
@@ -67,10 +76,19 @@
 		</div>
 	</div>
 
-	<div class="col-sm-4 col-md-4">
-		<div class="panel" style="border: 1px solid #072c61;">
+	<div class="col-sm-12 col-md-4">
+		<div class="panel" style="border: 2px solid #072c61;">
 			<div class="panel-heading text-center" style="background-color: #072c61;" id="OnGoing"><h4>OnGoing Projects</h4></div>
-			<div class="panel-body" style=" overflow-y: scroll; overflow-x: hidden; border: 1px solid lightgrey;  height: calc(100% - 40px); max-height: 480px;">
+			
+			<% if @ongoingProjects.size == 0 %>
+				<div class="panel">
+					<div class="panel-body text-center">
+						<h4 style="color: #072c61;">Ongoing Projects WILL APPEAR HERE</h4>
+					</div>
+				</div>
+			<% end %>
+
+			<div class="panel-body" style=" overflow-y: scroll;">
 				<%@ongoingProjects.each do|project|%>
 					<div class="panel-group">
 						<div class="panel" style="margin: -21px; background-color: white;">
@@ -107,11 +125,17 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="col-sm-4 col-md-4">
-		<div class="panel" style="border: 1px solid #072c61;">
+	<div class="col-sm-12 col-md-4">
+		<div class="panel" style="border: 2px solid #072c61;">
 			<div class="panel-heading text-center" style="background-color: #072c61;"><h4>Completed Projects</h4></div>
-			<div class="panel-body" style="height: calc(100% - 40px); max-height: 480px; overflow-y: scroll; border: 1px solid lightgrey; overflow-x: hidden;">
+			<% if @completedProjects.size == 0 %>
+					<div class="panel">
+						<div class="panel-body text-center">
+							<h4 style="color: #072c61;">Completed Projects WILL APPEAR HERE</h4>
+						</div>
+					</div>
+				<% end %>
+			<div class="panel-body" style="overflow-y: scroll;">
 				<% @completedProjects.each do|project|%>
 					<div class="panel-group">
 						<div class="panel" style="margin: -21px; ">
@@ -152,6 +176,9 @@
 </div>
 
 <style type="text/css">
+.panel-body{
+	height: calc(100% - 40px); max-height: 480px; overflow-y: scroll; overflow-x: hidden;
+}
 .font{
 	font-family: 'Karla',sans-serif; color: #072c61;
 	font-weight: bold;
@@ -160,7 +187,7 @@
 .round-image{
 	border: 2px solid #072c61;
 	border-radius: 20px;
-	z-index: -4px;
+	height: 100px; width: 100px;
 }
 .contact:hover{
 	text-decoration: none;
@@ -212,26 +239,15 @@
 .panel-footer{
 	background:transparent;
 }
-@media screen 
-  and (device-width: 360px) 
-  and (device-height: 640px)
-  and (device-width: 665px) 
-  and (device-height: 711px)
-  and (-webkit-device-pixel-ratio: 2) {
-  	.col-sm-8
-	{
-	    width: 100.666667%;
-	}
-	.contact
-	{
-		display: none;
-		width: 0px;
-	}
-	.img-responsive{
-		width: 25px;
-		height: 25px;
-	}
-
+.list-group-item{
+	border: 1px solid #072c61;
+}
+.panel-heading{
+	background-color: #dcdfe5;
+	font-size: 1.1em;
+}
+.lead{
+	font-weight: bold;
 }
 h4{
 	font-family: 'Merriweather',serif; color: white;

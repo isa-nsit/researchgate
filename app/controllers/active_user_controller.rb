@@ -78,7 +78,7 @@ class ActiveUserController < ApplicationController
     @ids.each do|id|
       @projects<<SelectedProject.find_by_id(id)
     end
-    @projects = @projects[0,10]
+    @projects = @projects[0,8]
     @eligibility = Eligibility.find_by_faculty_name(@name)
     
     if @eligibility

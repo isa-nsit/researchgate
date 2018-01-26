@@ -1,6 +1,7 @@
 class ActiveAdminController < ApplicationController
   before_action :authenticate_admin!
   def home
+    
   	#ongoing projects
     relations = ProjectUserAdminRelation.where(admin_id: current_admin.id)
     projectIds=[]

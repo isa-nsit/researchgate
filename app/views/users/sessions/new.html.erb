@@ -1,9 +1,9 @@
 <body>
 <div class="fade">
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+<div class="row" style="margin-top: -20px;">
+  <div class="col-md-6 col-md-offset-3 col-sm-12">
     <div class="panel" style="border: 1px solid #072c61;">
-      <div class="panel-heading height" style="background-color: #072c61;"><b class="col-md-offset-5" style="font-size: 20px; color: white;">Sign In</b></div>
+      <div class="panel-heading height text-center" style="background-color: #072c61;"><b style="font-size: 20px; color: white;">Sign In</b></div>
         <div class="panel-body">
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <%= devise_error_messages! %>
