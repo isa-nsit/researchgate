@@ -49,10 +49,32 @@ class SelectedProjectsController < ApplicationController
   			relations.user_id5 = user_id5
   			relations.save
   			
-        task.destroy
+        
 
   			format.html {redirect_to active_admin_home_path, notice: 'Project Added.' }  	
-  		
+  		   if(task.email1 and task.email1!="")
+          #Accepted.FormSubmission(task,task.email1).deliver_now
+          Resque.enqueue(AcceptedWorker,task.id,task.email1)
+        end
+        if(task.email2 and task.email2!="")
+         # Accepted.FormSubmission(task,task.email2).deliver_now
+          Resque.enqueue(AcceptedWorker,task.id,task.email2)
+        end
+        if(task.email3 and task.email3!="")
+         # Accepted.FormSubmission(task,task.email3).deliver_now
+          Resque.enqueue(AcceptedWorker,task.id,task.email3)
+        end
+        if(task.email4 and task.email4!="")
+         # Accepted.FormSubmission(task,task.email4).deliver_now
+          Resque.enqueue(AcceptedWorker,task.id,task.email4)
+        end
+        if(task.email5 and task.email5!="")
+         # Accepted.FormSubmission(task,task.email5).deliver_now
+          Resque.enqueue(AcceptedWorker,task.id,task.email5)
+        end
+
+
+          task.destroy
   		else
   			format.html {redirect_to selected_projects_new_path, notice: 'Project Could not be Saved!'}	
   		end
@@ -81,6 +103,27 @@ class SelectedProjectsController < ApplicationController
     task=Task.where(id:params[:id]).first
     task.accepted=false
     task.save!
+
+    if(task.email1 and task.email1!="")
+        #  Rejected.FormSubmission(task,task.email1).deliver_now
+        Resque.enqueue(RejectedWorker,task.id,task.email1)
+        end
+        if(task.email2 and task.email2!="")
+        #  Rejected.FormSubmission(task,task.email2).deliver_now
+        Resque.enqueue(RejectedWorker,task.id,task.email2)
+        end
+        if(task.email3 and task.email3!="")
+        #  Rejected.FormSubmission(task,task.email3).deliver_now
+        Resque.enqueue(RejectedWorker,task.id,task.email3)
+        end
+        if(task.email4 and task.email4!="")
+        #  Rejected.FormSubmission(task,task.email4).deliver_now
+        Resque.enqueue(RejectedWorker,task.id,task.email4)
+        end
+        if(task.email5 and task.email5!="")
+         # Rejected.FormSubmission(task,task.email5).deliver_now
+         Resque.enqueue(RejectedWorker,task.id,task.email5)
+        end
     return redirect_to active_admin_home_path, notice: 'Idea has been rejected'
   end
 

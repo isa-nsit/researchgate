@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180127212457) do
+ActiveRecord::Schema.define(version: 20180127220417) do
+
+  create_table "accepted_workers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -101,6 +106,11 @@ ActiveRecord::Schema.define(version: 20180127212457) do
   add_index "project_user_admin_relations", ["SelectedProject_id"], name: "index_project_user_admin_relations_on_SelectedProject_id"
   add_index "project_user_admin_relations", ["admin_id"], name: "index_project_user_admin_relations_on_admin_id"
   add_index "project_user_admin_relations", ["user_id"], name: "index_project_user_admin_relations_on_user_id"
+
+  create_table "rejected_workers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "selected_projects", force: :cascade do |t|
     t.string   "ProjectName"
