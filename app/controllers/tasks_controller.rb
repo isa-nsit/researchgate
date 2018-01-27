@@ -46,8 +46,16 @@ class TasksController < ApplicationController
       @task.email5=params[:task][:email5]
     end
     
+     flag=true
+     
+   duplicacy={@task.email1=>1,@task.email2=>2,@task.email3=>3,@task.email4=>4,@task.email5=>5}.reject { |k,v|  k.nil? } 
+.keys.uniq.count
+   if(duplicacy!=count)
+   flag=false
+ end
+
     respond_to do |format| 
-      if (count==@task.members_count and @task.save )    
+      if (count==@task.members_count and @task.save and flag==true)    
       
         #creating user_task_relations
         u=UserTaskRelation.new
@@ -80,8 +88,8 @@ class TasksController < ApplicationController
         end
         
         format.html { redirect_to active_user_home_path, notice: 'Response has been sent' }
-        FormMailer.FormSubmission(@task,@email).deliver_now
-
+       # FormMailer.FormSubmission(@task,@email).deliver_now
+            Resque.enqueue(SendTaskWorker,@task.id,@email)
       else
         format.html { redirect_to tasks_new_path , notice: 'You have not filled all the fields or email id is not registered with us' }
       end
@@ -100,6 +108,7 @@ class TasksController < ApplicationController
 
   def update
     @task=Task.where(id:params[:id]).first
+    @email=params[:email]
     @task.name=params[:task][:name]
     @task.email1=params[:task][:email1]
     @task.year=params[:task][:year]
@@ -134,8 +143,14 @@ class TasksController < ApplicationController
       count=count+1
       @task.email5=params[:task][:email5]
     end
-
-    if (count==@task.members_count and @task.save )
+       flag=true
+     
+   duplicacy={@task.email1=>1,@task.email2=>2,@task.email3=>3,@task.email4=>4,@task.email5=>5}.reject { |k,v|  k.nil? } 
+.keys.uniq.count
+   if(duplicacy!=count)
+   flag=false
+ end
+    if (count==@task.members_count and @task.save and flag==true)
       oldRelations=UserTaskRelation.where(task_id: params[:id])
       oldRelations.destroy_all
       #creating user_task_relations
@@ -168,7 +183,8 @@ class TasksController < ApplicationController
         u.save
       end
       redirect_to active_user_home_path, notice: 'Response has been sent'
-      FormMailer.FormSubmission(@task,@email).deliver_now
+     # FormMailer.FormSubmission(@task,@email).deliver_now
+      Resque.enqueue(SendTaskWorker,@task.id,@email)
     else
       redirect_to tasks_edit_path , notice: 'You have not filled all the fields or email id is not registered with us'
     end
