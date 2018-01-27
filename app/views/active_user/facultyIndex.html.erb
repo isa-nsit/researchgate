@@ -1,16 +1,16 @@
 <div class="row" style="margin-top: 30px;">
   <% @faculty.each do|f|%>
-    <div class="col-md-6 col-sm-12" style="">
+    <div class="col-md-6 col-sm-12">
       <div class="panel">
         <div class="panel-body">
           <div class="row">
-            <div class="col-md-5 col-sm-6">
+            <div class="col-md-5 col-sm-4">
               <div class="img-responsive circle"><%= image_tag("#{f.pic}",size: "100x100")%></div>
               <div class="row">
                 <div class="col-md-12 col-sm-12 FacultyName"><a class="names" href="/active_user/facultyShow?name=<%=f.name%>"><span style="font-family: 'Merriweather',serif;"><%=f.name%></span></a></div>
               </div>
             </div>
-            <div class="col-md-7 col-sm-6">
+            <div class="col-md-7 col-sm-12">
               <div style="border: 1px solid white; border-radius: 30px; background-color: white;">
                 <div class="AOI"><span style="font-family: 'Karla', sans-serif; font-size: 1.04em;"><%=f.AOI.html_safe%></span></div></div>
             </div>
@@ -46,5 +46,25 @@
 .names:hover{
   color: white;
   text-decoration: none;
+}
+@media screen and (max-width:1099px){
+
+  .panel{
+    margin: 50px 10px 10px 10px;
+  }
+  img{
+    text-align: center;
+    width: 50px;
+    height: auto;
+    border-radius: 20px;
+    margin-left: 40%;
+  }
+  .FacultyName{
+    text-align: center;
+    font-size: 1.2em;
+  }
+  .col-md-7{
+    margin-top: 5px;
+  }
 }
 </style>

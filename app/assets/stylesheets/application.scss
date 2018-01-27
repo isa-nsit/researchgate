@@ -1,6 +1,26 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@media screen and (max-width:1099px){
+    .navbar-header span{
+      background-color: white;
+    }
+    .navbar-brand{
+      padding-top: -10px;
+    }
+    .test b{
+      font-size: 1.2em;
+      margin-left: -21px;
+    }
+    .brand b{
+      font-size: 1.2em;
+      color:white;
+    }
+    .brand b{
+    color:white;
+    }
+  }
+
 .example3 .navbar-brand {
   height: 80px;
 }

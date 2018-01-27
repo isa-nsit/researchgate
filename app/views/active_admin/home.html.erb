@@ -1,7 +1,7 @@
 
 <div class="row">
 	<div class="col-md-4 col-sm-12">
-		<div class="panel" style="border: 2px solid #072c61;">
+		<div class="panel" id="panel-1" style="border: 2px solid #072c61;">
 			<div class="panel-heading" style="background-color: #072c61;">
 				<h4><%=current_admin.name%></h4>
 			</div>
@@ -10,7 +10,7 @@
 					<div class="col-sm-4 col-md-4 col-xs-4">
 						<%=image_tag current_admin.pic ,class:"img-responsive round-image"%>
 					</div>
-					<div class="col-sm-8 col-md-8 col-xs-6">
+					<div class="col-sm-12 col-md-8 col-xs-6">
 						<ul class="list-group">
 						  <li class="list-group-item"><span style="font-family: 'Karla',sans-serif; color: #072c61;">Projects Completed</span><span class="badge"><%=current_admin.complete_projects.count%></span></li>
 						  <li class="list-group-item"><span style="font-family: 'Karla',sans-serif; color: #072c61;">Projects Undergoing</span><span class="badge"><%=current_admin.ongoingProjectsCount%></span></li>
@@ -23,7 +23,7 @@
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
 		<div class="panel panel-info" style="border: 2px solid #072c61;">
-			<div class="panel-heading text-center" style="background-color: #072c61;"><h4>Tasks</h4></div>
+			<div class="panel-heading text-center" style="background-color: #072c61;"><h4>New Ideas</h4></div>
 			<div class="panel-body" style="margin-bottom: -20px;">
 
 				<% if @tasks.size == 0 %>
@@ -138,7 +138,7 @@
 			<div class="panel-body" style="overflow-y: scroll;">
 				<% @completedProjects.each do|project|%>
 					<div class="panel-group">
-						<div class="panel" style="margin: -21px; ">
+						<div class="panel" style="margin: -15px -21px; ">
 							<div class="panel-heading text-center font" style="word-wrap: break-word; border-top: 2px solid #072c61; border-bottom: 1px solid #072c61;"><%=project.ProjectName.humanize%></div>
 							<div class="panel-body lead" style="word-wrap: break-word;">
 								<%=project.Description.humanize%>
@@ -252,4 +252,19 @@
 h4{
 	font-family: 'Merriweather',serif; color: white;
 }
+ @media screen and (max-width:1099px){
+ 	#panel-1{
+ 		margin-top: 10%;
+ 	}
+ 	.list-group{
+ 		width: 140%;
+ 	}
+ 	.list-group-item{
+ 		font-size: 1.2em;
+ 		font-weight: bold;
+ 	}
+ 	.font{
+ 		font-size: 1.2em;
+ 	}
+ }
 </style>

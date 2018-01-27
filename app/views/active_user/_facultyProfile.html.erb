@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="row row-bottom-margin">
-        <div class="col-md-4 col-sm-3" style="border:2px solid #072c61;">
+        <div class="col-md-4 col-sm-3" id="col-1" style="border:2px solid #072c61;">
             <div class="page-heading">
                 <h2>Research Areas & Interests</h2>
                 <b style="font-size: 2.3em;"><span ><%=@interests.size%></b>
@@ -24,19 +24,19 @@
                 </h2>
             </div>
         </div>
-        <div class="col-md-4 col-sm-3" style="border:2px solid #072c61;">
+        <div class="col-md-4 col-sm-3" id="col-2" style="border:2px solid #072c61;">
             <h2>Alumni & Research Partners</h2>
                 <b style="font-size: 2.3em; color: #072c61;text-shadow: 1px 2px #072c61;">56</b>
         </div>
     </div>
     <div class="row two">
-        <div class="col-md-4 col-sm-12" style="border:2px solid #072c61;">
+        <div class="col-md-4 col-sm-12" id="col-3" style="border:2px solid #072c61;">
             <div class="page-heading">
                 <h2>Research Areas & Interests</h2>
                 <b style="font-size: 2.3em;"><%=@interests.size%></b>
             </div>
         </div>
-        <div class="col-md-8 col-sm-12" style="border:2px solid #072c61;height: 11.8em;">
+        <div class="col-md-8 col-sm-12" id="col-4" style="border:2px solid #072c61;height: 11.8em;">
             <%@interests.each do|interest|%>
             <span class="badge interests"><%=interest.humanize%></span>
             <% end %>
@@ -49,20 +49,23 @@
                 <b style="font-size: 2.3em;"><%=@projects.size%></b>
             </div>
         </div>
-        <div class="col-md-8 col-sm-12" style="border:2px solid #072c61; height: 10em; margin-bottom: 20px;">
+
+        <div class="col-md-8 col-sm-12" id="size_<%=@projects.size%>" style="border:2px solid #072c61; height: 10em; margin-bottom: 20px;">
             <%@projects.each do|project|%>
             <span class="badge interests" style="
     word-wrap:break-word;"><%=project.ProjectName.humanize%></span>
             <% end %>
         </div>
+       
+
     </div>
-    <div class="row" style="margin-bottom: 20px;">
-        <div class="col-md-4 col-sm-12" style="border:2px solid #072c61; height: 15em;">
+    <div class="row">
+        <div class="col-md-4 col-sm-12" id="col-5" style="border:2px solid #072c61;">
             <div class="page-heading">
                 <h2>Eligibility Criteria</h2>
             </div>
         </div>
-        <div class="col-md-8 col-sm-12" style="border:2px solid #072c61;  height: 15em;">
+        <div class="col-md-8 col-sm-12" id="col-6" style="border:2px solid #072c61;">
             <% if @eligibility %>
                 <ul class="list-group eligibility" style="margin-top: 1em;">
                     <li class="list-group-item"><span class="h4"><span class="label label-default">Minimum aggregate percentage </span><span class="badge"><%= @eligibility.percentage %></span>
@@ -125,6 +128,63 @@
     .col-sm-12{
         border: 1px solid #072c61;
         padding: 10px;
+    }
+    #col-5,#col-6{
+        height: 15em;
+    }
+    @media screen and (max-width:1099px){
+        .jumbotron{
+            margin-top: 20%;
+        }
+        h2{
+            font-size: 1.1em;
+        }
+        img{
+            margin-top: 20px;
+        }
+        #col-1 h2{
+            font-size: 2em;
+        }
+        #col-1 b{
+            position: sticky;
+            left: 90%;
+        }
+        #col-2 h2{
+            font-size: 1.9em;
+        }
+        #col-2 b{
+            position: sticky;
+            left: 90%;
+        }
+        #col-3 h2{
+            font-size: 2em;
+        }
+        #col-3 b{
+            position: sticky;
+            left: 85%;
+        }
+        #col-4 span{
+            padding: 5px;
+            margin: 4px;
+        }
+        #size_0{
+            display: none;
+        }
+        #col-5{
+            height: 8em;
+        }
+        #col-5 h2{
+            font-size: 2em;
+        }
+        #col-6 span{
+            padding: 3px;
+        }
+        #col-6 .h4{
+            padding: 0px;
+        }
+        #col-1,#col-2,#col-3,#col-4,#col-5,#col-6{
+            margin-top: 10px;
+        }
     }
 </style>
 <script type="text/javascript">

@@ -1,7 +1,11 @@
 <nav class="navbar navbar-light navigation_bar navbar-fixed-top" style="background-color:#072c61; border-bottom: 1px solid #072c61">
   <div class="container-fluid container">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+    <ul class="nav navbar-nav">
+        <a class="navbar-brand brand" href="/"><b style="font-family: 'Merriweather',serif; letter-spacing: 2px;">&nbsp;&nbsp;ISA</b>&nbsp;<span class="glyphicon glyphicon-home"></span></a>
+    </ul>
+    <div class="navbar-header" style="margin-top: -100px;">
+      
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -12,10 +16,8 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <a class="navbar-brand test" href="/"><b style="font-family: 'Merriweather',serif; letter-spacing: 2px;">ISA</b>&nbsp;<span class="glyphicon glyphicon-home"></span></a>
-      </ul>
+      
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav" style="margin-left: 10px;">
         <li><a class="test" href="http://isa-nsit.in/"><b style="font-family: 'Karla',sans-serif; letter-spacing: 2px;">Our Mission</b></a></li>
         <li><a class="test" href="http://isa-nsit.in/"><b style="font-family: 'Karla',sans-serif; letter-spacing: 2px;">Our Action</b></a></li>
@@ -31,21 +33,24 @@
 </nav>
 
 <style type="text/css">
-  a.test{
+  a.brand,a.test{
       padding: 15px 0px 0px 0px;
       color: white;
       font-family: 'Karla',sans-serif;
       font-weight: bold;
       font-size: 1em;
     }
-    a.test:hover{
+   a.brand, a.test:hover{
       text-decoration: none;
       transform: scale(1.03,1.03);
       color: white;
       background-color: #072c61;
     }
+
     .nav > li > a:hover, .nav > li > a:focus {
     text-decoration: none;
     background-color: #072c61;
+  }
+  
   }
 </style>

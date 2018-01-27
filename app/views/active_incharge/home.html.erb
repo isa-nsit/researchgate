@@ -7,7 +7,7 @@
       <% cp_ctr=completed_projects.count %>
       <% students=faculty.getStudents %>
     
-    <div class="col-md-12 col-sm-12">
+    <div class="col-md-12 col-sm-12" id="column">
       <div class="panel" style="border:1px solid #072c61; margin-bottom: 50px;">
         <div class="panel-heading text-center" style="font-family: 'Merriweather',serif; color: white; background-color: #072c61; font-weight: bold; display: flex;">
           <span><%=image_tag faculty.pic, class:"img-responsive fac_image"%></span>
@@ -130,6 +130,7 @@
     </div>
   </div>
   <% end %>
+
 </div>
 </div>
 
@@ -155,6 +156,7 @@
   .pname{
     color: black;
     letter-spacing: 0.1px;
+    word-wrap: break-word;
   }
   .list-group-item.pname{
     font-family: 'Karla',sans-serif;
@@ -180,5 +182,16 @@
     text-decoration: none;
     color:black;
     transform: scale(1.1,1.1);
+  }
+  @media screen and (max-height: 1099px){
+    #column{
+      margin-top: 30px;
+    }
+    .list-group{
+      font-size: 0.9em;
+    }
+    .list-group-item{
+      padding: 2px;
+    }
   }
 </style>

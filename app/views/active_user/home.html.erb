@@ -1,11 +1,21 @@
 <div class="container"> 
  <div class="row" style="margin-top: 30px;">
    <div class="col-md-5 col-sm-5">
-    <div class="panel">
+    <div class="panel" id="user_panelone">
       <div class="panel-heading">
         <h3 class="text-center" style="font-family: 'Merriweather',serif; color: white;">Sent Ideas</h3>
       </div>
       <div class="panel-body" >
+          
+          <% if @tasks.size == 0 %>
+            <div class="panel" id="emptyPanel">
+              <div class="panel-body text-center" style="border-radius: 10px;">
+                <h4 style="color: #072c61;">YOUR SENT IDEAS WILL APPEAR HERE</h4>
+              </div>
+            </div>
+          <% end %>
+
+
           <%@tasks.each do|project|%>
           <% if project.accepted %>
             <div class="card" title="Pending">
@@ -117,6 +127,15 @@
 
       <div class="tab-content clearfix" style="margin-top: 10px;">
         <div class="tab-pane active" id="1a">
+
+          <% if @allProjects.size == 0 %>
+            <div class="panel" id="emptyPanel">
+              <div class="panel-body text-center" style="border-radius: 10px;">
+                <h4 style="color: #072c61;">ALL OF YOUR PROJECTS WILL APPEAR HERE</h4>
+              </div>
+            </div>
+          <% end %>
+
           <%@allProjects.each do|project|%>
           <div class="card">
             <% if ProjectUserAdminRelation.find_by_SelectedProject_id(project.id)%>
@@ -159,6 +178,15 @@
           <% end %>
         </div>
         <div class="tab-pane" id="2a">
+
+          <% if @completedProjects.size == 0 %>
+            <div class="panel" id="emptyPanel">
+              <div class="panel-body text-center" style="border-radius: 10px;">
+                <h4 style="color: #072c61;">YOUR COMPLETED PROJECTS WILL APPEAR HERE</h4>
+              </div>
+            </div>
+          <% end %>
+
           <%@completedProjects.each do|project|%>
           <div class="card">
             <div class="card-header" style="border-bottom: 1px solid #072c61;">
@@ -196,6 +224,15 @@
           <% end %>
         </div>
         <div class="tab-pane" id="3a">
+
+          <% if @selectedProjects.size == 0 %>
+            <div class="panel" id="emptyPanel">
+              <div class="panel-body text-center" style="border-radius: 10px;">
+                <h4 style="color: #072c61;">YOUR ONGOING PROJECTS WILL APPEAR HERE</h4>
+              </div>
+            </div>
+          <% end %>
+
           <%@selectedProjects.each do|project|%>
             <div class="card">
             <div class="card-header" style="border-bottom: 1px solid black;">
@@ -346,4 +383,14 @@ a:hover{
 .Rejected{
   border:1px solid red;
 }
+
+@media screen and (max-width:1099px){
+  #user_panelone{
+    margin-top: 50px;
+  }
+  #emptyPanel{
+    margin-top: 10px;
+  }
+  
+  }
 </style>
