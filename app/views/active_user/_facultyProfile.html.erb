@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="row row-bottom-margin">
-        <div class="col-md-4 col-sm-3" id="col-1" style="border:2px solid #072c61;">
+        <div class="col-md-4 col-sm-3" id="col-1" style=" background-color: #fff; border:2px solid #072c61;">
             <div class="page-heading">
                 <h2>Research Areas & Interests</h2>
                 <b style="font-size: 2.3em;"><span ><%=@interests.size%></b>
@@ -17,61 +17,93 @@
         <% else %>
              <%= image_tag("#{@faculty.pic}",class:'img-responsive',style:'position:relative; top:-50px; right:-80px; width:50%; height:230px; border:2px solid #072c61; border-top-left-radius:20px; border-top-right-radius:20px;')%>
         <% end %>
+
+        <% if @faculty.name != "Asha Rani" %>
             <div style="position:relative; background-color: #fff; top:-120px;">
                 <h2 class="text-center"  style="border:2px solid #072c61;"><%=@faculty.name%>
                     <p class="h4">Professor</p>
                     <p class="h3">Department of <%=@faculty.division%></p>
                 </h2>
             </div>
+        <% else %>
+            <div style="position:relative; background-color: #fff; top:-75px;">
+                <h2 class="text-center"  style="border:2px solid #072c61;"><%=@faculty.name%>
+                    <p class="h4">Professor</p>
+                    <p class="h3">Department of <%=@faculty.division%></p>
+                </h2>
+            </div>
+        <% end %>
+
         </div>
-        <div class="col-md-4 col-sm-3" id="col-2" style="border:2px solid #072c61;">
+        <div class="col-md-4 col-sm-3" id="col-2" style=" background-color: #fff; border:2px solid #072c61;">
             <h2>Alumni & Research Partners</h2>
                 <b style="font-size: 2.3em; color: #072c61;text-shadow: 1px 2px #072c61;">56</b>
         </div>
     </div>
+    
     <div class="row two">
-        <div class="col-md-4 col-sm-12" id="col-3" style="border:2px solid #072c61;">
+        <div class="col-md-4 col-sm-12" id="col-3" style="background-color: #fff; border:2px solid #072c61;">
+            <div class="page-heading">
+                <h2>Qualifications</h2>
+                <b style="font-size: 2.3em;"><%=@qualifications.size%></b>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-12" id="col-4" style=" background-color: #fff; border:2px solid #072c61;height: 9.42em;">
+            <%@qualifications.each do|q|%>
+            <span class="badge interests"><%=q.upcase%></span>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="row two">
+        <div class="col-md-4 col-sm-12" id="col-3" style="background-color: #fff; border:2px solid #072c61;">
             <div class="page-heading">
                 <h2>Research Areas & Interests</h2>
                 <b style="font-size: 2.3em;"><%=@interests.size%></b>
             </div>
         </div>
-        <div class="col-md-8 col-sm-12" id="col-4" style="border:2px solid #072c61;height: 11.8em;">
+        <div class="col-md-8 col-sm-12" id="col-4" style=" background-color: #fff; border:2px solid #072c61;height: 11.8em;">
             <%@interests.each do|interest|%>
             <span class="badge interests"><%=interest.humanize%></span>
             <% end %>
         </div>
     </div>
+
+    <% if @projects.size > 0 %>
     <div class="row" style="margin-bottom: 20px;">
-        <div class="col-md-4 col-sm-12" style="border:2px solid #072c61; height: 10em;word-wrap: break-word;">
+        <div class="col-md-4 col-sm-12" style=" background-color: #fff; border:2px solid #072c61; height: 10em;word-wrap: break-word;">
             <div class="page-heading">
                 <h2>Latest Projects</h2>
                 <b style="font-size: 2.3em;"><%=@projects.size%></b>
             </div>
         </div>
 
-        <div class="col-md-8 col-sm-12" id="size_<%=@projects.size%>" style="border:2px solid #072c61; height: 10em; margin-bottom: 20px;">
+        <div class="col-md-8 col-sm-12" id="size_<%=@projects.size%>" style=" background-color: #fff; border:2px solid #072c61; height: 10em; margin-bottom: 20px;">
             <%@projects.each do|project|%>
             <span class="badge interests" style="
     word-wrap:break-word;"><%=project.ProjectName.humanize%></span>
             <% end %>
         </div>
-       
-
     </div>
+    <% end %>
     <div class="row">
-        <div class="col-md-4 col-sm-12" id="col-5" style="border:2px solid #072c61;">
+        <div class="col-md-4 col-sm-12" id="col-5" style=" background-color: #fff; border:2px solid #072c61;">
             <div class="page-heading">
-                <h2>Eligibility Criteria</h2>
+                <h2 style="font-size: 2.5em;">Eligibility Criteria</h2>
             </div>
         </div>
-        <div class="col-md-8 col-sm-12" id="col-6" style="border:2px solid #072c61;">
+        <div class="col-md-8 col-sm-12" id="col-6" style=" background-color: #fff; border:2px solid #072c61;">
+
+            <% if @eligibility == nil %>
+                <h1 class="text-center" style="color: #072c61; font-family: 'Karla', sans-serif;">NOT SPECIFIED.</h1>
+            <% end%>
             <% if @eligibility %>
                 <ul class="list-group eligibility" style="margin-top: 1em;">
                     <li class="list-group-item"><span class="h4"><span class="label label-default">Minimum aggregate percentage </span><span class="badge"><%= @eligibility.percentage %></span>
                     </span></li>
                     <li class="list-group-item"><span class="h4"><span class="label label-default">Semesters completed </span><span class="badge"><%= @eligibility.sems_complete %></li>
                     <li class="list-group-item"><span class="h4"><span class="label label-default">Branch</span>
+
                         <% @eligible_branches.each do|branch|%>
                             <span class="badge"><%=branch.upcase%></span> 
                         <% end %>

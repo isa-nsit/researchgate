@@ -82,10 +82,10 @@ class ActiveUserController < ApplicationController
     @eligibility = Eligibility.find_by_faculty_name(@name)
     
     if @eligibility
-      @eligible_branches = @eligibility.branch.split(',');
-      
+      @eligible_branches = @eligibility.branch.split(','); 
     end
 
+    @qualifications = @faculty.qualifications.split(',');
   end
 
   def profile

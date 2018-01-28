@@ -14,7 +14,7 @@
     
     <div class="col-sm-2"></div>
     
-    <div class="col-sm-5 col-md-5 col-sm-5" style="margin-left: -30px; border:2px solid #072c61; margin-bottom: 10px;">
+    <div class="col-md-5 col-sm-5" id="details" style="border:2px solid #072c61; margin-bottom: 10px;">
         <div class="panel">
             <div class="panel-body">
                 <div class="row detail-row">
@@ -61,5 +61,35 @@
 }
 .detail-row{
     padding: 10px;
+}
+#details{
+    margin-left: -30px;
+    background-color: #fff;
+}
+.panel{
+    margin-bottom: 0px;
+}
+.panel-body{
+    background-color: #fff;
+}
+img{
+    margin-bottom: 20px;
+    margin-top: -10px;
+}
+@media screen and (max-width:1099px){
+    .jumbotron{
+        margin-top: 100px;
+    }
+    img{
+        margin-left: 6%;
+    }
+    #details{
+        margin-top: 20px;
+        margin-left: 10px;
+        background-color: white;
+    }
+    .detail-row{
+        padding: 30px;
+    } 
 }
 </style>
