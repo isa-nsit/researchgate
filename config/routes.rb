@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'active_incharge/facultyProfile'
 
   root 'main#index'
-  
+  get 'main/aboutUs'
   get 'tasks/new'
   post 'tasks/create'
   get 'tasks/edit'

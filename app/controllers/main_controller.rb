@@ -1,5 +1,4 @@
 class MainController < ApplicationController
-
 	def index
 	  	if signed_in?
 	  		if user_signed_in?
@@ -12,5 +11,9 @@ class MainController < ApplicationController
 	  			redirect_to active_incharge_home_path	
 			end
 		end
+	end
+
+	def aboutUs
+		
 	end
 end
