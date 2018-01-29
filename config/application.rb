@@ -21,15 +21,15 @@ module Testing
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
-  #  config.active_record.raise_in_transactional_callbacks = true
-  #  ActionMailer::Base.smtp_settings = {
-  #    address:              'smtp.gmail.com',
-  #    port:                 587,
-  #    domain:               'gmail.com',
-  #    user_name:            'railsproject007@gmail.com',
-  #    password:             'password@123',
-  #    authentication:       :plain,
-  #    enable_starttls_auto: true
-#} 
+    config.active_record.raise_in_transactional_callbacks = true
+    ActionMailer::Base.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      domain:               'gmail.com',
+      user_name:            'railsproject007@gmail.com',
+      password:             'password@123',
+      authentication:       :plain,
+      enable_starttls_auto: true
+} 
   end
 end
