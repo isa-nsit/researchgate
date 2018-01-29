@@ -21,7 +21,7 @@
       <div class="field form-group">
         <%= f.label :Year %>
         <%= f.select :year, options_for_select([
-          ["You Are in Which Year?", {}], 
+          ["Select Your Year",""], 
           "1", 
           "2", 
           "3", 
@@ -32,7 +32,7 @@
       <div class="form-group">
         <%= f.label :Branch %>
         <%= f.select :branch, options_for_select([
-          ["You Are in Which Branch?", ""],  
+          ["Select Your Branch", ""],  
           "ICE", 
           "MPAE"]), 
           {}, { class: "form-control" } %><br>
@@ -114,7 +114,6 @@ label{
 </style>
 
 <script type="text/javascript">
-  document.addEventListener("DOMContentLoaded", function(event) {
   var r1 = document.getElementById('task_members_count_1');
   var r2 = document.getElementById('task_members_count_2');
   var r3 = document.getElementById('task_members_count_3');
@@ -173,7 +172,10 @@ label{
   text_area.addEventListener('input',function(){
   char.innerHTML = 30 - text_area.value.length;
   
-  if(text_area.value.length > 30)
+  if(text_area.value.length == 0)
+    submit_button.disabled = true;
+
+  else if(text_area.value.length > 30)
     {
     char.style.color = "red";
     submit_button.disabled = true;
@@ -181,8 +183,45 @@ label{
     }
     else{
     char.style.color = "#072c61";
-    submit_button.disabled = false;
     }
   });
-});
+
+  var percentage = document.getElementById('task_percentage');
+  var projectName = document.getElementById('project_name');
+  var projectDescription = document.getElementById('project_description');
+
+  projectName.addEventListener('input',function(){
+    if(projectName.value.length == 0)
+      submit_button.disabled = true;
+
+    else if(percentage.value > 0 && projectDescription.value.length > 0)
+      submit_button.disabled = false;
+  });
+  
+  percentage.addEventListener('input',function(){
+    if(percentage.value.length == 0)
+      submit_button.disabled = true;
+
+    else if(projectDescription.value.length > 0 && projectName.value.length > 0)
+      submit_button.disabled = false;
+  });
+
+  projectDescription.addEventListener('input',function(){
+    if(projectDescription.value.length == 0)
+      submit_button.disabled = true;
+
+    else if(projectName.value.length > 0 && percentage.value.length > 0)
+      submit_button.disabled = false;
+  });
+  
+  var year = document.getElementById('task_year');
+  year.options[0].disabled = true;
+
+  var branch = document.getElementById('task_branch');
+  branch.options[0].disabled = true;
+
+  
+  if(projectName.value.length == 0 || percentage.value.length == 0 || projectDescription.value.length == 0)
+    submit_button.disabled = true;
+
 </script>

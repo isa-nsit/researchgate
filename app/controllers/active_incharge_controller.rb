@@ -35,5 +35,6 @@ class ActiveInchargeController < ApplicationController
     if @eligibility
       @eligible_branches = @eligibility.branch.split(',');
     end
+    @qualifications = @faculty.qualifications.split(',');
   end
 end

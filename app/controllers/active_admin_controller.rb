@@ -50,6 +50,7 @@ class ActiveAdminController < ApplicationController
     if @eligibility
       @eligible_branches = @eligibility.branch.split(',');
     end
+    @qualifications = @faculty.qualifications.split(',');
   end
 
   def student_profile
