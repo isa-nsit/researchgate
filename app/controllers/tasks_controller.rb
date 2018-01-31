@@ -1,11 +1,19 @@
 class TasksController < ApplicationController
 	before_action :authenticate_user!
 
-	def new
+	def new  
     @countInstrumentation=Admin.where(division:"Instrumentation").count
     @countAutomation=Admin.where(division:"Automation").count
     @email=params[:email]    #faculty email
 		@task=Task.new
+    @email_ids = []
+
+    User.all.each do|user|
+      @email_ids << user.email
+    end
+    
+    @email_ids
+    @size = @email_ids.size
 	end 
 
 	def create
@@ -91,7 +99,7 @@ class TasksController < ApplicationController
        # FormMailer.FormSubmission(@task,@email).deliver_now
             Resque.enqueue(SendTaskWorker,@task.id,@email)
       else
-        format.html { redirect_to tasks_new_path , notice: 'You have not filled all the fields or email id is not registered with us' }
+        format.html { redirect_to tasks_new_path , notice: 'You have not filled all the fields or email id is not registered with us'}
       end
 	  end
   end
@@ -101,6 +109,15 @@ class TasksController < ApplicationController
     @countAutomation=Admin.where(division:"Automation").count
     @task =Task.where(id: params[:id]).first
     @email=Admin.find_by_id(@task.admin_id).email
+    @email_ids = []
+
+    User.all.each do|user|
+      @email_ids << user.email
+    end
+    
+    @email_ids
+    @size = @email_ids.size
+    
     if(@task.update_count>=3)
       redirect_to active_user_home_path, notice: 'Update limit reached'
     end
