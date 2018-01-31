@@ -15,7 +15,7 @@
 
       <div class="field form-group">
         <%= f.label :Email%>&nbsp;<span id="spanEmail1" style="color: green;" class="glyphicon glyphicon-ok pull-right"></span>
-        <%= f.text_field :email1 ,:value=>current_user.email, :class => 'form-control',autofocus: true%><br>
+        <span id="already1" style="color:red; opacity: 0.8; font-size: 1em; font-family: 'Merriweather',serif;">Email Already Filled!</span><%= f.text_field :email1 ,:value=>current_user.email, :class => 'form-control',autofocus: true%><br>
       </div>
 
       <div class="field form-group">
@@ -70,22 +70,22 @@
       <div id="emails">
         <div class="field form-group" id="email2">
           <span class="members"><%= f.label :Email%> of 2nd Member</span>&nbsp;<span id="spanEmail2" style="color: red;" class="glyphicon glyphicon-remove pull-right"></span> 
-          <%= f.text_field :email2 , :class => 'form-control',autofocus: true%><br>
+          <span id="already2" style="color:red; opacity: 0.8; font-size: 1em; font-family: 'Merriweather',serif;">Email Already Filled!</span><%= f.text_field :email2 , :class => 'form-control',autofocus: true%><br>
         </div>
         
         <div class="field form-group" id="email3">
           <span class="members"><%= f.label :Email%> of 3rd Member</span>&nbsp;<span id="spanEmail3" style="color: red;" class="glyphicon glyphicon-remove pull-right"></span>
-          <%= f.text_field :email3 , :class => 'form-control',autofocus: true%><br>
+          <span id="already3" style="color:red; opacity: 0.8; font-size: 1em; font-family: 'Merriweather',serif;">Email Already Filled!</span><%= f.text_field :email3 , :class => 'form-control',autofocus: true%><br>
         </div>
         
         <div class="field form-group" id="email4">
           <span class="members"><%= f.label :Email%> of 4th Member</span>&nbsp;<span id="spanEmail4" style="color: red;" class="glyphicon glyphicon-remove pull-right"></span>
-          <%= f.text_field :email4 , :class => 'form-control',autofocus: true%><br>
+          <span id="already4" style="color:red; opacity: 0.8; font-size: 1em; font-family: 'Merriweather',serif;">Email Already Filled!</span><%= f.text_field :email4 , :class => 'form-control',autofocus: true%><br>
         </div>
         
         <div class="field form-group" id="email5">
           <span class="members"><%= f.label :Email%> of 5th Member</span>&nbsp;<span id="spanEmail5" style="color: red;" class="glyphicon glyphicon-remove pull-right"></span>
-          <%= f.text_field :email5 , :class => 'form-control',autofocus: true%><br>
+         <span id="already5" style="color:red; opacity: 0.8; font-size: 1em; font-family: 'Merriweather',serif;">Email Already Filled!</span><%= f.text_field :email5 , :class => 'form-control',autofocus: true%><br>
         </div>
       </div>
       <div class="form-group">
@@ -118,7 +118,7 @@ label{
 
 document.addEventListener("turbolinks:load", function() {
   
-    var r1 = document.getElementById('task_members_count_1');
+  var r1 = document.getElementById('task_members_count_1');
   var r2 = document.getElementById('task_members_count_2');
   var r3 = document.getElementById('task_members_count_3');
   var r4 = document.getElementById('task_members_count_4');
@@ -128,7 +128,10 @@ document.addEventListener("turbolinks:load", function() {
   var k = []
 
   var valid_array = [];
-
+  var Already_email = false;
+  
+  set = new Set();
+  
   for(var i=0;i<7;i++)
     valid_array[i] = false;
 
@@ -584,7 +587,20 @@ document.addEventListener("turbolinks:load", function() {
     submit_button.disabled = result; 
 
 
-  arr =  [];
+function except(except,index,value)
+{
+  for(var i=0 ; i<5 ; i++)
+  {
+    if(index!=i)
+    {
+      if(value == except[i] && value!="" && except[i]!="")
+      return true;
+    }
+  }
+  return false;
+}
+
+arr =  [];
 var i=0;
 <%@email_ids.each do|f|%>
 arr[i++] = '<%=f%>';
@@ -592,21 +608,44 @@ arr[i++] = '<%=f%>';
 
 var size = <%=@size %>
 
-for(var i=0;i < size;i++)
-console.log(arr[i]);
 
 var e1 = document.getElementById('spanEmail1');
 var e2 = document.getElementById('spanEmail2');
 var e3 = document.getElementById('spanEmail3');
 var e4 = document.getElementById('spanEmail4');
 var e5 = document.getElementById('spanEmail5');
+var already1 = document.getElementById('already1');
+var already2 = document.getElementById('already2');
+var already3 = document.getElementById('already3');
+var already4 = document.getElementById('already4');
+var already5 = document.getElementById('already5');
+already1.style.display = "none";
+already2.style.display = "none";
+already3.style.display = "none";
+already4.style.display = "none";
+already5.style.display = "none";
+
+var already = [];
+for(var i=0 ; i<5 ;i++)
+already[i] = "";
 
 email1.addEventListener('input',function(){
   
   var val = email1.value;
   var index = arr.indexOf(val);
   
-  if(index == -1)
+  if(except(already,0,val))
+  {
+    e1.classList.add("glyphicon-remove");
+    e1.style.color = "red";
+    e1.classList.remove("glyphicon-ok");
+    email1.style.border = "1px solid red";
+    submit_button.disabled = true;
+    already1.style.display = "initial";     
+  }
+
+
+ else if(index == -1)
   {
     submit_button.disabled = true;
     e1.classList.add("glyphicon-remove");
@@ -614,40 +653,66 @@ email1.addEventListener('input',function(){
     e1.classList.remove("glyphicon-ok");
     email1.style.border = "1px solid red";
     submit_button.disabled = true;  
+    already[0] = val;
+    already1.style.display = "none";
   }
 
+  
   else
   {
+   
     e1.classList.add("glyphicon-ok");
     e1.style.color = "green";
     e1.classList.remove("glyphicon-remove");
     submit_button.disabled = false;
     email1.style.border = "1px solid green";
+    already[0] = val;
+    already1.style.display = "none";
   }
   
 });
 
 email2.addEventListener('input',function(){
-
+  
+  already[0] = email1.value;
   var val = email2.value;
   var index = arr.indexOf(val);
-  console.log(val);
-  if(index == -1)
+  
+  if(except(already,1,val))
+  {
+   
+    e2.classList.add("glyphicon-remove");
+    e2.style.color = "red";
+    e2.classList.remove("glyphicon-ok");
+    email2.style.border = "1px solid red";
+    submit_button.disabled = true;
+    already2.style.display = "initial";     
+  }
+
+
+ else if(index == -1)
   {
     submit_button.disabled = true;
     e2.classList.add("glyphicon-remove");
     e2.style.color = "red";
     e2.classList.remove("glyphicon-ok");
-    email2.style.border = "1px solid red";  
+    email2.style.border = "1px solid red";
+    submit_button.disabled = true;  
+    already[1] = val;
+    already2.style.display = "none";
   }
 
+  
   else
   {
+   
     e2.classList.add("glyphicon-ok");
     e2.style.color = "green";
     e2.classList.remove("glyphicon-remove");
     submit_button.disabled = false;
     email2.style.border = "1px solid green";
+    already[1] = val;
+    already2.style.display = "none";
   }
 });
 
@@ -656,22 +721,40 @@ email3.addEventListener('input',function(){
   var val = email3.value;
   var index = arr.indexOf(val);
   
-  if(index == -1)
+  if(except(already,2,val))
   {
-    submit_button.disabled = true;
+  
     e3.classList.add("glyphicon-remove");
     e3.style.color = "red";
     e3.classList.remove("glyphicon-ok");
-    email3.style.border = "1px solid red";  
+    email3.style.border = "1px solid red";
+    submit_button.disabled = true;
+    already3.style.display = "initial";     
   }
 
+
+ else if(index == -1)
+  {
+    e3.classList.add("glyphicon-remove");
+    e3.style.color = "red";
+    e3.classList.remove("glyphicon-ok");
+    email3.style.border = "1px solid red";
+    submit_button.disabled = true;  
+    already[2] = val;
+    already3.style.display = "none";
+  }
+
+  
   else
   {
+  
     e3.classList.add("glyphicon-ok");
     e3.style.color = "green";
     e3.classList.remove("glyphicon-remove");
     submit_button.disabled = false;
     email3.style.border = "1px solid green";
+    already[2] = val;
+    already3.style.display = "none";
   }
 });
 
@@ -680,15 +763,30 @@ email4.addEventListener('input',function(){
   var val = email4.value;
   var index = arr.indexOf(val);
   
-  if(index == -1)
+  if(except(already,3,val))
   {
-    submit_button.disabled = true;
+    
     e4.classList.add("glyphicon-remove");
     e4.style.color = "red";
     e4.classList.remove("glyphicon-ok");
-    email4.style.border = "1px solid red";  
+    email4.style.border = "1px solid red";
+    submit_button.disabled = true;
+    already4.style.display = "initial";     
   }
 
+
+ else if(index == -1)
+  {
+    e4.classList.add("glyphicon-remove");
+    e4.style.color = "red";
+    e4.classList.remove("glyphicon-ok");
+    email4.style.border = "1px solid red";
+    submit_button.disabled = true;  
+    already[3] = val;
+    already4.style.display = "none";
+  }
+
+  
   else
   {
     e4.classList.add("glyphicon-ok");
@@ -696,6 +794,8 @@ email4.addEventListener('input',function(){
     e4.classList.remove("glyphicon-remove");
     submit_button.disabled = false;
     email4.style.border = "1px solid green";
+    already[3] = val;
+    already4.style.display = "none";
   }
 });
 
@@ -704,15 +804,29 @@ email5.addEventListener('input',function(){
   var val = email5.value;
   var index = arr.indexOf(val);
   
-  if(index == -1)
+  if(except(already,4,val))
   {
-    submit_button.disabled = true;
     e5.classList.add("glyphicon-remove");
     e5.style.color = "red";
     e5.classList.remove("glyphicon-ok");
-    email5.style.border = "1px solid red";  
+    email5.style.border = "1px solid red";
+    submit_button.disabled = true;
+    already5.style.display = "initial";     
   }
 
+
+ else if(index == -1)
+  {
+    e5.classList.add("glyphicon-remove");
+    e5.style.color = "red";
+    e5.classList.remove("glyphicon-ok");
+    email5.style.border = "1px solid red";
+    submit_button.disabled = true;  
+    already[4] = val;
+    already5.style.display = "none";
+  }
+
+  
   else
   {
     e5.classList.add("glyphicon-ok");
@@ -720,6 +834,8 @@ email5.addEventListener('input',function(){
     e5.classList.remove("glyphicon-remove");
     submit_button.disabled = false;
     email5.style.border = "1px solid green";
+    already[4] = val;
+    already5.style.display = "none";
   }
 });  
 });
