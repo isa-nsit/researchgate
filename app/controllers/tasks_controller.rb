@@ -107,6 +107,7 @@ class TasksController < ApplicationController
     @countInstrumentation=Admin.where(division:"Instrumentation").count
     @countAutomation=Admin.where(division:"Automation").count
     @task =Task.where(id: params[:id]).first
+    
     @email=Admin.find_by_id(@task.admin_id).email
     @email_ids = []
 
