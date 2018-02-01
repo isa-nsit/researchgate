@@ -20,13 +20,13 @@
 
       <div class="field form-group">
         <%= f.label :Year %>
-        <%= f.select :year, options_for_select([
+        <b><%= f.select :year, options_for_select([
           ["Select Your Year",""], 
           "1", 
           "2", 
           "3", 
           "4"]), 
-          {}, { class: "form-control"} %><br>
+          {}, { class: "form-control"} %><b><br>
       </div>
           
       <div class="form-group">
@@ -449,7 +449,9 @@ document.addEventListener("turbolinks:load", function() {
 
   submit_button.disabled = true;
   year.options[0].disabled = true;
+  year.options[0].style.fontWeight = "bold";
   branch.options[0].disabled = true;
+  branch.options[0].style.fontWeight = "bold";
 
   // Added event Listener on ProjectName
   projectName.addEventListener('input',function(){
