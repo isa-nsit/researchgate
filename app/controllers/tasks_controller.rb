@@ -29,7 +29,6 @@ class TasksController < ApplicationController
     @task.members_count =params[:task][:members_count]
     @task.accepted = true;
     @task.admin_id = Admin.find_by_email(@email).id
-    
     count=1
     user2=User.where(:email=>params[:task][:email2]).first
     user3=User.where(:email=>params[:task][:email3]).first
@@ -138,6 +137,12 @@ class TasksController < ApplicationController
     @task.accepted = true
     @task.update_count+=1
     count=1
+
+    @task.email2= nil;
+    @task.email3= nil;
+    @task.email4= nil;
+    @task.email5= nil;
+    
     user2=User.where(:email=>params[:task][:email2]).first
     user3=User.where(:email=>params[:task][:email3]).first
     user4=User.where(:email=>params[:task][:email4]).first
@@ -165,7 +170,7 @@ class TasksController < ApplicationController
    duplicacy={@task.email1=>1,@task.email2=>2,@task.email3=>3,@task.email4=>4,@task.email5=>5}.reject { |k,v|  k.nil? } 
 .keys.uniq.count
    if(duplicacy!=count)
-   flag=false
+      flag=false
  end
     if (count==@task.members_count and @task.save and flag==true)
       oldRelations=UserTaskRelation.where(task_id: params[:id])
