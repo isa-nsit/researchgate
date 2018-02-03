@@ -1,3 +1,4 @@
+<div class="container">
 <div class="row" style="margin-top: 30px;">
   <% @faculty.each do|f|%>
     <div class="col-md-6 col-sm-12">
@@ -17,13 +18,13 @@
           </div>
         </div>
       </div>
-    </a>
     </div>
 <% end %>
 </div>
-
+<%= render :partial => '/main/feedback'%>
+</div>
 <style type="text/css">
-  img{
+  .circle img{
     border: 1px solid white;
   }
   .text-center{
@@ -52,7 +53,7 @@
   .panel{
     margin: 50px 10px 10px 10px;
   }
-  img{
+  .circle img{
     text-align: center;
     width: 50px;
     height: auto;

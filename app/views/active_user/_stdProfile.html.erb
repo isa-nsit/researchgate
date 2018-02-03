@@ -6,7 +6,7 @@
 <div class="row" style="padding-top: 10px;" >
     <div class="col-sm-0 col-md-1"></div>
     
-    <div class="col-sm-5 col-md-3 col-sm-5">
+    <div class="col-sm-5 col-md-3 col-sm-5 profilePic">
         <% if @user.profile_pic %>
 			<img src="/uploads/<%=@user.profile_pic%>" style="height: 300px; max-width: 300px; border:2px solid #072c61; border-radius: 10px;" class="img-responsive">
 		<% end %>
@@ -72,7 +72,7 @@
 .panel-body{
     background-color: #fff;
 }
-img{
+.profilePic img{
     margin-bottom: 20px;
     margin-top: -10px;
 }

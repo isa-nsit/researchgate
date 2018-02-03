@@ -276,32 +276,11 @@
       </div>
     </div>
   </div>
-  <div id="feedbackArea">
-    <button onclick="chg()" id="d1">
-      <span id="feedback">FEEDBACK</span>
-    </button>
-    <span id="linksArea">
-
-    </span>
-  </div>
-
-  <div id="links">
-      <ul class="list-group">
-        <li class="list-group-item" style="border-bottom: 2px solid black;"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=ResearchGate@isa-nsit.in&su=Feedback_ISANSIT&bcc=someone.else@ex"><img src="/uploads/logo.png"></a></li>
-        <li class="list-group-item" style="border-bottom: 2px solid black;"><a href="https://api.whatsapp.com/send?phone=8076903215"><img src="/uploads/whatsapp.png"></a></li>
-        <li class="list-group-item"><a href=" http://m.me/isansit"><img src="/uploads/messenger.png"></a></li>
-      </ul>
-  </div>
+  <%= render :partial => '/main/feedback'%>
 </div>
 
 <style type="text/css">
-#links{
-  display: none;
-}
-#links img{
-  height: 40px;
-  width: 40px;
-}
+
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -415,58 +394,4 @@ a:hover{
   }
   
 }
-#d1{
-  background-color: blue;
-  color: white;
-  position: fixed;
-  top: 20%;
-  right: -2.5%;
-  width: 95px;
-  letter-spacing: 1px;
-  height: 30px;
-  padding: 1px 1px 1px 1px;
-  transform: rotate(270deg);
-  transition: all .7s ease-in-out;
-  font-weight: bold;
-}
-#links .list-group{
-  width: 6%;
-  border: 2px solid black;
-  position: absolute;
-  top: 24%;
-  right: 0.6%;
-  transform: scale(1.1,1.1);
-  transition: all 2s ease-in-out;
-}
 </style>
-
-<script type="text/javascript">
-
-  var feedbackDiv = document.getElementById("d1");
-  var feedbackText = document.getElementById("feedback");
-  var links = document.getElementById('links');
-
-  function chg() {
-
-  if(feedbackDiv.value == "OFF")
-  {
-    feedbackDiv.value = "ON";
-    feedbackDiv.style.transform = "rotate(0deg)";
-    feedbackDiv.style.marginRight = "35px";
-    feedbackDiv.style.top = "15.5%";
-    feedbackText.innerText = "Contact Us";
-   $( "#links" ).delay( 800 ).fadeIn( 400 );
-  }
-
-  else
-  {
-    feedbackDiv.value = "OFF";
-    feedbackDiv.style.transform = "rotate(270deg)";
-    feedbackDiv.style.marginRight = "0px";
-    feedbackDiv.style.top = "20%";
-    feedbackText.innerText = "FEEDBACK";
-     $("#links").delay(400).fadeOut(200);
-  }
-}
-
-</script>

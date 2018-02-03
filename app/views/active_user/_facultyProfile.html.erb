@@ -11,7 +11,7 @@
                 <b style="font-size: 2.3em;"><span ><%=@interests.size%></b>
             </div>
         </div>
-        <div class="col-md-4 col-sm-6" style="border-top:2px solid #072c61; height: 20em;">
+        <div class="col-md-4 col-sm-6 image" style="border-top:2px solid #072c61; height: 20em;">
         <% if @faculty.name != "Pramendra Kumar"%>
             <%= image_tag("#{@faculty.pic}",class:'img-responsive',style:'position:relative; top:-50px; right:-80px; width:50%; border:2px solid #072c61; border-top-left-radius:20px; border-top-right-radius:20px;')%>
         <% else %>
@@ -171,7 +171,7 @@
         h2{
             font-size: 1.1em;
         }
-        img{
+        .image img{
             margin-top: 20px;
         }
         #col-1 h2{

@@ -17,3 +17,4 @@
 //= require turbolinks
 //= require jquery.noty.packaged.min.js
 //= require_tree .
+
