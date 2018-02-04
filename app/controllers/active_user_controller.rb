@@ -12,21 +12,21 @@ class ActiveUserController < ApplicationController
     
     # finding all the ongoing projects in which current_user is involved 
     users = ProjectUserAdminRelation.where("user_id1=? OR user_id2=? OR user_id3=? OR user_id4=? OR user_id5=?",
-      current_user.id,current_user.id,current_user.id,current_user.id,current_user.id)
+      current_user.id.to_s,current_user.id.to_s,current_user.id.to_s,current_user.id.to_s,current_user.id.to_s)
     s_projectIds = []
     users.each do|project|
       s_projectIds<<project.SelectedProject_id
     end
-    @selectedProjects=SelectedProject.where(id:s_projectIds)     
+    @selectedProjects=SelectedProject.where(id:s_projectIds.to_s.to_s.to_s)     
     
     # finding all the completed projects in which current_user is involved
-    users = CompleteProject.where("user1=? OR user2=? OR user3=? OR user4=? OR user5=?",current_user.id,
-      current_user.id,current_user.id,current_user.id,current_user.id)    
+    users = CompleteProject.where("user1=? OR user2=? OR user3=? OR user4=? OR user5=?",current_user.id.to_s,
+      current_user.id.to_s,current_user.id.to_s,current_user.id.to_s.to_s,current_user.id.to_s)    
     c_projectIds = []
     users.each do|project|
       c_projectIds<<project.SelectedProject_id
     end
-    @completedProjects=SelectedProject.where(id:c_projectIds)
+    @completedProjects=SelectedProject.where(id:c_projectIds.to_s)
    
     # finding all projects
     @allProjects = []
@@ -39,12 +39,12 @@ class ActiveUserController < ApplicationController
     @allProjects.shuffle!
   
     # finding all the tasks in which current_user is involved 
-    users = UserTaskRelation.where(user_id:current_user.id)    
+    users = UserTaskRelation.where(user_id:current_user.id.to_s)    
     task_ids = []
     users.each do|t|
       task_ids<<t.task_id
     end
-    @tasks=Task.where(id:task_ids)
+    @tasks=Task.where(id:task_ids.to_s)
 
   end
 
