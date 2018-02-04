@@ -4,7 +4,7 @@ class SendTaskWorker < ActiveRecord::Base
  
  	def self.perform (task,email)
  		
- 	    @task=Task.where(id: .to_s).first
+ 	    @task=Task.where(id: task.to_s).first
  		FormMailer.FormSubmission(@task,email).deliver_now
  	end
 end
