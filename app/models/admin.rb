@@ -31,7 +31,7 @@ class Admin < ActiveRecord::Base
 
   def getCompletedProjects faculty_id
     ids=[]
-    relations=CompleteProject.where(Admin_id: faculty_id.to_s)
+    relations=CompleteProject.where(admin_id: faculty_id.to_s)
     relations.each do |r|
       ids<<r.SelectedProject_id
     end
