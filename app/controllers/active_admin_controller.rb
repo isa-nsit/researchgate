@@ -45,7 +45,7 @@ class ActiveAdminController < ApplicationController
       @projects<<SelectedProject.where(id:id.to_s)
     end
     @projects = @projects[0..5]
-    @eligibility = Eligibility.find_by_faculty_name(@name.to_s)
+    @eligibility = Eligibility.find_by_faculty_name(@name)
     
     if @eligibility
       @eligible_branches = @eligibility.branch.split(',');
@@ -54,6 +54,6 @@ class ActiveAdminController < ApplicationController
   end
 
   def student_profile
-    @user=User.find_by_id(params[:id].to_s)
+    @user=User.find_by_id(params[:id])
   end
 end
