@@ -1,8 +1,8 @@
 class CreateCompleteProjects < ActiveRecord::Migration
   def change
     create_table :complete_projects do |t|
-      t.references :SelectedProject, index: true, foreign_key: true
-      t.references :Admin, index: true, foreign_key: true
+      t.references :selected_projects, index: true,type: :integer, foreign_key: true
+      t.references :Admin, index: true,type: :integer foreign_key: true
       t.string :user1
       t.string :user2
       t.string :user3
