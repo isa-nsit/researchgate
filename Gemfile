@@ -9,7 +9,6 @@ gem 'rails', '4.2.6'
 gem 'activeadmin'
 # Heroku.
 gem 'pg', group: :production
-gem 'sqlite3', '~> 1.3', '>= 1.3.11',group: :development
 gem 'rails_12factor',group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -37,6 +36,9 @@ gem 'devise'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+group :development, :test do
+  gem 'sqlite3'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
