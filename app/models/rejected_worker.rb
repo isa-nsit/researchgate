@@ -5,7 +5,7 @@ class RejectedWorker < ActiveRecord::Base
  
  	def self.perform (task,email)
  		
- 	    @task=Task.where(id: task).first
+ 	    @task=Task.where(id: task.to_s).first
  		Rejected.FormSubmission(@task,email).deliver_now
  	end
 end

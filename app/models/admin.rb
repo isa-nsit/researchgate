@@ -9,7 +9,7 @@ class Admin < ActiveRecord::Base
   has_many :tasks, dependent: :destroy
 
   def ongoingProjectsCount
-  	ProjectUserAdminRelation.where(admin_id:id).count
+  	ProjectUserAdminRelation.where(admin_id:id.to_s).count
   end
 
   @@allIds=[]
@@ -17,13 +17,13 @@ class Admin < ActiveRecord::Base
   def getOngoingProjects faculty_id
     ids=[]
     @@allIds=[]
-    relations=ProjectUserAdminRelation.where(admin_id: faculty_id)
+    relations=ProjectUserAdminRelation.where(admin_id: faculty_id.to_s)
     relations.each do |r|
       ids<<r.SelectedProject_id
     end
     projects=[]
     ids.each do |i|
-      projects<<SelectedProject.select("ProjectName").where(id: i).first
+      projects<<SelectedProject.select("ProjectName").where(id: i.to_s).first
       @@allIds<<i
     end
     return projects
@@ -31,14 +31,14 @@ class Admin < ActiveRecord::Base
 
   def getCompletedProjects faculty_id
     ids=[]
-    relations=CompleteProject.where(Admin_id: faculty_id)
+    relations=CompleteProject.where(Admin_id: faculty_id.to_s)
     relations.each do |r|
       ids<<r.SelectedProject_id
     end
     
     projects=[]
     ids.each do |i|
-      projects<<SelectedProject.select("ProjectName").where(id: i).first
+      projects<<SelectedProject.select("ProjectName").where(id: i.to_s).first
       @@allIds<<i
     end
     return projects
@@ -47,7 +47,7 @@ class Admin < ActiveRecord::Base
   def getStudents
     students=[]
     @@allIds.each do |i|
-      students<<SelectedProject.select("email1,email2,email3,email4,email5").where(id: i).first
+      students<<SelectedProject.select("email1,email2,email3,email4,email5").where(id: i.to_s).first
     end
     return students
   end
