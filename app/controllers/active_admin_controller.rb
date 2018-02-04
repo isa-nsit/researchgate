@@ -11,7 +11,7 @@ class ActiveAdminController < ApplicationController
     @ongoingProjects=SelectedProject.where(id:projectIds.to_s).reverse
 
     #completed projects
-    complete=CompleteProject.where(Admin_id: current_admin.id.to_s)
+    complete=CompleteProject.where(admin_id: current_admin.id.to_s)
     c_projectIds=[]
     complete.each do |c|
       c_projectIds<<c.SelectedProject_id
