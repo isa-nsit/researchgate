@@ -59,15 +59,6 @@ ActiveRecord::Schema.define(version: 20180127220417) do
     t.datetime "updated_at",         null: false
   end
 
-  create_table "projects", force: :cascade do |t|
-    t.string   "user2"
-    t.string   "user3"
-    t.string   "user4"
-    t.string   "user5"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-  end
-
   add_index "complete_projects", ["Admin_id"], name: "index_complete_projects_on_Admin_id"
   add_index "complete_projects", ["SelectedProject_id"], name: "index_complete_projects_on_SelectedProject_id"
 
