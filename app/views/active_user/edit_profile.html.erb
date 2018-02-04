@@ -1,0 +1,79 @@
+
+<div class="container">
+    <h1>Edit Profile</h1>
+    <hr>
+  <%= form_for current_user, url:{action: "update_profile"},:html => { :class =>
+'form-horizontal' },multipart: true do |f| %>
+  <div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+
+          <img src="/uploads/<%=current_user.profile_pic%>" class="avatar img-circle" alt="avatar" style="width: 100px; height: 100px;">
+          <h6>Upload a different photo...</h6>
+          
+          <%=f.file_field :profile_pic %>
+        </div>
+      </div>
+      
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        <div class="alert personal"> 
+          <i class="fa fa-coffee"></i>
+          Change Your <strong>Personal Details</strong> Here!
+        </div>
+        <h3>Personal info</h3>
+        <form >
+  
+          <div class="form-group">
+            <%=f.label :Name , class:'col-lg-3 control-label'%>
+            <div class="col-lg-8"><%=f.text_field :name, :value=>current_user.name ,class:'form-control',autofocus:'true'%></div>
+          </div>
+          <div class="form-group">
+            <%=f.label :Branch , class:'col-lg-3 control-label'%>
+            <div class="col-lg-8"><%=f.text_field :branch, :value=>current_user.branch ,class:'form-control'%></div>
+          </div>
+          <div class="form-group">
+            <%=f.label :Year , class:'col-lg-3 control-label'%>
+            <div class="col-lg-8"><%=f.text_field :year, :value=>current_user.year ,class:'form-control'%></div>
+          </div>
+          <div class="form-group">
+            <%=f.label :Percentage , class:'col-lg-3 control-label'%>
+            <div class="col-lg-8"><%=f.text_field :percentage, :value=>current_user.percentage ,class:'form-control'%></div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <%=f.submit "Save changes",class:'btn save'%>
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      
+    </div>
+    <div class="col-md-9 personal-info">
+        <div class="alert alert-danger alert"> 
+          <i class="fa fa-coffee"></i>
+          Change Your <strong>Credentials</strong> <%= link_to 'Here',edit_user_registration_path, method: :get ,style:'color:red; font-weight:bold; font-size:1.2em;'%>
+        </div>
+  </div>
+</div>
+<% end %>
+<%= render :partial => '/main/feedback'%>
+<hr>
+<style type="text/css">
+.save{
+	background-color: #072c61;
+	color:white;
+}
+.save:hover{
+	color:white;
+}
+.personal{
+	background-color: #072c61;
+	color:white;
+}
+</style>

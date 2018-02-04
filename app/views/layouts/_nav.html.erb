@@ -1,0 +1,11 @@
+<%if signed_in?%>
+	<% if user_signed_in?%>
+		<%=render 'layouts/nav_user'%>
+	<% elsif admin_signed_in?%>
+		<%=render 'layouts/nav_admin'%>
+	<% elsif incharge_signed_in? %>
+		<%= render 'layouts/nav_incharge' %>
+	<%end%>
+<% else %>
+	<%=render 'layouts/common_nav'%>
+<%end%>

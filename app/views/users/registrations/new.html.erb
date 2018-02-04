@@ -1,0 +1,85 @@
+<body>
+<div class="fade">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel" style="border: 1px solid #072c61;">
+      <div class="panel-heading height" style="background-color: #072c61;"><b class="col-md-offset-5" style="font-size: 20px; color: white;">Sign Up</b></div>
+        <div class="panel-body">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+
+            <div class="field form-group ">
+              <%= f.label :Name %><br />
+              <%= f.text_field :name , :class => 'form-control',:placeholder => 'Enter your Name'%>
+            </div>
+            
+            <div class="field form-group ">
+              <%= f.label :Email %><br />
+              <%= f.email_field :email , :class => 'form-control',:placeholder => 'Enter your email'%>
+            </div>
+
+            <div class="field form-group ">
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "off" , :class => 'form-control',:placeholder => 'Enter your password'%>
+            </div>
+
+            <div class="field form-group ">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off" , :class => 'form-control' ,:placeholder => 'Re-Enter your password'%>
+            </div>
+             <div class="field form-group ">
+              <%= f.label :Branch %><br />
+              <%= f.text_field :branch , :class => 'form-control',:placeholder => 'Enter your email'%>
+            </div>
+             <div class="field form-group ">
+              <%= f.label :Year %><br />
+              <%= f.text_field :year , :class => 'form-control',:placeholder => 'Enter your email'%>
+            </div>
+             <div class="field form-group ">
+              <%= f.label :Percentage %><br />
+              <%= f.text_field :percentage , :class => 'form-control',:placeholder => 'Enter your email'%>
+            </div>
+             <div class="actions form-group">
+            <input name="commit" type="submit" value="Sign Up" class="btn btn-block" style="background-color:#072c61; color: white;">
+        </div>
+      <% end %>
+      </div>
+      <div class="panel-footer links">
+      <%= render "admins/shared/links"%>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</div>
+</body>
+<style>
+  .height{
+    height: 50px;
+  }
+  .fade{
+    animation:fadein 1s;
+  animation-timing-function:linear;
+  animation-delay:0.1s;
+  animation-fill-mode:forwards;
+  animation-iteration-count: 1;
+  }
+  @keyframes fadein{
+    from{
+      opacity: 0.3;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+  .links a{
+    color:#072c61;
+  }
+  .links a:hover{
+    text-decoration: none;
+    font-weight: bold;
+  }
+</style>

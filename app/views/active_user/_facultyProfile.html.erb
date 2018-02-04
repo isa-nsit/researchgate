@@ -1,0 +1,224 @@
+
+<div class="jumbotron" style="border:2px solid white; background-color: #072c61;">
+<h1 class="text-center" style="color: white; border:1px solid white; padding: 2px;"><%=@faculty.division.upcase%></h1> 
+</div>
+
+<div class="container">
+    <div class="row row-bottom-margin">
+        <div class="col-md-4 col-sm-3" id="col-1" style=" background-color: #fff; border:2px solid #072c61;">
+            <div class="page-heading">
+                <h2>Research Areas & Interests</h2>
+                <b style="font-size: 2.3em;"><span ><%=@interests.size%></b>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 image" style="border-top:2px solid #072c61; height: 20em;">
+        <% if @faculty.name != "Pramendra Kumar"%>
+            <%= image_tag("#{@faculty.pic}",class:'img-responsive',style:'position:relative; top:-50px; right:-80px; width:50%; border:2px solid #072c61; border-top-left-radius:20px; border-top-right-radius:20px;')%>
+        <% else %>
+             <%= image_tag("#{@faculty.pic}",class:'img-responsive',style:'position:relative; top:-50px; right:-80px; width:50%; height:230px; border:2px solid #072c61; border-top-left-radius:20px; border-top-right-radius:20px;')%>
+        <% end %>
+
+        <% if @faculty.name != "Asha Rani" %>
+            <div style="position:relative; background-color: #fff; top:-120px;">
+                <h2 class="text-center"  style="border:2px solid #072c61;"><%=@faculty.name%>
+                    <p class="h4">Professor</p>
+                    <p class="h3">Department of <%=@faculty.division%></p>
+                </h2>
+            </div>
+        <% else %>
+            <div style="position:relative; background-color: #fff; top:-75px;">
+                <h2 class="text-center"  style="border:2px solid #072c61;"><%=@faculty.name%>
+                    <p class="h4">Professor</p>
+                    <p class="h3">Department of <%=@faculty.division%></p>
+                </h2>
+            </div>
+        <% end %>
+
+        </div>
+        <div class="col-md-4 col-sm-3" id="col-2" style=" background-color: #fff; border:2px solid #072c61;">
+            <h2>Alumni & Research Partners</h2>
+                <b style="font-size: 2.3em; color: #072c61;text-shadow: 1px 2px #072c61;">56</b>
+        </div>
+    </div>
+    
+    <div class="row two">
+        <div class="col-md-4 col-sm-12" id="col-3" style="background-color: #fff; border:2px solid #072c61;">
+            <div class="page-heading">
+                <h2>Qualifications</h2>
+                <b style="font-size: 2.3em;"><%=@qualifications.size%></b>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-12" id="col-4" style=" background-color: #fff; border:2px solid #072c61;height: 9.42em;">
+            <%@qualifications.each do|q|%>
+            <span class="badge interests"><%=q.upcase%></span>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="row two">
+        <div class="col-md-4 col-sm-12" id="col-3" style="background-color: #fff; border:2px solid #072c61;">
+            <div class="page-heading">
+                <h2>Research Areas & Interests</h2>
+                <b style="font-size: 2.3em;"><%=@interests.size%></b>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-12" id="col-4" style=" background-color: #fff; border:2px solid #072c61;height: 11.8em;">
+            <%@interests.each do|interest|%>
+            <span class="badge interests"><%=interest.humanize%></span>
+            <% end %>
+        </div>
+    </div>
+
+    <% if @projects.size > 0 %>
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-md-4 col-sm-12" style=" background-color: #fff; border:2px solid #072c61; height: 10em;word-wrap: break-word;">
+            <div class="page-heading">
+                <h2>Latest Projects</h2>
+                <b style="font-size: 2.3em;"><%=@projects.size%></b>
+            </div>
+        </div>
+
+        <div class="col-md-8 col-sm-12" id="size_<%=@projects.size%>" style=" background-color: #fff; border:2px solid #072c61; height: 10em; margin-bottom: 20px;">
+            <%@projects.each do|project|%>
+            <span class="badge interests" style="
+    word-wrap:break-word;"><%=project.ProjectName.humanize%></span>
+            <% end %>
+        </div>
+    </div>
+    <% end %>
+    <div class="row">
+        <div class="col-md-4 col-sm-12" id="col-5" style=" background-color: #fff; border:2px solid #072c61;">
+            <div class="page-heading">
+                <h2 style="font-size: 2.5em;">Eligibility Criteria</h2>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-12" id="col-6" style=" background-color: #fff; border:2px solid #072c61;">
+
+            <% if @eligibility == nil %>
+                <h1 class="text-center" style="color: #072c61; font-family: 'Karla', sans-serif;">NOT SPECIFIED.</h1>
+            <% end%>
+            <% if @eligibility %>
+                <ul class="list-group eligibility" style="margin-top: 1em;">
+                    <li class="list-group-item"><span class="h4"><span class="label label-default">Minimum aggregate percentage </span><span class="badge"><%= @eligibility.percentage %></span>
+                    </span></li>
+                    <li class="list-group-item"><span class="h4"><span class="label label-default">Semesters completed </span><span class="badge"><%= @eligibility.sems_complete %></li>
+                    <li class="list-group-item"><span class="h4"><span class="label label-default">Branch</span>
+
+                        <% @eligible_branches.each do|branch|%>
+                            <span class="badge"><%=branch.upcase%></span> 
+                        <% end %>
+                        </li>
+                    <li class="list-group-item"><span class="h4"><span class="label label-default">Minimum Engagement Period</span><span class="badge"><%= @eligibility.period %></span></li>
+                </ul>
+            <%end %>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .two{
+        margin-bottom: 50px;
+    }
+    .btn-lg{
+        background-color: #072c61;
+    }
+    .eligibility li{
+        border:0px;
+    }
+    .eligibility .badge{
+        float: none;
+        background-color: #072c61;
+        padding: 5px 10px 5px 10px;
+        font-size: 15px;
+    }
+    .label{
+        padding: 7px;
+        margin: 10px;
+        background-color: #fff;
+        border:1px solid #072c61;
+        color: #072c61;
+        font-family: 'Merriweather',serif; 
+        letter-spacing: 1px;
+    }
+    h2{
+        color: #072c61;
+    }
+    .page-heading b{
+        color: #072c61;
+        text-shadow: 1px 2px #072c61;
+    }
+    .interests{
+        color: rgba(255,255,255,1.0);
+        background-color: #072c61;
+        border: 1px solid #072c61;
+        margin: 10px;
+        letter-spacing: 1px;
+        font-family: 'Karla',sans-serif;
+        font-size: 1.05em;
+        padding: 1em;
+    }
+    .col-sm-12{
+        border: 1px solid #072c61;
+        padding: 10px;
+    }
+    #col-5,#col-6{
+        height: 15em;
+    }
+    @media screen and (max-width:1099px){
+        .jumbotron{
+            margin-top: 20%;
+        }
+        h2{
+            font-size: 1.1em;
+        }
+        .image img{
+            margin-top: 20px;
+        }
+        #col-1 h2{
+            font-size: 2em;
+        }
+        #col-1 b{
+            position: sticky;
+            left: 90%;
+        }
+        #col-2 h2{
+            font-size: 1.9em;
+        }
+        #col-2 b{
+            position: sticky;
+            left: 90%;
+        }
+        #col-3 h2{
+            font-size: 2em;
+        }
+        #col-3 b{
+            position: sticky;
+            left: 85%;
+        }
+        #col-4 span{
+            padding: 5px;
+            margin: 4px;
+        }
+        #size_0{
+            display: none;
+        }
+        #col-5{
+            height: 8em;
+        }
+        #col-5 h2{
+            font-size: 2em;
+        }
+        #col-6 span{
+            padding: 3px;
+        }
+        #col-6 .h4{
+            padding: 0px;
+        }
+        #col-1,#col-2,#col-3,#col-4,#col-5,#col-6{
+            margin-top: 10px;
+        }
+    }
+</style>
+<script type="text/javascript">
+    var mql = window.matchMedia("screen and (max-width: 765px)");
+</script>

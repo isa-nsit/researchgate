@@ -1,0 +1,55 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@media screen and (max-width:1099px){
+    .navbar-header span{
+      background-color: white;
+    }
+    .navbar-brand{
+      padding-top: -10px;
+    }
+    .test b{
+      font-size: 1.2em;
+      margin-left: -21px;
+    }
+    .brand b{
+      font-size: 1.2em;
+      color:white;
+    }
+    .brand b{
+    color:white;
+    }
+  }
+.example3 .navbar-brand {
+  height: 80px;
+}
+.form-control:focus {
+  border-color: #072c61;
+}
+.example3 .nav >li >a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.example3 .navbar-toggle {
+  padding: 10px;
+  margin: 25px 15px 25px 0;
+}
+.project-panel{
+	border: 1px solid black;
+	box-shadow: 10px 10px 5px lightgrey;
+}
+
+.fade{
+   margin-top: 80px;
+}
+::-webkit-scrollbar {
+    width: 2px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: lightgrey;
+}
+p{
+   font-family:'Fira Sans', sans-serif;
+}

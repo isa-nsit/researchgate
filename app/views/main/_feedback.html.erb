@@ -1,0 +1,132 @@
+<div id="feedbackArea">
+    <button id="d1" value="OFF" style="border:0px;border-radius: 10px 10px 0px 0px; outline: none;">
+      <span id="feedback">FEEDBACK</span>
+    </button>
+  </div>
+
+  <div id="links">
+      <ul class="list-group">
+        <li class="list-group-item" style="border-bottom: 2px solid black;"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=ResearchGate@isa-nsit.in&su=FEEDBACK:<Please type your subject here>&cc=divyanshu@isa-nsit.in"><img src="/uploads/logo.png"></a></li>
+        <li class="list-group-item" style="border-bottom: 2px solid black;"><a href="https://api.whatsapp.com/send?phone=918076903215"><img src="/uploads/whatsapp.png"></a></li>
+        <li class="list-group-item"><a href=" http://m.me/isansit"><img src="/uploads/messenger.png"></a></li>
+      </ul>
+  </div>
+</div>
+
+<style type="text/css">
+  #d1{
+  background-color: blue;
+  color: white;
+  position: fixed;
+  top: 20%;
+  right: -2.5%;
+  width: 95px;
+  letter-spacing: 1px;
+  height: 30px;
+  padding: 1px 1px 1px 1px;
+  transform: rotate(270deg);
+  transition: all .7s ease-in-out;
+  font-weight: bold;
+}
+#links .list-group{
+  width: 6%;
+  border: 2px solid black;
+  position: absolute;
+  top: 23%;
+  right: 0.6%;
+  transform: scale(1.1,1.1);
+  transition: all 2s ease-in-out;
+}
+#links{
+  display: none;
+}
+#links img{
+  height: 40px;
+  width: 40px;
+}
+@media screen and (max-width:1099px){
+  #d1{
+  background-color: blue;
+  color: white;
+  position: fixed;
+  top: 21%;
+  right: -8.6%;
+  width: 95px;
+  margin-right: 0px;
+  letter-spacing: 1px;
+  height: 26px;
+  padding: 1px 1px 1px 1px;
+  transform: rotate(270deg);
+  transition: all .7s ease-in-out;
+  font-weight: bold;
+}
+#links .list-group{
+  width: 15%;
+  position: absolute;
+  top: 20%;
+  right: 7%;
+  transform: scale(1.1,1.1);
+  transition: all 2s ease-in-out;
+}
+#links img{
+  height: 20px;
+  width: 20px;
+}
+</style>
+
+<script type="text/javascript">
+  screenWidth = window.matchMedia( "(max-width: 1099px)" );
+  var feedbackDiv = document.getElementById("d1");
+  var feedbackText = document.getElementById("feedback");
+  var links = document.getElementById('links');
+
+  feedbackDiv.addEventListener('click',function(){
+    
+    if(screenWidth.matches)
+    {
+      if(feedbackDiv.value == "OFF")
+      {
+        feedbackDiv.value = "ON";
+        feedbackDiv.style.transform = "rotate(0deg)";
+        feedbackDiv.style.marginRight = "45px";
+        feedbackDiv.style.top = "15%";
+        feedbackText.innerText = "Contact Us";
+       $( "#links" ).delay( 500 ).fadeIn( 400 );
+      }
+
+      else
+      {
+        feedbackDiv.value = "OFF";
+        feedbackDiv.style.transform = "rotate(270deg)";
+        feedbackDiv.style.marginRight = "0px";
+        feedbackDiv.style.top = "21%";
+        feedbackText.innerText = "FEEDBACK";
+         $("#links").delay(300).fadeOut(300);
+      }
+    }
+    else
+    {
+     if(feedbackDiv.value == "OFF")
+      {
+        console.log(screenWidth);
+        feedbackDiv.value = "ON";
+        feedbackDiv.style.transform = "rotate(0deg)";
+        feedbackDiv.style.marginRight = "35px";
+        feedbackDiv.style.top = "15.5%";
+        feedbackText.innerText = "Contact Us";
+       $( "#links" ).delay( 500 ).fadeIn( 400 );
+      }
+
+      else
+      {
+        feedbackDiv.value = "OFF";
+        feedbackDiv.style.transform = "rotate(270deg)";
+        feedbackDiv.style.marginRight = "0px";
+        feedbackDiv.style.top = "20%";
+        feedbackText.innerText = "FEEDBACK";
+         $("#links").delay(300).fadeOut(300);
+      }
+    }
+  });
+
+</script>

@@ -1,0 +1,21 @@
+<%= render 'active_user/facultyProfile' %>
+
+<div class="row" style="padding: 50px;">
+    <div class="col-md-6 col-sm-6 text-center">
+        <div class="btn btn-lg"><a class="test" href="/tasks/new?email=<%=@faculty.email%>"><span style="font-size: 1.5em; padding: 20px;">Share Idea</span></a></div>        
+    </div>
+    <div class="col-md-6 col-sm-6 text-center">
+        <div class="btn btn-lg disabled"><a class="test"><span style="font-size: 1.5em; padding: 20px;">Schedule Interview</span></a></div>
+    </div>
+</div>
+<%= render :partial => '/main/feedback'%>
+<style type="text/css">
+	@media screen and (max-width:1099px){
+		.btn{
+			margin:5px 15px 5px -5px;
+		}
+		.disabled{
+			padding: 10px 0px 10px 0px;
+		}
+	}
+</style>

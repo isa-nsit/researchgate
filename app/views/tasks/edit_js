@@ -1,0 +1,805 @@
+<%= javascript_tag do %>
+
+document.addEventListener("turbolinks:load", function() {
+  
+  var r1 = document.getElementById('task_members_count_1');
+  var r2 = document.getElementById('task_members_count_2');
+  var r3 = document.getElementById('task_members_count_3');
+  var r4 = document.getElementById('task_members_count_4');
+  var r5 = document.getElementById('task_members_count_5');
+  var submit_button = document.getElementById('submit_button');
+  var emails = document.getElementById('emails');
+  var k = []
+
+  var valid_array = [];
+  var Already_email = false;
+  
+  for(var i=0;i<7;i++)
+    valid_array[i] = false;
+
+  valid_array[2] = true;
+  valid_array[5] = true;
+  valid_array[6] = true;
+  valid_array[0] = true;
+  valid_array[1] = true;
+
+
+  k = Array.from(emails.children)
+  
+  var n = k.length
+
+  for(var i=0;i<n;i++)
+    k[i].style.display = "none";
+
+  var email2_val = false;
+  var email3_val = false;
+  var email4_val = false;
+  var email5_val = false;
+
+  if(r2.checked)
+  {
+    k[0].style.display = "block";
+    k[1].style.display = "none";
+    k[2].style.display = "none";
+    k[3].style.display = "none";
+
+    var result = false;
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+
+      if(!result)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;  
+  }
+
+  if(r3.checked)
+  {
+    k[0].style.display = "block";
+    k[1].style.display = "block";
+    k[2].style.display = "none";
+    k[3].style.display = "none";
+
+    var result = false;
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+
+      if(!result)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;  
+  }
+  if(r4.checked)
+  {
+    k[0].style.display = "block";
+    k[1].style.display = "block";
+    k[2].style.display = "block";
+    k[3].style.display = "none";
+
+    var result = false;
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+
+      if(!result)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;  
+  }
+  if(r5.checked)
+  {
+    k[0].style.display = "block";
+    k[1].style.display = "block";
+    k[2].style.display = "block";
+    k[3].style.display = "block";
+
+    var result = false;
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+
+      if(!result)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;  
+  }
+
+  r1.addEventListener('change',function (event) {
+    k[0].style.display = "none";
+    k[1].style.display = "none";
+    k[2].style.display = "none";
+    k[3].style.display = "none";
+
+    var result = false;
+    for(var i = 0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+
+    submit_button.disabled = result;
+  });
+  
+  r2.addEventListener('change',function (event) {
+    k[0].style.display = "block";
+    k[1].style.display = "none";
+    k[2].style.display = "none";
+    k[3].style.display = "none";
+
+    email2.addEventListener('input',function(){
+
+     var result = false;
+      for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+
+      val2 = email2.value.length;
+      if(!result && val2>0)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;
+    });
+  var result = false;
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;   
+
+      val2 = email2.value.length;
+      
+      if(!result && val2)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;  
+  });
+
+  r3.addEventListener('change',function (event) {
+    k[0].style.display = "block";
+    k[1].style.display = "block";
+    k[2].style.display = "none";
+    k[3].style.display = "none";
+
+    email2.addEventListener('input',function(){
+
+     var result = false;
+      for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+
+      val2 = email2.value.length;
+      val3 = email3.value.length;
+
+      if(!result && val2>0 && val3>0)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;
+    });
+
+    email3.addEventListener('input',function(){
+
+      var result = false;
+      for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+
+      val2 = email2.value.length;
+      val3 = email3.value.length;
+      
+      if(!result && val2>0 && val3>0)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;
+    });
+  var result = false;
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;   
+
+      val2 = email2.value.length;
+      val3 = email3.value.length;
+      
+      if(!result && val2 && val3)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;   
+  });
+  
+  r4.addEventListener('change',function (event) {
+    k[0].style.display = "block";
+    k[1].style.display = "block";
+    k[2].style.display = "block";
+    k[3].style.display = "none";
+
+    email2.addEventListener('input',function(){
+
+     var result = false;
+      for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+
+      val2 = email2.value.length;
+      val3 = email3.value.length;
+      val4 = email4.value.length;
+
+      if(!result && val2>0 && val3>0 && val4>0)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;
+    });
+
+    email3.addEventListener('input',function(){
+
+      var result = false;
+      for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+
+      val2 = email2.value.length;
+      val3 = email3.value.length;
+      val4 = email4.value.length;
+      
+
+      if(!result && val2>0 && val3>0 && val4>0)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;
+    });
+
+    
+    email4.addEventListener('input',function(){
+
+      var result = false;
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+
+      val2 = email2.value.length;
+      val3 = email3.value.length;
+      val4 = email4.value.length;
+      
+      if(!result && val2>0 && val3>0 && val4>0)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;
+    });
+  var result = false;
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;   
+
+      val2 = email2.value.length;
+      val3 = email3.value.length;
+      val4 = email4.value.length;
+      
+      if(!result && val2 && val3 && val4)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;  
+  });
+  
+  r5.addEventListener('change',function (event) {
+    k[0].style.display = "block";
+    k[1].style.display = "block";
+    k[2].style.display = "block";
+    k[3].style.display = "block";
+
+    email2.addEventListener('input',function(){
+
+     var result = false;
+      for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+
+      val2 = email2.value.length;
+      val3 = email3.value.length;
+      val4 = email4.value.length;
+      val5 = email5.value.length;
+
+      if(!result && val2>0 && val3>0 && val4>0 && val5>0)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;
+    });
+
+    email3.addEventListener('input',function(){
+
+      var result = false;
+      for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+
+      val2 = email2.value.length;
+      val3 = email3.value.length;
+      val4 = email4.value.length;
+      val5 = email5.value.length;
+      
+
+      if(!result && val2>0 && val3>0 && val4>0 && val5>0)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;
+    });
+
+    
+    email4.addEventListener('input',function(){
+
+      var result = false;
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+
+      val2 = email2.value.length;
+      val3 = email3.value.length;
+      val4 = email4.value.length;
+      val5 = email5.value.length;
+      
+      if(!result && val2>0 && val3>0 && val4>0 && val5>0)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;
+    });
+
+    email5.addEventListener('input',function(){
+
+      var result = false;
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+
+      val2 = email2.value.length;
+      val3 = email3.value.length;
+      val4 = email4.value.length;
+      val5 = email5.value.length;
+        
+      if(!result && val2 && val3 && val4 && val5)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;
+
+    });
+
+    var result = false;
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;   
+
+      val2 = email2.value.length;
+      val3 = email3.value.length;
+      val4 = email4.value.length;
+      val5 = email5.value.length;
+      
+      if(!result && val2 && val3 && val4 && val5)
+        submit_button.disabled = false;
+
+      else
+      submit_button.disabled = true;  
+  });
+
+  
+  projectName = document.getElementById('project_name');
+  var projectNameCounter = document.getElementById('project_name_counter');
+  var submit_button = document.getElementById('submit_button');
+  var percentage = document.getElementById('task_percentage');
+  var projectDescription = document.getElementById('project_description');
+  var year = document.getElementById('task_year');
+  var branch = document.getElementById('task_branch');
+  var email1 = document.getElementById('task_email1');
+  var email2 = document.getElementById('task_email2');
+  var email3 = document.getElementById('task_email3');
+  var email4 = document.getElementById('task_email4');
+  var email5 = document.getElementById('task_email5');
+  var task_name = document.getElementById('task_name');
+
+  submit_button.disabled = true;
+  year.options[0].disabled = true;
+  branch.options[0].disabled = true;
+
+  // Added event Listener on ProjectName
+  projectName.addEventListener('input',function(){
+
+    if(projectName.value.length == 0)
+      valid_array[0] = false;
+
+    else
+    {
+      if(projectName.value.length > 30)
+      {
+        valid_array[0] = false;
+        projectNameCounter.innerHTML = 0;
+        projectNameCounter.style.color = "red";
+      }
+      
+      else
+      {
+      valid_array[0] = true;
+      projectNameCounter.innerHTML = 30 - projectName.value.length;
+      projectNameCounter.style.color = "#072c61"; 
+      }  
+    }
+    
+    var result = false;
+
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+
+    submit_button.disabled = result;
+  });
+
+  // Added event Listener on projectDescription
+  projectDescription.addEventListener('input',function(){
+    if(projectDescription.value.length == 0)
+      valid_array[1] = false;
+
+    else
+      valid_array[1] = true;
+    var result = false;
+
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+      submit_button.disabled = result;
+  });
+
+  //Added event Listener on percentage
+  percentage.addEventListener('input',function(){
+    if(percentage.value.length == 0)
+      valid_array[2] = false;
+
+    else
+      valid_array[2] = true;
+    var result = false;
+
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+    submit_button.disabled = result;
+  });
+
+  //Added event Listener on year
+  year.addEventListener('input',function(){
+    if(year.value.length == 0)
+      valid_array[3] = false;
+
+    else
+      valid_array[3] = true;
+    var result = false;
+
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+    submit_button.disabled = result;
+  });
+
+  //Added event Listener on branch
+  branch.addEventListener('input',function(){
+    if(branch.value.length == 0)
+      valid_array[4] = false;
+
+    else
+      valid_array[4] = true;
+    var result = false;
+
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+    submit_button.disabled = result;
+  });
+
+  //Added event Listener on task name
+  task_name.addEventListener('input',function(){
+
+
+    if(task_name.value.length == 0)
+      valid_array[5] = false;
+
+    else
+      valid_array[5] = true;
+
+    var result = false;
+
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+    submit_button.disabled = result;
+  });
+
+  //Added event Listener on email1 
+  email1.addEventListener('input',function(){
+
+    if(email1.value.length == 0)
+      valid_array[6] = false;
+
+    else
+      valid_array[6] = true;
+
+    var result = false;
+
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+    submit_button.disabled = result;
+  });
+
+  var result = false;
+
+    for(var i=0;i<7;i++)
+      if(valid_array[i] == false)
+        result = true;
+
+    submit_button.disabled = result; 
+
+
+function except(except,index,value)
+{
+  for(var i=0 ; i<5 ; i++)
+  {
+    if(index!=i)
+    {
+      if(value == except[i] && value!="" && except[i]!="")
+      return true;
+    }
+  }
+  return false;
+}
+
+arr =  [];
+var i=0;
+<%@email_ids.each do|f|%>
+arr[i++] = '<%=f%>';
+<% end %>
+
+var size = <%=@size %>
+
+
+var e1 = document.getElementById('spanEmail1');
+var e2 = document.getElementById('spanEmail2');
+var e3 = document.getElementById('spanEmail3');
+var e4 = document.getElementById('spanEmail4');
+var e5 = document.getElementById('spanEmail5');
+var already1 = document.getElementById('already1');
+var already2 = document.getElementById('already2');
+var already3 = document.getElementById('already3');
+var already4 = document.getElementById('already4');
+var already5 = document.getElementById('already5');
+already1.style.display = "none";
+already2.style.display = "none";
+already3.style.display = "none";
+already4.style.display = "none";
+already5.style.display = "none";
+
+var already = [];
+already[0] = email1.value;
+already[1] = email2.value;
+already[2] = email3.value;
+already[3] = email4.value;
+already[4] = email5.value;
+
+email1.addEventListener('input',function(){
+  
+  var val = email1.value;
+  var index = arr.indexOf(val);
+  
+  if(except(already,0,val))
+  {
+    e1.classList.add("glyphicon-remove");
+    e1.style.color = "red";
+    e1.classList.remove("glyphicon-ok");
+    email1.style.border = "1px solid red";
+    submit_button.disabled = true;
+    already1.style.display = "initial";     
+  }
+
+
+ else if(index == -1)
+  {
+    submit_button.disabled = true;
+    e1.classList.add("glyphicon-remove");
+    e1.style.color = "red";
+    e1.classList.remove("glyphicon-ok");
+    email1.style.border = "1px solid red";
+    submit_button.disabled = true;  
+    already[0] = val;
+    already1.style.display = "none";
+  }
+
+  
+  else
+  {
+   
+    e1.classList.add("glyphicon-ok");
+    e1.style.color = "green";
+    e1.classList.remove("glyphicon-remove");
+    submit_button.disabled = false;
+    email1.style.border = "1px solid green";
+    already[0] = val;
+    already1.style.display = "none";
+  }
+  
+});
+
+email2.addEventListener('input',function(){
+  
+  already[0] = email1.value;
+  var val = email2.value;
+  var index = arr.indexOf(val);
+  
+  if(except(already,1,val))
+  {
+   
+    e2.classList.add("glyphicon-remove");
+    e2.style.color = "red";
+    e2.classList.remove("glyphicon-ok");
+    email2.style.border = "1px solid red";
+    submit_button.disabled = true;
+    already2.style.display = "initial";     
+  }
+
+
+ else if(index == -1)
+  {
+    submit_button.disabled = true;
+    e2.classList.add("glyphicon-remove");
+    e2.style.color = "red";
+    e2.classList.remove("glyphicon-ok");
+    email2.style.border = "1px solid red";
+    submit_button.disabled = true;  
+    already[1] = val;
+    already2.style.display = "none";
+  }
+
+  
+  else
+  {
+   
+    e2.classList.add("glyphicon-ok");
+    e2.style.color = "green";
+    e2.classList.remove("glyphicon-remove");
+    submit_button.disabled = false;
+    email2.style.border = "1px solid green";
+    already[1] = val;
+    already2.style.display = "none";
+  }
+});
+
+email3.addEventListener('input',function(){
+  
+  var val = email3.value;
+  var index = arr.indexOf(val);
+  
+  if(except(already,2,val))
+  {
+  
+    e3.classList.add("glyphicon-remove");
+    e3.style.color = "red";
+    e3.classList.remove("glyphicon-ok");
+    email3.style.border = "1px solid red";
+    submit_button.disabled = true;
+    already3.style.display = "initial";     
+  }
+
+
+ else if(index == -1)
+  {
+    e3.classList.add("glyphicon-remove");
+    e3.style.color = "red";
+    e3.classList.remove("glyphicon-ok");
+    email3.style.border = "1px solid red";
+    submit_button.disabled = true;  
+    already[2] = val;
+    already3.style.display = "none";
+  }
+
+  
+  else
+  {
+  
+    e3.classList.add("glyphicon-ok");
+    e3.style.color = "green";
+    e3.classList.remove("glyphicon-remove");
+    submit_button.disabled = false;
+    email3.style.border = "1px solid green";
+    already[2] = val;
+    already3.style.display = "none";
+  }
+});
+
+email4.addEventListener('input',function(){
+  
+  var val = email4.value;
+  var index = arr.indexOf(val);
+  
+  if(except(already,3,val))
+  {
+    
+    e4.classList.add("glyphicon-remove");
+    e4.style.color = "red";
+    e4.classList.remove("glyphicon-ok");
+    email4.style.border = "1px solid red";
+    submit_button.disabled = true;
+    already4.style.display = "initial";     
+  }
+
+
+ else if(index == -1)
+  {
+    e4.classList.add("glyphicon-remove");
+    e4.style.color = "red";
+    e4.classList.remove("glyphicon-ok");
+    email4.style.border = "1px solid red";
+    submit_button.disabled = true;  
+    already[3] = val;
+    already4.style.display = "none";
+  }
+
+  
+  else
+  {
+    e4.classList.add("glyphicon-ok");
+    e4.style.color = "green";
+    e4.classList.remove("glyphicon-remove");
+    submit_button.disabled = false;
+    email4.style.border = "1px solid green";
+    already[3] = val;
+    already4.style.display = "none";
+  }
+});
+
+email5.addEventListener('input',function(){
+  
+  var val = email5.value;
+  var index = arr.indexOf(val);
+  
+  if(except(already,4,val))
+  {
+    e5.classList.add("glyphicon-remove");
+    e5.style.color = "red";
+    e5.classList.remove("glyphicon-ok");
+    email5.style.border = "1px solid red";
+    submit_button.disabled = true;
+    already5.style.display = "initial";     
+  }
+
+
+ else if(index == -1)
+  {
+    e5.classList.add("glyphicon-remove");
+    e5.style.color = "red";
+    e5.classList.remove("glyphicon-ok");
+    email5.style.border = "1px solid red";
+    submit_button.disabled = true;  
+    already[4] = val;
+    already5.style.display = "none";
+  }
+
+  
+  else
+  {
+    e5.classList.add("glyphicon-ok");
+    e5.style.color = "green";
+    e5.classList.remove("glyphicon-remove");
+    submit_button.disabled = false;
+    email5.style.border = "1px solid green";
+    already[4] = val;
+    already5.style.display = "none";
+  }
+});  
+});
+
+<% end %>

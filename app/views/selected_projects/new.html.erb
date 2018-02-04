@@ -1,0 +1,52 @@
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <center><span style="font-weight: bold;">Register This Project!</span></center>
+  </div>
+  <div class="panel-body">
+
+    <%= form_for @project, url: {controller: "selected_projects",action: "create"}  do |f| %>
+   <div class="field form-group">
+   		  <div class="field form-group">
+              <%= f.label :"Project Name"%>
+            <%= f.text_field :ProjectName , :class => 'form-control',autofocus: true%><br>
+            </div>
+
+          <div class="form-group">
+            <%= f.label :"Project Description" %>
+            <%= f.text_area :Description , :class => 'form-control'%><br>
+          </div>
+
+          <div class="field form-group">
+            <%= f.label :"Email for first Candidate (Mandatory)"%>
+          <%= f.text_field :email1 , :class => 'form-control',autofocus: true%><br>
+          </div>
+          
+          <div class="field form-group">
+            <%= f.label :"Email for Second Candidate"%>
+          <%= f.text_field :email2 , :class => 'form-control',autofocus: true%><br>
+          </div>
+          
+          <div class="field form-group">
+            <%= f.label :"Email for Third Candidate"%>
+          <%= f.text_field :email3 , :class => 'form-control',autofocus: true%><br>
+          </div>
+          <div class="field form-group">
+            <%= f.label :"Email for Fourth Candidate"%>
+          <%= f.text_field :email4 , :class => 'form-control',autofocus: true%><br>
+          </div>
+          <div class="field form-group">
+            <%= f.label :"Email for Fifth Candidate"%>
+          <%= f.text_field :email5 , :class => 'form-control',autofocus: true%><br>
+          </div>
+          
+
+          <div class="form-group">
+
+                  <%= f.submit "Save"  ,:class => 'btn btn-block btn-primary'%>
+
+              </div>
+          
+<% end %>    
+  </div>
+</div>
