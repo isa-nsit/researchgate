@@ -1,0 +1,1314 @@
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (78.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL)
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (76.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateAdmins (20171129083756)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "admins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar , "reset_password_sent_at" datetime , "remember_created_at" datetime , "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime , "last_sign_in_at" datetime , "current_sign_in_ip" varchar , "last_sign_in_ip" varchar , "confirmation_token" varchar , "confirmed_at" datetime , "confirmation_sent_at" datetime , "unconfirmed_email" varchar , "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+  [1m[36m (0.5ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.2ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.6ms)[0m  [1mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171129083756"]]
+  [1m[35m (82.1ms)[0m  commit transaction
+Migrating to DeviseCreateUsers (20171129083809)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar , "reset_password_sent_at" datetime , "remember_created_at" datetime , "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime , "last_sign_in_at" datetime , "current_sign_in_ip" varchar , "last_sign_in_ip" varchar , "confirmation_token" varchar , "confirmed_at" datetime , "confirmation_sent_at" datetime , "unconfirmed_email" varchar , "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.2ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.5ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20171129083809"]]
+  [1m[36m (89.9ms)[0m  [1mcommit transaction[0m
+Migrating to AddColumnsToAdmins (20171205080400)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "admins" ADD "name" varchar [0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "admins" ADD "bio" text 
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "admins" ADD "qualifications" varchar [0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "admins" ADD "designation" varchar 
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "admins" ADD "division" varchar [0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "admins" ADD "contact_no" varchar 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171205080400"]]
+  [1m[35m (85.2ms)[0m  commit transaction
+Migrating to AddColumnsToUsers (20171205080731)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "users" ADD "name" varchar 
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "users" ADD "branch" varchar [0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "percentage" varchar 
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "year" varchar [0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "profile_pic" varchar 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171205080731"]]
+  [1m[35m (78.0ms)[0m  commit transaction
+Migrating to AddPicToAdmins (20171205150935)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "admins" ADD "pic" varchar 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171205150935"]]
+  [1m[35m (130.7ms)[0m  commit transaction
+Migrating to CreateTasks (20171205164535)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar , "branch" varchar , "percentage" varchar , "year" varchar , "task_name" varchar , "task_desc" varchar , "members_count" integer , "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171205164535"]]
+  [1m[35m (135.2ms)[0m  commit transaction
+Migrating to AddEmail1ToTask (20171207185442)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "tasks" ADD "email1" varchar 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171207185442"]]
+  [1m[35m (102.9ms)[0m  commit transaction
+Migrating to AddEmail2ToTask (20171207185451)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "tasks" ADD "email2" varchar 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171207185451"]]
+  [1m[35m (72.6ms)[0m  commit transaction
+Migrating to AddEmail3ToTask (20171207185500)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "tasks" ADD "email3" varchar 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171207185500"]]
+  [1m[35m (82.8ms)[0m  commit transaction
+Migrating to AddEmail4ToTask (20171207185507)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "tasks" ADD "email4" varchar 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171207185507"]]
+  [1m[35m (93.5ms)[0m  commit transaction
+Migrating to AddEmail5ToTask (20171207185514)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "tasks" ADD "email5" varchar 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171207185514"]]
+  [1m[35m (70.9ms)[0m  commit transaction
+Migrating to CreateSelectedProjects (20171208090422)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "selected_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ProjectName" varchar , "Description" text , "email1" varchar , "email2" varchar , "email3" varchar , "email4" varchar , "email5" varchar , "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171208090422"]]
+  [1m[35m (88.9ms)[0m  commit transaction
+Migrating to CreateProjectUserAdminRelations (20171208090857)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  PRAGMA FOREIGN_KEYS = ON
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "project_user_admin_relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "admin_id" integer , "user_id" integer , "selected_projects_id" integer , "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT fk_project_user_admin_relations_admin_id FOREIGN KEY ("admin_id") REFERENCES "admins" ("id"), CONSTRAINT fk_project_user_admin_relations_user_id FOREIGN KEY ("user_id") REFERENCES "users" ("id"), CONSTRAINT fk_project_user_admin_relations_selected_projects_id FOREIGN KEY ("selected_projects_id") REFERENCES "selected_projects" ("id"))[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.2ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.4ms)[0m  CREATE  INDEX "index_project_user_admin_relations_on_admin_id" ON "project_user_admin_relations" ("admin_id")
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_project_user_admin_relations_on_admin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_project_user_admin_relations_on_admin_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.4ms)[0m  CREATE  INDEX "index_project_user_admin_relations_on_user_id" ON "project_user_admin_relations" ("user_id")
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_project_user_admin_relations_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_project_user_admin_relations_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_project_user_admin_relations_on_admin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_project_user_admin_relations_on_admin_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.4ms)[0m  [1mCREATE  INDEX "index_project_user_admin_relations_on_selected_projects_id" ON "project_user_admin_relations" ("selected_projects_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20171208090857"]]
+  [1m[36m (102.6ms)[0m  [1mcommit transaction[0m
+Migrating to AddAdminIdToSelectedProjects (20171208104230)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "selected_projects" ADD "admin_id" integer [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAdminIdToSelectedProjects (20171208104230)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "selected_projects" ADD "admin_id" integer [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAdminIdToSelectedProjects (20171208104230)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "selected_projects" ADD "Admin_id" integer [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAdminIdToSelectedProjects (20171208104230)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "selected_projects" ADD "admin_id" integer [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAdminIdToSelectedProjects (20171208104230)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20171208104230"]]
+  [1m[36m (81.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddFieldsToProjectUserAdminRelation (20171208104310)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "project_user_admin_relations" ADD "user_id1" integer [0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "project_user_admin_relations" ADD "user_id2" integer 
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "project_user_admin_relations" ADD "user_id3" integer [0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "project_user_admin_relations" ADD "user_id4" integer 
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "project_user_admin_relations" ADD "user_id5" integer [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20171208104310"]]
+  [1m[36m (76.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateCompleteProjects (20171208190209)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mPRAGMA FOREIGN_KEYS = ON[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "complete_projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "selected_projects_id" integer , "admin_id" integer , "user1" varchar , "user2" varchar , "user3" varchar , "user4" varchar , "user5" varchar , "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT fk_complete_projects_selected_projects_id FOREIGN KEY ("selected_projects_id") REFERENCES "selected_projects" ("id"), CONSTRAINT fk_complete_projects_admin_id FOREIGN KEY ("admin_id") REFERENCES "admins" ("id"))
+  [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.3ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.4ms)[0m  CREATE  INDEX "index_complete_projects_on_selected_projects_id" ON "complete_projects" ("selected_projects_id")
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.6ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_complete_projects_on_selected_projects_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_complete_projects_on_selected_projects_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.4ms)[0m  CREATE  INDEX "index_complete_projects_on_admin_id" ON "complete_projects" ("admin_id")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171208190209"]]
+  [1m[35m (171.3ms)[0m  commit transaction
+Migrating to AddAdminToTask (20171209160618)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "tasks" ADD "admin_id" integer 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAdminToTask (20171209160618)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20171209160618"]]
+  [1m[36m (91.0ms)[0m  [1mcommit transaction[0m
+Migrating to RemovecontactNoFromAdmin (20180102200356)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mCREATE TEMPORARY TABLE "aadmins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar , "reset_password_sent_at" datetime , "remember_created_at" datetime , "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime , "last_sign_in_at" datetime , "current_sign_in_ip" varchar , "last_sign_in_ip" varchar , "confirmation_token" varchar , "confirmed_at" datetime , "confirmation_sent_at" datetime , "unconfirmed_email" varchar , "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" varchar , "bio" text , "qualifications" varchar , "designation" varchar , "division" varchar , "contact_no" varchar , "pic" varchar )[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.5ms)[0m  [1mCREATE UNIQUE INDEX "tindex_aadmins_on_reset_password_token" ON "aadmins" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "tindex_aadmins_on_email" ON "aadmins" ("email")[0m
+  [1m[35m (0.3ms)[0m  SELECT * FROM "admins"
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE "admins"[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "admins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar , "reset_password_sent_at" datetime , "remember_created_at" datetime , "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime , "last_sign_in_at" datetime , "current_sign_in_ip" varchar , "last_sign_in_ip" varchar , "confirmation_token" varchar , "confirmed_at" datetime , "confirmation_sent_at" datetime , "unconfirmed_email" varchar , "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" varchar , "bio" text , "qualifications" varchar , "designation" varchar , "division" varchar , "pic" varchar )
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aadmins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aadmins_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aadmins_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aadmins_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "aadmins"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "aadmins"
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180102200356"]]
+  [1m[35m (128.4ms)[0m  commit transaction
+Migrating to RemoveFromAdmin (20180102200841)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TEMPORARY TABLE "aadmins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar , "reset_password_sent_at" datetime , "remember_created_at" datetime , "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime , "last_sign_in_at" datetime , "current_sign_in_ip" varchar , "last_sign_in_ip" varchar , "confirmation_token" varchar , "confirmed_at" datetime , "confirmation_sent_at" datetime , "unconfirmed_email" varchar , "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" varchar , "bio" text , "qualifications" varchar , "designation" varchar , "division" varchar , "pic" varchar )
+  [1m[36m (0.4ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+
+  [1m[36m (0.4ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "tindex_aadmins_on_reset_password_token" ON "aadmins" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "tindex_aadmins_on_email" ON "aadmins" ("email")[0m
+  [1m[35m (0.3ms)[0m  SELECT * FROM "admins"
+  [1m[36m (0.8ms)[0m  [1mDROP TABLE "admins"[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "admins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar , "reset_password_sent_at" datetime , "remember_created_at" datetime , "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime , "last_sign_in_at" datetime , "current_sign_in_ip" varchar , "last_sign_in_ip" varchar , "confirmation_token" varchar , "confirmed_at" datetime , "confirmation_sent_at" datetime , "unconfirmed_email" varchar , "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" varchar , "qualifications" varchar , "designation" varchar , "division" varchar , "pic" varchar )
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aadmins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aadmins_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aadmins_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aadmins_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "aadmins"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "aadmins"
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "aadmins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar , "reset_password_sent_at" datetime , "remember_created_at" datetime , "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime , "last_sign_in_at" datetime , "current_sign_in_ip" varchar , "last_sign_in_ip" varchar , "confirmation_token" varchar , "confirmed_at" datetime , "confirmation_sent_at" datetime , "unconfirmed_email" varchar , "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" varchar , "qualifications" varchar , "designation" varchar , "division" varchar , "pic" varchar )[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.1ms)[0m  CREATE UNIQUE INDEX "tindex_aadmins_on_reset_password_token" ON "aadmins" ("reset_password_token")
+  [1m[36m (0.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.1ms)[0m  CREATE UNIQUE INDEX "tindex_aadmins_on_email" ON "aadmins" ("email")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "admins"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "admins"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "admins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar , "reset_password_sent_at" datetime , "remember_created_at" datetime , "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime , "last_sign_in_at" datetime , "current_sign_in_ip" varchar , "last_sign_in_ip" varchar , "confirmation_token" varchar , "confirmed_at" datetime , "confirmation_sent_at" datetime , "unconfirmed_email" varchar , "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" varchar , "qualifications" varchar , "division" varchar , "pic" varchar )[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aadmins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aadmins_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aadmins_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aadmins_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.0ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  [1m[35m (0.0ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "aadmins"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "aadmins"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20180102200841"]]
+  [1m[36m (123.1ms)[0m  [1mcommit transaction[0m
+Migrating to AddingToAdmin (20180102201205)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "admins" ADD "designation" varchar [0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "admins" ADD "namehref" varchar 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180102201205"]]
+  [1m[35m (122.3ms)[0m  commit transaction
+Migrating to AddingToMeraAdmin (20180102203518)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "admins" ADD "AOI" varchar 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180102203518"]]
+  [1m[35m (118.1ms)[0m  commit transaction
+Migrating to AddAcceptedToTask (20180114112937)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "tasks" ADD "accepted" boolean 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180114112937"]]
+  [1m[35m (91.8ms)[0m  commit transaction
+Migrating to CreateTaskCreates (20180114114333)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "task_creates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180114114333"]]
+  [1m[35m (123.9ms)[0m  commit transaction
+Migrating to CreateEligibilities (20180115180046)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "eligibilities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "percentage" varchar , "sems_complete" integer , "branch" varchar , "period" varchar , "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180115180046"]]
+  [1m[35m (113.1ms)[0m  commit transaction
+Migrating to AddAdminNameToEligibility (20180115180443)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "eligibilities" ADD "faculty_name" varchar 
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180115180443"]]
+  [1m[35m (69.3ms)[0m  commit transaction
+Migrating to DeviseCreateIncharges (20180120053751)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "incharges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar , "reset_password_sent_at" datetime , "remember_created_at" datetime , "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime , "last_sign_in_at" datetime , "current_sign_in_ip" varchar , "last_sign_in_ip" varchar , "confirmation_token" varchar , "confirmed_at" datetime , "confirmation_sent_at" datetime , "unconfirmed_email" varchar , "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+  [1m[36m (0.3ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.4ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "index_incharges_on_email" ON "incharges" ("email")[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.4ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_incharges_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_incharges_on_email' AND type='index'
+[0m
+  [1m[35m (0.6ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.6ms)[0m  [1mCREATE UNIQUE INDEX "index_incharges_on_reset_password_token" ON "incharges" ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20180120053751"]]
+  [1m[36m (122.9ms)[0m  [1mcommit transaction[0m
+Migrating to AddUpdateCountToTasks (20180120154354)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "tasks" ADD "update_count" integer DEFAULT 0[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20180120154354"]]
+  [1m[36m (67.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateSendTaskWorkers (20180127212457)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "send_task_workers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20180127212457"]]
+  [1m[36m (151.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAcceptedWorkers (20180127220406)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "accepted_workers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20180127220406"]]
+  [1m[36m (124.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateRejectedWorkers (20180127220417)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "rejected_workers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20180127220417"]]
+  [1m[36m (126.1ms)[0m  [1mcommit transaction[0m
+Migrating to AddTableUserTaskRelation (20180204161931)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mPRAGMA FOREIGN_KEYS = ON[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "user_task_relations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer , "task_id" integer , "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT fk_user_task_relations_user_id FOREIGN KEY ("user_id") REFERENCES "users" ("id"), CONSTRAINT fk_user_task_relations_task_id FOREIGN KEY ("task_id") REFERENCES "tasks" ("id"))
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.2ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_user_task_relations_on_user_id" ON "user_task_relations" ("user_id")[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.5ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_task_relations_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_task_relations_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.5ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.5ms)[0m  [1mCREATE  INDEX "index_user_task_relations_on_task_id" ON "user_task_relations" ("task_id")[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20180204161931"]]
+  [1m[36m (135.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='schema_migrations' 
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='users' 
+[0m
+  [1m[35m (0.3ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='tasks' 
+
+  [1m[36m (0.4ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='selected_projects' 
+[0m
+  [1m[35m (0.3ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='project_user_admin_relations' 
+
+  [1m[36m (0.4ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='complete_projects' 
+[0m
+  [1m[35m (0.4ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='admins' 
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='task_creates' 
+[0m
+  [1m[35m (0.3ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='eligibilities' 
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='incharges' 
+[0m
+  [1m[35m (0.4ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='send_task_workers' 
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='accepted_workers' 
+[0m
+  [1m[35m (0.4ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='rejected_workers' 
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='user_task_relations' 
+[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.3ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_complete_projects_on_admin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_complete_projects_on_admin_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_complete_projects_on_selected_projects_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_complete_projects_on_selected_projects_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.2ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_incharges_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_incharges_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_incharges_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_incharges_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_project_user_admin_relations_on_selected_projects_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_project_user_admin_relations_on_selected_projects_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_project_user_admin_relations_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_project_user_admin_relations_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_project_user_admin_relations_on_admin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_project_user_admin_relations_on_admin_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_task_relations_on_task_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_task_relations_on_task_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_task_relations_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_task_relations_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='accepted_workers' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='admins' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='complete_projects' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='eligibilities' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='incharges' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='project_user_admin_relations' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='rejected_workers' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='selected_projects' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='send_task_workers' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='task_creates' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='tasks' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='user_task_relations' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='users' 
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='schema_migrations' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='users' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='tasks' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='selected_projects' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='project_user_admin_relations' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='complete_projects' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='admins' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='task_creates' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='eligibilities' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='incharges' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='send_task_workers' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='accepted_workers' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='rejected_workers' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='user_task_relations' 
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_complete_projects_on_admin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_complete_projects_on_admin_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_complete_projects_on_selected_projects_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_complete_projects_on_selected_projects_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_incharges_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_incharges_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_incharges_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_incharges_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_project_user_admin_relations_on_selected_projects_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_project_user_admin_relations_on_selected_projects_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_project_user_admin_relations_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_project_user_admin_relations_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_project_user_admin_relations_on_admin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_project_user_admin_relations_on_admin_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_task_relations_on_task_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_task_relations_on_task_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_task_relations_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_task_relations_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='accepted_workers' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='admins' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='complete_projects' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='eligibilities' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='incharges' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='project_user_admin_relations' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='rejected_workers' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='selected_projects' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='send_task_workers' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='task_creates' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='tasks' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='user_task_relations' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='users' 
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='schema_migrations' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='users' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='tasks' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='selected_projects' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='project_user_admin_relations' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='complete_projects' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='admins' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='task_creates' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='eligibilities' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='incharges' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='send_task_workers' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='accepted_workers' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='rejected_workers' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='user_task_relations' 
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_complete_projects_on_admin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_complete_projects_on_admin_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_complete_projects_on_selected_projects_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_complete_projects_on_selected_projects_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_incharges_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_incharges_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_incharges_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_incharges_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_project_user_admin_relations_on_selected_projects_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_project_user_admin_relations_on_selected_projects_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_project_user_admin_relations_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_project_user_admin_relations_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_project_user_admin_relations_on_admin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_project_user_admin_relations_on_admin_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_task_relations_on_task_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_task_relations_on_task_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_task_relations_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_task_relations_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='accepted_workers' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='admins' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='complete_projects' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='eligibilities' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='incharges' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='project_user_admin_relations' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='rejected_workers' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='selected_projects' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='send_task_workers' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='task_creates' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='tasks' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='user_task_relations' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='users' 
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='view'[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='schema_migrations' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='users' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='tasks' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='selected_projects' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='project_user_admin_relations' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='complete_projects' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='admins' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='task_creates' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='eligibilities' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='incharges' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='send_task_workers' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='accepted_workers' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='rejected_workers' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='user_task_relations' 
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_complete_projects_on_admin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_complete_projects_on_admin_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_complete_projects_on_selected_projects_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_complete_projects_on_selected_projects_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_incharges_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_incharges_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_incharges_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_incharges_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_project_user_admin_relations_on_selected_projects_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_project_user_admin_relations_on_selected_projects_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_project_user_admin_relations_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_project_user_admin_relations_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_project_user_admin_relations_on_admin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_project_user_admin_relations_on_admin_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_task_relations_on_task_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_task_relations_on_task_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_task_relations_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_task_relations_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mSELECT name, sql FROM sqlite_master WHERE type = 'index'[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name, sql FROM sqlite_master WHERE type = 'index'
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='accepted_workers' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='admins' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='complete_projects' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='eligibilities' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='incharges' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='project_user_admin_relations' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='rejected_workers' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='selected_projects' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='send_task_workers' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='task_creates' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='tasks' 
+[0m
+  [1m[35m (0.1ms)[0m              SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='user_task_relations' 
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT name, sql FROM sqlite_master
+            WHERE type='table'  AND name='users' 
+[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='view'
