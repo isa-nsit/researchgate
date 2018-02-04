@@ -4,7 +4,7 @@ class SelectedProjectsController < ApplicationController
   def create
   	respond_to do|format| 
 
-      task=Task.where(id:params[:id]).first
+      task=Task.where(id:params[:id].to_s).first
       
  	    project = SelectedProject.new
   	  project.ProjectName = task.task_name
@@ -84,7 +84,7 @@ class SelectedProjectsController < ApplicationController
 
   def complete
     id= params[:id]
-    project=ProjectUserAdminRelation.where(:SelectedProject_id=> id).first
+    project=ProjectUserAdminRelation.where(:SelectedProject_id=> id.to_s).first
     val=CompleteProject.new
     val.SelectedProject_id=id
     val.Admin_id=current_admin.id
@@ -100,7 +100,7 @@ class SelectedProjectsController < ApplicationController
   end
 
    def reject
-    task=Task.where(id:params[:id]).first
+    task=Task.where(id:params[:id].to_s).first
     task.accepted=false
     task.save!
 

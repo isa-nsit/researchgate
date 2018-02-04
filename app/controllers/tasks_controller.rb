@@ -28,12 +28,12 @@ class TasksController < ApplicationController
     @task.task_desc =params[:task][:task_desc]
     @task.members_count =params[:task][:members_count]
     @task.accepted = true;
-    @task.admin_id = Admin.find_by_email(@email).id
+    @task.admin_id = Admin.find_by_email(@email.to_s).id
     count=1
-    user2=User.where(:email=>params[:task][:email2]).first
-    user3=User.where(:email=>params[:task][:email3]).first
-    user4=User.where(:email=>params[:task][:email4]).first
-    user5=User.where(:email=>params[:task][:email5]).first
+    user2=User.where(:email=>params[:task][:email2].to_s).first
+    user3=User.where(:email=>params[:task][:email3].to_s).first
+    user4=User.where(:email=>params[:task][:email4].to_s).first
+    user5=User.where(:email=>params[:task][:email5].to_s).first
 
     #checking if user exists or not 
     if(user2)
@@ -67,7 +67,7 @@ class TasksController < ApplicationController
         #creating user_task_relations
         u=UserTaskRelation.new
         u.task_id=@task.id
-        u.user_id=User.where(:email=>params[:task][:email1]).first.id
+        u.user_id=User.where(:email=>params[:task][:email1].to_s).first.id
         u.save
         if(user2)
           u=UserTaskRelation.new
@@ -106,9 +106,9 @@ class TasksController < ApplicationController
   def edit 
     @countInstrumentation=Admin.where(division:"Instrumentation").count
     @countAutomation=Admin.where(division:"Automation").count
-    @task =Task.where(id: params[:id]).first
+    @task =Task.where(id: params[:id].to_s).first
     
-    @email=Admin.find_by_id(@task.admin_id).email
+    @email=Admin.find_by_id(@task.admin_id.to_s).email
     @email_ids = []
 
     User.all.each do|user|
@@ -124,7 +124,7 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task=Task.where(id:params[:id]).first
+    @task=Task.where(id:params[:id].to_s).first
     @email=params[:email]
     @task.name=params[:task][:name]
     @task.email1=params[:task][:email1]
@@ -134,7 +134,7 @@ class TasksController < ApplicationController
     @task.task_name=params[:task][:task_name]
     @task.task_desc=params[:task][:task_desc]
     @task.members_count=params[:task][:members_count]
-    @task.admin_id = Admin.find_by_email(params[:email]).id
+    @task.admin_id = Admin.find_by_email(params[:email].to_s).id
     @task.accepted = true
     @task.update_count+=1
     count=1
@@ -174,12 +174,12 @@ class TasksController < ApplicationController
       flag=false
  end
     if (count==@task.members_count and @task.save and flag==true)
-      oldRelations=UserTaskRelation.where(task_id: params[:id])
+      oldRelations=UserTaskRelation.where(task_id: params[:id].to_s)
       oldRelations.destroy_all
       #creating user_task_relations
       u=UserTaskRelation.new
       u.task_id=@task.id
-      u.user_id=User.where(:email=>params[:task][:email1]).first.id
+      u.user_id=User.where(:email=>params[:task][:email1].to_s).first.id
       u.save
       if(user2)
         u=UserTaskRelation.new
@@ -216,7 +216,7 @@ class TasksController < ApplicationController
   def destroy
     task_id=params[:id]
     task=Task.find_by_id(task_id)
-    user_relations=UserTaskRelation.where(task_id: task_id)
+    user_relations=UserTaskRelation.where(task_id: task_id.to_s)
     user_relations.destroy_all
     task.destroy
     return redirect_to active_user_home_path, notice:'Idea successfully deleted'
