@@ -17,7 +17,7 @@ class ActiveUserController < ApplicationController
     users.each do|project|
       s_projectIds<<project.selected_projects_id
     end
-    @selectedProjects=SelectedProject.where(id:s_projectIds.to_s.to_s.to_s)     
+    @selectedProjects=SelectedProject.where(id:s_projectIds)     
     
     # finding all the completed projects in which current_user is involved
     users = CompleteProject.where("user1=? OR user2=? OR user3=? OR user4=? OR user5=?",current_user.id.to_s,
@@ -26,7 +26,7 @@ class ActiveUserController < ApplicationController
     users.each do|project|
       c_projectIds<<project.selected_projects_id
     end
-    @completedProjects=SelectedProject.where(id:c_projectIds.to_s)
+    @completedProjects=SelectedProject.where(id:c_projectIds)
    
     # finding all projects
     @allProjects = []
@@ -39,12 +39,12 @@ class ActiveUserController < ApplicationController
     @allProjects.shuffle!
   
     # finding all the tasks in which current_user is involved 
-    users = UserTaskRelation.where(user_id:current_user.id.to_s)    
+    users = UserTaskRelation.where(user_id:current_user.id)    
     task_ids = []
     users.each do|t|
       task_ids<<t.task_id
     end
-    @tasks=Task.where(id:task_ids.to_s)
+    @tasks=Task.where(id:task_ids)
 
   end
 
@@ -115,7 +115,7 @@ class ActiveUserController < ApplicationController
     uploaded_file = params[:user][:profile_pic]
     if(uploaded_file)
       filename = SecureRandom.hex + "." +uploaded_file.original_filename.split('.')[1]
-      filepath = Dir.pwd + "/public/uploads/" + filename
+      filepath = "/uploads/" + filename
       File.open(filepath,'wb') do |file|
         file.write(uploaded_file.read())
       end
