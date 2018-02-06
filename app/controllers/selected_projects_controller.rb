@@ -5,7 +5,8 @@ class SelectedProjectsController < ApplicationController
   	respond_to do|format| 
 
       task=Task.where(id:params[:id].to_s).first
-      
+      user = UserTaskRelations.where(task_id: task.id.to_s)
+
  	    project = SelectedProject.new
   	  project.ProjectName = task.task_name
   	  project.Description = task.task_desc
@@ -72,9 +73,8 @@ class SelectedProjectsController < ApplicationController
           #Accepted.FormSubmission(task,task.email5).deliver_now
          # Resque.enqueue(AcceptedWorker,task.id,task.email5)
         end
-
-
           task.destroy
+          user.destroy
   		else
   			format.html {redirect_to selected_projects_new_path, notice: 'Project Could not be Saved!'}	
   		end
