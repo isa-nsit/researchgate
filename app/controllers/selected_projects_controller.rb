@@ -73,7 +73,7 @@ class SelectedProjectsController < ApplicationController
           #Accepted.FormSubmission(task,task.email5).deliver_now
          # Resque.enqueue(AcceptedWorker,task.id,task.email5)
         end
-          user.destroy
+          user.destroy_all
           task.destroy
   		else
   			format.html {redirect_to selected_projects_new_path, notice: 'Project Could not be Saved!'}	
