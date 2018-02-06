@@ -15,7 +15,7 @@ class ActiveUserController < ApplicationController
       current_user.id.to_s,current_user.id.to_s,current_user.id.to_s,current_user.id.to_s,current_user.id.to_s)
     s_projectIds = []
     users.each do|project|
-      s_projectIds<<project.SelectedProject_id
+      s_projectIds<<project.selected_projects_id
     end
     @selectedProjects=SelectedProject.where(id:s_projectIds.to_s.to_s.to_s)     
     
@@ -24,7 +24,7 @@ class ActiveUserController < ApplicationController
       current_user.id.to_s,current_user.id.to_s,current_user.id.to_s.to_s,current_user.id.to_s)    
     c_projectIds = []
     users.each do|project|
-      c_projectIds<<project.SelectedProject_id
+      c_projectIds<<project.selected_projects_id
     end
     @completedProjects=SelectedProject.where(id:c_projectIds.to_s)
    
@@ -72,7 +72,7 @@ class ActiveUserController < ApplicationController
     selectedProjects = ProjectUserAdminRelation.where(admin_id: @faculty.id)
     
     selectedProjects.each do|project|
-      @ids<<project.SelectedProject_id
+      @ids<<project.selected_projects_id
     end
 
     @ids.each do|id|
