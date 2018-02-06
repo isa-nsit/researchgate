@@ -84,10 +84,10 @@ class SelectedProjectsController < ApplicationController
 
   def complete
     id= params[:id]
-    project=ProjectUserAdminRelation.where(:selected_projects_id=> id.to_s).first
+    project=ProjectUserAdminRelation.where(:selected_projects_id => id).first
     val=CompleteProject.new
     val.selected_projects_id=id
-    val.Admin_id=current_admin.id
+    val.admin_id=current_admin.id
     val.user1=project.user_id1
     val.user2=project.user_id2
     val.user3=project.user_id3
@@ -100,7 +100,7 @@ class SelectedProjectsController < ApplicationController
   end
 
    def reject
-    task=Task.where(id:params[:id].to_s).first
+    task=Task.where(id:params[:id]).first
     task.accepted=false
     task.save!
 

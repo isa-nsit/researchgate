@@ -19,7 +19,7 @@ class Admin < ActiveRecord::Base
     @@allIds=[]
     relations=ProjectUserAdminRelation.where(admin_id: faculty_id.to_s)
     relations.each do |r|
-      ids<<r.SelectedProject_id
+      ids<<r.selected_project_id
     end
     projects=[]
     ids.each do |i|
@@ -33,7 +33,7 @@ class Admin < ActiveRecord::Base
     ids=[]
     relations=CompleteProject.where(admin_id: faculty_id.to_s)
     relations.each do |r|
-      ids<<r.SelectedProject_id
+      ids<<r.selected_project_id
     end
     
     projects=[]
