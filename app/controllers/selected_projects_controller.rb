@@ -40,7 +40,7 @@ class SelectedProjectsController < ApplicationController
   	
   		if project.save
   			relations = ProjectUserAdminRelation.new
-  			relations.SelectedProject_id = project.id
+  			relations.selected_projects_id = project.id
   			relations.admin_id = current_admin.id
   			relations.user_id1 = user_id1
   			relations.user_id2 = user_id2
@@ -86,7 +86,7 @@ class SelectedProjectsController < ApplicationController
     id= params[:id]
     project=ProjectUserAdminRelation.where(:SelectedProject_id=> id.to_s).first
     val=CompleteProject.new
-    val.SelectedProject_id=id
+    val.selected_projects_id=id
     val.Admin_id=current_admin.id
     val.user1=project.user_id1
     val.user2=project.user_id2
