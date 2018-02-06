@@ -204,6 +204,7 @@ DEPENDENCIES
   pg (~> 0.20)
   rails (= 4.2.6)
   rails_12factor
+  redis
   resque
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
