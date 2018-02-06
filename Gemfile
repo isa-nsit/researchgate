@@ -6,7 +6,6 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 #gem 'sqlite3', group: :development # Added development group.
-gem 'activeadmin'
 # Heroku.
 gem 'pg', '~> 0.20', group: :production
 gem 'rails_12factor',group: :production
@@ -28,7 +27,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
-gem 'schema_plus'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
