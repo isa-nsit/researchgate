@@ -8,7 +8,7 @@ class ActiveAdminController < ApplicationController
     relations.each do |r|
       projectIds<<r.selected_projects_id
     end
-    @ongoingProjects=SelectedProject.where(id:projectIds.to_s).reverse
+    @ongoingProjects=SelectedProject.where(id:projectIds).reverse
 
     #completed projects
     complete=CompleteProject.where(admin_id: current_admin.id.to_s)
@@ -19,7 +19,7 @@ class ActiveAdminController < ApplicationController
     @completedProjects=SelectedProject.where(id:c_projectIds.to_s).reverse
 
     #tasks
-    @tasks = Task.where("admin_id=? AND accepted=?",current_admin.id.to_s,true).reverse
+    @tasks = Task.where("admin_id=? AND accepted=?",current_admin.id.to_s,true)
 
   end
 
