@@ -84,7 +84,7 @@ class SelectedProjectsController < ApplicationController
 
   def complete
     id= params[:id]
-    project=ProjectUserAdminRelation.where(:SelectedProject_id=> id.to_s).first
+    project=ProjectUserAdminRelation.where(:selected_projects_id=> id.to_s).first
     val=CompleteProject.new
     val.selected_projects_id=id
     val.Admin_id=current_admin.id
