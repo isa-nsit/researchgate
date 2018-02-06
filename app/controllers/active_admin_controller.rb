@@ -35,16 +35,16 @@ class ActiveAdminController < ApplicationController
 
     @projects = []
     @ids = []
-    selectedProjects = ProjectUserAdminRelation.where(admin_id: @faculty.id.to_s)
+    selectedProjects = ProjectUserAdminRelation.where(admin_id: @faculty)
     
     selectedProjects.each do|project|
       @ids<<project.selected_projects_id
     end
 
     @ids.each do|id|
-      @projects<<SelectedProject.where(id:id.to_s)
+      @projects<<SelectedProject.find_by_id(id)
     end
-    @projects = @projects[0..5]
+    @projects = @projects[0,5]
     @eligibility = Eligibility.find_by_faculty_name(@name)
     
     if @eligibility
