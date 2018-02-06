@@ -5,7 +5,7 @@ class SelectedProjectsController < ApplicationController
   	respond_to do|format| 
 
       task=Task.where(id:params[:id].to_s).first
-      user = UserTaskRelations.where(task_id: task.id.to_s)
+      user = UserTaskRelation.where(task_id: task.id.to_s)
 
  	    project = SelectedProject.new
   	  project.ProjectName = task.task_name
