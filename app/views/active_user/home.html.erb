@@ -138,7 +138,7 @@
 
           <%@allProjects.each do|project|%>
           <div class="card">
-            <% if ProjectUserAdminRelation.find_by_SelectedProject_id(project.id)%>
+            <% if ProjectUserAdminRelation.find_by_selected_project_id(project.id)%>
                 <div class="pull-right" style="border-top-right-radius:6px; border-right:1px solid #072c61; padding: 2px; box-shadow: 1px 1px; background-color: green; color: white;" ><span class="glyphicon glyphicon-pencil"></span>&nbsp;<b>Ongoing</b></div>
               <% else %>
                 <div class="pull-right" style="border-top-right-radius:6px; border-right:1px solid #072c61; padding: 2px; box-shadow: 1px 1px; background-color: blue; color: white; ><span class="glyphicon glyphicon-ok"></span>&nbsp;<b>Completed</b></div>
