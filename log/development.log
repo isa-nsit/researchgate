@@ -1598,3 +1598,514 @@ Content-Transfer-Encoding: 7bit
   Rendered accepted/FormSubmission.html.erb within layouts/mailer (0.5ms)
 
 Accepted#FormSubmission: processed outbound mail in 204.9ms
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-06 23:29:39 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_common_nav.html.erb (1.6ms)
+  Rendered layouts/_nav.html.erb (4.6ms)
+Completed 200 OK in 13754ms (Views: 13739.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-06 23:29:53 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 1140ms (Views: 1138.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-199a7865da941ede8b0a012786adccedb36883d59b7bdb9fcffbf0dfe9ca1aaf.css?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/bootstrap/transition.self-6ad2488465135ab731a045a8ebbe3ea2fc501aed286042496eda1664fdd07ba9.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/bootstrap/alert.self-742145c5bb847aafdadc6e339be795628f8bc25f177e851f03a8c42278eb0312.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/bootstrap/carousel.self-e47323f363ceb3dc0bdbce05e36e709ed428e339833a41140a85cb0af24b8127.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/bootstrap/button.self-126ac9bf0e7f2d8568f8da3a00fd5f0fac6eae0946331003370161fbf8d7975e.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/bootstrap/collapse.self-2eb697f62b587bb786ff940d82dd4be88cdeeaf13ca128e3da3850c5fcaec301.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/bootstrap/modal.self-3e78617ade5663314b7ee0ea10375a5b34d59ffbade44939e3f2a4e4ef2019b3.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/bootstrap/dropdown.self-561cca1cbaf67474e01e9536f106bad541594860a6df997004591c1c1957a147.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/bootstrap/scrollspy.self-969f3c5f48cdf1e439c7fa1154c13b948715f5c689f87837c0b64521d3b46ef6.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/bootstrap/affix.self-6d6f1a7fc5c8aabf3547fa1b794fab6268f54bc55ad815e55873c71f52513517.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/bootstrap/tab.self-5bf7078b682f8b131332eefa46b45fa5eff2eca745fc0d03e2991450888f7c28.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/bootstrap/tooltip.self-05afb177e08f98997ccfc84fa08a215e4b27d48d5fe4d049080675e9dffd8199.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/bootstrap/popover.self-0aa93860b59fe7393f1dd490f54b3cb994f9d6155adffce034d4e14ae361b041.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/turbolinks.self-2db6ec539b9190f75e1d477b305df53d12904d5cafdd47c7ffd91ba25cbec128.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/jquery.noty.packaged.min.self-35e74a3afaa9c75229de0016c8d9548aa1dfb4b7d7491801bc433ccaf7a49c3f.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/active_incharge.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/active_user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/electrical.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/electronic.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/mechanical.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/newTask.self-6847c1e44d5d45e0f293d75cd640cad0a40cc9c6d4d4415a3dc1a45bbcde7746.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/registrations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/selected_projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2018-02-06 23:29:55 +0530
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-06 23:30:00 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (106.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 3213ms (Views: 3140.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-06 23:30:07 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dcxwrpgV2ox62bq10fXXEE0E4lmgKGfCST8cEpTViX/Xt9avIRgqXcAIAed9L6t47vreMzwL/ISsajOaHrDSWA==", "user"=>{"email"=>"ashishc534@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "ashishc534@gmail.com"]]
+Completed 401 Unauthorized in 114ms (ActiveRecord: 0.9ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dcxwrpgV2ox62bq10fXXEE0E4lmgKGfCST8cEpTViX/Xt9avIRgqXcAIAed9L6t47vreMzwL/ISsajOaHrDSWA==", "user"=>{"email"=>"ashishc534@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 1700ms (Views: 1442.5ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-06 23:30:51 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered admins/shared/_links.html.erb (2.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (27.6ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 3064ms (Views: 3062.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-06 23:34:59 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered admins/shared/_links.html.erb (0.4ms)
+  Rendered users/registrations/new.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (2.0ms)
+Completed 200 OK in 2769ms (Views: 2767.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-06 23:36:06 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered users/registrations/new.html.erb within layouts/application (3.7ms)
+Completed 401 Unauthorized in 21ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/aashish/Dropbox/Heroku/isansit/app/views/users/registrations/new.html.erb:39: syntax error, unexpected ')', expecting =>
+...ntrol', ['option1', 'option2']);@output_buffer.safe_append='
+...                               ^
+/home/aashish/Dropbox/Heroku/isansit/app/views/users/registrations/new.html.erb:49: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;       end 
+                   ^
+/home/aashish/Dropbox/Heroku/isansit/app/views/users/registrations/new.html.erb:88: syntax error, unexpected keyword_ensure, expecting ')'
+/home/aashish/Dropbox/Heroku/isansit/app/views/users/registrations/new.html.erb:90: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/users/registrations/new.html.erb:39: syntax error, unexpected ')', expecting =>
+  app/views/users/registrations/new.html.erb:49: syntax error, unexpected keyword_end, expecting ')'
+  app/views/users/registrations/new.html.erb:88: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/users/registrations/new.html.erb:90: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (24.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (158.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (128.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (233.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-06 23:36:47 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered users/registrations/new.html.erb within layouts/application (1.2ms)
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/aashish/Dropbox/Heroku/isansit/app/views/users/registrations/new.html.erb:39: syntax error, unexpected '\n', expecting =>
+/home/aashish/Dropbox/Heroku/isansit/app/views/users/registrations/new.html.erb:40: syntax error, unexpected ',', expecting ')'
+...ear , :class => 'form-control',:placeholder => 'Enter your e...
+...                               ^):
+  app/views/users/registrations/new.html.erb:39: syntax error, unexpected '\n', expecting =>
+  app/views/users/registrations/new.html.erb:40: syntax error, unexpected ',', expecting ')'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (28.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-06 23:37:16 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered admins/shared/_links.html.erb (0.3ms)
+  Rendered users/registrations/new.html.erb within layouts/application (12.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 2678ms (Views: 2674.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-06 23:37:33 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered users/registrations/new.html.erb within layouts/application (6.1ms)
+Completed 401 Unauthorized in 19ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/aashish/Dropbox/Heroku/isansit/app/views/users/registrations/new.html.erb:39: syntax error, unexpected ')', expecting =>
+...r_select([['opt1'], ['opt2']]));@output_buffer.safe_append='
+...                               ^
+/home/aashish/Dropbox/Heroku/isansit/app/views/users/registrations/new.html.erb:49: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;       end 
+                   ^
+/home/aashish/Dropbox/Heroku/isansit/app/views/users/registrations/new.html.erb:88: syntax error, unexpected keyword_ensure, expecting ')'
+/home/aashish/Dropbox/Heroku/isansit/app/views/users/registrations/new.html.erb:90: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/users/registrations/new.html.erb:39: syntax error, unexpected ')', expecting =>
+  app/views/users/registrations/new.html.erb:49: syntax error, unexpected keyword_end, expecting ')'
+  app/views/users/registrations/new.html.erb:88: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/users/registrations/new.html.erb:90: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (12.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (27.1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-06 23:38:25 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered admins/shared/_links.html.erb (0.2ms)
+  Rendered users/registrations/new.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 2751ms (Views: 2749.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-06 23:38:53 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered admins/shared/_links.html.erb (0.2ms)
+  Rendered users/registrations/new.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_common_nav.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (2.1ms)
+Completed 200 OK in 2859ms (Views: 2858.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-06 23:39:31 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered users/registrations/new.html.erb within layouts/application (4.8ms)
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (wrong number of arguments (given 5, expected 1..4)):
+    36:             </div>
+    37:              <div class="field form-group ">
+    38:               <%= f.label :Year %><br />
+    39:               <%= f.select(:year, ['First', 'Second','Third','Fourth'], {}, { :class => 'form-control' },{:placeholder => 'Enter Your Year'}) %>
+    40:               
+    41:             </div>
+    42:              <div class="field form-group ">
+  app/views/users/registrations/new.html.erb:39:in `block in _app_views_users_registrations_new_html_erb___3684217515505917603_70230084491320'
+  app/views/users/registrations/new.html.erb:8:in `_app_views_users_registrations_new_html_erb___3684217515505917603_70230084491320'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (11.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (23.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-06 23:40:55 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered admins/shared/_links.html.erb (0.2ms)
+  Rendered users/registrations/new.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 2972ms (Views: 2970.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-06 23:42:13 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered admins/shared/_links.html.erb (0.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (20.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 3119ms (Views: 3115.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-06 23:43:19 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered admins/shared/_links.html.erb (0.2ms)
+  Rendered users/registrations/new.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 2628ms (Views: 2627.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-06 23:43:44 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered admins/shared/_links.html.erb (0.9ms)
+  Rendered users/registrations/new.html.erb within layouts/application (26.2ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.7ms)
+Completed 200 OK in 2880ms (Views: 2876.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-06 23:46:05 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered admins/shared/_links.html.erb (0.4ms)
+  Rendered users/registrations/new.html.erb within layouts/application (10.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 2895ms (Views: 2890.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-06 23:47:19 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered admins/shared/_links.html.erb (0.9ms)
+  Rendered users/registrations/new.html.erb within layouts/application (22.5ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 3281ms (Views: 3276.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-06 23:47:56 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered admins/shared/_links.html.erb (1.2ms)
+  Rendered users/registrations/new.html.erb within layouts/application (26.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 2819ms (Views: 2816.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-02-06 23:49:06 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"37jlaGMkTP4xIyFtd0xGn1OAN9DNqP+66vzt6456rbR9w0Np2im8L4vymj/bljr38H4LulGLZPwPqcJjBB/2kw==", "user"=>{"name"=>"Ashish ", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "branch"=>"COE", "percentage"=>""}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered admins/shared/_links.html.erb (1.2ms)
+  Rendered users/registrations/new.html.erb within layouts/application (30.9ms)
+  Rendered layouts/_common_nav.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (2.2ms)
+Completed 200 OK in 3826ms (Views: 3725.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-02-06 23:49:34 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JhNIJH9MHn5nGQlyHPz265GqlFXLiWsOKleuGQRt0D2EaO4lxkHur93IsiCwJoqDMlSoP1eq8EjPAoGRjgiLGg==", "user"=>{"name"=>"Ashish ", "email"=>"ashishc534@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "branch"=>"ICE", "year"=>"Third", "percentage"=>"78"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ashishc534@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (7.0ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "name", "branch", "percentage", "year", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["email", "ashishc534@gmail.com"], ["encrypted_password", "$2a$11$/Huq6dDrS3b4R2kkAe9nd.pZd5ZWLEUo/nd0snD8trZMEH4NW2e/W"], ["name", "Ashish "], ["branch", "ICE"], ["percentage", "78"], ["year", "Third"], ["created_at", "2018-02-06 18:19:34.373068"], ["updated_at", "2018-02-06 18:19:34.373068"], ["confirmation_token", "KdPhtJQFtRPu2z7fV3ng"], ["confirmation_sent_at", "2018-02-06 18:19:34.373389"]]
+  [1m[36m (165.8ms)[0m  [1mcommit transaction[0m
+  Rendered users/mailer/confirmation_instructions.html.erb (1.4ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 1102.2ms
+
+Sent mail to ashishc534@gmail.com (6420.4ms)
+Date: Tue, 06 Feb 2018 23:49:35 +0530
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: ashishc534@gmail.com
+Message-ID: <5a79f1b7c1a21_209f1c8aba848cf@aashish-HP-Pavilion-Notebook.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome ashishc534@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=KdPhtJQFtRPu2z7fV3ng">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 7939ms (ActiveRecord: 173.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-06 23:49:42 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 2650ms (Views: 2648.7ms | ActiveRecord: 0.0ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["confirmed_at", "2018-02-06 18:20:07.687266"], ["updated_at", "2018-02-06 18:20:07.689369"], ["id", 1]]
+  [1m[36m (139.0ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-06 23:50:36 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 3210ms (Views: 3207.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-06 23:50:42 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vyg5bAYLiGXpRxIoSWQ3/zdCSezLjV7yiPimIbpuiY/1U59tvwZ4tFOWqXrlvkuXlLx1hleuxbRtrYmpMAvSqA==", "user"=>{"email"=>"ashishc534@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "ashishc534@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2018-02-06 18:20:42.619726"], ["current_sign_in_at", "2018-02-06 18:20:42.619726"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2018-02-06 18:20:42.620579"], ["id", 1]]
+  [1m[36m (180.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 375ms (ActiveRecord: 181.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-06 23:50:42 +0530
+Processing by MainController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/active_user/home
+Completed 302 Found in 9ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/active_user/home" for 127.0.0.1 at 2018-02-06 23:50:42 +0530
+Processing by ActiveUserController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "profile_pic" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["profile_pic", "/image.jpg"], ["updated_at", "2018-02-06 18:20:42.928590"], ["id", 1]]
+  [1m[35m (93.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mProjectUserAdminRelation Load (0.2ms)[0m  [1mSELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE (user_id1='1' OR user_id2='1' OR user_id3='1' OR user_id4='1' OR user_id5='1')[0m
+  [1m[35mSelectedProject Load (0.1ms)[0m  SELECT "selected_projects".* FROM "selected_projects" WHERE 1=0
+  [1m[36mCompleteProject Load (0.1ms)[0m  [1mSELECT "complete_projects".* FROM "complete_projects" WHERE (user1='1' OR user2='1' OR user3='1' OR user4='1' OR user5='1')[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "selected_projects".* FROM "selected_projects" WHERE 1=0
+  [1m[36mUserTaskRelation Load (0.2ms)[0m  [1mSELECT "user_task_relations".* FROM "user_task_relations" WHERE "user_task_relations"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE 1=0
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE 1=0[0m
+  Rendered main/_feedback.html.erb (0.4ms)
+  Rendered active_user/home.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_nav_user.html.erb (2.6ms)
+  Rendered layouts/_nav.html.erb (440.5ms)
+Completed 200 OK in 3131ms (Views: 2998.4ms | ActiveRecord: 95.8ms)
+
+
+Started GET "/active_user/edit_profile" for 127.0.0.1 at 2018-02-06 23:50:48 +0530
+Processing by ActiveUserController#edit_profile as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered active_user/edit_profile.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_nav_user.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+Completed 200 OK in 2755ms (Views: 2750.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/active_user/edit_profile" for 127.0.0.1 at 2018-02-06 23:51:26 +0530
+Processing by ActiveUserController#edit_profile as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  Rendered main/_feedback.html.erb (0.1ms)
+  Rendered active_user/edit_profile.html.erb within layouts/application (46.2ms)
+  Rendered layouts/_nav_user.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 2990ms (Views: 2976.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/active_user/edit_profile" for 127.0.0.1 at 2018-02-06 23:51:38 +0530
+Processing by ActiveUserController#edit_profile as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  Rendered main/_feedback.html.erb (0.1ms)
+  Rendered active_user/edit_profile.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_nav_user.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2615ms (Views: 2602.5ms | ActiveRecord: 1.1ms)

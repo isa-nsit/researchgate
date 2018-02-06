@@ -32,15 +32,16 @@
             </div>
              <div class="field form-group ">
               <%= f.label :Branch %><br />
-              <%= f.text_field :branch , :class => 'form-control',:placeholder => 'Enter your email'%>
+              <%= f.select(:branch, ['Enter Your Branch','COE', 'IT','ECE','ICE','ME','MPAE','BT'], {}, { :class => 'form-control' }) %>
             </div>
              <div class="field form-group ">
               <%= f.label :Year %><br />
-              <%= f.text_field :year , :class => 'form-control',:placeholder => 'Enter your email'%>
+              <%= f.select(:year, ['Enter Your Year','First', 'Second','Third','Fourth'], {}, { :class => 'form-control' }) %>
+              
             </div>
              <div class="field form-group ">
               <%= f.label :Percentage %><br />
-              <%= f.text_field :percentage , :class => 'form-control',:placeholder => 'Enter your email'%>
+              <%= f.text_field :percentage , :class => 'form-control',:placeholder => 'Enter your percentage'%>
             </div>
              <div class="actions form-group">
             <input name="commit" type="submit" value="Sign Up" class="btn btn-block" style="background-color:#072c61; color: white;">
@@ -83,3 +84,14 @@
     font-weight: bold;
   }
 </style>
+
+
+<script type="text/javascript">
+  var year = document.getElementById('user_year');
+  var branch = document.getElementById('user_branch');
+  
+  year.options[0].disabled = true;
+  year.options[0].style.fontWeight = "bold";
+  branch.options[0].style.fontWeight = "bold";
+  branch.options[0].disabled = true;
+</script>
