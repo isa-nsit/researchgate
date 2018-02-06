@@ -6,7 +6,7 @@ class ActiveAdminController < ApplicationController
     relations = ProjectUserAdminRelation.where(admin_id: current_admin.id.to_s)
     projectIds=[]
     relations.each do |r|
-      projectIds<<r.SelectedProject_id
+      projectIds<<r.selected_projects_id
     end
     @ongoingProjects=SelectedProject.where(id:projectIds.to_s).reverse
 
@@ -14,7 +14,7 @@ class ActiveAdminController < ApplicationController
     complete=CompleteProject.where(admin_id: current_admin.id.to_s)
     c_projectIds=[]
     complete.each do |c|
-      c_projectIds<<c.SelectedProject_id
+      c_projectIds<<c.selected_projects_id
     end
     @completedProjects=SelectedProject.where(id:c_projectIds.to_s).reverse
 
@@ -38,7 +38,7 @@ class ActiveAdminController < ApplicationController
     selectedProjects = ProjectUserAdminRelation.where(admin_id: @faculty.id.to_s).order("created_at DESC")
     
     selectedProjects.each do|project|
-      @ids<<project.SelectedProject_id
+      @ids<<project.selected_projects_id
     end
 
     @ids.each do|id|
