@@ -81,7 +81,7 @@
         <div class="col-md-8 col-sm-12" id="size_<%=@projects.size%>" style=" background-color: #fff; border:2px solid #072c61; height: 10em; margin-bottom: 20px;">
             <%@projects.each do|project|%>
             <span class="badge interests" style="
-    word-wrap:break-word;"><%=project.project_name.humanize%></span>
+    word-wrap:break-word;"><%=project.ProjectName.humanize%></span>
             <% end %>
         </div>
     </div>

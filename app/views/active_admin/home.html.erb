@@ -92,7 +92,7 @@
 				<%@ongoingProjects.each do|project|%>
 					<div class="panel-group">
 						<div class="panel" style="margin: -21px; background-color: white;">
-							<div class="panel-heading text-center font" style="word-wrap: break-word; border-top: 2px solid #072c61; border-bottom: 1px solid #072c61;"><%=project.project_name.humanize%></div>
+							<div class="panel-heading text-center font" style="word-wrap: break-word; border-top: 2px solid #072c61; border-bottom: 1px solid #072c61;"><%=project.ProjectName.humanize%></div>
 							<div class="panel-body lead" style="word-wrap: break-word;">
 								<%=project.Description.humanize%>
 							</div>
@@ -139,7 +139,7 @@
 				<% @completedProjects.each do|project|%>
 					<div class="panel-group">
 						<div class="panel" style="margin: -15px -21px; ">
-							<div class="panel-heading text-center font" style="word-wrap: break-word; border-top: 2px solid #072c61; border-bottom: 1px solid #072c61;"><%=project.project_name.humanize%></div>
+							<div class="panel-heading text-center font" style="word-wrap: break-word; border-top: 2px solid #072c61; border-bottom: 1px solid #072c61;"><%=project.ProjectName.humanize%></div>
 							<div class="panel-body lead" style="word-wrap: break-word;">
 								<%=project.Description.humanize%>
 							</div>
