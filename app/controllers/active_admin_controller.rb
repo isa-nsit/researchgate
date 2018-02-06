@@ -35,7 +35,7 @@ class ActiveAdminController < ApplicationController
 
     @projects = []
     @ids = []
-    selectedProjects = ProjectUserAdminRelation.where(admin_id: @faculty.id.to_s).order("created_at DESC")
+    selectedProjects = ProjectUserAdminRelation.where(admin_id: @faculty.id.to_s)
     
     selectedProjects.each do|project|
       @ids<<project.selected_projects_id
