@@ -1,16 +1,39 @@
-<h2>Resend unlock instructions</h2>
-
-<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<div class="row">
+  <div class="col-md-offset-3 col-md-5 col-sm-5" style="margin-top: 5%;">
+    <div class="panel panel-primary" style="border: 1px solid #072c61;">
+      <div class="panel-heading text-center" style="background-color: #072c61;">
+        <b class="text-center" style="font-size: 20px;">Resend unlock instructions</b>
+      </div>
+      <div class="panel-body">
+        <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+  		<%= devise_error_messages! %>
+          
+          <div class="field form-group ">
+            <%= f.label :email %><br />
+        	<%= f.email_field :email , :class => 'form-control',:placeholder => 'Enter your Email Address'%>
+          </div>
+          
+          <div class="actions form-group">
+              <input type="submit" name="commit" value="Resend unlock instructions" class="btn btn-block" style="background-color:#072c61; color: white;">
+          </div>
+        <% end %>
+      </div>
+      <div class="panel-footer links">
+          <%= render "users/shared/links"%>
+        </div>
+          
+    </div>
   </div>
+</div>
 
-  <div class="actions">
-    <%= f.submit "Resend unlock instructions" %>
-  </div>
-<% end %>
+<style type="text/css">
+  .links a{
+    color:#072c61;
+  }
+  .links a:hover{
+    text-decoration: none;
+    font-weight: bold;
+  }
+</style>
 
-<%= render "users/shared/links" %>
+

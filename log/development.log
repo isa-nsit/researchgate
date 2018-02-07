@@ -2109,3 +2109,511 @@ Processing by ActiveUserController#edit_profile as HTML
   Rendered layouts/_nav_user.html.erb (0.4ms)
   Rendered layouts/_nav.html.erb (1.0ms)
 Completed 200 OK in 2615ms (Views: 2602.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-07 23:12:38 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (41.0ms)
+  Rendered layouts/_common_nav.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 12768ms (Views: 12643.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-07 23:12:52 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 1495ms (Views: 1494.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-199a7865da941ede8b0a012786adccedb36883d59b7bdb9fcffbf0dfe9ca1aaf.css?body=1" for 127.0.0.1 at 2018-02-07 23:12:53 +0530
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-02-07 23:12:53 +0530
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-07 23:12:56 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (3.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (259.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 1822ms (Views: 1717.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:13:04 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.7ms)
+  Rendered users/passwords/new.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 1154ms (Views: 1151.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:13:45 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.7ms)
+  Rendered users/passwords/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 2710ms (Views: 2708.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:14:23 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.7ms)
+  Rendered users/passwords/new.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 2773ms (Views: 2771.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:14:43 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.9ms)
+  Rendered users/passwords/new.html.erb within layouts/application (14.2ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2768ms (Views: 2765.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:15:03 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (2.6ms)
+  Rendered users/passwords/new.html.erb within layouts/application (11.8ms)
+  Rendered layouts/_common_nav.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (2.0ms)
+Completed 200 OK in 2684ms (Views: 2681.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:16:00 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/passwords/new.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2626ms (Views: 2622.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:16:12 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.7ms)
+  Rendered users/passwords/new.html.erb within layouts/application (10.4ms)
+  Rendered layouts/_common_nav.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (2.3ms)
+Completed 200 OK in 2822ms (Views: 2817.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:17:03 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.7ms)
+  Rendered users/passwords/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 2462ms (Views: 2461.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:17:15 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.3ms)
+  Rendered users/passwords/new.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 2769ms (Views: 2765.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:17:28 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.4ms)
+  Rendered users/passwords/new.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+Completed 200 OK in 3005ms (Views: 3004.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:19:25 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.6ms)
+  Rendered users/passwords/new.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 2812ms (Views: 2811.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:19:57 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (2.2ms)
+  Rendered users/passwords/new.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 2795ms (Views: 2792.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:20:27 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.8ms)
+  Rendered users/passwords/new.html.erb within layouts/application (10.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 2785ms (Views: 2782.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2018-02-07 23:20:49 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered admins/shared/_links.html.erb (3.0ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (26.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 3212ms (Views: 3185.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:22:40 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/passwords/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.7ms)
+Completed 200 OK in 2729ms (Views: 2726.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:22:54 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.9ms)
+  Rendered users/passwords/new.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (2.0ms)
+Completed 200 OK in 2891ms (Views: 2887.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:23:05 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.5ms)
+  Rendered users/passwords/new.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 2947ms (Views: 2944.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:23:26 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.4ms)
+  Rendered users/passwords/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 2537ms (Views: 2536.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:23:38 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.8ms)
+  Rendered users/passwords/new.html.erb within layouts/application (11.5ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2779ms (Views: 2776.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:23:52 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (2.5ms)
+  Rendered users/passwords/new.html.erb within layouts/application (12.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 2812ms (Views: 2807.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:24:05 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/passwords/new.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 2716ms (Views: 2715.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:24:13 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.8ms)
+  Rendered users/passwords/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2869ms (Views: 2865.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:25:15 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.4ms)
+  Rendered users/passwords/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 2624ms (Views: 2623.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:25:42 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (2.5ms)
+  Rendered users/passwords/new.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 2762ms (Views: 2759.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:26:44 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (2.8ms)
+  Rendered users/passwords/new.html.erb within layouts/application (11.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 2751ms (Views: 2746.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:26:59 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.2ms)
+  Rendered users/passwords/new.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 2687ms (Views: 2684.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:27:13 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/passwords/new.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.7ms)
+Completed 200 OK in 2944ms (Views: 2940.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:27:20 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.6ms)
+  Rendered users/passwords/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2945ms (Views: 2943.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:27:29 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.5ms)
+  Rendered users/passwords/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 2787ms (Views: 2785.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:28:00 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (2.6ms)
+  Rendered users/passwords/new.html.erb within layouts/application (12.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2744ms (Views: 2741.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:28:07 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/passwords/new.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+Completed 200 OK in 2705ms (Views: 2704.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:28:36 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (2.4ms)
+  Rendered users/passwords/new.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 2764ms (Views: 2761.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:28:45 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.6ms)
+  Rendered users/passwords/new.html.erb within layouts/application (12.3ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+Completed 200 OK in 2800ms (Views: 2794.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation/new" for 127.0.0.1 at 2018-02-07 23:28:53 +0530
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.6ms)
+  Rendered users/confirmations/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2926ms (Views: 2924.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation/new" for 127.0.0.1 at 2018-02-07 23:32:04 +0530
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendered users/shared/_links.html.erb (2.1ms)
+  Rendered users/confirmations/new.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (2.1ms)
+Completed 200 OK in 2956ms (Views: 2954.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation/new" for 127.0.0.1 at 2018-02-07 23:34:48 +0530
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.6ms)
+  Rendered users/confirmations/new.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2833ms (Views: 2828.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation/new" for 127.0.0.1 at 2018-02-07 23:36:55 +0530
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendered users/confirmations/new.html.erb within layouts/application (93.8ms)
+Completed 401 Unauthorized in 108ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `unlock_path' for #<#<Class:0x007f97e3784a38>:0x007f97e7188fe0>):
+     5:         <b class="text-center" style="font-size: 20px;">Resend Confirmation instructions</b>
+     6:       </div>
+     7:       <div class="panel-body">
+     8:         <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+     9:   		<%= devise_error_messages! %>
+    10:           
+    11:           <div class="field form-group ">
+  app/views/users/confirmations/new.html.erb:8:in `_app_views_users_confirmations_new_html_erb__2441810622163093704_70145170963580'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.4ms)
+
+
+Started GET "/users/confirmation/new" for 127.0.0.1 at 2018-02-07 23:37:25 +0530
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendered users/shared/_links.html.erb (3.3ms)
+  Rendered users/shared/_links.html.erb (2.5ms)
+  Rendered users/confirmations/new.html.erb within layouts/application (24.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 2636ms (Views: 2634.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation/new" for 127.0.0.1 at 2018-02-07 23:37:59 +0530
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.6ms)
+  Rendered users/shared/_links.html.erb (0.5ms)
+  Rendered users/confirmations/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 3006ms (Views: 3004.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation/new" for 127.0.0.1 at 2018-02-07 23:38:09 +0530
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.4ms)
+  Rendered users/confirmations/new.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+Completed 200 OK in 2806ms (Views: 2803.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-07 23:38:18 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 2897ms (Views: 2895.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation/new" for 127.0.0.1 at 2018-02-07 23:38:23 +0530
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.7ms)
+  Rendered users/confirmations/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2936ms (Views: 2935.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:38:29 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.4ms)
+  Rendered users/passwords/new.html.erb within layouts/application (2.2ms)
+Completed 401 Unauthorized in 2980ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No such file or directory @ rb_sysopen - /home/aashish/Dropbox/Heroku/isansit/tmp/cache/assets/sprockets/v3.0/ck/ckQxQ67ELeGjuNJayfWYThO1pFDeG18RUpRc6ycVBsw.cache.70145164007020.4548.422456):
+    2: <html>
+    3: <head>
+    4:   <title>ISA</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___1340752695198812060_26194180'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (32.5ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-02-07 23:38:34 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.6ms)
+  Rendered users/passwords/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 2675ms (Views: 2673.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2018-02-07 23:38:45 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered admins/shared/_links.html.erb (1.1ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2644ms (Views: 2640.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/password/new" for 127.0.0.1 at 2018-02-07 23:38:50 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered admins/shared/_links.html.erb (0.5ms)
+  Rendered admins/passwords/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 2985ms (Views: 2983.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/password/new" for 127.0.0.1 at 2018-02-07 23:40:29 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered admins/shared/_links.html.erb (0.2ms)
+  Rendered admins/passwords/new.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (2.0ms)
+Completed 200 OK in 2462ms (Views: 2461.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-07 23:43:10 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 2823ms (Views: 2822.2ms | ActiveRecord: 0.0ms)
