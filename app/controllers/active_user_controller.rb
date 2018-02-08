@@ -23,6 +23,7 @@ class ActiveUserController < ApplicationController
     users = CompleteProject.where("user1=? OR user2=? OR user3=? OR user4=? OR user5=?",current_user.id.to_s,
       current_user.id.to_s,current_user.id.to_s,current_user.id.to_s.to_s,current_user.id.to_s)    
     c_projectIds = []
+
     users.each do|project|
       c_projectIds<<project.selected_projects_id
     end
