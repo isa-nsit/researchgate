@@ -26,7 +26,7 @@
     </div>
     
     <div class="item">
-      <img class="d-block w-100" src="http://www.nsit.ac.in/static/images/index_carousel/5.jpg" alt="fifth slide">
+      <img class="d-block w-100" src="http://www.nsit.ac.in/static/images/NSITWebPhotos/Infrastructure/32.jpg" id="img5" alt="fifth slide">
     </div>
   </div>
 
@@ -53,7 +53,9 @@
 </div>
 
 <style type="text/css">
-
+#img5{
+    width: 100%; height: 467px;
+}
 .text{
     color: #072c61;
 }
@@ -107,55 +109,42 @@
      margin-top: -4.6%;
 }
 @media screen and (max-width:1099px){
-  .text-content{
-    font-size: 2em;
-  }
-  .text{
+    #myCarousel{
     position: fixed;
-    top: 30%;
-    left: 11%;
-    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 1s; /* Firefox < 16 */
-        -ms-animation: fadein 1s; /* Internet Explorer */
-         -o-animation: fadein 1s; /* Opera < 12.1 */
-            animation: fadein 1s;
-    }
-   .images{
-    margin-top: -3px;
-    margin-left: -50px;
-    width: 112.7%;
-    border:2px solid black; 
-    height: 101%;
+    top: 60px;
     left: 0;
-    color: rgba(188, 143, 143, 0.2); 
-    z-index: -1;
+    width: 100%;
+    }
+    #img5{
+        height: 128px;
+    }
+    .bottom{
+    margin-top: 200px;
+    }
+    .text-center{
+        font-size: 2em;
     }
     .circle {
-    width: 200px;
-    height: 90px;
+    width: 30%;
+    height: 100px;
     text-align: center;
     border-radius: 50%;
-    font-size: 1em;
+    font-size: 1.25em;
+    margin-top: 10px;
+    color: #fff;
+    background: rgba(7,44,97,0.9);
+    font-family: 'Karla',sans-serif;
+    transition: 0.3s transform ease-in;
     }
-    .bubbles{
-    position: fixed;
-    top: 60%;
-    left: 5%;
-    width: 90%;
+    .circle-text1{
+    font-size: 0.9em;
     }
     .circle-text2{
-    position: relative;
-    top: 27%;
     font-size: 0.9em;
-    font-weight: bold;
     }
-    .circle:hover{
-    transform: scale(1.15,1.15);
-    cursor: pointer;
+    .circle-text3{
+    font-size: 0.9em;
+    position: relative;
     }
-    #img1{
-        margin-top: -4px;
-    }
-
 }
 </style>
