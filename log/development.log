@@ -3035,3 +3035,217 @@ Processing by ActiveUserController#facultyIndex as HTML
   Rendered layouts/_nav_user.html.erb (0.7ms)
   Rendered layouts/_nav.html.erb (1.6ms)
 Completed 200 OK in 3080ms (Views: 3066.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 19:41:43 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_common_nav.html.erb (3.5ms)
+  Rendered layouts/_nav.html.erb (35.8ms)
+Completed 200 OK in 11868ms (Views: 11661.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 19:41:55 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 1463ms (Views: 1447.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-08 19:42:01 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (3.7ms)
+  Rendered users/sessions/new.html.erb within layouts/application (258.7ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 3606ms (Views: 3557.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-08 19:42:07 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"skVM3QGdKAjNLLGvhEubjXiKaoElnaGjMSN62uwqJoy8cZ6wGxEZGejlFeUVhYaUfC+0Xr4z2drCG/Ke3PN/hQ==", "user"=>{"email"=>"ashishc534@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "ashishc534@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2018-02-08 08:59:27.227550"], ["current_sign_in_at", "2018-02-08 14:12:09.078308"], ["sign_in_count", 3], ["updated_at", "2018-02-08 14:12:09.079579"], ["id", 1]]
+  [1m[36m (354.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1938ms (ActiveRecord: 355.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 19:42:09 +0530
+Processing by MainController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/active_user/home
+Completed 302 Found in 8ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/active_user/home" for 127.0.0.1 at 2018-02-08 19:42:09 +0530
+Processing by ActiveUserController#home as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mProjectUserAdminRelation Load (0.3ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE (user_id1='1' OR user_id2='1' OR user_id3='1' OR user_id4='1' OR user_id5='1')
+  [1m[36mSelectedProject Load (0.3ms)[0m  [1mSELECT "selected_projects".* FROM "selected_projects" WHERE 1=0[0m
+  [1m[35mCompleteProject Load (0.4ms)[0m  SELECT "complete_projects".* FROM "complete_projects" WHERE (user1='1' OR user2='1' OR user3='1' OR user4='1' OR user5='1')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "selected_projects".* FROM "selected_projects" WHERE 1=0[0m
+  [1m[35mUserTaskRelation Load (0.3ms)[0m  SELECT "user_task_relations".* FROM "user_task_relations" WHERE "user_task_relations"."user_id" = ?  [["user_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE 1=0[0m
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" WHERE 1=0
+  Rendered main/_feedback.html.erb (1.0ms)
+  Rendered active_user/home.html.erb within layouts/application (36.0ms)
+  Rendered layouts/_nav_user.html.erb (1.0ms)
+  Rendered layouts/_nav.html.erb (25.6ms)
+Completed 200 OK in 1532ms (Views: 1437.7ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/active_user/facultyIndex?division=Instrumentation" for 127.0.0.1 at 2018-02-08 19:42:13 +0530
+Processing by ActiveUserController#facultyIndex as HTML
+  Parameters: {"division"=>"Instrumentation"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mAdmin Load (0.6ms)[0m  SELECT "admins".* FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  Rendered main/_feedback.html.erb (0.1ms)
+  Rendered active_user/facultyIndex.html.erb within layouts/application (35.1ms)
+  Rendered layouts/_nav_user.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+Completed 200 OK in 1366ms (Views: 1355.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/active_user/facultyShow?name=ABCD" for 127.0.0.1 at 2018-02-08 19:42:16 +0530
+Processing by ActiveUserController#facultyShow as HTML
+  Parameters: {"name"=>"ABCD"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mAdmin Load (0.5ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."name" = ?  ORDER BY "admins"."id" ASC LIMIT 1  [["name", "ABCD"]]
+  [1m[36mProjectUserAdminRelation Load (0.3ms)[0m  [1mSELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE "project_user_admin_relations"."admin_id" = ?[0m  [["admin_id", 1]]
+  [1m[35mEligibility Load (0.1ms)[0m  SELECT  "eligibilities".* FROM "eligibilities" WHERE "eligibilities"."faculty_name" = ? LIMIT 1  [["faculty_name", "ABCD"]]
+  Rendered active_user/_facultyProfile.html.erb (2.9ms)
+  Rendered main/_feedback.html.erb (0.1ms)
+  Rendered active_user/facultyShow.html.erb within layouts/application (12.1ms)
+  Rendered layouts/_nav_user.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 2915ms (Views: 2693.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/tasks/new?email=a@gmail.com" for 127.0.0.1 at 2018-02-08 19:42:24 +0530
+Processing by TasksController#new as HTML
+  Parameters: {"email"=>"a@gmail.com"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered tasks/new.html.erb within layouts/application (17.7ms)
+  Rendered layouts/_nav_user.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 1360ms (Views: 1329.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/tasks/new?email=a@gmail.com" for 127.0.0.1 at 2018-02-08 19:43:01 +0530
+Processing by TasksController#new as HTML
+  Parameters: {"email"=>"a@gmail.com"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered tasks/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_nav_user.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (2.1ms)
+Completed 200 OK in 12041ms (Views: 12031.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/active_user/facultyShow?name=ABCD" for 127.0.0.1 at 2018-02-08 19:44:35 +0530
+Processing by ActiveUserController#facultyShow as HTML
+  Parameters: {"name"=>"ABCD"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."name" = ?  ORDER BY "admins"."id" ASC LIMIT 1  [["name", "ABCD"]]
+  [1m[36mProjectUserAdminRelation Load (0.1ms)[0m  [1mSELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE "project_user_admin_relations"."admin_id" = ?[0m  [["admin_id", 1]]
+  [1m[35mEligibility Load (0.1ms)[0m  SELECT  "eligibilities".* FROM "eligibilities" WHERE "eligibilities"."faculty_name" = ? LIMIT 1  [["faculty_name", "ABCD"]]
+  Rendered active_user/_facultyProfile.html.erb (2.1ms)
+  Rendered main/_feedback.html.erb (0.1ms)
+  Rendered active_user/facultyShow.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_nav_user.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 1703ms (Views: 1695.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/active_user/facultyIndex?division=Instrumentation" for 127.0.0.1 at 2018-02-08 19:44:37 +0530
+Processing by ActiveUserController#facultyIndex as HTML
+  Parameters: {"division"=>"Instrumentation"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT "admins".* FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  Rendered main/_feedback.html.erb (0.1ms)
+  Rendered active_user/facultyIndex.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_nav_user.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 1372ms (Views: 1368.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/active_user/home" for 127.0.0.1 at 2018-02-08 19:44:38 +0530
+Processing by ActiveUserController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mProjectUserAdminRelation Load (0.5ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE (user_id1='1' OR user_id2='1' OR user_id3='1' OR user_id4='1' OR user_id5='1')
+  [1m[36mSelectedProject Load (0.1ms)[0m  [1mSELECT "selected_projects".* FROM "selected_projects" WHERE 1=0[0m
+  [1m[35mCompleteProject Load (0.2ms)[0m  SELECT "complete_projects".* FROM "complete_projects" WHERE (user1='1' OR user2='1' OR user3='1' OR user4='1' OR user5='1')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "selected_projects".* FROM "selected_projects" WHERE 1=0[0m
+  [1m[35mUserTaskRelation Load (0.1ms)[0m  SELECT "user_task_relations".* FROM "user_task_relations" WHERE "user_task_relations"."user_id" = ?  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE 1=0[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE 1=0
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered active_user/home.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_nav_user.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 1478ms (Views: 1467.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/active_user/facultyIndex?division=Instrumentation" for 127.0.0.1 at 2018-02-08 19:44:42 +0530
+Processing by ActiveUserController#facultyIndex as HTML
+  Parameters: {"division"=>"Instrumentation"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT "admins".* FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered active_user/facultyIndex.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_nav_user.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 1112ms (Views: 1105.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/active_user/facultyShow?name=ABCD" for 127.0.0.1 at 2018-02-08 19:44:44 +0530
+Processing by ActiveUserController#facultyShow as HTML
+  Parameters: {"name"=>"ABCD"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."name" = ?  ORDER BY "admins"."id" ASC LIMIT 1  [["name", "ABCD"]]
+  [1m[36mProjectUserAdminRelation Load (0.1ms)[0m  [1mSELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE "project_user_admin_relations"."admin_id" = ?[0m  [["admin_id", 1]]
+  [1m[35mEligibility Load (0.1ms)[0m  SELECT  "eligibilities".* FROM "eligibilities" WHERE "eligibilities"."faculty_name" = ? LIMIT 1  [["faculty_name", "ABCD"]]
+  Rendered active_user/_facultyProfile.html.erb (2.9ms)
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered active_user/facultyShow.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_nav_user.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 1288ms (Views: 1282.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks/new?email=a@gmail.com" for 127.0.0.1 at 2018-02-08 19:44:47 +0530
+Processing by TasksController#new as HTML
+  Parameters: {"email"=>"a@gmail.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered tasks/new.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_nav_user.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.7ms)
+Completed 200 OK in 1283ms (Views: 1277.5ms | ActiveRecord: 0.6ms)
