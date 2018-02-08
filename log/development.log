@@ -3249,3 +3249,3212 @@ Processing by TasksController#new as HTML
   Rendered layouts/_nav_user.html.erb (0.5ms)
   Rendered layouts/_nav.html.erb (1.7ms)
 Completed 200 OK in 1283ms (Views: 1277.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:06:29 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/active_user/home
+Completed 302 Found in 43ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/active_user/home" for 127.0.0.1 at 2018-02-08 20:06:30 +0530
+Processing by ActiveUserController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mProjectUserAdminRelation Load (0.1ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE (user_id1='1' OR user_id2='1' OR user_id3='1' OR user_id4='1' OR user_id5='1')
+  [1m[36mSelectedProject Load (0.1ms)[0m  [1mSELECT "selected_projects".* FROM "selected_projects" WHERE 1=0[0m
+  [1m[35mCompleteProject Load (0.1ms)[0m  SELECT "complete_projects".* FROM "complete_projects" WHERE (user1='1' OR user2='1' OR user3='1' OR user4='1' OR user5='1')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "selected_projects".* FROM "selected_projects" WHERE 1=0[0m
+  [1m[35mUserTaskRelation Load (0.1ms)[0m  SELECT "user_task_relations".* FROM "user_task_relations" WHERE "user_task_relations"."user_id" = ?  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE 1=0[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE 1=0
+  Rendered main/_feedback.html.erb (0.5ms)
+  Rendered active_user/home.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_nav_user.html.erb (1.0ms)
+  Rendered layouts/_nav.html.erb (2.2ms)
+Completed 200 OK in 4035ms (Views: 4014.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/active_user/home" for 127.0.0.1 at 2018-02-08 20:06:34 +0530
+Processing by ActiveUserController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mProjectUserAdminRelation Load (0.1ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE (user_id1='1' OR user_id2='1' OR user_id3='1' OR user_id4='1' OR user_id5='1')
+  [1m[36mSelectedProject Load (0.1ms)[0m  [1mSELECT "selected_projects".* FROM "selected_projects" WHERE 1=0[0m
+  [1m[35mCompleteProject Load (0.1ms)[0m  SELECT "complete_projects".* FROM "complete_projects" WHERE (user1='1' OR user2='1' OR user3='1' OR user4='1' OR user5='1')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "selected_projects".* FROM "selected_projects" WHERE 1=0[0m
+  [1m[35mUserTaskRelation Load (0.1ms)[0m  SELECT "user_task_relations".* FROM "user_task_relations" WHERE "user_task_relations"."user_id" = ?  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE 1=0[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE 1=0
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered active_user/home.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_nav_user.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 1677ms (Views: 1670.3ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-02-08 20:06:39 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8qIwH/f3JQlapJDrNB/M/wfnEUwhZ6g4R2RxxtT1n3mG1G0ucTwve+uGhZaPYBFLf0xqbDj+swnm2I3R/+2kBg=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 31ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:06:39 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_common_nav.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 1391ms (Views: 1389.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:08:03 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 2777ms (Views: 2775.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:08:26 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 2875ms (Views: 2872.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:08:46 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 2968ms (Views: 2965.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:08:59 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 2964ms (Views: 2960.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:09:08 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 2926ms (Views: 2924.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:09:18 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 2583ms (Views: 2582.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:10:55 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 2782ms (Views: 2779.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:11:15 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2904ms (Views: 2901.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:11:47 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2872ms (Views: 2868.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:11:55 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2996ms (Views: 2994.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:13:36 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 2621ms (Views: 2619.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:16:12 +0530
+Processing by MainController#index as HTML
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `layout' for #<MainController:0x007f0d03539dc0>
+Did you mean?  _layout):
+  app/controllers/main_controller.rb:15:in `index'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (69.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (212.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:16:23 +0530
+Processing by MainController#index as HTML
+Completed 401 Unauthorized in 14ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `layout' for #<MainController:0x007f0d02400608>
+Did you mean?  _layout):
+  app/controllers/main_controller.rb:15:in `index'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (32.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:16:40 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:17:12 +0530
+Processing by MainController#index as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template main/common_nav, application/common_nav with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/aashish/Dropbox/Heroku/isansit/app/views"
+  * "/var/lib/gems/2.3.0/gems/devise-4.4.1/app/views"
+):
+  app/controllers/main_controller.rb:15:in `index'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (88.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (37.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:17:54 +0530
+Processing by MainController#index as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template layouts/nav with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/aashish/Dropbox/Heroku/isansit/app/views"
+  * "/var/lib/gems/2.3.0/gems/devise-4.4.1/app/views"
+):
+  app/controllers/main_controller.rb:15:in `index'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (17.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (29.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:18:30 +0530
+Processing by MainController#index as HTML
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered main/index.html.erb (1.4ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:18:46 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 2658ms (Views: 2653.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:19:25 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2725ms (Views: 2724.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:19:57 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 3172ms (Views: 3169.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:20:17 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 2854ms (Views: 2850.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:20:27 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 3115ms (Views: 3114.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:22:13 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 3014ms (Views: 3012.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:22:39 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 3022ms (Views: 3017.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:22:51 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_common_nav.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+Completed 200 OK in 3045ms (Views: 3044.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:23:02 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 2851ms (Views: 2848.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:23:14 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 2946ms (Views: 2945.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:23:21 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 2994ms (Views: 2993.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:23:33 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2776ms (Views: 2772.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:23:39 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 3041ms (Views: 3040.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:23:53 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 2700ms (Views: 2698.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:24:05 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2917ms (Views: 2916.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:24:10 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 2612ms (Views: 2610.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:24:21 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 3112ms (Views: 3110.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:24:33 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 2790ms (Views: 2789.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:24:42 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_common_nav.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (2.1ms)
+Completed 200 OK in 2773ms (Views: 2770.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:25:31 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 2789ms (Views: 2785.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:25:43 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 2918ms (Views: 2914.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:26:00 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 2907ms (Views: 2903.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:26:13 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (2.0ms)
+Completed 200 OK in 3025ms (Views: 3024.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:26:35 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 3049ms (Views: 3044.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:28:02 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 2916ms (Views: 2914.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:28:15 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2910ms (Views: 2906.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:28:29 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 2780ms (Views: 2776.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:28:59 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 2871ms (Views: 2866.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:29:05 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_common_nav.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 2562ms (Views: 2560.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:29:07 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 2870ms (Views: 2869.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:29:41 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 2014ms (Views: 2011.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-78d71552eca2ff907ac68c0c5fbd2de6bcc413cde3a8aa2c109be7fe9e9ade72.css?body=1" for 127.0.0.1 at 2018-02-08 20:29:43 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:29:56 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_common_nav.html.erb (1.3ms)
+  Rendered layouts/_nav.html.erb (2.2ms)
+Completed 200 OK in 1672ms (Views: 1671.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:30:06 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+Completed 200 OK in 1445ms (Views: 1444.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:30:25 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_common_nav.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+Completed 200 OK in 1297ms (Views: 1295.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:30:33 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_common_nav.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 1429ms (Views: 1428.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:31:08 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_common_nav.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 1422ms (Views: 1421.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:31:28 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 1607ms (Views: 1605.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:31:48 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 1542ms (Views: 1538.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:32:02 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 1651ms (Views: 1646.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:33:09 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 1510ms (Views: 1508.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:33:22 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 1549ms (Views: 1548.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:33:28 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (1.7ms)
+Completed 200 OK in 1507ms (Views: 1504.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:33:40 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 1450ms (Views: 1446.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:33:47 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 1435ms (Views: 1432.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:34:06 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 1686ms (Views: 1679.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:35:02 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 1495ms (Views: 1491.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:35:10 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 1467ms (Views: 1466.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:37:27 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 1751ms (Views: 1750.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-6bdd6f9b4aa85cba8a258d34c45af2c39319871ba0cd42086e4a7b5a299af4d6.css?body=1" for 127.0.0.1 at 2018-02-08 20:37:29 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:37:58 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 77ms (Views: 73.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2018-02-08 20:38:05 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered admins/shared/_links.html.erb (2.3ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (28.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 150ms (Views: 131.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-08 20:38:06 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.7ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 88ms (Views: 75.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-08 20:38:08 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5BamDMJxQ/+HC1v4Xy1PlSKuVhttkZPIJ3jEeA5sZ8pkNFTCuPCQSoJ2Kxt6YJrGJ13V57/Ox/2GS7iW/QUTNg==", "user"=>{"email"=>"ashishc534@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "ashishc534@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2018-02-08 14:12:09.078308"], ["current_sign_in_at", "2018-02-08 15:08:08.686445"], ["sign_in_count", 4], ["updated_at", "2018-02-08 15:08:08.687410"], ["id", 1]]
+  [1m[36m (1461.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1605ms (ActiveRecord: 1462.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:38:10 +0530
+Processing by MainController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/active_user/home
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/active_user/home" for 127.0.0.1 at 2018-02-08 20:38:10 +0530
+Processing by ActiveUserController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mProjectUserAdminRelation Load (0.2ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE (user_id1='1' OR user_id2='1' OR user_id3='1' OR user_id4='1' OR user_id5='1')
+  [1m[36mSelectedProject Load (0.1ms)[0m  [1mSELECT "selected_projects".* FROM "selected_projects" WHERE 1=0[0m
+  [1m[35mCompleteProject Load (0.2ms)[0m  SELECT "complete_projects".* FROM "complete_projects" WHERE (user1='1' OR user2='1' OR user3='1' OR user4='1' OR user5='1')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "selected_projects".* FROM "selected_projects" WHERE 1=0[0m
+  [1m[35mUserTaskRelation Load (0.1ms)[0m  SELECT "user_task_relations".* FROM "user_task_relations" WHERE "user_task_relations"."user_id" = ?  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE 1=0[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE 1=0
+  Rendered main/_feedback.html.erb (0.1ms)
+  Rendered active_user/home.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_nav_user.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (2.0ms)
+Completed 200 OK in 90ms (Views: 72.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/active_user/profile?id=1" for 127.0.0.1 at 2018-02-08 20:38:20 +0530
+Processing by ActiveUserController#profile as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered active_user/_stdProfile.html.erb (1.7ms)
+  Rendered main/_feedback.html.erb (0.2ms)
+  Rendered active_user/profile.html.erb within layouts/application (30.9ms)
+  Rendered layouts/_nav_user.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 212ms (Views: 199.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-08 20:38:24 +0530
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:38:27 +0530
+Processing by MainController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/active_user/home
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/active_user/home" for 127.0.0.1 at 2018-02-08 20:38:28 +0530
+Processing by ActiveUserController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mProjectUserAdminRelation Load (0.3ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE (user_id1='1' OR user_id2='1' OR user_id3='1' OR user_id4='1' OR user_id5='1')
+  [1m[36mSelectedProject Load (0.2ms)[0m  [1mSELECT "selected_projects".* FROM "selected_projects" WHERE 1=0[0m
+  [1m[35mCompleteProject Load (0.2ms)[0m  SELECT "complete_projects".* FROM "complete_projects" WHERE (user1='1' OR user2='1' OR user3='1' OR user4='1' OR user5='1')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "selected_projects".* FROM "selected_projects" WHERE 1=0[0m
+  [1m[35mUserTaskRelation Load (0.1ms)[0m  SELECT "user_task_relations".* FROM "user_task_relations" WHERE "user_task_relations"."user_id" = ?  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE 1=0[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE 1=0
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered active_user/home.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_nav_user.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 74ms (Views: 65.8ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-02-08 20:38:30 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XxvF6n/OWAtRZJQYiftx/7D269oGehhXEyrlkSEAkNSaaI7XGTxquTLSuWvbcznc6FDsH0Lud07ZqD55/6m6+w=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:38:30 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 53ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:39:03 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 1440ms (Views: 1439.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-54875f65ac0d7d860e19b32bcc0633f4bfebed1816e456d6189d09ebf336e465.css?body=1" for 127.0.0.1 at 2018-02-08 20:39:05 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:39:32 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 1595ms (Views: 1591.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-812e2b41d23cc3aa39eac5e97579a9066c5ae82de6e1150f3d34d5bbe324f161.css?body=1" for 127.0.0.1 at 2018-02-08 20:39:33 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:39:39 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 2048ms (Views: 2044.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e98511b3d332bfae7a1c2b0ea357e828598975527bfdacec67dfd1c31b8911b4.css?body=1" for 127.0.0.1 at 2018-02-08 20:39:41 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:39:52 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 1730ms (Views: 1728.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:40:52 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 1790ms (Views: 1788.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-1c9cadbb2aad7b8536b3210283a1e57aefd2f81593e351ba00e35d4815f157d9.css?body=1" for 127.0.0.1 at 2018-02-08 20:40:54 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:41:01 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 1627ms (Views: 1623.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-999c1cb23e152f321fbefceef2352006fb764858809d6d2230d2c51e2922ac2c.css?body=1" for 127.0.0.1 at 2018-02-08 20:41:03 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:41:22 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_common_nav.html.erb (1.5ms)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 1444ms (Views: 1440.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:41:31 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_common_nav.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+Completed 200 OK in 1436ms (Views: 1435.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:41:38 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 1692ms (Views: 1689.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:41:49 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 1690ms (Views: 1687.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:41:56 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 1763ms (Views: 1760.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:42:21 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (2.0ms)
+Completed 200 OK in 1683ms (Views: 1678.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:42:55 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 1718ms (Views: 1714.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-106f4dbabe6187b8673e95c62ce6a9fe53b1028f991669d65327f223354c82d1.css?body=1" for 127.0.0.1 at 2018-02-08 20:42:57 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:43:12 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 1603ms (Views: 1601.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e87e1b6a715f1b777d92f6181b3400bdc5e35583c3ff3e57965de26c2f828f15.css?body=1" for 127.0.0.1 at 2018-02-08 20:43:13 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:43:43 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (1.1ms)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 1681ms (Views: 1676.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-12d6edb21ea80b2d979e4a446173d196fa97d06bbbc88378043d6cb21297f105.css?body=1" for 127.0.0.1 at 2018-02-08 20:43:45 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:44:05 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 2112ms (Views: 2108.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-06ab21c047490f67bbde11bbd58cf778e02524a2d4f47b7af2df6dde80a231d7.css?body=1" for 127.0.0.1 at 2018-02-08 20:44:07 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:44:18 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 126ms (Views: 122.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:44:26 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 97ms (Views: 93.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:44:30 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 126ms (Views: 122.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:45:10 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 129ms (Views: 126.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:45:36 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 64ms (Views: 63.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:46:34 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 76ms (Views: 75.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:46:46 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (2.7ms)
+Completed 200 OK in 112ms (Views: 108.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:47:11 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 124ms (Views: 120.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:47:14 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 110ms (Views: 107.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:47:17 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 64ms (Views: 63.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:47:22 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.7ms)
+Completed 200 OK in 151ms (Views: 147.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:48:07 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 116ms (Views: 112.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:48:48 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 69ms (Views: 67.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:49:00 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 121ms (Views: 118.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:49:11 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 125ms (Views: 121.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:49:19 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 75ms (Views: 73.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:49:38 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 125ms (Views: 120.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:49:53 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 125ms (Views: 122.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:50:04 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 123ms (Views: 120.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:50:12 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 157ms (Views: 153.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:50:23 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 159ms (Views: 155.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:50:30 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 148ms (Views: 145.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:50:46 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 157ms (Views: 153.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:51:02 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 143ms (Views: 140.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:51:13 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 144ms (Views: 140.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:51:17 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 123ms (Views: 118.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:51:19 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 77ms (Views: 74.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:51:24 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 130ms (Views: 126.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:51:38 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 146ms (Views: 142.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:51:49 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 74ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:52:01 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 148ms (Views: 144.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:52:14 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 133ms (Views: 130.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:52:18 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 75ms (Views: 73.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:52:23 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 77ms (Views: 74.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:52:27 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 155ms (Views: 150.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:52:29 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 145ms (Views: 141.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:52:31 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 62ms (Views: 61.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:52:34 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 140ms (Views: 137.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:52:37 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 69ms (Views: 67.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:54:26 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 81ms (Views: 79.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:54:46 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 135ms (Views: 131.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:55:03 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 146ms (Views: 142.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:55:06 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 160ms (Views: 157.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:55:08 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 75ms (Views: 72.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:55:13 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+Completed 200 OK in 127ms (Views: 123.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:55:40 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 179ms (Views: 174.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:56:06 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 133ms (Views: 130.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:56:14 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 109ms (Views: 105.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:56:21 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 79ms (Views: 76.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:56:41 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 99ms (Views: 95.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:56:55 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 116ms (Views: 112.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:59:03 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 98ms (Views: 95.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:59:07 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 131ms (Views: 128.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:59:14 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+Completed 200 OK in 110ms (Views: 104.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:59:26 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 68ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 20:59:31 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 87ms (Views: 84.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:03:27 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 128ms (Views: 124.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:03:47 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 145ms (Views: 141.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:04:07 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 143ms (Views: 139.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:04:19 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 135ms (Views: 130.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:04:22 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 140ms (Views: 135.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:04:36 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 146ms (Views: 143.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:04:43 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 123ms (Views: 118.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:04:52 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 77ms (Views: 76.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:04:57 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 133ms (Views: 128.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:05:05 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 136ms (Views: 132.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:05:10 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 71ms (Views: 69.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:05:13 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 143ms (Views: 139.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:05:16 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 81ms (Views: 78.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:05:18 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 120ms (Views: 117.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:05:22 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (199.9ms)
+Completed 200 OK in 342ms (Views: 337.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:05:41 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 130ms (Views: 127.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:06:05 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 122ms (Views: 117.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:06:14 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 121ms (Views: 117.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:06:24 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 80ms (Views: 77.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:06:36 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 139ms (Views: 135.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:06:45 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 88ms (Views: 86.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:06:48 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 89ms (Views: 84.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:06:53 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 123ms (Views: 118.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:07:01 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 126ms (Views: 123.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:07:24 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 130ms (Views: 126.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:07:37 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 87ms (Views: 84.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:08:00 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 146ms (Views: 142.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:08:06 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_common_nav.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (2.1ms)
+Completed 200 OK in 87ms (Views: 86.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:08:11 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 162ms (Views: 158.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:08:15 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 129ms (Views: 126.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:08:24 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 76ms (Views: 75.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:08:32 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 146ms (Views: 141.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:08:55 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 139ms (Views: 135.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:09:17 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 117ms (Views: 114.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:09:21 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 83ms (Views: 81.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:09:28 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 153ms (Views: 149.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:09:31 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 67ms (Views: 66.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:09:49 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 84ms (Views: 82.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:10:09 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 79ms (Views: 77.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:10:23 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 127ms (Views: 122.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:10:31 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 122ms (Views: 118.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:10:38 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 136ms (Views: 133.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:10:44 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 141ms (Views: 137.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:10:58 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+Completed 200 OK in 141ms (Views: 135.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:11:40 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 145ms (Views: 141.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:11:44 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 126ms (Views: 121.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:12:11 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 113ms (Views: 109.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:12:15 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 125ms (Views: 121.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:12:22 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 139ms (Views: 135.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:12:29 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 118ms (Views: 113.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:12:43 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 71ms (Views: 69.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:12:48 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 134ms (Views: 130.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:12:56 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 127ms (Views: 123.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:13:30 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 141ms (Views: 136.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:13:40 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 133ms (Views: 130.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:13:46 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 133ms (Views: 129.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:13:47 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 88ms (Views: 85.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:13:47 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 77ms (Views: 75.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:13:47 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 93ms (Views: 92.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:13:48 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 147ms (Views: 146.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:13:48 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 65ms (Views: 64.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:15:10 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 74ms (Views: 73.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:15:34 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 145ms (Views: 140.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:15:40 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 149ms (Views: 145.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:15:43 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 80ms (Views: 77.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:15:55 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 140ms (Views: 135.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:16:01 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 148ms (Views: 143.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:16:13 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 137ms (Views: 133.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:16:32 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 137ms (Views: 133.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:16:42 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 142ms (Views: 138.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:16:47 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 122ms (Views: 118.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:16:57 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 102ms (Views: 99.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:17:01 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_common_nav.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (2.3ms)
+Completed 200 OK in 68ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:17:03 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 146ms (Views: 142.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:17:22 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_common_nav.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 151ms (Views: 147.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:17:28 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 127ms (Views: 122.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:17:31 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 71ms (Views: 69.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:17:35 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 123ms (Views: 120.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:17:40 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 146ms (Views: 142.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:17:55 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 129ms (Views: 126.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:18:04 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 175ms (Views: 170.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:18:12 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 118ms (Views: 115.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:18:16 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 118ms (Views: 114.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:18:19 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 112ms (Views: 108.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:18:23 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 71ms (Views: 70.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:18:29 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 134ms (Views: 131.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:18:43 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 68ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:18:54 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+Completed 200 OK in 135ms (Views: 131.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:18:59 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 73ms (Views: 72.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:19:04 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 119ms (Views: 115.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:19:10 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 128ms (Views: 124.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:19:18 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 118ms (Views: 114.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:19:30 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 144ms (Views: 140.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:19:34 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 116ms (Views: 107.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:19:39 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 104ms (Views: 99.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:19:40 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 64ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:19:50 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 67ms (Views: 64.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:20:13 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 138ms (Views: 134.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:20:19 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 138ms (Views: 135.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:20:23 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 76ms (Views: 75.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:20:27 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 69ms (Views: 67.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:20:39 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 106ms (Views: 101.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:20:46 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 133ms (Views: 126.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:20:50 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+Completed 200 OK in 70ms (Views: 68.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:20:58 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 133ms (Views: 129.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:21:04 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 71ms (Views: 69.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:21:38 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_common_nav.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+Completed 200 OK in 125ms (Views: 122.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:21:48 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 92ms (Views: 87.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:21:52 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 130ms (Views: 128.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:21:54 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 106ms (Views: 101.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:21:57 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 65ms (Views: 64.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:22:08 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 146ms (Views: 143.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:22:17 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 64ms (Views: 62.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:22:22 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 104ms (Views: 100.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:22:25 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 59ms (Views: 57.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:22:27 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+Completed 200 OK in 76ms (Views: 73.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:22:28 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 66ms (Views: 63.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:22:33 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 117ms (Views: 115.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:22:39 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 72ms (Views: 70.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:22:42 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 134ms (Views: 130.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:22:46 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 117ms (Views: 110.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:22:51 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 64ms (Views: 62.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:22:55 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 61ms (Views: 60.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:22:58 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (2.2ms)
+Completed 200 OK in 130ms (Views: 127.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:23:06 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 79ms (Views: 78.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:23:13 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 138ms (Views: 134.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:23:42 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 107ms (Views: 103.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:24:08 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 136ms (Views: 132.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:24:13 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 136ms (Views: 132.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:24:17 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 112ms (Views: 107.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:24:20 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 104ms (Views: 101.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:24:28 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 139ms (Views: 135.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:24:31 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_common_nav.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 73ms (Views: 72.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:25:02 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 134ms (Views: 131.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:25:10 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 135ms (Views: 131.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:25:16 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 83ms (Views: 81.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:26:12 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 131ms (Views: 128.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:26:22 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 149ms (Views: 145.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:26:37 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 130ms (Views: 127.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:26:47 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 129ms (Views: 126.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:29:23 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 74ms (Views: 73.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:29:51 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 80ms (Views: 78.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:29:56 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (1.7ms)
+Completed 200 OK in 68ms (Views: 66.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:31:13 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 76ms (Views: 74.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:31:47 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 126ms (Views: 123.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:31:57 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 139ms (Views: 136.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:32:03 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 69ms (Views: 67.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2018-02-08 21:32:07 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered admins/shared/_links.html.erb (0.4ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 63ms (Views: 61.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins/sign_in" for 127.0.0.1 at 2018-02-08 21:32:09 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ifkE8dB2sewJUneWtaR5ghDDwGnRXxfmDvqbiGRRtiKOnN51eF++JHFNtQ9bUg4Tgb2pFbf+N/feWsmmoAEjKQ==", "admin"=>{"email"=>"ashishc534@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  [1m[35mAdmin Load (0.4ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."email" = ?  ORDER BY "admins"."id" ASC LIMIT 1  [["email", "ashishc534@gmail.com"]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ifkE8dB2sewJUneWtaR5ghDDwGnRXxfmDvqbiGRRtiKOnN51eF++JHFNtQ9bUg4Tgb2pFbf+N/feWsmmoAEjKQ==", "admin"=>{"email"=>"ashishc534@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  Rendered admins/shared/_links.html.erb (0.1ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 206ms (Views: 78.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins/sign_in" for 127.0.0.1 at 2018-02-08 21:32:15 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qDmdeo7+S2e+DIySGvuUx8KAqzUfWSkIQouPFoiLGWyvXEf+JtdEr8YTTgv0DeNWU/7CSXn4CRmSK904TNuMZw==", "admin"=>{"email"=>"ashishc534@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["email", "ashishc534@gmail.com"]]
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.1ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qDmdeo7+S2e+DIySGvuUx8KAqzUfWSkIQouPFoiLGWyvXEf+JtdEr8YTTgv0DeNWU/7CSXn4CRmSK904TNuMZw==", "admin"=>{"email"=>"ashishc534@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  Rendered admins/shared/_links.html.erb (0.1ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (2.0ms)
+Completed 200 OK in 191ms (Views: 66.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-08 21:32:20 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 94ms (Views: 90.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-08 21:32:30 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 70ms (Views: 69.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:32:31 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 119ms (Views: 117.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:33:35 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 148ms (Views: 143.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:34:05 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 108ms (Views: 104.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:34:15 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 127ms (Views: 124.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:34:22 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 134ms (Views: 129.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:34:27 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 117ms (Views: 113.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:34:37 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_common_nav.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 98ms (Views: 94.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:34:42 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 70ms (Views: 68.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:34:48 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 78ms (Views: 77.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:34:53 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.7ms)
+Completed 200 OK in 127ms (Views: 124.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:34:57 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 79ms (Views: 76.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:35:04 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 73ms (Views: 71.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:35:22 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 114ms (Views: 109.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:36:06 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 72ms (Views: 71.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:36:30 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 165ms (Views: 161.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:36:53 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 76ms (Views: 75.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:37:15 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 73ms (Views: 71.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:37:50 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_common_nav.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (2.0ms)
+Completed 200 OK in 72ms (Views: 71.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:38:19 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (2.4ms)
+Completed 200 OK in 152ms (Views: 149.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:38:29 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+Completed 200 OK in 114ms (Views: 110.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:38:38 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 128ms (Views: 125.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:38:56 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 69ms (Views: 68.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:39:14 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 72ms (Views: 70.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:39:37 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_common_nav.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (2.1ms)
+Completed 200 OK in 498ms (Views: 484.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:39:41 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 70ms (Views: 67.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:41:23 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 141ms (Views: 136.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:41:45 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 147ms (Views: 144.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:41:51 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 132ms (Views: 128.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:42:20 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 146ms (Views: 142.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:42:48 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 69ms (Views: 67.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:42:57 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 62ms (Views: 61.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:43:33 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 141ms (Views: 137.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:43:40 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 145ms (Views: 141.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:43:48 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 122ms (Views: 119.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:43:56 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 69ms (Views: 68.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:44:52 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 146ms (Views: 143.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:45:05 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 142ms (Views: 137.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:45:27 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 95ms (Views: 91.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:45:29 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 66ms (Views: 65.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:45:32 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 72ms (Views: 71.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:45:37 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 108ms (Views: 106.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:45:49 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 140ms (Views: 137.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:46:03 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 124ms (Views: 120.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:46:22 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 128ms (Views: 124.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:46:27 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 163ms (Views: 159.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:46:36 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 131ms (Views: 127.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:46:39 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 101ms (Views: 97.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:47:03 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 151ms (Views: 147.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:47:07 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 138ms (Views: 133.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:47:11 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.7ms)
+Completed 200 OK in 91ms (Views: 89.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:47:23 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 139ms (Views: 136.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:47:26 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 132ms (Views: 98.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:47:31 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 141ms (Views: 136.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:47:37 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 109ms (Views: 107.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:48:05 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 134ms (Views: 129.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:48:22 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 94ms (Views: 89.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:49:12 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 85ms (Views: 83.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:49:25 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 140ms (Views: 136.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:49:32 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+Completed 200 OK in 141ms (Views: 138.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:49:49 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 89ms (Views: 85.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:49:56 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 148ms (Views: 143.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:50:51 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 85ms (Views: 83.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:51:16 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 75ms (Views: 73.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:51:29 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 107ms (Views: 103.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:51:33 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 69ms (Views: 68.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:51:40 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 147ms (Views: 143.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:51:47 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 62ms (Views: 61.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:52:13 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 68ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:52:34 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 129ms (Views: 126.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/main/aboutUs" for 127.0.0.1 at 2018-02-08 21:52:44 +0530
+Processing by MainController#aboutUs as HTML
+  Rendered main/aboutUs.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 71ms (Views: 70.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:53:27 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 145ms (Views: 141.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:54:10 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (2.0ms)
+Completed 200 OK in 122ms (Views: 119.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:54:18 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 148ms (Views: 143.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 21:54:24 +0530
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 60ms (Views: 59.1ms | ActiveRecord: 0.0ms)

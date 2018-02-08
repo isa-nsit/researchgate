@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body{
+  margin:0px;
+  padding:0px;
+}
 @media screen and (max-width:1099px){
     .navbar-header span{
       background-color: white;
@@ -43,12 +47,12 @@
    margin-top: 80px;
 }
 ::-webkit-scrollbar {
-    width: 2px;  /* remove scrollbar space */
+    width: 0px;  /* remove scrollbar space */
     background: transparent;  /* optional: just make scrollbar invisible */
 }
 /* optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-    background: lightgrey;
+    background: light;
 }
 p{
    font-family:'Fira Sans', sans-serif;
