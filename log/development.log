@@ -8458,3 +8458,1599 @@ Processing by MainController#index as HTML
   Rendered layouts/_common_nav.html.erb (0.3ms)
   Rendered layouts/_nav.html.erb (1.2ms)
 Completed 200 OK in 114ms (Views: 99.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:33:53 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_common_nav.html.erb (2.3ms)
+  Rendered layouts/_nav.html.erb (25.8ms)
+Completed 200 OK in 5670ms (Views: 5406.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:34:00 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 126ms (Views: 115.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:34:25 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 78ms (Views: 72.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:34:31 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_common_nav.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 91ms (Views: 83.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:34:41 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 152ms (Views: 139.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:34:45 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 121ms (Views: 107.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:34:51 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+Completed 200 OK in 66ms (Views: 61.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:34:56 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 77ms (Views: 73.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:35:02 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 135ms (Views: 122.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:35:09 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 102ms (Views: 87.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:35:14 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 79ms (Views: 74.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:35:30 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 130ms (Views: 116.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:36:18 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 105ms (Views: 87.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:36:23 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.7ms)
+Completed 200 OK in 159ms (Views: 145.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:39:23 +0530
+Processing by MainController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 159ms (Views: 143.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:39:32 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 134ms (Views: 118.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:39:55 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (26.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 145ms (Views: 133.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:40:31 +0530
+Processing by MainController#index as HTML
+  [1m[36m (1.1ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 118ms (Views: 103.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:40:40 +0530
+Processing by MainController#index as HTML
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 115ms (Views: 103.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:40:44 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 75ms (Views: 68.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:40:48 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 113ms (Views: 98.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:41:09 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 89ms (Views: 84.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:41:16 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 146ms (Views: 134.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:41:32 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_common_nav.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (2.2ms)
+Completed 200 OK in 167ms (Views: 150.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:41:39 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 132ms (Views: 118.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:41:43 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 69ms (Views: 66.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:41:46 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 161ms (Views: 147.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:41:53 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 158ms (Views: 146.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:42:00 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 113ms (Views: 101.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:42:07 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 75ms (Views: 72.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:42:14 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 115ms (Views: 106.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:42:21 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 142ms (Views: 127.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:42:26 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 150ms (Views: 116.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:42:30 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 88ms (Views: 79.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:42:40 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 146ms (Views: 134.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:42:45 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 71ms (Views: 68.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:42:50 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 76ms (Views: 72.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:42:57 +0530
+Processing by MainController#index as HTML
+  [1m[36m (1.1ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 149ms (Views: 134.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:43:22 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 140ms (Views: 120.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:43:26 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 92ms (Views: 88.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:43:31 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 151ms (Views: 134.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:43:43 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 118ms (Views: 105.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:43:55 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 128ms (Views: 114.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:44:00 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 157ms (Views: 143.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:44:03 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 286ms (Views: 273.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:44:19 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 146ms (Views: 132.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:44:23 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 118ms (Views: 105.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:44:49 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 91ms (Views: 83.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:45:37 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 143ms (Views: 128.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:45:52 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_common_nav.html.erb (1.3ms)
+  Rendered layouts/_nav.html.erb (2.3ms)
+Completed 200 OK in 159ms (Views: 142.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:46:00 +0530
+Processing by MainController#index as HTML
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 118ms (Views: 97.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:46:05 +0530
+Processing by MainController#index as HTML
+  [1m[36m (1.1ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 108ms (Views: 93.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:46:08 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 157ms (Views: 147.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:46:11 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_common_nav.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (2.0ms)
+Completed 200 OK in 119ms (Views: 106.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:48:35 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 92ms (Views: 86.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:48:58 +0530
+Processing by MainController#index as HTML
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 138ms (Views: 124.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:49:03 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 74ms (Views: 66.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:50:01 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 82ms (Views: 79.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:50:04 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 78ms (Views: 74.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:50:13 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 162ms (Views: 149.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:50:22 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 144ms (Views: 132.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:51:16 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 148ms (Views: 134.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:51:23 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 88ms (Views: 84.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:51:28 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 111ms (Views: 96.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:52:08 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 177ms (Views: 161.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:52:10 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (2.2ms)
+Completed 200 OK in 101ms (Views: 95.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:52:18 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 154ms (Views: 138.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:52:22 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 80ms (Views: 77.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:52:27 +0530
+Processing by MainController#index as HTML
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 145ms (Views: 131.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:52:34 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 130ms (Views: 114.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:52:38 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 81ms (Views: 76.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:53:05 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 78ms (Views: 74.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:53:16 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 137ms (Views: 123.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:53:19 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 129ms (Views: 115.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:53:27 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 124ms (Views: 110.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:53:37 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 152ms (Views: 138.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:53:39 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (1.0ms)
+  Rendered layouts/_nav.html.erb (2.7ms)
+Completed 200 OK in 75ms (Views: 68.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:53:40 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (3.3ms)
+Completed 200 OK in 86ms (Views: 78.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:53:47 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 84ms (Views: 78.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:54:52 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 158ms (Views: 143.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:54:54 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+Completed 200 OK in 73ms (Views: 70.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:54:55 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (5.8ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 73ms (Views: 64.7ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:55:00 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_common_nav.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 141ms (Views: 128.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:55:03 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 67ms (Views: 64.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:55:04 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 114ms (Views: 106.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:55:05 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 70ms (Views: 65.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:55:06 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 79ms (Views: 72.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:55:08 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 72ms (Views: 67.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:55:15 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 125ms (Views: 109.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:55:17 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 72ms (Views: 68.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:55:19 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 107ms (Views: 88.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:55:26 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 124ms (Views: 110.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:55:28 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 76ms (Views: 73.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:55:35 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 73ms (Views: 69.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:55:37 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+Completed 200 OK in 76ms (Views: 70.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:55:39 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 71ms (Views: 68.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:55:46 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 68ms (Views: 66.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:55:47 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 109ms (Views: 99.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:56:05 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 110ms (Views: 101.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:56:09 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 67ms (Views: 64.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:56:25 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 160ms (Views: 146.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:56:28 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 77ms (Views: 74.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:56:30 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (6.5ms)
+Completed 200 OK in 80ms (Views: 76.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:57:00 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_common_nav.html.erb (1.3ms)
+  Rendered layouts/_nav.html.erb (2.9ms)
+Completed 200 OK in 137ms (Views: 123.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:57:04 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+Completed 200 OK in 77ms (Views: 73.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:57:08 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 92ms (Views: 89.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:57:20 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 133ms (Views: 117.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:57:22 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 85ms (Views: 77.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:57:26 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 76ms (Views: 70.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:57:31 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 89ms (Views: 80.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:58:01 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_common_nav.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 152ms (Views: 140.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:58:03 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 103ms (Views: 99.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:58:06 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 56ms (Views: 52.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:58:08 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.7ms)
+Completed 200 OK in 62ms (Views: 54.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:58:09 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 46ms (Views: 43.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:58:26 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_common_nav.html.erb (0.8ms)
+  Rendered layouts/_nav.html.erb (1.9ms)
+Completed 200 OK in 70ms (Views: 65.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:58:31 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 67ms (Views: 64.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:58:52 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 153ms (Views: 140.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:58:54 +0530
+Processing by MainController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 109ms (Views: 102.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:58:56 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+Completed 200 OK in 72ms (Views: 65.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:58:57 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 87ms (Views: 82.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:58:59 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 108ms (Views: 102.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:59:00 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 71ms (Views: 67.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:59:02 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 145ms (Views: 132.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:59:13 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 91ms (Views: 83.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:59:15 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 70ms (Views: 66.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:59:16 +0530
+Processing by MainController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 78ms (Views: 70.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:59:18 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 82ms (Views: 75.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-09 23:59:22 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 600ms (Views: 595.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 00:00:39 +0530
+Processing by MainController#index as HTML
+  [1m[36m (1.1ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 143ms (Views: 129.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 00:00:57 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 75ms (Views: 72.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 00:01:19 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.8ms)
+Completed 200 OK in 170ms (Views: 155.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 00:01:39 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (4.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 125ms (Views: 107.0ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 00:01:42 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+Completed 200 OK in 165ms (Views: 149.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 00:02:18 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 150ms (Views: 139.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 00:02:57 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (2.2ms)
+Completed 200 OK in 164ms (Views: 150.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 00:03:05 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 129ms (Views: 116.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 00:03:13 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 71ms (Views: 68.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 00:03:22 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (1.3ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 146ms (Views: 131.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 00:03:27 +0530
+Processing by MainController#index as HTML
+  [1m[36m (1.7ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 75ms (Views: 68.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 00:04:00 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 80ms (Views: 75.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 00:04:05 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 72ms (Views: 69.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 00:04:09 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 81ms (Views: 76.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 00:04:22 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 141ms (Views: 126.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-10 00:04:27 +0530
+Processing by MainController#index as HTML
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (2.0ms)
+Completed 200 OK in 123ms (Views: 109.1ms | ActiveRecord: 1.7ms)
