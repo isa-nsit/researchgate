@@ -1,0 +1,46 @@
+<button type="button" class="btn feedbtn" data-toggle="modal" data-target="#myModal">
+	<span class="glyphicon glyphicon-pencil"></span>&nbsp;Feedback
+</button>
+    </div>
+	
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  		<%=render 'main/feedback'%>
+	</div>
+
+<style type="text/css">
+	
+	.feedbtn{
+		background-color:  #fff;
+		border:2px solid #072c61;
+		width: 120px;
+		font-family: 'Karla',serif;
+		font-weight: bold;
+		margin-top: 1px;
+		font-size: 1.2em;
+		color: #072c61;
+		transition: 0.2s all ease-in-out;
+	}
+	.feedbtn:hover{
+		color: white;
+		background-color: blue;
+		border:2px solid blue;
+	}
+	.feedbtn:active{
+		outline: none;
+	}
+	@media screen and (max-width: 1109px)
+	{
+		.feedbtn{
+		background-color:  #fff;
+		border:2px solid #072c61;
+		width: 103px;
+		font-family: 'Karla',serif;
+		font-weight: bold;
+		margin-top: 1px;
+		font-size: 1.0em;
+		color: #072c61;
+		transition: 0.2s all ease-in-out;
+	}
+	}
+</style>
+
