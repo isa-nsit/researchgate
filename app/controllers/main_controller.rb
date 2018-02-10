@@ -10,10 +10,11 @@ class MainController < ApplicationController
 	  		elsif incharge_signed_in?
 	  			redirect_to active_incharge_home_path	
 			end
-		end
-	end
 
-	def aboutUs
-		
+		else
+			@ongoing = SelectedProject.all.count
+			@faculty_members = Admin.all.count
+			@students = User.all.count
+		end
 	end
 end

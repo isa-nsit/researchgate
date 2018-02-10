@@ -20,14 +20,14 @@
 
         <% if @faculty.name != "Asha Rani" %>
             <div style="position:relative; background-color: #fff; top:-120px;">
-                <h2 class="text-center"  style="border:2px solid #072c61;"><%=@faculty.name%>
+                <h2 class="text-center"  style="border:2px solid #072c61; border-radius: 20px;"><%=@faculty.name%>
                     <p class="h4">Professor</p>
                     <p class="h3">Department of <%=@faculty.division%></p>
                 </h2>
             </div>
         <% else %>
             <div style="position:relative; background-color: #fff; top:-75px;">
-                <h2 class="text-center"  style="border:2px solid #072c61;"><%=@faculty.name%>
+                <h2 class="text-center"  style="border:2px solid #072c61;border-radius: 20px;"><%=@faculty.name%>
                     <p class="h4">Professor</p>
                     <p class="h3">Department of <%=@faculty.division%></p>
                 </h2>
@@ -35,20 +35,20 @@
         <% end %>
 
         </div>
-        <div class="col-md-4 col-sm-3" id="col-2" style=" background-color: #fff; border:2px solid #072c61;">
+        <div class="col-md-4 col-sm-3" id="col-2" style=" background-color: #fff; border:2px solid #072c61; border-radius: 0px 20px 20px 20px;">
             <h2>Alumni & Research Partners</h2>
                 <b style="font-size: 2.3em; color: #072c61;text-shadow: 1px 2px #072c61;">56</b>
         </div>
     </div>
     
     <div class="row two">
-        <div class="col-md-4 col-sm-12" id="col-3" style="background-color: #fff; border:2px solid #072c61;">
+        <div class="col-md-4 col-sm-12" id="col-3" style="background-color: #fff; border:2px solid #072c61; border-radius: 20px 0px 0px 20px;">
             <div class="page-heading">
                 <h2>Qualifications</h2>
                 <b style="font-size: 2.3em;"><%=@qualifications.size%></b>
             </div>
         </div>
-        <div class="col-md-8 col-sm-12" id="col-4" style=" background-color: #fff; border:2px solid #072c61;height: 9.42em;">
+        <div class="col-md-8 col-sm-12" id="col-4" style=" background-color: #fff; border:2px solid #072c61;height: 9.42em; border-radius: 0px 20px 20px 0px;">
             <%@qualifications.each do|q|%>
             <span class="badge interests"><%=q.upcase%></span>
             <% end %>

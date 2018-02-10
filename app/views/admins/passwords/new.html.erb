@@ -1,16 +1,37 @@
-<h2>Forgot your password?</h2>
+<div class="row">
+	<div class="col-md-offset-3 col-md-5 col-sm-5" style="margin-top: 5%;">
+		<div class="panel panel-primary" style="border: 1px solid #072c61;">
+			<div class="panel-heading text-center" style="background-color: #072c61;">
+				<b class="text-center" style="font-size: 20px;">Forgot your password?</b>
+			</div>
+			<div class="panel-body">
+				<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  				<%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+				  <div class="field form-group ">
+		            <%= f.label :email %><br />
+		            <%= f.email_field :email , :class => 'form-control',:placeholder => 'Enter your Registered Email Address'%>
+		           </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+				  <div class="actions form-group">
+			        <input type="submit" name="commit" value="Reset Password" class="btn btn-block" style="background-color:#072c61; color: white;">
+			      </div>
+				<% end %>
+			</div>
+			<div class="panel-footer links">
+		      <%= render "admins/shared/links"%>
+		    </div>
+					
+		</div>
+	</div>
+</div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "admins/shared/links" %>
+<style type="text/css">
+	.links a{
+    color:#072c61;
+  }
+  .links a:hover{
+    text-decoration: none;
+    font-weight: bold;
+  }
+</style>
