@@ -1,7 +1,5 @@
 
-<div class="jumbotron" style="border:2px solid white; background-color: #072c61;">
-<h1 class="text-center" style="color: white; border:1px solid white; padding: 2px;"><%=@faculty.division.upcase%></h1> 
-</div>
+<img class="jumbotron_image" src="/uploads/<%=@faculty.division.downcase%>.jpg"> 
 
 <div class="container">
     <div class="row row-bottom-margin">
@@ -117,6 +115,13 @@
 
 <style type="text/css">
     
+    .jumbotron_image{
+        width: 103%;
+        filter: blur(2px);
+        border:2px solid #072c61;
+        border-radius: 20px;
+        height: 300px; 
+    }
     #col-1{
          border-radius: 20px 0px 20px 20px;
     }
