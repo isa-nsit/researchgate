@@ -20114,3 +20114,382 @@ Processing by ActiveUserController#facultyShow as HTML
   Rendered layouts/_nav_user.html.erb (0.5ms)
   Rendered layouts/_nav.html.erb (1.2ms)
 Completed 200 OK in 64ms (Views: 55.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 192.168.0.101 at 2018-02-11 19:43:16 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2018-02-11 14:08:53.486432"], ["current_sign_in_at", "2018-02-11 14:13:16.105630"], ["current_sign_in_ip", "192.168.0.101"], ["sign_in_count", 14], ["updated_at", "2018-02-11 14:13:16.108471"], ["id", 1]]
+  [1m[36m (223.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.168.0.109:3000/active_user/home
+Completed 302 Found in 265ms (ActiveRecord: 223.8ms)
+
+
+Started GET "/active_user/home" for 192.168.0.101 at 2018-02-11 19:43:16 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mProjectUserAdminRelation Load (0.2ms)[0m  [1mSELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE (user_id1='1' OR user_id2='1' OR user_id3='1' OR user_id4='1' OR user_id5='1')[0m
+  [1m[35mSelectedProject Load (0.2ms)[0m  SELECT "selected_projects".* FROM "selected_projects" WHERE 1=0
+  [1m[36mCompleteProject Load (0.2ms)[0m  [1mSELECT "complete_projects".* FROM "complete_projects" WHERE (user1='1' OR user2='1' OR user3='1' OR user4='1' OR user5='1')[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "selected_projects".* FROM "selected_projects" WHERE 1=0
+  [1m[36mUserTaskRelation Load (0.2ms)[0m  [1mSELECT "user_task_relations".* FROM "user_task_relations" WHERE "user_task_relations"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE 1=0
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE 1=0[0m
+  Rendered main/_feedback.html.erb (0.3ms)
+  Rendered main/_feed.html.erb (1.3ms)
+  Rendered active_user/home.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_nav_user.html.erb (1.3ms)
+  Rendered layouts/_nav.html.erb (2.8ms)
+Completed 200 OK in 523ms (Views: 502.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/active_user/home" for 192.168.0.101 at 2018-02-11 19:43:17 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mProjectUserAdminRelation Load (0.5ms)[0m  [1mSELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE (user_id1='1' OR user_id2='1' OR user_id3='1' OR user_id4='1' OR user_id5='1')[0m
+  [1m[35mSelectedProject Load (0.2ms)[0m  SELECT "selected_projects".* FROM "selected_projects" WHERE 1=0
+  [1m[36mCompleteProject Load (0.2ms)[0m  [1mSELECT "complete_projects".* FROM "complete_projects" WHERE (user1='1' OR user2='1' OR user3='1' OR user4='1' OR user5='1')[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "selected_projects".* FROM "selected_projects" WHERE 1=0
+  [1m[36mUserTaskRelation Load (0.1ms)[0m  [1mSELECT "user_task_relations".* FROM "user_task_relations" WHERE "user_task_relations"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE 1=0
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE 1=0[0m
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered main/_feed.html.erb (0.7ms)
+  Rendered active_user/home.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_nav_user.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 69ms (Views: 56.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/active_user/facultyIndex?division=Instrumentation" for 192.168.0.101 at 2018-02-11 19:43:20 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#facultyIndex as HTML
+  Parameters: {"division"=>"Instrumentation"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.5ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."division" = ?  ORDER BY "admins"."id" ASC[0m  [["division", "Instrumentation"]]
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered main/_feed.html.erb (0.7ms)
+  Rendered active_user/facultyIndex.html.erb within layouts/application (17.9ms)
+  Rendered layouts/_nav_user.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+Completed 200 OK in 102ms (Views: 90.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/active_user/facultyShow?name=ABCD" for 192.168.0.101 at 2018-02-11 19:43:21 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#facultyShow as HTML
+  Parameters: {"name"=>"ABCD"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.4ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."name" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["name", "ABCD"]]
+  [1m[35mProjectUserAdminRelation Load (0.2ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE "project_user_admin_relations"."admin_id" = ?  [["admin_id", 1]]
+  [1m[36mEligibility Load (0.2ms)[0m  [1mSELECT  "eligibilities".* FROM "eligibilities" WHERE "eligibilities"."faculty_name" = ? LIMIT 1[0m  [["faculty_name", "ABCD"]]
+  Rendered active_user/_facultyProfile.html.erb (4.2ms)
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered main/_feed.html.erb (0.8ms)
+  Rendered active_user/facultyShow.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_nav_user.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 81ms (Views: 64.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/active_user/facultyShow?name=ABCD" for 192.168.0.101 at 2018-02-11 19:44:19 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#facultyShow as HTML
+  Parameters: {"name"=>"ABCD"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."name" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["name", "ABCD"]]
+  [1m[35mProjectUserAdminRelation Load (0.1ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE "project_user_admin_relations"."admin_id" = ?  [["admin_id", 1]]
+  [1m[36mEligibility Load (0.1ms)[0m  [1mSELECT  "eligibilities".* FROM "eligibilities" WHERE "eligibilities"."faculty_name" = ? LIMIT 1[0m  [["faculty_name", "ABCD"]]
+  Rendered active_user/_facultyProfile.html.erb (3.7ms)
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered main/_feed.html.erb (0.6ms)
+  Rendered active_user/facultyShow.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_nav_user.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 105ms (Views: 97.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/active_user/facultyShow?name=ABCD" for 192.168.0.101 at 2018-02-11 19:44:28 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#facultyShow as HTML
+  Parameters: {"name"=>"ABCD"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."name" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["name", "ABCD"]]
+  [1m[35mProjectUserAdminRelation Load (0.2ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE "project_user_admin_relations"."admin_id" = ?  [["admin_id", 1]]
+  [1m[36mEligibility Load (0.2ms)[0m  [1mSELECT  "eligibilities".* FROM "eligibilities" WHERE "eligibilities"."faculty_name" = ? LIMIT 1[0m  [["faculty_name", "ABCD"]]
+  Rendered active_user/_facultyProfile.html.erb (3.6ms)
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered main/_feed.html.erb (0.7ms)
+  Rendered active_user/facultyShow.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_nav_user.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 108ms (Views: 94.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/active_user/facultyShow?name=ABCD" for 192.168.0.101 at 2018-02-11 19:44:46 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#facultyShow as HTML
+  Parameters: {"name"=>"ABCD"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."name" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["name", "ABCD"]]
+  [1m[35mProjectUserAdminRelation Load (0.1ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE "project_user_admin_relations"."admin_id" = ?  [["admin_id", 1]]
+  [1m[36mEligibility Load (0.1ms)[0m  [1mSELECT  "eligibilities".* FROM "eligibilities" WHERE "eligibilities"."faculty_name" = ? LIMIT 1[0m  [["faculty_name", "ABCD"]]
+  Rendered active_user/_facultyProfile.html.erb (3.1ms)
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered main/_feed.html.erb (0.5ms)
+  Rendered active_user/facultyShow.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_nav_user.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 92ms (Views: 84.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/active_user/facultyShow?name=ABCD" for 192.168.0.101 at 2018-02-11 19:44:57 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#facultyShow as HTML
+  Parameters: {"name"=>"ABCD"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."name" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["name", "ABCD"]]
+  [1m[35mProjectUserAdminRelation Load (0.1ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE "project_user_admin_relations"."admin_id" = ?  [["admin_id", 1]]
+  [1m[36mEligibility Load (0.1ms)[0m  [1mSELECT  "eligibilities".* FROM "eligibilities" WHERE "eligibilities"."faculty_name" = ? LIMIT 1[0m  [["faculty_name", "ABCD"]]
+  Rendered active_user/_facultyProfile.html.erb (2.3ms)
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered main/_feed.html.erb (0.5ms)
+  Rendered active_user/facultyShow.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_nav_user.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 82ms (Views: 78.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/active_user/facultyShow?name=ABCD" for 192.168.0.101 at 2018-02-11 19:45:05 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#facultyShow as HTML
+  Parameters: {"name"=>"ABCD"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."name" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["name", "ABCD"]]
+  [1m[35mProjectUserAdminRelation Load (0.2ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE "project_user_admin_relations"."admin_id" = ?  [["admin_id", 1]]
+  [1m[36mEligibility Load (0.1ms)[0m  [1mSELECT  "eligibilities".* FROM "eligibilities" WHERE "eligibilities"."faculty_name" = ? LIMIT 1[0m  [["faculty_name", "ABCD"]]
+  Rendered active_user/_facultyProfile.html.erb (3.8ms)
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered main/_feed.html.erb (0.7ms)
+  Rendered active_user/facultyShow.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_nav_user.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 103ms (Views: 90.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/active_user/facultyIndex?division=Automation" for 192.168.0.101 at 2018-02-11 19:45:13 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#facultyIndex as HTML
+  Parameters: {"division"=>"Automation"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."division" = ?  ORDER BY "admins"."id" ASC[0m  [["division", "Automation"]]
+  Rendered main/_feedback.html.erb (0.1ms)
+  Rendered main/_feed.html.erb (0.8ms)
+  Rendered active_user/facultyIndex.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_nav_user.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 95ms (Views: 87.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/active_user/facultyShow?name=AB" for 192.168.0.101 at 2018-02-11 19:45:15 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#facultyShow as HTML
+  Parameters: {"name"=>"AB"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."name" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["name", "AB"]]
+  [1m[35mProjectUserAdminRelation Load (0.1ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE "project_user_admin_relations"."admin_id" = ?  [["admin_id", 2]]
+  [1m[36mEligibility Load (0.1ms)[0m  [1mSELECT  "eligibilities".* FROM "eligibilities" WHERE "eligibilities"."faculty_name" = ? LIMIT 1[0m  [["faculty_name", "AB"]]
+  Rendered active_user/_facultyProfile.html.erb (1.3ms)
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered main/_feed.html.erb (0.6ms)
+  Rendered active_user/facultyShow.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_nav_user.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 88ms (Views: 84.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/active_user/facultyShow?name=AB" for 192.168.0.101 at 2018-02-11 19:45:27 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#facultyShow as HTML
+  Parameters: {"name"=>"AB"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."name" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["name", "AB"]]
+  [1m[35mProjectUserAdminRelation Load (0.1ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE "project_user_admin_relations"."admin_id" = ?  [["admin_id", 2]]
+  [1m[36mEligibility Load (0.1ms)[0m  [1mSELECT  "eligibilities".* FROM "eligibilities" WHERE "eligibilities"."faculty_name" = ? LIMIT 1[0m  [["faculty_name", "AB"]]
+  Rendered active_user/_facultyProfile.html.erb (3.5ms)
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered main/_feed.html.erb (0.8ms)
+  Rendered active_user/facultyShow.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_nav_user.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (1.6ms)
+Completed 200 OK in 111ms (Views: 105.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/active_user/facultyIndex?division=Instrumentation" for 192.168.0.101 at 2018-02-11 19:45:28 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#facultyIndex as HTML
+  Parameters: {"division"=>"Instrumentation"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."division" = ?  ORDER BY "admins"."id" ASC[0m  [["division", "Instrumentation"]]
+  Rendered main/_feedback.html.erb (0.1ms)
+  Rendered main/_feed.html.erb (0.9ms)
+  Rendered active_user/facultyIndex.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_nav_user.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 98ms (Views: 86.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/active_user/facultyShow?name=ABCD" for 192.168.0.101 at 2018-02-11 19:45:29 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#facultyShow as HTML
+  Parameters: {"name"=>"ABCD"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.3ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."name" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["name", "ABCD"]]
+  [1m[35mProjectUserAdminRelation Load (0.2ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE "project_user_admin_relations"."admin_id" = ?  [["admin_id", 1]]
+  [1m[36mEligibility Load (0.2ms)[0m  [1mSELECT  "eligibilities".* FROM "eligibilities" WHERE "eligibilities"."faculty_name" = ? LIMIT 1[0m  [["faculty_name", "ABCD"]]
+  Rendered active_user/_facultyProfile.html.erb (1.9ms)
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered main/_feed.html.erb (0.8ms)
+  Rendered active_user/facultyShow.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_nav_user.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 65ms (Views: 50.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 192.168.0.109 at 2018-02-11 19:45:37 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_common_nav.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (2.1ms)
+Completed 200 OK in 110ms (Views: 104.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-1982ee07952e6c614d6ea60eebfdd06b04501584b6c80a4423e54993786a78ee.css?body=1" for 192.168.0.109 at 2018-02-11 19:45:38 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 192.168.0.109 at 2018-02-11 19:45:38 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/sign_in" for 192.168.0.109 at 2018-02-11 19:45:40 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (20.0ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 103ms (Views: 100.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 192.168.0.109 at 2018-02-11 19:45:44 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hTNg1VLdN7EAa+s1PFSirOr75FkBFTl4akPxuOJGKcBTd18k7Lj8d14ziBSqDYxe529Ch4R1d7AepQZ8xFxfVA==", "user"=>{"email"=>"ashishc534@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "ashishc534@gmail.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2018-02-11 14:13:16.105630"], ["current_sign_in_at", "2018-02-11 14:15:45.037780"], ["last_sign_in_ip", "192.168.0.101"], ["current_sign_in_ip", "192.168.0.109"], ["sign_in_count", 15], ["updated_at", "2018-02-11 14:15:45.039540"], ["id", 1]]
+  [1m[35m (250.8ms)[0m  commit transaction
+Redirected to http://192.168.0.109:3000/
+Completed 302 Found in 484ms (ActiveRecord: 252.2ms)
+
+
+Started GET "/" for 192.168.0.109 at 2018-02-11 19:45:45 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to http://192.168.0.109:3000/active_user/home
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/active_user/home" for 192.168.0.109 at 2018-02-11 19:45:45 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mProjectUserAdminRelation Load (0.6ms)[0m  [1mSELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE (user_id1='1' OR user_id2='1' OR user_id3='1' OR user_id4='1' OR user_id5='1')[0m
+  [1m[35mSelectedProject Load (0.6ms)[0m  SELECT "selected_projects".* FROM "selected_projects" WHERE 1=0
+  [1m[36mCompleteProject Load (0.5ms)[0m  [1mSELECT "complete_projects".* FROM "complete_projects" WHERE (user1='1' OR user2='1' OR user3='1' OR user4='1' OR user5='1')[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "selected_projects".* FROM "selected_projects" WHERE 1=0
+  [1m[36mUserTaskRelation Load (0.3ms)[0m  [1mSELECT "user_task_relations".* FROM "user_task_relations" WHERE "user_task_relations"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE 1=0
+  [1m[36mTask Load (0.5ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE 1=0[0m
+  Rendered main/_feedback.html.erb (0.1ms)
+  Rendered main/_feed.html.erb (2.0ms)
+  Rendered active_user/home.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_nav_user.html.erb (0.9ms)
+  Rendered layouts/_nav.html.erb (2.6ms)
+Completed 200 OK in 163ms (Views: 135.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/active_user/facultyIndex?division=Instrumentation" for 192.168.0.109 at 2018-02-11 19:45:47 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#facultyIndex as HTML
+  Parameters: {"division"=>"Instrumentation"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."division" = ?  ORDER BY "admins"."id" ASC[0m  [["division", "Instrumentation"]]
+  Rendered main/_feedback.html.erb (0.1ms)
+  Rendered main/_feed.html.erb (0.8ms)
+  Rendered active_user/facultyIndex.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_nav_user.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 88ms (Views: 82.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/active_user/facultyShow?name=ABCD" for 192.168.0.109 at 2018-02-11 19:45:49 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#facultyShow as HTML
+  Parameters: {"name"=>"ABCD"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."name" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["name", "ABCD"]]
+  [1m[35mProjectUserAdminRelation Load (0.1ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE "project_user_admin_relations"."admin_id" = ?  [["admin_id", 1]]
+  [1m[36mEligibility Load (0.1ms)[0m  [1mSELECT  "eligibilities".* FROM "eligibilities" WHERE "eligibilities"."faculty_name" = ? LIMIT 1[0m  [["faculty_name", "ABCD"]]
+  Rendered active_user/_facultyProfile.html.erb (1.3ms)
+  Rendered main/_feedback.html.erb (0.1ms)
+  Rendered main/_feed.html.erb (0.8ms)
+  Rendered active_user/facultyShow.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_nav_user.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 80ms (Views: 75.6ms | ActiveRecord: 0.4ms)
