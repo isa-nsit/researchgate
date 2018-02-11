@@ -80,7 +80,7 @@
 
         <div class="col-md-8 col-sm-12 col-projects-name" id="size_<%=@projects.size%>" style=" background-color: #fff; border:2px solid #072c61; height: 10em; margin-bottom: 20px;">
             <%@projects.each do|project|%>
-            <span class="badge interests"><%=project.ProjectName.humanize%></span>
+            <span class="badge project-name"><%=project.ProjectName.humanize%></span>
             <% end %>
         </div>
     </div>
@@ -275,7 +275,7 @@
         .image{
         border:0px;
         }
-        .interests{
+        .project-name{
         color: rgba(255,255,255,1.0);
         background-color: #072c61;
         border: 1px solid #072c61;
