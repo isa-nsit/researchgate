@@ -18487,3 +18487,303 @@ Processing by ActiveUserController#home as HTML
   Rendered layouts/_nav_user.html.erb (0.7ms)
   Rendered layouts/_nav.html.erb (2.0ms)
 Completed 200 OK in 100ms (Views: 90.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 192.168.0.109 at 2018-02-11 14:40:42 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://192.168.0.109:3000/active_user/home
+Completed 302 Found in 39ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/active_user/home" for 192.168.0.109 at 2018-02-11 14:40:42 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mProjectUserAdminRelation Load (0.2ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE (user_id1='1' OR user_id2='1' OR user_id3='1' OR user_id4='1' OR user_id5='1')
+  [1m[36mSelectedProject Load (0.2ms)[0m  [1mSELECT "selected_projects".* FROM "selected_projects" WHERE 1=0[0m
+  [1m[35mCompleteProject Load (0.2ms)[0m  SELECT "complete_projects".* FROM "complete_projects" WHERE (user1='1' OR user2='1' OR user3='1' OR user4='1' OR user5='1')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "selected_projects".* FROM "selected_projects" WHERE 1=0[0m
+  [1m[35mUserTaskRelation Load (0.1ms)[0m  SELECT "user_task_relations".* FROM "user_task_relations" WHERE "user_task_relations"."user_id" = ?  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE 1=0[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE 1=0
+  Rendered main/_feedback.html.erb (0.3ms)
+  Rendered main/_feed.html.erb (1.1ms)
+  Rendered active_user/home.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_nav_user.html.erb (1.8ms)
+  Rendered layouts/_nav.html.erb (4.5ms)
+Completed 200 OK in 792ms (Views: 761.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 192.168.0.101 at 2018-02-11 14:40:50 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to http://192.168.0.109:3000/active_user/home
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/active_user/home" for 192.168.0.101 at 2018-02-11 14:40:50 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mProjectUserAdminRelation Load (0.2ms)[0m  [1mSELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE (user_id1='1' OR user_id2='1' OR user_id3='1' OR user_id4='1' OR user_id5='1')[0m
+  [1m[35mSelectedProject Load (0.1ms)[0m  SELECT "selected_projects".* FROM "selected_projects" WHERE 1=0
+  [1m[36mCompleteProject Load (0.1ms)[0m  [1mSELECT "complete_projects".* FROM "complete_projects" WHERE (user1='1' OR user2='1' OR user3='1' OR user4='1' OR user5='1')[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "selected_projects".* FROM "selected_projects" WHERE 1=0
+  [1m[36mUserTaskRelation Load (0.1ms)[0m  [1mSELECT "user_task_relations".* FROM "user_task_relations" WHERE "user_task_relations"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE 1=0
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE 1=0[0m
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered main/_feed.html.erb (0.4ms)
+  Rendered active_user/home.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_nav_user.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 77ms (Views: 72.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/active_user/facultyIndex?division=Instrumentation" for 192.168.0.101 at 2018-02-11 14:40:53 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#facultyIndex as HTML
+  Parameters: {"division"=>"Instrumentation"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.3ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."division" = ?  ORDER BY "admins"."id" ASC[0m  [["division", "Instrumentation"]]
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered main/_feed.html.erb (0.5ms)
+  Rendered active_user/facultyIndex.html.erb within layouts/application (12.7ms)
+  Rendered layouts/_nav_user.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 73ms (Views: 69.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/active_user/facultyShow?name=ABCD" for 192.168.0.101 at 2018-02-11 14:40:54 +0530
+Cannot render console from 192.168.0.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveUserController#facultyShow as HTML
+  Parameters: {"name"=>"ABCD"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."name" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["name", "ABCD"]]
+  [1m[35mProjectUserAdminRelation Load (0.1ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE "project_user_admin_relations"."admin_id" = ?  [["admin_id", 1]]
+  [1m[36mEligibility Load (0.2ms)[0m  [1mSELECT  "eligibilities".* FROM "eligibilities" WHERE "eligibilities"."faculty_name" = ? LIMIT 1[0m  [["faculty_name", "ABCD"]]
+  Rendered main/_feedback.html.erb (0.1ms)
+  Rendered main/_feed.html.erb (0.7ms)
+  Rendered active_user/_facultyProfile.html.erb (4.9ms)
+  Rendered active_user/facultyShow.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_nav_user.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 103ms (Views: 95.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 192.168.0.109 at 2018-02-11 14:41:09 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_common_nav.html.erb (1.1ms)
+  Rendered layouts/_nav.html.erb (2.0ms)
+Completed 200 OK in 126ms (Views: 122.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-1982ee07952e6c614d6ea60eebfdd06b04501584b6c80a4423e54993786a78ee.css?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/carousel.self-e47323f363ceb3dc0bdbce05e36e709ed428e339833a41140a85cb0af24b8127.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/alert.self-742145c5bb847aafdadc6e339be795628f8bc25f177e851f03a8c42278eb0312.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/transition.self-6ad2488465135ab731a045a8ebbe3ea2fc501aed286042496eda1664fdd07ba9.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/button.self-126ac9bf0e7f2d8568f8da3a00fd5f0fac6eae0946331003370161fbf8d7975e.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/collapse.self-2eb697f62b587bb786ff940d82dd4be88cdeeaf13ca128e3da3850c5fcaec301.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/dropdown.self-561cca1cbaf67474e01e9536f106bad541594860a6df997004591c1c1957a147.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/modal.self-3e78617ade5663314b7ee0ea10375a5b34d59ffbade44939e3f2a4e4ef2019b3.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/tab.self-5bf7078b682f8b131332eefa46b45fa5eff2eca745fc0d03e2991450888f7c28.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/affix.self-6d6f1a7fc5c8aabf3547fa1b794fab6268f54bc55ad815e55873c71f52513517.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/scrollspy.self-969f3c5f48cdf1e439c7fa1154c13b948715f5c689f87837c0b64521d3b46ef6.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/tooltip.self-05afb177e08f98997ccfc84fa08a215e4b27d48d5fe4d049080675e9dffd8199.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap/popover.self-0aa93860b59fe7393f1dd490f54b3cb994f9d6155adffce034d4e14ae361b041.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-2db6ec539b9190f75e1d477b305df53d12904d5cafdd47c7ffd91ba25cbec128.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.noty.packaged.min.self-35e74a3afaa9c75229de0016c8d9548aa1dfb4b7d7491801bc433ccaf7a49c3f.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/active_incharge.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/active_user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/electrical.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/electronic.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/mechanical.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/newTask.self-6847c1e44d5d45e0f293d75cd640cad0a40cc9c6d4d4415a3dc1a45bbcde7746.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/registrations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/selected_projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 192.168.0.109 at 2018-02-11 14:41:10 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/admins/sign_in" for 192.168.0.109 at 2018-02-11 14:41:13 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered admins/shared/_links.html.erb (2.6ms)
+  Rendered admins/sessions/new.html.erb within layouts/application (260.5ms)
+  Rendered layouts/_common_nav.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (2.7ms)
+Completed 200 OK in 740ms (Views: 732.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins/sign_in" for 192.168.0.109 at 2018-02-11 14:41:19 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hmMAtFalx54bb7yucZunnTYeTfxKUpamuzeFXvFqJj77encDF0kBWAtnB2MKCIKmmCplqcV0h1z1IDUpJeiiMQ==", "admin"=>{"email"=>"a@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["email", "a@gmail.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "admins" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "admins"."id" = ?[0m  [["last_sign_in_at", "2018-02-10 19:11:14.691518"], ["current_sign_in_at", "2018-02-11 09:11:19.790159"], ["last_sign_in_ip", "192.168.0.109"], ["sign_in_count", 3], ["updated_at", "2018-02-11 09:11:19.791635"], ["id", 1]]
+  [1m[35m (141.2ms)[0m  commit transaction
+Redirected to http://192.168.0.109:3000/
+Completed 302 Found in 306ms (ActiveRecord: 141.8ms)
+
+
+Started GET "/" for 192.168.0.109 at 2018-02-11 14:41:19 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MainController#index as HTML
+  [1m[36mAdmin Load (0.5ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to http://192.168.0.109:3000/active_admin/home
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/active_admin/home" for 192.168.0.109 at 2018-02-11 14:41:19 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveAdminController#home as HTML
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProjectUserAdminRelation Load (0.1ms)[0m  [1mSELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE "project_user_admin_relations"."admin_id" = ?[0m  [["admin_id", 1]]
+  [1m[35mSelectedProject Load (0.2ms)[0m  SELECT "selected_projects".* FROM "selected_projects" WHERE 1=0
+  [1m[36mCompleteProject Load (0.8ms)[0m  [1mSELECT "complete_projects".* FROM "complete_projects" WHERE "complete_projects"."admin_id" = ?[0m  [["admin_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "selected_projects".* FROM "selected_projects" WHERE 1=0
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "complete_projects" WHERE "complete_projects"."admin_id" = ?[0m  [["admin_id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "project_user_admin_relations" WHERE "project_user_admin_relations"."admin_id" = ?  [["admin_id", 1]]
+  [1m[36m (2.5ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE (admin_id='1' AND accepted='t')[0m
+  Rendered active_admin/home.html.erb within layouts/application (70.1ms)
+Completed 401 Unauthorized in 82ms (ActiveRecord: 4.5ms)
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: admin_id: SELECT COUNT(*) FROM "tasks" WHERE (admin_id='1' AND accepted='t')):
+    26: 			<div class="panel-heading text-center" style="background-color: #072c61;"><h4>New Ideas</h4></div>
+    27: 			<div class="panel-body" style="margin-bottom: -20px;">
+    28: 
+    29: 				<% if @tasks.size == 0 %>
+    30: 					<div class="panel">
+    31: 						<div class="panel-body text-center">
+    32: 							<h4 style="color: #072c61;">NEW IDEAS WILL APPEAR HERE</h4>
+  app/views/active_admin/home.html.erb:29:in `_app_views_active_admin_home_html_erb__3756129208862069634_70250847457360'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.2ms)
+
+
+Started GET "/admins/sign_in" for 192.168.0.109 at 2018-02-11 14:41:39 +0530
+Cannot render console from 192.168.0.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT  "admins".* FROM "admins" WHERE "admins"."id" = ?  ORDER BY "admins"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://192.168.0.109:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)

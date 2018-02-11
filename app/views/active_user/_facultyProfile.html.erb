@@ -80,8 +80,7 @@
 
         <div class="col-md-8 col-sm-12 col-projects-name" id="size_<%=@projects.size%>" style=" background-color: #fff; border:2px solid #072c61; height: 10em; margin-bottom: 20px;">
             <%@projects.each do|project|%>
-            <span class="badge interests" style="
-    word-wrap:break-word;"><%=project.ProjectName.humanize%></span>
+            <span class="badge interests"><%=project.ProjectName.humanize%></span>
             <% end %>
         </div>
     </div>
@@ -276,8 +275,15 @@
         .image{
         border:0px;
         }
+        /*.interests{
+        color: rgba(255,255,255,1.0);
+        background-color: #072c61;
+        border: 1px solid #072c61;
+        margin: 3px;
+        letter-spacing: 1px;
+        font-family: 'Karla',sans-serif;
+        font-size: 0.9em;
+        padding: 10px;
+        }*/
     }
 </style>
-<script type="text/javascript">
-    var mql = window.matchMedia("screen and (max-width: 765px)");
-</script>
