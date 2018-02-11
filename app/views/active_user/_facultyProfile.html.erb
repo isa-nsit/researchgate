@@ -11,7 +11,7 @@
                 <b style="font-size: 2.3em;"><span ><%=@interests.size%></b>
             </div>
         </div>
-        <div class="col-md-4 col-sm-6 image" style="border-top:2px solid #072c61; height: 20em;">
+        <div class="col-md-4 col-sm-6 image" style=" height: 20em;">
         <% if @faculty.name != "Pramendra Kumar"%>
             <%= image_tag("#{@faculty.pic}",class:'img-responsive',style:'position:relative; top:-50px; right:-80px; width:50%; border:2px solid #072c61; border-top-left-radius:20px; border-top-right-radius:20px;')%>
         <% else %>
@@ -35,7 +35,7 @@
         <% end %>
 
         </div>
-        <div class="col-md-4 col-sm-3" id="col-2" style=" background-color: #fff; border:2px solid #072c61; border-radius: 0px 20px 20px 20px;">
+        <div class="col-md-4 col-sm-3" id="col-2" style=" background-color: #fff; border:2px solid #072c61;">
             <h2>Alumni & Research Partners</h2>
                 <b style="font-size: 2.3em; color: #072c61;text-shadow: 1px 2px #072c61;">56</b>
         </div>
@@ -48,7 +48,7 @@
                 <b style="font-size: 2.3em;"><%=@qualifications.size%></b>
             </div>
         </div>
-        <div class="col-md-8 col-sm-12" id="col-4" style=" background-color: #fff; border:2px solid #072c61;height: 9.42em; border-radius: 0px 20px 20px 0px;">
+        <div class="col-md-8 col-sm-12" id="col-4" style=" background-color: #fff; border:2px solid #072c61;height: 9.42em;">
             <%@qualifications.each do|q|%>
             <span class="badge interests"><%=q.upcase%></span>
             <% end %>
@@ -71,14 +71,14 @@
 
     <% if @projects.size > 0 %>
     <div class="row" style="margin-bottom: 20px;">
-        <div class="col-md-4 col-sm-12" style=" background-color: #fff; border:2px solid #072c61; height: 10em;word-wrap: break-word;">
+        <div class="col-md-4 col-sm-12" id="col-projects" style=" background-color: #fff; border:2px solid #072c61; height: 10em;word-wrap: break-word;">
             <div class="page-heading">
                 <h2>Latest Projects</h2>
                 <b style="font-size: 2.3em;"><%=@projects.size%></b>
             </div>
         </div>
 
-        <div class="col-md-8 col-sm-12" id="size_<%=@projects.size%>" style=" background-color: #fff; border:2px solid #072c61; height: 10em; margin-bottom: 20px;">
+        <div class="col-md-8 col-sm-12 col-projects-name" id="size_<%=@projects.size%>" style=" background-color: #fff; border:2px solid #072c61; height: 10em; margin-bottom: 20px;">
             <%@projects.each do|project|%>
             <span class="badge interests" style="
     word-wrap:break-word;"><%=project.ProjectName.humanize%></span>
@@ -120,6 +120,31 @@
 </div>
 
 <style type="text/css">
+    
+    #col-1{
+         border-radius: 20px 0px 20px 20px;
+    }
+    #col-2{
+        border-radius: 0px 20px 20px 20px;
+    }
+    #col-3{
+        border-radius: 20px 0px 0px 20px;
+    }
+    #col-4{
+        border-radius: 0px 20px 20px 0px;
+    }
+    #col-projects{
+        border-radius: 20px 0px 0px 20px;
+    }
+    .col-projects-name{
+        border-radius: 0px 20px 20px 0px;
+    }
+    #col-5{
+        border-radius: 20px 0px 0px 20px;
+    }
+    #col-6{
+        border-radius: 0px 20px 20px 0px;
+    }
     .two{
         margin-bottom: 50px;
     }
@@ -167,6 +192,9 @@
     }
     #col-5,#col-6{
         height: 15em;
+    }
+    .image{
+        border-top:2px solid #072c61;
     }
     @media screen and (max-width:1099px){
         .jumbotron{
@@ -220,6 +248,33 @@
         }
         #col-1,#col-2,#col-3,#col-4,#col-5,#col-6{
             margin-top: 10px;
+        }
+        #col-1{
+            border-radius: 20px 20px 20px 20px;
+        }
+        #col-2{
+            border-radius: 20px;
+        }
+        #col-3{
+            border-radius: 20px;
+        }
+        #col-projects{
+        border-radius: 20px;
+        }
+        .col-projects-name{
+        border-radius: 20px;
+        }
+        #col-5{
+            border-radius: 20px;
+        }
+        #col-6{
+            border-radius: 20px;
+        }
+        #col-4{
+            border-radius: 20px;
+        }
+        .image{
+        border:0px;
         }
     }
 </style>
