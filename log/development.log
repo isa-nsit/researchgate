@@ -10140,3 +10140,263 @@ Processing by MainController#index as HTML
   Rendered layouts/_nav.html.erb (2.0ms)
 Completed 200 OK in 123ms (Views: 109.1ms | ActiveRecord: 1.7ms)
 >>>>>>> bdd3a229d8c46b7edcefcc078cea1e4adcab2cdf
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-11 23:50:06 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "selected_projects"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered main/index.html.erb within layouts/application (18.7ms)
+  Rendered layouts/_common_nav.html.erb (2.3ms)
+  Rendered layouts/_nav.html.erb (13.0ms)
+Completed 200 OK in 6091ms (Views: 5969.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.self-a3c4e910d9c2ecda8f5a8b2a0f3b9815bd18b93bb21fd4af917171e37a06919c.css?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/bootstrap/transition.self-6ad2488465135ab731a045a8ebbe3ea2fc501aed286042496eda1664fdd07ba9.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/bootstrap/alert.self-742145c5bb847aafdadc6e339be795628f8bc25f177e851f03a8c42278eb0312.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/bootstrap/button.self-126ac9bf0e7f2d8568f8da3a00fd5f0fac6eae0946331003370161fbf8d7975e.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/bootstrap/carousel.self-e47323f363ceb3dc0bdbce05e36e709ed428e339833a41140a85cb0af24b8127.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/bootstrap/collapse.self-2eb697f62b587bb786ff940d82dd4be88cdeeaf13ca128e3da3850c5fcaec301.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/bootstrap/dropdown.self-561cca1cbaf67474e01e9536f106bad541594860a6df997004591c1c1957a147.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/bootstrap/modal.self-3e78617ade5663314b7ee0ea10375a5b34d59ffbade44939e3f2a4e4ef2019b3.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/bootstrap/tab.self-5bf7078b682f8b131332eefa46b45fa5eff2eca745fc0d03e2991450888f7c28.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/bootstrap/affix.self-6d6f1a7fc5c8aabf3547fa1b794fab6268f54bc55ad815e55873c71f52513517.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/bootstrap/scrollspy.self-969f3c5f48cdf1e439c7fa1154c13b948715f5c689f87837c0b64521d3b46ef6.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/bootstrap/tooltip.self-05afb177e08f98997ccfc84fa08a215e4b27d48d5fe4d049080675e9dffd8199.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/bootstrap/popover.self-0aa93860b59fe7393f1dd490f54b3cb994f9d6155adffce034d4e14ae361b041.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/turbolinks.self-2db6ec539b9190f75e1d477b305df53d12904d5cafdd47c7ffd91ba25cbec128.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/jquery.noty.packaged.min.self-35e74a3afaa9c75229de0016c8d9548aa1dfb4b7d7491801bc433ccaf7a49c3f.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/active_incharge.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/active_user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/electrical.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/electronic.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/mechanical.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/newTask.self-6847c1e44d5d45e0f293d75cd640cad0a40cc9c6d4d4415a3dc1a45bbcde7746.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/registrations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/selected_projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-11 23:50:13 +0530
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-11 23:50:27 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (6.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (227.4ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 371ms (Views: 330.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-11 23:50:34 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B4PMIKYR43ExePNPOe68fb/tfCtaaUtzGCOZ3iVi937HvjfNqGN4F71nKdhRKF5iOZMzRXYnGUHi1CLbyuXtlA==", "user"=>{"email"=>"a@b.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "a@b.com"]]
+Completed 401 Unauthorized in 92ms (ActiveRecord: 0.5ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B4PMIKYR43ExePNPOe68fb/tfCtaaUtzGCOZ3iVi937HvjfNqGN4F71nKdhRKF5iOZMzRXYnGUHi1CLbyuXtlA==", "user"=>{"email"=>"a@b.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  Rendered users/shared/_links.html.erb (0.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 271ms (Views: 62.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-11 23:50:49 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J9mcIJQ3vaFc5G2AMIfwNBtEhY1KA3mR0C5JMsN99VDn5GfNmkUmx9D7txdYQRIrnTrK42ZNK6Mq2fI3LPrvug==", "user"=>{"email"=>"a@c.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "a@c.com"]]
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.1ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J9mcIJQ3vaFc5G2AMIfwNBtEhY1KA3mR0C5JMsN99VDn5GfNmkUmx9D7txdYQRIrnTrK42ZNK6Mq2fI3LPrvug==", "user"=>{"email"=>"a@c.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (1.0ms)
+Completed 200 OK in 194ms (Views: 52.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-11 23:50:53 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 59ms (Views: 57.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-11 23:50:58 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IxSiWjX2PTWnO55GyuwO8bQkRtJVT/1OWLJz57WmomHjKVm3O4SmUyskRNGiKuzuMloJvHkBr3yiRcjiWiG4iw==", "user"=>{"email"=>"ashishc534@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "ashishc534@gmail.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2018-02-07 13:31:59.714209"], ["current_sign_in_at", "2018-02-11 18:20:58.922910"], ["sign_in_count", 3], ["updated_at", "2018-02-11 18:20:58.924067"], ["id", 1]]
+  [1m[35m (64.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 247ms (ActiveRecord: 65.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-11 23:50:59 +0530
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/active_user/home
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/active_user/home" for 127.0.0.1 at 2018-02-11 23:50:59 +0530
+Processing by ActiveUserController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mProjectUserAdminRelation Load (0.3ms)[0m  [1mSELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE (user_id1='1' OR user_id2='1' OR user_id3='1' OR user_id4='1' OR user_id5='1')[0m
+  [1m[35mSelectedProject Load (0.2ms)[0m  SELECT "selected_projects".* FROM "selected_projects" WHERE 1=0
+  [1m[36mCompleteProject Load (0.6ms)[0m  [1mSELECT "complete_projects".* FROM "complete_projects" WHERE (user1='1' OR user2='1' OR user3='1' OR user4='1' OR user5='1')[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "selected_projects".* FROM "selected_projects" WHERE 1=0
+  [1m[36mUserTaskRelation Load (0.1ms)[0m  [1mSELECT "user_task_relations".* FROM "user_task_relations" WHERE "user_task_relations"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE 1=0
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE 1=0[0m
+  Rendered main/_feedback.html.erb (1.0ms)
+  Rendered active_user/home.html.erb within layouts/application (34.1ms)
+  Rendered layouts/_nav_user.html.erb (1.5ms)
+  Rendered layouts/_nav.html.erb (8.8ms)
+Completed 200 OK in 150ms (Views: 115.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/active_user/facultyIndex?division=Instrumentation" for 127.0.0.1 at 2018-02-11 23:51:12 +0530
+Processing by ActiveUserController#facultyIndex as HTML
+  Parameters: {"division"=>"Instrumentation"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.7ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  Rendered main/_feedback.html.erb (0.2ms)
+  Rendered active_user/facultyIndex.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_nav_user.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.2ms)
+Completed 200 OK in 115ms (Views: 109.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/active_user/facultyIndex?division=Automation" for 127.0.0.1 at 2018-02-11 23:51:13 +0530
+Processing by ActiveUserController#facultyIndex as HTML
+  Parameters: {"division"=>"Automation"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  Rendered main/_feedback.html.erb (0.1ms)
+  Rendered active_user/facultyIndex.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_nav_user.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 70ms (Views: 61.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/active_user/profile?id=1" for 127.0.0.1 at 2018-02-11 23:51:15 +0530
+Processing by ActiveUserController#profile as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered active_user/_stdProfile.html.erb (0.9ms)
+  Rendered main/_feedback.html.erb (0.1ms)
+  Rendered active_user/profile.html.erb within layouts/application (12.4ms)
+  Rendered layouts/_nav_user.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 90ms (Views: 71.4ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-02-11 23:51:30 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EhYS/hgGFkeC5hlEGIKH88iY5PKWVcGCQWW2xDn9OB2NYzTK96jj9UHTpiHrGTDhT/iUftNRzLTd5O9OKybbzg=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.9ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 69ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-11 23:51:30 +0530
+Processing by MainController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "selected_projects"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered main/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 41ms (Views: 38.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/main/aboutUs" for 127.0.0.1 at 2018-02-11 23:51:37 +0530
+Processing by MainController#aboutUs as HTML
+  Rendered main/aboutUs.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_common_nav.html.erb (0.2ms)
+  Rendered layouts/_nav.html.erb (0.9ms)
+Completed 200 OK in 53ms (Views: 52.7ms | ActiveRecord: 0.0ms)

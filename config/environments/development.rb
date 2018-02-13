@@ -38,11 +38,11 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-      address:              'smtp.gmail.com',
+      address:              'smtp.mailgun.org',
       port:                 587,
-      domain:               'gmail.com',
-      user_name:            'railsproject007@gmail.com',
-      password:             'password@123',
+      domain:               'sandbox018f1e8692684901813e34c41176e8bb.mailgun.org',
+      user_name:            'postmaster@sandbox018f1e8692684901813e34c41176e8bb.mailgun.org',
+      password:             'Research-gate99',
       authentication:       :plain,
       enable_starttls_auto: true
 } 
