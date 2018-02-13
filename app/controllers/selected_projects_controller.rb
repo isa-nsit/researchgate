@@ -117,7 +117,7 @@ class SelectedProjectsController < ApplicationController
         # Resque.enqueue(RejectedWorker,task.id,task.email3)
         end
         if(task.email4 and task.email4!="")
-         #Rejected.FormSubmission(task,task.email4).deliver_now
+        # Rejected.FormSubmission(task,task.email4).deliver_now
         # Resque.enqueue(RejectedWorker,task.id,task.email4)
         end
         if(task.email5 and task.email5!="")
