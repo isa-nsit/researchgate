@@ -16,7 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 gem 'aws-sdk', '~> 2'
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'dotenv-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 # gem 'resque'
