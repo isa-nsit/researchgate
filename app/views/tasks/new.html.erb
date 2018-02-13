@@ -1,4 +1,5 @@
 
+
 <div class="panel" style="border: 1px solid #072c61;">
   <div class="panel-heading" style="background-color: #072c61;">
     <center><span style="font-weight: bold; color: white;">Apply For Project</span></center>
@@ -62,17 +63,17 @@
           <span id="already2" style="color:red; opacity: 0.8; font-size: 1em; font-family: 'Merriweather',serif;">Email Already Filled!</span><%= f.text_field :email2 , :class => 'form-control',autofocus: true%><br>
         </div>
         
-        <div class="field form-group" id="email3">
+        <div class=" col-md-12 field form-group" id="email3">
           <span class="members"><%= f.label :Email%> of 3rd Member</span>&nbsp;<span id="spanEmail3" style="color: red;" class="glyphicon glyphicon-remove pull-right"></span>
           <span id="already3" style="color:red; opacity: 0.8; font-size: 1em; font-family: 'Merriweather',serif;">Email Already Filled!</span><%= f.text_field :email3 , :class => 'form-control',autofocus: true%><br>
         </div>
         
-        <div class="field form-group" id="email4">
+        <div class=" col-md-12 field form-group" id="email4">
           <span class="members"><%= f.label :Email%> of 4th Member</span>&nbsp;<span id="spanEmail4" style="color: red;" class="glyphicon glyphicon-remove pull-right"></span>
           <span id="already4" style="color:red; opacity: 0.8; font-size: 1em; font-family: 'Merriweather',serif;">Email Already Filled!</span><%= f.text_field :email4 , :class => 'form-control',autofocus: true%><br>
         </div>
         
-        <div class="field form-group" id="email5">
+        <div class=" col-md-12 field form-group" id="email5">
           <span class="members"><%= f.label :Email%> of 5th Member</span>&nbsp;<span id="spanEmail5" style="color: red;" class="glyphicon glyphicon-remove pull-right"></span>
          <span id="already5" style="color:red; opacity: 0.8; font-size: 1em; font-family: 'Merriweather',serif;">Email Already Filled!</span><%= f.text_field :email5 , :class => 'form-control',autofocus: true%><br>
         </div>
@@ -109,7 +110,10 @@ label{
 
 <%= javascript_tag do %>
 
-document.addEventListener("turbolinks:load", function() {
+var ready;
+ready = function() {
+
+  document.addEventListener("turbolinks:load", function() {
   
   console.log('turbolinks loaded');
   var r1 = document.getElementById('task_members_count_1');
@@ -805,5 +809,9 @@ email5.addEventListener('input',function(){
   }
 });  
 });
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
 
 <% end %>
