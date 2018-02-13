@@ -1,6 +1,6 @@
 
 <div class="row">
-	<div class="col-md-4 col-sm-12">
+	<div class="col-md-4 col-sm-10">
 		<div class="panel" id="panel-1" style="border: 2px solid #072c61;">
 			<div class="panel-heading" style="background-color: #072c61;">
 				<h4><%=current_admin.name%></h4>
@@ -172,7 +172,10 @@
 			</div>	
 		</div>
 	</div>	
-  <%= render :partial => '/main/feedback'%>
+  	<div class="feed">
+  		<%=render 'main/feed'%>
+	</div>
+
 <style type="text/css">
 .panel-body{
 	height: calc(100% - 40px); max-height: 480px; overflow-y: scroll; overflow-x: hidden;
@@ -227,10 +230,10 @@
 	display: block;
 	font-weight: bold;
 }
-.btn:hover{
+/*.btn:hover{
 	box-shadow: 2px 2px solid grey;
 	border-radius: 40px;
-}
+}*/
 .badge{
 	background-color: #072c61;
 }

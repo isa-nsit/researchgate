@@ -21,9 +21,14 @@
     </div>
 <% end %>
 </div>
-<%= render :partial => '/main/feedback'%>
+
+<div class="feed">
+  <%=render 'main/feed'%>
+</div>
+
 </div>
 <style type="text/css">
+
   .circle img{
     border: 1px solid white;
   }
@@ -31,7 +36,7 @@
     word-wrap: break-word;
   }
   .panel{
-  border:2px solid #072c61; border-radius: 10px; background-color: #072c61;
+  border:2px solid #072c61; border-radius: 10px; background-color: rgba(7, 44, 97,0.9);
 }
 .FacultyName{
   margin-top: 10px; margin-left: 10px; letter-spacing: 2px;

@@ -53,7 +53,7 @@ class ActiveUserController < ApplicationController
     @countInstrumentation=Admin.where(division:"Instrumentation").count
     @countAutomation=Admin.where(division:"Automation").count
   	@division=params[:division]
-	  @faculty=Admin.where(:division=>@division)
+	  @faculty=Admin.where(:division=>@division).order(id: :asc)
   end
 
   def facultyShow
