@@ -20981,3 +20981,31 @@ Completed 200 OK in 922ms (Views: 907.9ms | ActiveRecord: 3.4ms)
 
 
 Started GET "/assets/favicon-b17aa3916d7eb1b5279953254b1130e910c6cb6cb7e5b6b84f6843b1cdc80aed.ico" for 127.0.0.1 at 2018-02-13 14:18:57 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-13 14:23:35 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MainController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/active_user/home
+Completed 302 Found in 33ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/active_user/home" for 127.0.0.1 at 2018-02-13 14:23:35 +0530
+Processing by ActiveUserController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Instrumentation"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Automation"]]
+  [1m[35mProjectUserAdminRelation Load (0.2ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE (user_id1='1' OR user_id2='1' OR user_id3='1' OR user_id4='1' OR user_id5='1')
+  [1m[36mSelectedProject Load (0.1ms)[0m  [1mSELECT "selected_projects".* FROM "selected_projects" WHERE 1=0[0m
+  [1m[35mCompleteProject Load (0.1ms)[0m  SELECT "complete_projects".* FROM "complete_projects" WHERE (user1='1' OR user2='1' OR user3='1' OR user4='1' OR user5='1')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "selected_projects".* FROM "selected_projects" WHERE 1=0[0m
+  [1m[35mUserTaskRelation Load (0.1ms)[0m  SELECT "user_task_relations".* FROM "user_task_relations" WHERE "user_task_relations"."user_id" = ?  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE 1=0[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE 1=0
+  Rendered main/_feedback.html.erb (0.8ms)
+  Rendered main/_feed.html.erb (3.0ms)
+  Rendered active_user/home.html.erb within layouts/application (11.2ms)
+  Rendered layouts/_nav_user.html.erb (1.1ms)
+  Rendered layouts/_nav.html.erb (2.3ms)
+Completed 200 OK in 635ms (Views: 607.2ms | ActiveRecord: 1.8ms)
