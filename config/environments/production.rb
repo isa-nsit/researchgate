@@ -62,6 +62,16 @@ Rails.application.configure do
   # config.action_controller.asset_host = 'http://assets.example.com'
 
 config.action_mailer.default_url_options = { :host => 'isansit.heroku.com' }
+config.action_mailer.delivery_method = :smtp
+ActionMailer::Base.smtp_settings = {
+      address:              'smtp.mailgun.org',
+      port:                 587,
+      domain:               'researchgate.isa-nsit.in',
+      user_name:            'postmaster@researchgate.isa-nsit.in',
+      password:             '8ab096adfb095fb9939f538d37396cdb',
+      authentication:       :plain,
+      enable_starttls_auto: true
+} 
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
