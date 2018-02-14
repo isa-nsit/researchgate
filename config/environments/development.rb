@@ -40,9 +40,9 @@ Rails.application.configure do
 ActionMailer::Base.smtp_settings = {
       address:              'smtp.mailgun.org',
       port:                 587,
-      domain:               'sandbox018f1e8692684901813e34c41176e8bb.mailgun.org',
-      user_name:            'postmaster@sandbox018f1e8692684901813e34c41176e8bb.mailgun.org',
-      password:             'Research-gate99',
+      domain:               'researchgate.isa-nsit.in',
+      user_name:            'postmaster@researchgate.isa-nsit.in',
+      password:             '8ab096adfb095fb9939f538d37396cdb',
       authentication:       :plain,
       enable_starttls_auto: true
 } 
