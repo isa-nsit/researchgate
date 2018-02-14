@@ -87,24 +87,29 @@
 </style>
 
 <script type="text/javascript">
-  var password_field = document.getElementById('password');
-  var password_visual = document.getElementById('password_visual');
-  var password_eye = document.getElementById('password_eye');
+  
+  document.addEventListener("turbolinks:load",function(){
+    console.log("turbolinks loaded");
+    
+    var password_field = document.getElementById('password');
+    var password_visual = document.getElementById('password_visual');
+    var password_eye = document.getElementById('password_eye');
 
-  password_visual.addEventListener('click',function(){
+    password_visual.addEventListener('click',function(){
 
-    if(password_eye.classList.contains("glyphicon-eye-open"))
-    {
-      password_eye.classList.remove("glyphicon-eye-open");
-      password_eye.classList.add("glyphicon-eye-close");
-      password_field.type = "text";
-    }
+      if(password_eye.classList.contains("glyphicon-eye-open"))
+      {
+        password_eye.classList.remove("glyphicon-eye-open");
+        password_eye.classList.add("glyphicon-eye-close");
+        password_field.type = "text";
+      }
 
-    else
-    {
-      password_eye.classList.add("glyphicon-eye-open");
-      password_eye.classList.remove("glyphicon-eye-close");
-      password_field.type = "password";
-    }
+      else
+      {
+        password_eye.classList.add("glyphicon-eye-open");
+        password_eye.classList.remove("glyphicon-eye-close");
+        password_field.type = "password";
+      }
+    });
   });
 </script>
