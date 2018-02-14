@@ -112,9 +112,7 @@ label{
 
 var ready;
 ready = function() {
-
-  document.addEventListener("turbolinks:load", function() {
-  
+ 
   console.log('turbolinks loaded');
   var r1 = document.getElementById('task_members_count_1');
   var r2 = document.getElementById('task_members_count_2');
@@ -808,7 +806,6 @@ email5.addEventListener('input',function(){
     already5.style.display = "none";
   }
 });  
-});
 };
 
 $(document).ready(ready);
