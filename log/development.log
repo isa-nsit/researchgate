@@ -24831,3 +24831,140 @@ Processing by Devise::SessionsController#new as HTML
   Rendered layouts/_common_nav.html.erb (0.3ms)
   Rendered layouts/_nav.html.erb (1.2ms)
 Completed 200 OK in 94ms (Views: 92.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-15 21:34:26 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_common_nav.html.erb (0.3ms)
+  Rendered layouts/_nav.html.erb (2.5ms)
+Completed 200 OK in 110ms (Views: 107.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-15 21:34:29 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ON38JALXWdnAThaNGGki6xRJBno7lZqd73axX+NwnyB4qjrwquzKBtJbR1rHkVc95r+/z4P/LBCMXfbMw6VnNg==", "user"=>{"email"=>"ashishc534@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "ashishc534@gmail.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (15.7ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2018-02-13 14:05:41.089881"], ["current_sign_in_at", "2018-02-15 16:04:30.452577"], ["sign_in_count", 5], ["updated_at", "2018-02-15 16:04:30.453790"], ["id", 1]]
+  [1m[35m (107.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 1964ms (ActiveRecord: 123.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 21:34:31 +0530
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/active_user/home
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/active_user/home" for 127.0.0.1 at 2018-02-15 21:34:31 +0530
+Processing by ActiveUserController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mProjectUserAdminRelation Load (0.6ms)[0m  [1mSELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE (user_id1='1' OR user_id2='1' OR user_id3='1' OR user_id4='1' OR user_id5='1')[0m
+  [1m[35mSelectedProject Load (0.6ms)[0m  SELECT "selected_projects".* FROM "selected_projects" WHERE 1=0
+  [1m[36mCompleteProject Load (0.5ms)[0m  [1mSELECT "complete_projects".* FROM "complete_projects" WHERE (user1='1' OR user2='1' OR user3='1' OR user4='1' OR user5='1')[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "selected_projects".* FROM "selected_projects" WHERE 1=0
+  [1m[36mUserTaskRelation Load (0.4ms)[0m  [1mSELECT "user_task_relations".* FROM "user_task_relations" WHERE "user_task_relations"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE 1=0
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE 1=0[0m
+  Rendered main/_feedback.html.erb (1.4ms)
+  Rendered main/_feed.html.erb (20.2ms)
+  Rendered active_user/home.html.erb within layouts/application (63.0ms)
+  Rendered layouts/_nav_user.html.erb (1.4ms)
+  Rendered layouts/_nav.html.erb (18.0ms)
+Completed 200 OK in 924ms (Views: 227.3ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/active_user/facultyIndex?division=Instrumentation" for 127.0.0.1 at 2018-02-15 21:34:34 +0530
+Processing by ActiveUserController#facultyIndex as HTML
+  Parameters: {"division"=>"Instrumentation"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.3ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."division" = ?  ORDER BY "admins"."id" ASC[0m  [["division", "Instrumentation"]]
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered main/_feed.html.erb (1.0ms)
+  Rendered active_user/facultyIndex.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_nav_user.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (1.1ms)
+Completed 200 OK in 139ms (Views: 134.7ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mAdmin Exists (0.4ms)[0m  SELECT  1 AS one FROM "admins" WHERE "admins"."email" = 'c@d.com' LIMIT 1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "admins" ("email", "name", "qualifications", "division", "designation", "pic", "AOI", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "c@d.com"], ["name", "TESTT"], ["qualifications", "ALL"], ["division", "Instrumentation"], ["designation", "Professor"], ["pic", "kpsr.jpg"], ["AOI", "A<br>B<br>C"], ["encrypted_password", "$2a$11$9kBWn68rh5gjEIvumkxVFewBunknySJNe6kWC4izSTI8t4RLq.LdG"], ["created_at", "2018-02-15 16:05:58.196336"], ["updated_at", "2018-02-15 16:05:58.196336"], ["confirmation_token", "qTix22gJZUy9_mEtUFqH"], ["confirmation_sent_at", "2018-02-15 16:05:58.198206"]]
+  [1m[35m (185.2ms)[0m  commit transaction
+  Rendered admins/mailer/confirmation_instructions.html.erb (5.7ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 752.5ms
+
+Sent mail to c@d.com (3584.1ms)
+Date: Thu, 15 Feb 2018 21:35:59 +0530
+From: me@sandbox018f1e8692684901813e34c41176e8bb.mailgun.org
+Reply-To: me@sandbox018f1e8692684901813e34c41176e8bb.mailgun.org
+To: c@d.com
+Message-ID: <5a85afe73feb0_370f7450cc36592@aashish-HP-Pavilion-Notebook.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome c@d.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/admins/confirmation?confirmation_token=qTix22gJZUy9_mEtUFqH">Confirm my account</a></p>
+
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  UPDATE "admins" SET "confirmed_at" = ?, "updated_at" = ? WHERE "admins"."id" = ?  [["confirmed_at", "2018-02-15 16:06:06.766098"], ["updated_at", "2018-02-15 16:06:06.768360"], ["id", 1]]
+  [1m[36m (182.2ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/active_user/facultyIndex?division=Instrumentation" for 127.0.0.1 at 2018-02-15 21:36:10 +0530
+Processing by ActiveUserController#facultyIndex as HTML
+  Parameters: {"division"=>"Instrumentation"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."division" = ?  ORDER BY "admins"."id" ASC[0m  [["division", "Instrumentation"]]
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered main/_feed.html.erb (0.7ms)
+  Rendered active_user/facultyIndex.html.erb within layouts/application (16.3ms)
+  Rendered layouts/_nav_user.html.erb (0.5ms)
+  Rendered layouts/_nav.html.erb (1.4ms)
+Completed 200 OK in 116ms (Views: 109.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/active_user/facultyShow?name=TESTT" for 127.0.0.1 at 2018-02-15 21:36:11 +0530
+Processing by ActiveUserController#facultyShow as HTML
+  Parameters: {"name"=>"TESTT"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mAdmin Load (0.3ms)[0m  [1mSELECT  "admins".* FROM "admins" WHERE "admins"."name" = ?  ORDER BY "admins"."id" ASC LIMIT 1[0m  [["name", "TESTT"]]
+  [1m[35mProjectUserAdminRelation Load (0.2ms)[0m  SELECT "project_user_admin_relations".* FROM "project_user_admin_relations" WHERE "project_user_admin_relations"."admin_id" = ?  [["admin_id", 1]]
+  [1m[36mEligibility Load (0.2ms)[0m  [1mSELECT  "eligibilities".* FROM "eligibilities" WHERE "eligibilities"."faculty_name" = ? LIMIT 1[0m  [["faculty_name", "TESTT"]]
+  Rendered active_user/_facultyProfile.html.erb (2.6ms)
+  Rendered main/_feedback.html.erb (0.0ms)
+  Rendered main/_feed.html.erb (0.4ms)
+  Rendered active_user/facultyShow.html.erb within layouts/application (12.6ms)
+  Rendered layouts/_nav_user.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 137ms (Views: 80.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tasks/new?email=c@d.com" for 127.0.0.1 at 2018-02-15 21:36:13 +0530
+Processing by TasksController#new as HTML
+  Parameters: {"email"=>"c@d.com"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?[0m  [["division", "Instrumentation"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "admins" WHERE "admins"."division" = ?  [["division", "Automation"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered tasks/new.html.erb within layouts/application (18.5ms)
+  Rendered layouts/_nav_user.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (1.5ms)
+Completed 200 OK in 139ms (Views: 120.6ms | ActiveRecord: 0.8ms)
