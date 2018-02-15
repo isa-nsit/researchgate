@@ -28,7 +28,7 @@
                   <span class="glyph glyphicon glyphicon-lock"></span>
               </div>
               <%= f.password_field :password, autocomplete: "off" , :class => 'form-control',:placeholder => 'Enter your password',id:'password'%>
-              <div class="input-group-addon btn" id="password_visual" onclick="ready();">
+              <div class="input-group-addon btn" id="password_visual">
                   <span class="glyph glyphicon glyphicon-eye-open" id="password_eye"></span>
               </div>
             </div>
@@ -88,14 +88,15 @@
 
 <script type="text/javascript">
   
-  var ready;
-  ready = function(){
-    console.log("turbolinks loaded");
+  $(document).on('turbolinks:load', function() {
+
+  console.log("turbolinks loaded");
 
     var password_field = document.getElementById('password');
     var password_visual = document.getElementById('password_visual');
     var password_eye = document.getElementById('password_eye');
 
+    password_visual.addEventListener('click',function(){
 
       if(password_eye.classList.contains("glyphicon-eye-open"))
       {
@@ -110,7 +111,6 @@
         password_eye.classList.remove("glyphicon-eye-close");
         password_field.type = "password";
       }
-    
-  };
-  $(window).on('page:load ready', ready);
+    });
+});
 </script>
