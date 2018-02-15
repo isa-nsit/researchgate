@@ -2,4 +2,6 @@
 
 <p>You can confirm your account email through the link below:</p>
 
+<a href="http://researchgate.isa-nsit.in/users/confirmation?confirmation_token=<%=@token%>" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://researchgate.isansit.in/users/confirmation?confirmation_token%3DFFxUwUY-TLASBVyD8RAG&amp;source=gmail&amp;ust=1518772023868000&amp;usg=AFQjCNEtCxnEwEI4UclmT9bBnHpE8dS-8g">Confirm my account</a>
+
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
