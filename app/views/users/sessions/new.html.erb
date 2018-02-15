@@ -90,12 +90,12 @@
   
   var ready;
   ready = function(){
-
     console.log("turbolinks loaded");
 
     var password_field = document.getElementById('password');
     var password_visual = document.getElementById('password_visual');
     var password_eye = document.getElementById('password_eye');
+
 
       if(password_eye.classList.contains("glyphicon-eye-open"))
       {
@@ -110,6 +110,7 @@
         password_eye.classList.remove("glyphicon-eye-close");
         password_field.type = "password";
       }
-};
-
+    
+  };
+  $(window).on('page:load ready', ready);
 </script>
