@@ -1,3 +1,4 @@
+
 <body>
 <div class="fade">
 <div class="row" style="margin-top: -20px;">
@@ -85,20 +86,16 @@
     color: #072c61;
   }
 </style>
-
 <script type="text/javascript">
-  
-  $(document).on('turbolinks:load', function() {
 
-  console.log("turbolinks loaded");
-
+    document.addEventListener('turbolinks:load',function(){
     var password_field = document.getElementById('password');
     var password_visual = document.getElementById('password_visual');
     var password_eye = document.getElementById('password_eye');
 
     password_visual.addEventListener('click',function(){
-
-      if(password_eye.classList.contains("glyphicon-eye-open"))
+      console.log("turbolinks loaded");
+    if(password_eye.classList.contains("glyphicon-eye-open"))
       {
         password_eye.classList.remove("glyphicon-eye-open");
         password_eye.classList.add("glyphicon-eye-close");
@@ -111,6 +108,8 @@
         password_eye.classList.remove("glyphicon-eye-close");
         password_field.type = "password";
       }
+}); 
     });
-});
+    
+      
 </script>
