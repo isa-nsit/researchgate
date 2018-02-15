@@ -44,6 +44,7 @@ config.action_mailer.smtp_settings = {
   :domain => "sandbox018f1e8692684901813e34c41176e8bb.mailgun.org",
   :user_name => "postmaster@sandbox018f1e8692684901813e34c41176e8bb.mailgun.org",
   :password => "ba80f9463696112af9cff62952ec4243"
+  
 }
 
   # Raises error for missing translations
