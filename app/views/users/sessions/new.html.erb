@@ -1,3 +1,32 @@
+<head>
+  <script type="text/javascript">
+    document.onload = function(){
+
+    console.log("turbolinks loaded");
+
+    var password_field = document.getElementById('password');
+    var password_visual = document.getElementById('password_visual');
+    var password_eye = document.getElementById('password_eye');
+
+    password_visual.addEventListener('click',function(){
+
+      if(password_eye.classList.contains("glyphicon-eye-open"))
+      {
+        password_eye.classList.remove("glyphicon-eye-open");
+        password_eye.classList.add("glyphicon-eye-close");
+        password_field.type = "text";
+      }
+
+      else
+      {
+        password_eye.classList.add("glyphicon-eye-open");
+        password_eye.classList.remove("glyphicon-eye-close");
+        password_field.type = "password";
+      }
+    });
+  };
+  </script>
+</head>
 <body>
 <div class="fade">
 <div class="row" style="margin-top: -20px;">
@@ -28,7 +57,7 @@
                   <span class="glyph glyphicon glyphicon-lock"></span>
               </div>
               <%= f.password_field :password, autocomplete: "off" , :class => 'form-control',:placeholder => 'Enter your password',id:'password'%>
-              <div class="input-group-addon btn" id="password_visual" onclick="ready();">
+              <div class="input-group-addon btn" id="password_visual">
                   <span class="glyph glyphicon glyphicon-eye-open" id="password_eye"></span>
               </div>
             </div>
@@ -86,35 +115,10 @@
   }
 </style>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   
-  function ready(){
-
-    console.log("turbolinks loaded");
-
-    var password_field = document.getElementById('password');
-    var password_visual = document.getElementById('password_visual');
-    var password_eye = document.getElementById('password_eye');
-
-    password_visual.addEventListener('click',function(){
-
-      if(password_eye.classList.contains("glyphicon-eye-open"))
-      {
-        password_eye.classList.remove("glyphicon-eye-open");
-        password_eye.classList.add("glyphicon-eye-close");
-        password_field.type = "text";
-      }
-
-      else
-      {
-        password_eye.classList.add("glyphicon-eye-open");
-        password_eye.classList.remove("glyphicon-eye-close");
-        password_field.type = "password";
-      }
-    });
-};
 
 // $(document).ready(ready);
 // $(document).on('page:load',ready);
 
-</script>
+</script> -->
