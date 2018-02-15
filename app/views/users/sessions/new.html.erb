@@ -1,9 +1,6 @@
 <head>
   <script type="text/javascript">
-    window.onload = readyPage;
-
-function readyPage(argument) {
-    function ready(){
+    window.onload = function(){
 
     console.log("turbolinks loaded");
 
@@ -28,7 +25,6 @@ function readyPage(argument) {
       }
     });
   };
-}
   </script>
 </head>
 <body>
@@ -61,7 +57,7 @@ function readyPage(argument) {
                   <span class="glyph glyphicon glyphicon-lock"></span>
               </div>
               <%= f.password_field :password, autocomplete: "off" , :class => 'form-control',:placeholder => 'Enter your password',id:'password'%>
-              <div class="input-group-addon btn" id="password_visual" onclick="ready()">
+              <div class="input-group-addon btn" id="password_visual">
                   <span class="glyph glyphicon glyphicon-eye-open" id="password_eye"></span>
               </div>
             </div>
