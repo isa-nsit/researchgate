@@ -71,6 +71,7 @@ ActionMailer::Base.smtp_settings = {
       password:             '8ab096adfb095fb9939f538d37396cdb',
       authentication:       :plain,
       enable_starttls_auto: true
+      :openssl_verify_mode => 'none'
 } 
 
   # Ignore bad email addresses and do not raise email delivery errors.
