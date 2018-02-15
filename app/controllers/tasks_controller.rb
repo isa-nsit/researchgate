@@ -95,7 +95,7 @@ class TasksController < ApplicationController
         end
         
         format.html { redirect_to active_user_home_path, notice: 'Response has been sent' }
-        #FormMailer.FormSubmission(@task,@email).deliver_now
+        FormMailer.FormSubmission(@task,@email).deliver_now
         #Resque.enqueue(SendTaskWorker,@task.id,@email)
       else
         format.html { redirect_to tasks_new_path , notice: 'You have not filled all the fields or email id is not registered with us'}
@@ -206,7 +206,7 @@ class TasksController < ApplicationController
         u.save
       end
       redirect_to active_user_home_path, notice: 'Response has been sent'
-      #FormMailer.FormSubmission(@task,@email).deliver_now
+      FormMailer.FormSubmission(@task,@email).deliver_now
       #Resque.enqueue(SendTaskWorker,@task.id,@email)
     else
       redirect_to tasks_edit_path , notice: 'You have not filled all the fields or email id is not registered with us'
