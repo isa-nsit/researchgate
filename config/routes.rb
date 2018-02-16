@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'active_incharge/home'
   get 'active_incharge/student_profile'
   get 'active_incharge/facultyProfile'
-devise_for :users, controllers: { confirmations: 'confirmations' }
+
   root 'main#index'
   get 'main/aboutUs'
   get 'tasks/new'
