@@ -86,10 +86,8 @@
 </style>
 <script type="text/javascript">
   
-  var ready;
-  ready = function(){
-
-    console.log("turbolinks loaded");
+  document.addEventListener('turbolinks:load',function(){
+      console.log("turbolinks loaded");
 
     var password_field = document.getElementById('password');
     var password_visual = document.getElementById('password_visual');
@@ -111,9 +109,6 @@
         password_field.type = "password";
       }
     });
-};
-
-$(document).ready(ready);
-$(document).on('page:load',ready);
+  });
 
 </script>
