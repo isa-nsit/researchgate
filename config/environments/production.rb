@@ -68,7 +68,7 @@ ActionMailer::Base.smtp_settings = {
       port:                 587,
       domain:               'researchgate.isa-nsit.in',
       user_name:            'postmaster@researchgate.isa-nsit.in',
-      password:             '8ab096adfb095fb9939f538d37396cdb',
+      password:             'AnkushPostMaster99!',
       authentication:       :plain,
       enable_starttls_auto: true
      

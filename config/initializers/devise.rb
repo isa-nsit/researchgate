@@ -12,7 +12,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'me@sandbox018f1e8692684901813e34c41176e8bb.mailgun.org'
+  config.mailer_sender = 'researchgate.isa-nsit.in'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'

@@ -41,9 +41,9 @@ config.action_mailer.smtp_settings = {
   :authentication => :plain,
   :address => "smtp.mailgun.org",
   :port => 587,
-  :domain => "sandbox018f1e8692684901813e34c41176e8bb.mailgun.org",
-  :user_name => "postmaster@sandbox018f1e8692684901813e34c41176e8bb.mailgun.org",
-  :password => "ba80f9463696112af9cff62952ec4243"
+  :domain => "researchgate.isa-nsit.in",
+  :user_name => "postmaster@researchgate.isa-nsit.in",
+  :password => "AnkushPostMaster99!"
   
 }
 
