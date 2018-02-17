@@ -4,7 +4,7 @@ class Rejected < ApplicationMailer
        @task=task
        @email=email
         
-    @admin=Admin.where(:id=>@task.admin_id).name
+    @admin=Admin.where(:id=>@task.admin_id.to_s).first.name
 
        mail(to: @email, subject: 'Your idea has been Rejected')
 
