@@ -3,7 +3,7 @@ class Accepted < ApplicationMailer
 	def FormSubmission(task,email)
        @task=task
        @email=email
-        @admin=Admin.where(:id=>@task.admin_id.to_s).name
+        @admin=Admin.where(:id=>@task.admin_id.to_s).first.name
        mail( to: @email, subject: 'Your idea has been Accepted')
 
 	end
