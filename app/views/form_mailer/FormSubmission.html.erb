@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="it">
 
@@ -282,7 +280,7 @@ TESTO INTENSE #ffffff
                       </tr>
                       <tr>
                         <td align="left" class="padding-copy articletextintenseStyle" style="padding: 10px 0 15px 25px; font-size: 16px; line-height: 24px; font-family: Georgia; color: #002060;">
-                          <p style="margin-top:0px" data-mce-style="margin-top: 0px;">Congratulations on taking the hardest step!</p>
+                          <p style="margin-top:0px" data-mce-style="margin-top: 0px;">Great news inside</p>
                         </td>
                       </tr>
                     </tbody>
@@ -298,7 +296,7 @@ TESTO INTENSE #ffffff
 
   <!--CONTENT-->
 
-  <table border="0" cellpadding="0" cellspacing="0" width="100%" id="ko_onecolumnBlock_3">
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" id="ko_onecolumnBlock_5">
     <tbody>
       <tr class="row-a">
         <td bgcolor="#EDE8DA" align="center" class="section-padding" style="padding-top: 30px; padding-left: 15px; padding-bottom: 30px; padding-right: 15px;">
@@ -314,14 +312,40 @@ TESTO INTENSE #ffffff
                           <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tbody>
                               <tr>
-                                <td align="center" class="padding-copy" style="font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #3F3D33; padding-top: 0px;">Your idea has been submitted</td>
+                                <td align="center" class="padding-copy" style="font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #3F3D33; padding-top: 0px;">You have received a new submission!</td>
                               </tr>
                               <tr>
                                 <td align="center" class="padding-copy textlightStyle" style="padding: 20px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #3F3D33;">
-                                  <p style="margin:0px;" data-mce-style="margin: 0px;">You completed the first step! You idea <%=@task.task_name%> has been submitted to <%=@admin%>.<br></p>
-                                  <p style="margin:0px;" data-mce-style="margin: 0px;">You will be updated when your idea has been reviewed.</p>
+                                  <p style="margin:0px;" data-mce-style="margin: 0px;"><%=@task.name%> has submitted an idea titled <%=@task.task_name%>. </p>
                                   <p style="margin:0px;" data-mce-style="margin: 0px;"><br data-mce-bogus="1"></p>
-                                  <p style="margin:0px;" data-mce-style="margin: 0px;">Best of luck!</p>
+                                  <p style="margin:0px;" data-mce-style="margin: 0px;"><br data-mce-bogus="1"></p>
+                                  <h3 style="margin:0px;" data-mce-style="margin: 0px;">What now ?</h3>
+                                  <p style="margin:0px;" data-mce-style="margin: 0px; text-align: left;">Please review the idea. </p>
+                                  <ol>
+                                    <li style="margin:0px;" data-mce-style="margin: 0px; text-align: left;">If the student meets your criteria and the idea meetes your requirements, you may accept it.</li>
+                                    <li style="margin:0px;" data-mce-style="margin: 0px; text-align: left;">If not, you may reject the idea and provide <%=@task.name%> some feedback to improve upon so that he can re-submit.</li>
+                                  </ol>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <!-- BULLETPROOF BUTTON -->
+                          <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mobile-button-container">
+                            <tbody>
+                              <tr>
+                                <td align="center" style="padding: 25px 0 0 0;" class="padding-copy">
+                                  <table border="0" cellspacing="0" cellpadding="0" class="responsive-table">
+                                    <tbody>
+                                      <tr>
+                                        <td align="center"><a target="_new" class="mobile-button" style="display: inline-block; font-size: 18px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; background-color: #9C010F; padding-top: 15px; padding-bottom: 15px; padding-left: 25px; padding-right: 25px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-bottom: 3px solid #5f0109;"
+                                            href="http://researchgate.isa-nsit.in/active_admin/home">Login and Check →</a></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
                                 </td>
                               </tr>
                             </tbody>

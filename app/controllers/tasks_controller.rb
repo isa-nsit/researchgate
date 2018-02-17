@@ -136,6 +136,7 @@ class TasksController < ApplicationController
     @task.task_desc=params[:task][:task_desc]
     @task.members_count=params[:task][:members_count]
     @task.admin_id = Admin.find_by_email(params[:email].to_s).id
+    @admin=Admin.find_by_email(@email.to_s).name
     @task.accepted = true
     @task.update_count+=1
     count=1
@@ -207,7 +208,7 @@ class TasksController < ApplicationController
         u.save
       end
       redirect_to active_user_home_path, notice: 'Response has been sent'
-      FormMailer.FormSubmission(@task,@email).deliver_now
+      FormMailer.FormSubmission(@task,@email,@admin).deliver_now
       #Resque.enqueue(SendTaskWorker,@task.id,@email)
     else
       redirect_to tasks_edit_path , notice: 'You have not filled all the fields or email id is not registered with us'
