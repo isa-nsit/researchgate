@@ -11,7 +11,7 @@ class SelectedProjectsController < ApplicationController
   	  project.ProjectName = task.task_name
   	  project.Description = task.task_desc
   	  project.admin_id = current_admin.id
-      ProfName=current_admin.name
+      ProfName=Admin.where(id: current_admin.id.to_s).first.name
     	project.email1 = task.email1
     	project.email2 = task.email2
     	project.email3 = task.email3
@@ -102,7 +102,7 @@ class SelectedProjectsController < ApplicationController
 
    def reject
     task=Task.where(id:params[:id]).first
-    ProfName=current_admin.name
+     ProfName=Admin.where(id: current_admin.id.to_s).first.name
     task.accepted=false
     task.save!
 
