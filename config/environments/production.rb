@@ -63,16 +63,15 @@ Rails.application.configure do
 
 config.action_mailer.default_url_options = { :host => 'isansit.heroku.com' }
 config.action_mailer.delivery_method = :smtp
-ActionMailer::Base.smtp_settings = {
-      address:              'smtp.mailgun.org',
-      port:                 587,
-      domain:               'researchgate.isa-nsit.in',
-      user_name:            'postmaster@researchgate.isa-nsit.in',
-      password:             'AnkushPostMaster99!',
-      authentication:       :plain,
-      enable_starttls_auto: true
-     
-} 
+config.action_mailer.smtp_settings = {
+    :address => 'smtp-relay.sendinblue.com',
+    :port => 587,
+    :user_name => 'researchgate@isa-nsit.in',
+    :password => 'h6V82PzQvZKLnA4j',
+    :authentication => 'login',
+    :enable_starttls_auto => true
+  }
+
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
