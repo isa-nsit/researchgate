@@ -1,10 +1,11 @@
 class FormMailer < ApplicationMailer
 
 
-	def FormSubmission(task,email)
+	def FormSubmission(task,email,admin)
        @task=task
        @email=email
-       mail(to: @email, subject: 'Idea for Project')
+       @admin=admin
+       mail(to: @email,:cc => @task.email1, subject: 'Idea for Project')
 
 	end
 end

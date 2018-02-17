@@ -29,6 +29,7 @@ class TasksController < ApplicationController
     @task.members_count =params[:task][:members_count]
     @task.accepted = true;
     @task.admin_id = Admin.find_by_email(@email.to_s).id
+    @admin=Admin.find_by_email(@email.to_s).name
     count=1
     user2=User.where(:email=>params[:task][:email2].to_s).first
     user3=User.where(:email=>params[:task][:email3].to_s).first
@@ -95,7 +96,7 @@ class TasksController < ApplicationController
         end
         
         format.html { redirect_to active_user_home_path, notice: 'Response has been sent' }
-        FormMailer.FormSubmission(@task,@email).deliver_now
+        FormMailer.FormSubmission(@task,@email,@admin).deliver_now
         #Resque.enqueue(SendTaskWorker,@task.id,@email)
       else
         format.html { redirect_to tasks_new_path , notice: 'You have not filled all the fields or email id is not registered with us'}
