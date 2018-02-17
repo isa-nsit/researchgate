@@ -12,7 +12,7 @@ class SelectedProjectsController < ApplicationController
   	  project.Description = task.task_desc
   	  project.admin_id = current_admin.id
 
-      @ProfName=Admin.where(id: project.admin_id.to_s).first.name
+     
     	project.email1 = task.email1
     	project.email2 = task.email2
     	project.email3 = task.email3
@@ -56,23 +56,23 @@ class SelectedProjectsController < ApplicationController
 
   			format.html {redirect_to active_admin_home_path, notice: 'Project Added.' }  	
   		   if(@task.email1 and @task.email1!="")
-          Accepted.FormSubmission(@task,@task.email1,@ProfName).deliver_now
+          Accepted.FormSubmission(@task,@task.email1).deliver_now
           #Resque.enqueue(AcceptedWorker,task.id,task.email1)
         end
         if(@task.email2 and @task.email2!="")
-          Accepted.FormSubmission(@task,@task.email2,@ProfName).deliver_now
+          Accepted.FormSubmission(@task,@task.email2).deliver_now
          # Resque.enqueue(AcceptedWorker,task.id,task.email2)
         end
         if(@task.email3 and @task.email3!="")
-          Accepted.FormSubmission(@task,@task.email3,@ProfName).deliver_now
+          Accepted.FormSubmission(@task,@task.email3).deliver_now
          # Resque.enqueue(AcceptedWorker,task.id,task.email3)
         end
         if(@task.email4 and @task.email4!="")
-          Accepted.FormSubmission(@task,@task.email4,@ProfName).deliver_now
+          Accepted.FormSubmission(@task,@task.email4).deliver_now
          # Resque.enqueue(AcceptedWorker,task.id,task.email4)
         end
         if(@task.email5 and @task.email5!="")
-          Accepted.FormSubmission(@task,@task.email5,@ProfName).deliver_now
+          Accepted.FormSubmission(@task,@task.email5).deliver_now
          # Resque.enqueue(AcceptedWorker,task.id,task.email5)
         end
           user.destroy_all
@@ -108,23 +108,23 @@ class SelectedProjectsController < ApplicationController
     @task.save!
 
     if(@task.email1 and @task.email1!="")
-         Rejected.FormSubmission(@task,@task.email1,@ProfName).deliver_now
+         Rejected.FormSubmission(@task,@task.email1).deliver_now
         # Resque.enqueue(RejectedWorker,task.id,task.email1)
         end
         if(@task.email2 and @task.email2!="")
-         Rejected.FormSubmission(@task,@task.email2,@ProfName).deliver_now
+         Rejected.FormSubmission(@task,@task.email2).deliver_now
         # Resque.enqueue(RejectedWorker,task.id,task.email2)
         end
         if(@task.email3 and @task.email3!="")
-         Rejected.FormSubmission(@task,@task.email3,@ProfName).deliver_now
+         Rejected.FormSubmission(@task,@task.email3).deliver_now
         # Resque.enqueue(RejectedWorker,task.id,task.email3)
         end
         if(@task.email4 and @task.email4!="")
-         Rejected.FormSubmission(@task,@task.email4,@ProfName).deliver_now
+         Rejected.FormSubmission(@task,@task.email4).deliver_now
         # Resque.enqueue(RejectedWorker,task.id,task.email4)
         end
         if(@task.email5 and @task.email5!="")
-        Rejected.FormSubmission(@task,@task.email5,@ProfName).deliver_now
+        Rejected.FormSubmission(@task,@task.email5).deliver_now
          # Resque.enqueue(RejectedWorker,task.id,task.email5)
         end
     return redirect_to active_admin_home_path, notice: 'Idea has been rejected'

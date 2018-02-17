@@ -1,6 +1,6 @@
 class Rejected < ApplicationMailer
 
-	def FormSubmission(task,email,Prof)
+	def FormSubmission(task,email)
        @task=task
        @email=email
        @ProfName=Prof
