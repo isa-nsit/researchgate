@@ -11,7 +11,7 @@ class SelectedProjectsController < ApplicationController
   	  project.ProjectName = task.task_name
   	  project.Description = task.task_desc
   	  project.admin_id = current_admin.id
-      ProfName=Admin.where(id: current_admin.id.to_s).first.name
+      ProfName=Admin.where(id: project.admin_id.to_s).first.name
     	project.email1 = task.email1
     	project.email2 = task.email2
     	project.email3 = task.email3
@@ -102,28 +102,28 @@ class SelectedProjectsController < ApplicationController
 
    def reject
     task=Task.where(id:params[:id]).first
-     ProfName=Admin.where(id: current_admin.id.to_s).first.name
+     ProfName=Admin.where(id: project.admin_id.to_s).first.name
     task.accepted=false
     task.save!
 
     if(task.email1 and task.email1!="")
-         Rejected.FormSubmission(task,task.email1,current_admin).deliver_now
+         Rejected.FormSubmission(task,task.email1,ProfName).deliver_now
         # Resque.enqueue(RejectedWorker,task.id,task.email1)
         end
         if(task.email2 and task.email2!="")
-         Rejected.FormSubmission(task,task.email2,current_admin).deliver_now
+         Rejected.FormSubmission(task,task.email2,ProfName).deliver_now
         # Resque.enqueue(RejectedWorker,task.id,task.email2)
         end
         if(task.email3 and task.email3!="")
-         Rejected.FormSubmission(task,task.email3,current_admin).deliver_now
+         Rejected.FormSubmission(task,task.email3,ProfName).deliver_now
         # Resque.enqueue(RejectedWorker,task.id,task.email3)
         end
         if(task.email4 and task.email4!="")
-         Rejected.FormSubmission(task,task.email4,current_admin).deliver_now
+         Rejected.FormSubmission(task,task.email4,ProfName).deliver_now
         # Resque.enqueue(RejectedWorker,task.id,task.email4)
         end
         if(task.email5 and task.email5!="")
-        Rejected.FormSubmission(task,task.email5,current_admin).deliver_now
+        Rejected.FormSubmission(task,task.email5,ProfName).deliver_now
          # Resque.enqueue(RejectedWorker,task.id,task.email5)
         end
     return redirect_to active_admin_home_path, notice: 'Idea has been rejected'
