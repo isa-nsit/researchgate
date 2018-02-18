@@ -21,7 +21,9 @@ gem 'dotenv-rails'
 # gem 'therubyracer', platforms: :ruby
 # gem 'resque'
 #gem 'redis'
-
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
+gem 'fog-aws'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-modal-rails', '~> 0.0.4'

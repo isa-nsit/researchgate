@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   def find_user(email)
   	User.find_by(email).id
   end
+
+  mount_uploader :profile_pic, ProfilePicUploader
 end
