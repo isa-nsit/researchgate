@@ -113,15 +113,15 @@ class ActiveUserController < ApplicationController
     current_user.branch=branch
     current_user.year=year
     current_user.percentage=percentage
-    uploaded_file = params[:user][:profile_pic]
-    if(uploaded_file)
-      filename = SecureRandom.hex + "." +uploaded_file.original_filename.split('.')[1]
-      filepath = Dir.pwd + "/uploads/" + filename
-      File.open(filepath,'wb') do |file|
-        file.write(uploaded_file.read())
-      end
-      current_user.profile_pic = filename
-    end
+    # uploaded_file = params[:user][:profile_pic]
+    # if(uploaded_file)
+    #   filename = SecureRandom.hex + "." +uploaded_file.original_filename.split('.')[1]
+    #   filepath = Dir.pwd + "/uploads/" + filename
+    #   File.open(filepath,'wb') do |file|
+    #     file.write(uploaded_file.read())
+    #   end
+    #   current_user.profile_pic = filename
+    # end
     
     if(current_user.save)
       return redirect_to active_user_profile_path(id: current_user.id), notice: 'Profile has been saved'
