@@ -8,5 +8,5 @@ class User < ActiveRecord::Base
   	User.find_by(email).id
   end
 
-  mount_uploader :profile_pic, ProfilePicUploader
+  # mount_uploader :profile_pic, ProfilePicUploader
 end

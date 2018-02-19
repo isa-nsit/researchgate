@@ -233,7 +233,7 @@ DEPENDENCIES
   aws-sdk (~> 2)
   bootstrap-sass (~> 3.3.6)
   byebug
-  carrierwave (~> 1.0)
+  carrierwave
   coffee-rails (~> 4.1.0)
   devise
   dotenv-rails

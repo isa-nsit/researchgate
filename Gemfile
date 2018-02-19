@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 ruby "2.3.1"
+
 #for Twitter UI components navbar
 gem 'bootstrap-sass', '~> 3.3.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -23,7 +24,7 @@ gem 'sendinblue'
 # gem 'therubyracer', platforms: :ruby
 # gem 'resque'
 #gem 'redis'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave'
 gem "mini_magick"
 gem 'fog-aws'
 # Use jquery as the JavaScript library
