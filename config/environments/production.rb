@@ -67,7 +67,7 @@ config.action_mailer.smtp_settings = {
   :authentication => :plain,
   :address => "smtp.mailgun.org",
   :port => 587,
-  :domain => "researchgate.isa-nsit.in.mailgun.org",
+  :domain => "researchgate.isa-nsit.in",
   :user_name => "postmaster@researchgate.isa-nsit.in",
   :password => "c5d2f27b4e53b0a101c3bf36e9e3cddb"
 }
