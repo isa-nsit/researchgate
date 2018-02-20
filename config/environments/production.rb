@@ -69,7 +69,7 @@ config.action_mailer.smtp_settings = {
   :port => 587,
   :domain => "researchgate.isa-nsit.in",
   :user_name => "postmaster@researchgate.isa-nsit.in",
-  :password => "c5d2f27b4e53b0a101c3bf36e9e3cddb"
+  :password => "296e39fc77c917f4b7f41a9a106918f0"
 }
 
 
