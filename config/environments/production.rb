@@ -64,13 +64,13 @@ Rails.application.configure do
 config.action_mailer.default_url_options = { :host => 'isansit.heroku.com' }
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
-    :address => 'smtp-relay.sendinblue.com',
-    :port => 587,
-    :user_name => 'researchgate@isa-nsit.in',
-    :password => 'h6V82PzQvZKLnA4j',
-    :authentication => 'login',
-    :enable_starttls_auto => true
-  }
+  :authentication => :plain,
+  :address => "smtp.mailgun.org",
+  :port => 587,
+  :domain => "sandboxa68b9bed08e9488d9fee4a1dfd24057d.mailgun.org.mailgun.org",
+  :user_name => "postmaster@sandboxa68b9bed08e9488d9fee4a1dfd24057d.mailgun.org",
+  :password => "c5d2f27b4e53b0a101c3bf36e9e3cddb"
+}
 
 
   # Ignore bad email addresses and do not raise email delivery errors.
