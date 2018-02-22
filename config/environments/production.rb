@@ -63,14 +63,6 @@ Rails.application.configure do
 
 config.action_mailer.default_url_options = { :host => 'isansit.heroku.com' }
 config.action_mailer.delivery_method = :smtp
-config.action_mailer.smtp_settings = {
-  :authentication => :plain,
-  :address => "smtp.mailgun.org",
-  :port => 587,
-  :domain => "researchgate.isa-nsit.in",
-  :user_name => "postmaster@researchgate.isa-nsit.in",
-  :password => "296e39fc77c917f4b7f41a9a106918f0"
-}
 
 
   # Ignore bad email addresses and do not raise email delivery errors.

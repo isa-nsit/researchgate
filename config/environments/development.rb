@@ -37,14 +37,6 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 config.action_mailer.delivery_method = :smtp
-config.action_mailer.smtp_settings = {
-  :authentication => :plain,
-  :address => "smtp.mailgun.org",
-  :port => 587,
-  :domain => "researchgate.isa-nsit.in",
-  :user_name => "postmaster@researchgate.isa-nsit.in",
-  :password => "296e39fc77c917f4b7f41a9a106918f0"
-}
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
